@@ -1,0 +1,248 @@
+\documentclass[phd,tocprelim]{cornell}
+%
+% tocprelim option must be included to put the roman numeral pages in the
+% table of contents
+%
+% The cornellheadings option will make headings completely consistent with
+% guidelines.
+%
+% This sample document was originally provided by Blake Jacquot, and
+% fixed up by Andrew Myers.
+%
+%Some possible packages to include
+\usepackage{graphicx,pstricks}
+\usepackage{graphics}
+\usepackage{moreverb}
+\usepackage{subfigure}
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage{hangcaption}
+\usepackage{txfonts}
+\usepackage{palatino}
+
+%if you're having problems with overfull boxes, you may need to increase
+%the tolerance to 9999
+\tolerance=9999
+
+\bibliographystyle{plain}
+%\bibliographystyle{IEEEbib}
+
+\renewcommand{\caption}[1]{\singlespacing\hangcaption{#1}\normalspacing}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.75}
+
+\title {The Dynamics of Information Diffusion on On-line Social Networks}
+\author {Shaomei Wu}
+\conferraldate {August}{2012}
+\degreefield {Ph.D.}
+\copyrightholder{Shaomei Wu}
+\copyrightyear{2012}
+
+\begin{document}
+
+\maketitle
+\makecopyright
+
+\begin{abstract}
+Your abstract goes here. Make sure it sits inside the brackets. If not,
+your biosketch page may not be roman numeral iii, as required by the
+graduate school.
+\end{abstract}
+
+\begin{biosketch}
+Your biosketch goes here. Make sure it sits inside
+the brackets.
+\end{biosketch}
+
+\begin{dedication}
+This document is dedicated to all Cornell graduate students.
+\end{dedication}
+
+\begin{acknowledgements}
+Your acknowledgements go here. Make sure it sits inside the brackets.
+\end{acknowledgements}
+
+\contentspage
+\tablelistpage
+\figurelistpage
+
+\normalspacing \setcounter{page}{1} \pagenumbering{arabic}
+\pagestyle{cornell} \addtolength{\parskip}{0.5\baselineskip}
+
+\chapter{Introduction}
+Understanding how information spreads in the society has attracted a growing interest from both practitioners and scholars. It is an essential element for many interesting problems, such as the diffusion of innovation, formation of public opinion, product adoption, and viral marketing. 
+
+Historically, one of the biggest challenges in the study of information diffusion is data collection. Given the difficulty of observing and tracing the diffusion process over all possible channels, most empirical studies in this field have been conducted manually by sociologists and communication researchers, through in-person interviews or standardized surveys of population samples. Therefore, these studies are largely confined by the scale and the data accuracy. As a result, existing theoretical models in the literature have relied on many assumptions about the underlying diffusion mechanism instead of empirical evidence. Being widely applied, these models are, however, hard to be verified or rebutted empirically on a large scale. 
+
+In recent years, the abundance of digital records of online interactions has provided us both the explicit network structure and detailed dynamics, supporting global-scale, quantitative study of diffusion in the real world. Using these large scale datasets collected from social media sites (i.e. Twitter, Orkut), this thesis addresses the following three questions: ``who influences whom?'', ``how do different types of information spread?'',  and ``how does the network structure impact the diffusion process?''
+
+\section{The Influencer Problem}
+Can we estimate person influence and pick out the influencers?
+Think of influence in context:
+\begin{enumerate}
+\item general influence: mass media
+\item domain influence: masspersonal (celebrities, bloggers, organizations)
+\item personal influence: tie strength, content, language, timing (accidental influencers)
+\end{enumerate}
+
+\subsection{Life of information in Social Media}
+How long should we expect a piece of information to live in the social media space ~\cite{Leskovec-Newscycle-2009}? Who are involved in each stage (production, circulation, and consumption) of lifecycle of information? 
+
+
+\subsection{Modeling personal influence}
+
+\subsection{The intersection between content and people}
+
+\section{The role of content in diffusion process}
+Section 2 text.
+
+\subsection{Subsection heading goes here}
+
+Subsection 1 text
+
+\subsubsection{Subsubsection 1 heading goes here}
+Subsubsection 1 text
+
+\subsubsection{Subsubsection 2 heading goes here}
+Subsubsection 2 text
+
+\section{Diffusion and network structure}
+Section 3 text. The dielectric constant at the air-metal interface
+determines the resonance shift as absorption or capture occurs.
+
+\begin{equation}
+k_1=\frac{\omega }{c({1/\varepsilon_m + 1/\varepsilon_i})^{1/2}}=k_2=\frac{\omega
+sin(\theta)\varepsilon_{air}^{1/2}}{c}
+\end{equation}
+
+\noindent
+where $\omega$ is the frequency of the plasmon, $c$ is the speed of
+light, $\varepsilon_m$ is the dielectric constant of the metal,
+$\varepsilon_i$ is the dielectric constant of neighboring insulator,
+and $\varepsilon_{air}$ is the dielectric constant of air.
+
+\chapter{Background}
+A variety of methods have been applied by scholars to study the diffusion of information. From the theoretic perspective, sociologists and economists developed agent-based modeling (ABM) to explore the dynamics of diffusion in different networks and interactions [Centola and Macy 2007, Watts and Dodds 2007]. Computer scientists designed the algorithm to maximize the extent of diffusion by seeding the diffusion with specially-picked individuals [Liben-Nowell et al 2008]. 
+
+On the other hand, modeling and predicting the propensity of real world diffusion going viral through WOM process is of central interest in recent empirical studies. Built on top of the cascade model, Gruhl et al [2004] tracked the diffusion of topics in blogspace to estimate the transmission probability with an expectation-maximization(EM)-like algorithm. Leskovec et al [2007] studied interpersonal recommendations on an e-commerce site to infer the adoption probability based on the category of products and invitation history. Cha et al [2008] studied the viral process of photos being marked as favorite on the Flickr social network. By applying the SIR model with infinite recovery time, they estimated the reproduction number with the mean degree of nodes at each step of contagion. Backstrom et al. [2006] modeled the probability of a user  joining a community and the growth of communities on LiveJournal using decision trees with network structure features.
+
+\section{Social theories}
+
+\section{Diffusion models}
+
+
+\section{Temporal analysis}
+\subsection{Temporal pattern detection}
+\subsection{Trend detection}
+
+\section{Lingusitic analysis}
+
+\section{On-line social network as the lab for studying information diffusion}
+\subsection{Twitter}
+
+In my work, I frequently study the diffusion of information in the context of Twitter. As a highly popular micro-blogging service, Twitter provides a natural environment for the study of diffusion process. Unlike other online social networks (e.g. Facebook), Twitter is expressly devoted to disseminating information in that users subscribe to the information broadcasted by other users; thus the network of potential adoption can be reconstructed by crawling the corresponding "follower graph". In addition, because of the need of users to share web content, with the restriction of maximal tweet length as 140 characters, URL shortening services (e.g., bit.ly, TinyURL, etc) are used widely, and effectively tag numerous pieces of information with unique and easily-identifiable tokens. Our study takes advantage of these features in following aspects:
+
+(a) We are able to observe essentially everything that is spreading on Twitter. Thus although we have only one type of social media, we have a very high level of resolution and coverage regarding what is being diffused.
+
+(b) Although it may be non-representative in some respects, Twitter is very representative in at least one respect--namely it includes essentially all actors of any consequence in the information diffusion process in the society: media outlets and formal organizations of all sizes, bloggers, and public figures like celebrities, as well as tens of millions of ordinary individuals. In this sense, it really is a complete sample of one (admittedly narrow) slice through the diffusion landscape. 
+
+(c) Because Twitter users themselves classify other users by including them on lists, Twitter effectively provides a ready-made, crowd-sourced classification scheme of users. Thus even though we do have content information for many of the Tweets we observe, we can reliably classify the source of the content being circulated over Twitter.  
+
+(d) For certain subsets of URL/Tweets (e.g. those originating from certain news sources) we can automatically classify content into topical domains (``international news'', ``entertainment'', ``business'', ``science'' etc.); and for other subsets (e.g. persistent URL's - URL's that are shared repeatedly by different users over a big timespan) we can identify certain content-related attributes (e.g. video, music, etc.). So for certain restricted domains we can make some statements about how content matters in the diffusion process.
+
+(e) Even though our view of ``effects'' is limited (i.e., URL persistence and retweeting rate), we have very high resolution temporal information over the lifespan of any piece of information in diffusion.
+
+
+Nevertheless, we are aware that our analysis is limited in some important respects:
+
+(a) It is limited to Twitter, which is not only just one diffusion channel among many, but may well be unlike other channels in a number of ways; 
+(b) We can not observe the kind of offline "effects" that viral marketers and social scientists are most interested in, such as, adoption of products, change in attitude;
+
+(c) We have only limited information about the content that is being shared (although this constraint could be relaxed with some effort).
+
+
+
+\subsection{Other on-line social media}
+
+
+\section{MapReduce and parallel network algorithms}
+Introduction to MapReduce.
+
+MapReduce is good with easy-parallelible tasks, hard for tasks that need certain global information (e.g., shortest path). However, many network problems are the second case. 
+
+Methods to convert a global problem to a series of mapreduce jobs~\cite{Suri-Triangle-2011}.
+
+
+
+
+\chapter{the interaction between people and information}
+
+In~\cite{Wu-Twitter-2011}, we studied the production, flow, and consumption of information in Twitter. As suggested in previous research in public communications, we classified users into 5 categories (celebrities, bloggers, mass media, organizations, and others) and found a striking concentration of attention on a small number of ``elite'' users on Twitter, as well as a significant homophily within categories. We also applied the classical ``two-step flow'' theory of communications in the context of social media sites such as Twitter. Our results confirmed that there are a large number of intermediary users who actively filter and disseminate information from media to the masses, and the composition of intermediaries is highly diverse. We also examined the lifespan and content of URLs broadcasted by different categories of users. We found that although content picked up by bloggers tends to stimulate a more persistent interest, the longevity of information is determined not by diffusion process, but by many different users independently rediscovering the same content.
+
+
+
+
+\chapter{the role of content}
+Following up our previous work, in~\cite{Wu-ICWSM-2011}, we studied the relationship between content and the temporal dynamics of information on Twitter, focusing on the persistence of information. Our results demonstrated a strong association between the content and the temporal dynamics of information. For example, rapidly-fading information contains significantly more words related to negative emotion, actions, and more complicated cognitive processes, whereas persistent information contains more words related to positive emotion, leisure, and lifestyle.
+
+\chapter{Network effect and behavioral contagion}
+
+\chapter{Diffusion without active dissemination}
+
+Arrival and Departure Dynamics in Online Social Networks (submitted to the International Conference on Web Wide Web, 2012). 
+
+In this paper, we compared the dynamics of user arrival and departure in online social networks. We showed although user disengagement has been considered less viral than engagement, there is a substantial network effect of the departure of friends on a user's tendency to leave a network. Taking into account such network effect, we are able to build machine learning models to predict the departure of users based on their local network properties.
+
+
+\chapter{Social media in Arab Spring Movement}
+    Joining social media data with real world events, we are able to study one of the most interesting (and also the most difficult) parts in media communication research (Lasswell's maxim): the effect of information. One of my ongoing projects is to study the role of social media in social movements, in order to understand how the propagation of information is leading or reflecting societal changes. We have collected a large number of tweets and twitter networks related to big social movements (i.e., Middle East Revolution, Occupy WallStreet Movement). Using effective algorithms for community detection, hub detection, trend detection, and opinion mining, we will be able to identify the informal structure of massive communication networks for social movements and study the diffusion of ideology and behaviors within and across organizational/geographical boundaries.
+
+
+\section{Data}
+To collect a substantial set of users and their tweets from the Middle East area in the period of the recent social movements, we first identified a set of countries of interest, including Tunisia, Egypt, Libya, Bahrain, Iran, Iraq, Israel, Algeria, Morocco, Saudi Arabia, Kuwait, Yemen, United Arab Emirates, Palenstine, Quatar, Oman, Jordan, Cyprus, Syria, and Lebanon. For each country, we used Yahoo Maps APIs to get the list of cities and towns in that country, together with the geographical centroid point for each city/town, in the form of (latitude, longitude).
+
+After we had the centroid points of cities/towns within a country, we used Twitter search APIs to retrieve all the recent tweets generated within 100 miles from every centroid point in that country. We then parsed these tweets and extracted the authors of these tweets.
+
+Using these authors as ``seeds'', we crawled one degree out from the seeds, and retrieved the profiles of all the seeds, and all the neighbors (friends/followers) of the seeds. The size of graph grows rapidly in one-degree distance. In fact, the network induced by the seeds and their one-degree neighbors already cover over 3 millions distinct Twitter users.
+
+We crawled the profiles of these 3M users, and tried to identify their country of origin in three ways:
+\begin{enumerate}
+\item look for the country name in their self-reported location in their profile;
+\item if the time-zone city is specified in their profile, map the city to the corresponding country;
+\item if the location-tracking service is turned on, get the tracked location in Twitter meta data.
+\end{enumerate}
+
+After parsing the profiles for all 5M users, we were able to identify the country of origin for 260K of them.
+
+In the end, we crawled the maximal available history of tweets generated by these $260K$ users, which is, up to $3200$ tweets per user. In the end we collected in total $96,350,865$ tweets in this way. Among them, 36,857,387 were generated between Dec 1st, 2010 and March 31st, 2011, by 112,661 users  from the countries listed above.
+
+Here is a breakdown of the amount of data we collected from each country.
+
+To compare the diffusion of protest and non-protest content on Twitter, we first identify protest-related tweets. We say a tweet is related to protest if it contains at least one protest hashtag .  Protest hashtags are hand-picked by political scientists. However, as there are hundreds of thousands of  hashtags in our dataset, it is not feasible for political scientists to manually label all the hashtags. To effectively identify protest-related hashtags while maintaining a high recall, we narrow the pool of hashtags to be examined based on two metrics: (1) the volume of tweets containing the hashtag; and (2) the bursty-ness (as defined by Kleinberg 2004 KDD) of the hashtag occurrence. In this way, we narrow the scope down to only the top 1000 most frequently used hashtags and the top 1000 most bursty hashtags. We then have the experts to only go through those 2000 hashtags, and are able to identify about 500 protest-related hashtags among them.
+
+\section{Method and Results}
+As shown in the previous section, there had been a substantial amount of protest content introduced by Egyptian users on Twitter, even before Jan 25, 2011, when the first big protests took place in Tahrir Square, Cairo. Who were V those foresighted users? Were they planning and organizing the protests? Were  they qualitatively different than other users on Twitter? In this section, we will investigate these questions, focusing on the relationship between the status of users and their earliness at participating in the protest activities on Twitter.
+
+To start, we first represent the earliness of a user by his mobilization day. A user u's mobilization day d(u), is defined as the day when u first used any protest hashtag. We then quantify the status of user u on day t,  by the number of Twitter followers u has on day t. In order to show the aggregated status of users who started to participate in the protest at different times, we group users by their mobilization day d, and calculate f(d), the median value of user status, for each group. In Figure 4, we plot f(d) for d between December 10, 2010 and January 25, 2011. Here we can see a clear trend of decreasing status as the mobilization day gets  closer to the actual protest day.
+
+\section{Conclusion}
+By analyzing Twitter activity in Middle East area during the Arab Spring movement, we have shown that social media were used to both activate and reflect the on-goings of Middle East social movement. The relative weights of these two roles differed across countries. In particular, Egyptian users actively used Twitter to plan protests and call for a critical mass, and the users from Saudi Arabia or UAE mostly used Twitter to support or comment on on-going events. We also found that protest content travelled directionally from the central to the peripheral of the Twitter network:  most protest memes were initiated by hub users and later picked up by the masses.  At the individual level, we found that the adoption of protest content can be modeled by the complex contagion process - while the overall adoption rate of protest content is relatively low, people become significantly more likely to start tweeting about the protest when more than 2 friends already doing so. 
+
+ Although our work is to our best knowledge the largest study of the role of social media in social movements, we have to acknowledge that our dataset is rather disproportionate: $80\%$ of the tweets we studied came from only 5 Middle East countries. Due to technical issues, we were not able to collect an equally large number of tweets from countries such as Libya, Tunisia, and Algeria, when dramatic societal changes were taking places in these countries.
+
+For the future work, we want to extend our study to the diffusion of protest content among countries and communities through social media. Another interesting direction is to understand how mass media (newspaper, TV, radio) and social media interact and influence each other in social movements.
+
+This work presents one of the largest studies on the role of social media in the Arab Spring movement. Using over 2 million tweets generated by 110 thousand users in 11 Middle East countries during early 2011, we depict the landscape of aggregated Twitter usage in those countries as the revolution unfolded. Our results suggest that social media has been used to both lead and reflect real world protest activities. Compared to non-protest-related content on Twitter, we find that protest-related content travels directionally from central users to peripheral users, and the adoption of protest-related content can be modeled by a complex contagion process. 
+
+\chapter{Conclusion}
+    In summary, I am deeply intrigued by the developing characteristics of information diffusion in online social media. Thanks to the Internet and social media technologies, I believe that we are heading towards a more democratic era where revolutions can be started by ordinary people and the power to change is in the hands of the masses. As part of this process, social media sites such as Facebook and Twitter have also evolved from friendship networks to a much broader platform for organizing social/political changes and communicating with various communities. I hope my work can help understand this movement and foster the effective flow of information in the society.
+
+
+\appendix
+\chapter{Chapter 1 of appendix}
+Appendix chapter 1 text goes here
+
+\bibliography{diffusion}
+
+\end{document}
