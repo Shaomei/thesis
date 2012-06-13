@@ -1,6 +1,24 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Schematic of the Snowball Sampling Method}}{14}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Average fraction of $\#$ following (blue line) and $\#$ tweets (red line) for a random user that are accounted for by the top K elites users crawled}}{18}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Snowball sample}}}{18}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Activity sample}}}{18}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Average fraction of $\#$ following (blue line) and $\#$ tweets (red line) for a random user that are accounted for by the top K most retweeted users in the ``Other'' category}}{20}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Share of attention among elite categories}}{21}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces RT behavior among elite categories}}{24}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Number of RT's and Reintroductions of New York Times stories by content category}}{26}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Number of RT's and Reintroductions of most popular URLs originating from media and other}}{27}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Schematic of window estimation procedure}}{29}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Upperbound of $\tau $ with confidence level > 0.95, as a function of $\delta $.}}{30}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Histogram of lifespan of URLs originating from different categories}}{31}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Percentage of URL initiated by 5 categories, with different lifespan}}{31}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Lifetime \nobreakspace {} avg RT rate, by categories}}{32}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Top 20 domains for URLs that lived more than 200 days}}{33}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

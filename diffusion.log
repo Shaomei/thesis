@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2012.5.29)  30 MAY 2012 17:15
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2012.5.29)  12 JUN 2012 20:09
 entering extended mode
 **diffusion.tex
 ("C:\Users\Shaomei\Documents\My Dropbox\cu_thesis-2.9\diffusion.tex"
@@ -315,22 +315,22 @@ LaTeX Font Info:    Try loading font information for U+txsyc on input line 1.
 
 (C:\Users\Shaomei\AppData\Roaming\MiKTeX\2.8\tex\latex\txfonts\utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
-))
-\tf@toc=\write3
-
+)
 [6
 
 
-] ("C:\Users\Shaomei\Documents\My Dropbox\cu_thesis-2.9\diffusion.lot")
+])
+\tf@toc=\write3
+ [7] ("C:\Users\Shaomei\Documents\My Dropbox\cu_thesis-2.9\diffusion.lot")
 \tf@lot=\write4
 
-[7
+[8
 
 
 ] ("C:\Users\Shaomei\Documents\My Dropbox\cu_thesis-2.9\diffusion.lof")
 \tf@lof=\write5
 
-[8
+[9
 
 
 ]
@@ -349,61 +349,180 @@ line 90.
 Chapter 2.
 [4
 
-]
+] [5] [6] [7]
 
-LaTeX Warning: Citation `Suri-Triangle-2011' on page 5 undefined on input line 
-148.
+LaTeX Warning: Citation `Suri-Triangle-2011' on page 8 undefined on input line 
+176.
 
-[5]
+[8]
 Chapter 3.
-
-LaTeX Warning: Citation `Wu-Twitter-2011' on page 6 undefined on input line 155
-.
-
-[6
-
-]
-Chapter 4.
-
-LaTeX Warning: Citation `Wu-ICWSM-2011' on page 7 undefined on input line 158.
-
-[7
-
-]
-Chapter 5.
-[8
-
-]
-Chapter 6.
 [9
 
 ]
-Underfull \hbox (badness 1178) in paragraph at lines 172--173
+Underfull \hbox (badness 10000) in paragraph at lines 216--216
+[][]\OT1/ppl/m/n/10 At the time of this study, the data was free to down-load f
+rom
+ []
+
+
+LaTeX Warning: Citation `kwak_10' on page 10 undefined on input line 216.
+
+[10]
+Underfull \hbox (badness 1259) in paragraph at lines 221--226
+[]\OT1/ppl/m/n/12 In ad-di-tion, we were in-ter-ested in the con-tent that was 
+be-ing shared---
+ []
+
+[11]
+
+LaTeX Warning: Reference `sec:introduction' on page 12 undefined on input line 
+249.
+
+[12]
+Underfull \hbox (badness 2865) in paragraph at lines 283--293
+\OT1/ppl/m/n/12 kikolani, smart-blog-gerz, El-e-ment321, bran-dona-cox, re-mark
+-ablog-ger,
+ []
+
+[13]
+File: figures/snowball_sample.eps Graphic file (type eps)
+ <figures/snowball_sample.eps> [14] [15] [16]
+File: figures/top_users_outflow_to_random_other_users_500K.eps Graphic file (ty
+pe eps)
+
+<figures/top_users_outflow_to_random_other_users_500K.eps>
+File: figures/top_users_outflow_to_random_other_users_800K.eps Graphic file (ty
+pe eps)
+
+<figures/top_users_outflow_to_random_other_users_800K.eps> [17] [18] [19]
+File: figures/mostRTing_user_outflow_to_random_other_users.eps Graphic file (ty
+pe eps)
+
+<figures/mostRTing_user_outflow_to_random_other_users.eps> [20]
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 632.
+File: figures/visualization_500K_tweets.eps Graphic file (type eps)
+
+<figures/visualization_500K_tweets.eps> [21] [22]
+File: figures/rt_topUsers_500K.eps Graphic file (type eps)
+
+<figures/rt_topUsers_500K.eps> [23]
+
+LaTeX Warning: Citation `bakshy_11' on page 24 undefined on input line 749.
+
+[24]
+File: figures/nyt_url_cat.eps Graphic file (type eps)
+ <figures/nyt_url_cat.eps> [25] [26]
+File: figures/pop_url_cat_RT.eps Graphic file (type eps)
+ <figures/pop_url_cat_RT.eps> [27]
+
+LaTeX Warning: Reference `fig:censoring' on page 28 undefined on input line 858
+.
+
+
+LaTeX Warning: Reference `fig:tau_v_delta' on page 28 undefined on input line 8
+64.
+
+
+LaTeX Warning: Reference `fig:tau_v_delta' on page 28 undefined on input line 8
+70.
+
+[28]
+File: figures/window_estimation_procedure_scheme.eps Graphic file (type eps)
+ <figures/window_estimation_procedure_scheme.eps>
+File: figures/tau_delta.eps Graphic file (type eps)
+ <figures/tau_delta.eps>
+
+LaTeX Warning: Reference `fig:lifespan_category' on page 29 undefined on input 
+line 894.
+
+
+LaTeX Warning: Reference `fig:lifespan_percentage_category' on page 29 undefine
+d on input line 902.
+
+[29]
+File: figures/url_lifespan_by_categories_500K_censored.eps Graphic file (type e
+ps)
+ <figures/url_lifespan_by_categories_500K_censored.eps>
+File: figures/url_lifespan_percentage_by_categories_500K_censored.eps Graphic f
+ile (type eps)
+
+<figures/url_lifespan_percentage_by_categories_500K_censored.eps>
+
+LaTeX Warning: Reference `fig:RT_lifespan_category' on page 30 undefined on inp
+ut line 932.
+
+[30] [31]
+File: figures/url_lifespan_RTrate_by_categories_500K_censored.eps Graphic file 
+(type eps)
+ <figures/url_lifespan_RTrate_by_categories_500K_censored.eps>
+
+LaTeX Warning: Reference `fig:longlived_urls' on page 32 undefined on input lin
+e 964.
+
+File: figures/domains_breakdown_longlived_urls.eps Graphic file (type eps)
+<figures/domains_breakdown_longlived_urls.eps> [32] [33] [34]
+Chapter 4.
+[35
+
+]
+Chapter 5.
+
+LaTeX Warning: Citation `Wu-Twitter-2011' on page 36 undefined on input line 10
+22.
+
+[36
+
+]
+Chapter 6.
+
+LaTeX Warning: Citation `Wu-ICWSM-2011' on page 37 undefined on input line 1028
+.
+
+[37
+
+]
+Chapter 7.
+[38
+
+]
+Chapter 8.
+[39
+
+]
+Chapter 9.
+[40
+
+]
+Underfull \hbox (badness 1178) in paragraph at lines 1048--1049
 \OT1/ppl/m/n/12 seeds, and re-trieved the pro-files of all the seeds, and all t
 he neigh-bors
  []
 
-[10] [11] [12] [13]
-Chapter 7.
-[14
+[41] [42] [43] [44]
+Chapter 10.
+[45
 
 ]
 Appendix A.
 No file diffusion.bbl.
-[15
+[46
 
 ] ("C:\Users\Shaomei\Documents\My Dropbox\cu_thesis-2.9\diffusion.aux")
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 3131 strings out of 495286
- 38817 string characters out of 3179895
- 98521 words of memory out of 3000000
- 6292 multiletter control sequences out of 15000+200000
- 16163 words of font info for 51 fonts, out of 3000000 for 9000
+ 3231 strings out of 495286
+ 41095 string characters out of 3179895
+ 103521 words of memory out of 3000000
+ 6375 multiletter control sequences out of 15000+200000
+ 28569 words of font info for 87 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 30i,6n,37p,1119b,182s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,9n,37p,1119b,297s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on diffusion.dvi (24 pages, 39336 bytes).
+Output written on diffusion.dvi (56 pages, 125800 bytes).

@@ -165,6 +165,8 @@ Nevertheless, we are aware that our analysis is limited in some important respec
 
 \subsection{Other on-line social media}
 
+\section{Web as a source for knowledge}
+
 
 \section{MapReduce and parallel network algorithms}
 Introduction to MapReduce.
@@ -174,6 +176,845 @@ MapReduce is good with easy-parallelible tasks, hard for tasks that need certain
 Methods to convert a global problem to a series of mapreduce jobs~\cite{Suri-Triangle-2011}.
 
 
+\chapter{The life of information: the interaction between people and content in online networks}
+
+We study the lifespan of information, from production, flow, to consumption. We can also extend our findings to general diffusion process, the spread of behavior.
+
+We have seen different temporal patterns in the life of information - very small amount got picked up, but substantial amount exist for a long time. (although note that exist does not necessarily means spread). Factors that lead to differnet temporal patterns: interactions between people and content.
+
+Information diffusion like virus spread in the sense that it is produced by some people, consumed by some people, and can be further spread by the consumer. However, it is much more complex in the sense that people can be infected by multiple channels, including the environmental factors, but classic epedimic models can not fully describe (ZZZZZ: need more research to make this claim).
+
+My contributions:
+\begin{enumerate}
+\item Study one-way, one-hop flow of information, which is although the majority but largely overlooked. We did it by showing the distribution of attention among different groups.
+\item Study the temporal pattern of information, especially, the persistence. Most previous work focused on the spikes but not the persistence.
+\item (ZZZZZ: possible remove) Diffusion as an organic process integrating people, content, and time.
+\end{enumerate}
+
+\section{The production and consumption of information: distribution of attention}
+
+Typical lifespan of a piece of information on social media is one-way, zero or one hop - depending how a hop is define: from production directly to (potentially) consumption, without any additional node in the chain.
+
+Why is it interesting to study the direction production-consumption flow of information? 1. Majority of information; 2. Interesting social science problem; 3. very similar to mass communication - debates on the role of social media; 4. significant effect of environmental influence that will largely determine public opinion formation; 
+
+In this seciton, we focus on the production and consumption of information. Our study is led by classic communication theories: debate on two modes of communications. Different people play different roles, and which role they are playing is largely determined by two factors: (1) internally, their own goal, taste, and agenda; (2) externally, the amount of attention they enjoyed from the public. 
+
+Our contributions:
+\begin{enumerate}
+\item introduce a low-cost, crowd-sourcing method to classify users into categories that parallel to media/communication research;
+\item investigate one-way, one-hop flow of information among these categories, present a high level picture of the distribution of attention;
+\item show the interaction between people and content. 
+\end{enumerate}
+
+ZZZZZ Put two-step flow in next chapter?
+
+\subsection{Data And Methods}
+\subsubsection{Twitter Follower Graph}
+\label{sec:follower}
+In order to understand how information is flowing in the Twitter system, we
+need to know the channels by which it flows; that is, who is following whom
+on Twitter.  To this end, we used the data shared\footnote{At the time of this study, the data was free to download from http://an.kaist.ac.kr/traces/WWW2010.html} by Kwak et al.~\cite{kwak_10}, which included 42M users and 1.5B edges.  This data
+represents a crawl of the follower graph seeded with all users on Twitter as observed by July 31st, 2009.
+
+\subsubsection{Twitter Firehose}
+\label{sec:firehose}
+In addition, we were interested in the content that was being
+shared---particularly bit.ly URLs---so that we could trave the flow of
+information through the Twitter graph.  We examined all tweets over a 223
+day period from July 28, 2009 to March 8, 2010 using the data from the
+Twitter ``firehose''.  From these 5B tweets we observed 260M bit.ly URLs.
+
+\subsubsection{Twitter Lists}
+\label{sec:classify}
+Our method for classifying users exploits a relatively recent feature of
+Twitter: Twitter Lists. Since its launch on November 2, 2009, Twitter Lists
+have been welcomed by the community as a way to group people and organize
+one's incoming stream of tweets by specific sets of users. To create a
+Twitter List, a user needs to provide a name (required) and description
+(optional) for the list, and decide whether the new list is public (anyone
+can view and subscribe to this list) or private (only the list creator can
+view or subscribe to this list). Once a list is created, the user can
+add/edit/delete people in the list. As the purpose of Twitter Lists is to
+help users organize people they follow, the name of the list can be
+considered a meaningful label for the listed users.  List creation
+therefore effectively applies the ``wisdom of crowds" to the task of
+classifying users, both in terms of their importance to the community
+(number of lists on which they appear), and also how they are perceived
+(e.g. news organization vs. celebrity, etc.).
+
+
+There is not yet a standard way to classify users by lists, or even a
+central portal to obtain lists for all users. In order to capture the
+variety of users invloved in mass media, masspersonal, and interpersonal
+commmunication described in section \ref{sec:introduction} in a reasonably
+parsimonious manner, we restrict our attention to four classes of what we
+call ``elite'' users: media, celebrities, organizations (including both
+public and private), and bloggers. In addition to these elite users, we
+also study the much larger population of ``ordinary'' users, as well as the
+relationships between elite and ordinary users.
+ \footnote{Some
+ third-party sites such as Listorious (http://listorious.com/) now
+ maintain categorized directories of Twitter Lists; however, their
+ methodology is not sufficiently transparent for our
+ purposes. We also found their data largely not-up-to-date.}. 
+
+% JMH: if we mention listorious, should we also include twibes, tlists, and
+% similar? or just forget it?
+
+Given the rate limits established by Twitter's API, moreover, crawling all
+lists for all Twitter users (reportedly over 100M, where some users are
+included on tens of thousands of lists) would be prohibitively time
+consuming. Thus we instead devised two different sampling schemes---a
+snowball sample and an activity sample---each with some advantages and
+disadvantages, discussed below.
+
+
+\subsubsection{Snowball sample of Twitter Lists}
+The first method for identifying elite users employed snowball sampling.
+For each category, we chose a number of seed users that were highly
+representative of the desired category and appeared on many
+category-related lists. For each of the four categories above, the
+following seeds were chosen:
+\begin{itemize}
+	\item Celebrities: Barack Obama, Lady Gaga, Paris Hilton
+	\item Media: CNN, New York Times
+	\item Organizations: Amnesty International, World Wildlife
+          Foundation, Yahoo! Inc., Whole Foods
+	\item Blogs\footnote{The blogger category required many more seeds
+          because bloggers are in general lower profile than the seeds for
+          the other categories}: BoingBoing, FamousBloggers, problogger,
+          mashable. Chrisbrogan, virtuosoblogger, Gizmodo, Ileane,
+          dragonblogger, bbrian017, hishaman, copyblogger, engadget,
+          danielscocco, BlazingMinds, bloggersblog, TycoonBlogger,
+          shoemoney, wchingya, extremejohn, GrowMap, kikolani,
+          smartbloggerz, Element321, brandonacox, remarkablogger,
+          jsinkeywest, seosmarty, NotAProBlog, kbloemendaal, JimiJones,
+          ditesco
+\end{itemize}
+
+After reviewing the lists associated with these seeds, the following
+keywords were hand-selected as representative of the desired categories:
+\begin{itemize}
+	\item Celebrities: star, stars, hollywood, celebs, celebrity,
+          celebrities-on-twitter, celebrity-tweets, celebrity-list,
+          celebrities, celebsverified
+	\item Media: news, media, news-media %news_media
+	\item Organizations: company, companies, organization,
+          organisation, organizations, organisations, corporation,
+          brands, products, charity, charities, causes, cause, ngo
+	\item Blogs: blog, blogs, blogger, bloggers
+\end{itemize}
+
+Having selected the seeds and the keywords for each category, we then did a
+snowball sample of the bipartite graph of users and lists (see Figure
+\ref{fig:snowball_sample_schematic}).  For each seed, we crawled all lists on
+which that seed appeared. The resulting ``list of lists'' was then pruned
+to contain only lists whose names matched at least one of the chosen
+keywords for that category.  We then crawled all users appearing in the
+pruned ``list of lists''.  We then repeated these last two steps.
+
+% JMH: we could phrase this as a snowball sample of the bipartite graph of
+% users and lists ... it's succinct, but perhaps overly fancy?
+% WM: done, and kept explanation
+
+\begin{figure}
+\centering
+\includegraphics[width=3in]{figures/snowball_sample.eps}
+\caption{Schematic of the Snowball Sampling Method}
+% JMH to DJW: can we change levels to u_0, l_0, u_1, l_0, etc? (for users @ level 0, lists @ level 0, ...)
+\label{fig:snowball_sample_schematic}
+\end{figure}
+
+Table~\ref{tab:snowball_sample} shows how many (a) users and (b) lists were
+obtained at each level of the snowball sample.  In total, $495,000$ users
+were obtained, who appeared on $7,000,000$ lists.  Because users can be
+listed in multiple categories (e.g., Oprah Winfrey is frequently included
+in lists of ``celebrity'' and ``media''), we next compute a user $u$'s
+membership score in category $c$:
+\begin{equation}
+w_{uc}=\frac{n_{uc}}{N_c},
+\end{equation}
+where $n_{uc}$ is the number of lists in category $c$ that contain user $u$
+and $N_c$ is the total number of lists in category $c$. We then assign each
+user to the category in which he or she has the highest membership
+score. Users that appear in the follower graph but not in the snowball
+sample are assigned to the ``ordinary'' category.
+
+
+\begin{table}
+\centering
+\begin{scriptsize}
+\caption{Snowball Sample}
+\label{tab:snowball_sample}
+\begin{tabular}{|c|r|r|r|r|}
+\hline
+Level 		& celeb	& media & org 	& blog \\ \hline
+$u_0$		& 3 	& 2 	& 4		& 32 \\ \hline
+$l_0$		& 2342 	& 11403	& 1170 	& 1347 \\ \hline \hline
+$u_1$		& 3607 	& 5025 	& 20122	& 16317 \\ \hline
+$l_1$		& 30490 & 71605	& 4970 	& 9546 \\ \hline \hline
+$u_2$		& 108836 & 309056 & 115034 & 140251 \\ \hline
+$l_2$		& 91873 & 171912 & 22518 & 19946 \\ \hline
+\end{tabular}
+\end{scriptsize}
+\end{table}
+
+
+\subsubsection{Activity Sample of Twitter Lists}
+Although the snowball sampling method is convenient and is easily
+interpretable with respect to our theoretical motivation, it is also
+potentially biased by our particular choice of seeds. To address this
+concern, we also generate a sample of users based on their
+activity. Specifically, we crawl all lists associated with all users who
+tweet at least once every week for the entire observation period.
+% DW to SW: Do we retain users who tweet at least once per week, or who
+% tweet at least one URL per week?  
+% SW: the first case: tweet at least once per week.
+
+This ``activity-based'' sampling method, which yields $750,000$ users and
+$5,000,000$ lists (see Table~\ref{tab:sampling-comp} for comparison to the
+snowball method), is also clearly biased towards users who are consistently
+active. Importantly, however, the bias is likely to be quite different from
+any introduced by the snowball sample; thus obtaining similar results from
+the two samples should give us confidence that our findings are not
+artifacts of the sampling procedure.
+
+%% DW: Refer to Table
+%% WM: done
+\begin{table}
+\centering
+\begin{scriptsize}
+\begin{tabular}{|c|r|r|r|r|} \hline
+ & \multicolumn{2}{|c|} {Snowball Sample} & \multicolumn{2}{|c|} {Activity Sample} \\ \hline
+\textit{category} & \# of users & \# of lists & \# of users  & \# of lists\\ \hline
+celeb & 108,836 & 91,873 & 22,803 & 68,810 \\ \hline
+media & 309,056 & 171,912 & 66,300 & 145,176\\ \hline
+org & 115,034 & 22,518 & 19,726 & 16,532\\ \hline
+blog & 140,251& 19,946 & 49,987 &17,259\\
+\hline
+\end{tabular}
+\caption{Statistics of crawled lists. The number of users refers only to
+  people who appear in at least one list of the specific category.}
+\label{tab:sampling-comp}
+\end{scriptsize}
+\end{table}
+
+% \begin{figure}
+% \label{top_k_volume_other}
+% \centering
+% \includegraphics[width=3in]{figures/mostRTing_user_outflow_to_random_other_users.png}
+% \caption{}
+% \end{figure}
+
+\subsection{Distribution of attention}
+
+After categorizing people into categories, we can calculate the amount of attention sent and received by each category, at a global level. The way we do it is to show the reach of the ``elite'' categories. It can be considered as the influence of each category, as well as an estimate of the impact of the information introducted by each category. In other words, it is the maximal reach of the information produced by each category.
+
+
+
+\subsubsection{Concentration of attention}
+With either sampling method, the initial categorization of users is quite
+coarse and noisy as a result of the arbitrary labeling allowed in Twitter
+Lists.  To filter categories to the most representative users, we further
+rank the users in each of the 4 elite categories by how frequently they are
+listed in each category, and take only the top $k$ users in each category,
+relabeling the remainder as ``ordinary'' users. To determine the
+appropriate $k$, we measure the flow of information from the four elite
+categories to an average ``ordinary'' user in two ways: the proportion of
+people the user follows in each category, and the proportion of tweets the
+user received from everyone the user follows in each category.  We sampled
+100K random ``ordinary'' users and calculated the average information flow
+from the ``elite'' users using these two measures.
+
+Figure \ref{fig:attention_elites_snowball} shows that each category
+accounts for a significant share of both the following links and also the
+tweets received by an average user, where celebrities outrank all other
+categories, followed by the media, organizations, and bloggers.  Also of
+note is that the bulk of the attention is accounted for by a relatively
+small number of users within each category, as evidenced by the relatively
+flat slope of the attention curves in Figure
+\ref{fig:attention_elites_snowball}. In order to define which users should
+be classified as ``elites'', we seek a tradeoff between (a) keeping each
+category relatively small, so as not to include users who are not
+distinguishable from ordinary users, while (b) maximizing the volume of
+attention that is accounted for by each category. In addition, it is also
+desirable to make the four categories the same size, so as to facilitate
+comparisons.  Balancing these requirements, we therefore choose 5K as a
+cut-off for the elite categories.
+
+\begin{figure}[ht]
+\centering
+\subfigure[Snowball sample]{
+\includegraphics[width=3in]{figures/top_users_outflow_to_random_other_users_500K.eps}
+\label{fig:attention_elites_snowball}
+}
+\subfigure[Activity sample]{
+\includegraphics[width=3in]{figures/top_users_outflow_to_random_other_users_800K.eps}
+\label{fig:top_k_elite_volume}
+}
+\label{fig:attention_to_top_k_elite}
+\caption{Average fraction of $\#$ following (blue line) and $\#$
+  tweets (red line) for a random user that are accounted for by the
+  top K elites users crawled}
+\end{figure}
+
+%\begin{figure}
+%\centering
+%\includegraphics[width=3in]{figures/top_users_outflow_to_random_other_users_500K.eps}
+%\caption{Average fraction of $\#$ following (blue line) and $\#$
+%  tweets (red line) for a random user that are accounted for by the
+%  top K elites users crawled}
+%\label{fig:attention_elites_snowball}
+%\end{figure}
+
+%\begin{figure}
+%\centering
+%\includegraphics[width=3in]{figures/top_users_outflow_to_random_other_users_800K.eps}
+%\caption{Average fraction of $\#$ following (blue line) and $\#$ tweets
+%  (red line) for a random user that are accounted for by the top $k$ users
+%  classified in one of our four categories}
+%\label{fig:top_k_elite_volume}
+%\end{figure}
+
+
+Consistent with this view, we find that the population of users identified
+by the activity sample is somewhat different from the snowball sample: the
+intersection of the two populations is only 20$\%$ (100,000
+accounts). However, the intersection of the top $k$ users in each
+population increases as $k$ decreases: for the top $5,000$ users in each
+category, the intersection is $41\%$, and for the top $1,000$ users it is
+$51\%$. Thus, although the population of consistently active users is
+somewhat different from those reached with the snowball sample, the most
+frequently listed users in both populations tend to be similar. In
+addition, Figure \ref{fig:top_k_elite_volume} shows that the attention paid
+to the top $k$ users in the four categories is essentially the same as for
+the snowball sample.  Thus in the rest of this paper, when we talk about
+``celebrity'', ``media'', ``organization'', ``blog'', we mean the top 5K
+users listed as ``celebrity'', ``media'', ``organization'', ``blog'',
+respectively, drawn from the snowball sample. Table
+\ref{tab:top_k_examples} shows the top 5 users in each of
+the four categories.
+
+%  while Figure \ref{top_k_other_volume} reassures us
+% that again the unclassified users account for at most a negligible
+% fraction of attention.
+
+% JMH to SW: should the axis be adjusted here for better resolution? or
+% will this give the false appearance that there's lots of variation wrt x?
+% SW: which axis? 
+
+\begin{table}
+\centering
+\begin{scriptsize}
+\caption{Top 5 users in each category}
+\vspace{2pt}
+\begin{tabular}{|c|c|c|c|} 
+\hline 
+%\multicolumn{4}{|c|} {Top 5 users} \\ 
+%\hline
+\textit{Celebrity} & \textit{Media} & \textit{Org} & \textit{Blog} \\ 
+\hline
+aplusk & cnnbrk & google & mashable \\
+ladygaga & nytimes & Starbucks & problogger \\
+TheEllenShow & asahi & twitter & kibeloco \\
+taylorswift13 & BreakingNews & joinred & naosalvo \\
+Oprah & TIME & ollehkt & dooce \\
+\hline 
+%\multicolumn{4}{|c|} {Bottom 5 users} \\ 
+%\hline
+%\textit{Celebrity} & \textit{Media} & \textit{Org} & \textit{Blog} \\ 
+%\hline
+%rajolaurel & singaporenews & worldvisioncan & nicolamattine \\
+%wongfupro & TelegraphSci & fujiqnow & machedavvero \\
+%FUCKCITY & SZ\_Wirtschaft & KNT\_gakusei & BrideTide \\
+%tonyfernandes & TheOaklandPress & overdrive\_jp & theselvedgeyard \\
+%Silver90210 & USDOL & ProOkubo & averyps \\
+%\hline
+\end{tabular}
+\label{tab:top_k_examples}
+\end{scriptsize}
+\end{table}
+
+
+ZZZZZ: Move the paragraph and tables below to content part.
+
+To confirm the validity of these categories, we now consider the number of
+URLs introduced by various categories. As Table \ref{tab:urls_initiated}
+(left column) shows, the vast majority of URLs are initiated by ordinary
+users, not by any of the elite categories.  This result, however, is
+deceptive: as we have just determined, our elite categories number only
+$20K$ users in total, whereas we classify over $40M$ users in the
+``ordinary'' category.  A more calibrated view is presented in the right
+hand column of Table \ref{tab:urls_initiated}, which shows the per-capita
+number of URLs originating from various categories.  Here it is clear that
+users classified as ``media'' far outproduce all other categories, followed
+by bloggers, organizations, and celebrities. In contrast to the previous
+result, ordinary users originate on average only about $6$ URLs
+each---far fewer than any category of elite users.
+
+%%DW: Need to note at some point in this section that from now on we will
+%%use snowball sample; all results are the same.
+%%WM: done, in previous paragraph
+
+% JMH: Need to add a second column for per-capita initiations.
+% WM: done
+\begin{table}
+\centering
+\caption{\# of URLs initiated by category}
+\label{tab:urls_initiated}
+\begin{tabular}{l r r}
+\textit{category} & \# of URLs & per-capita \# of URLs \\ 
+\hline
+celeb	& 139,058 & 27.81 \\ 
+media	& 5,119,739 & 1023.94 \\ 
+org	& 523,698 & 104.74 \\ 
+blog	& 1,360,131 & 272.03 \\ 
+other	& 244,228,364 & 6.10\\
+\end{tabular}
+\end{table}
+
+
+Conceivably, our classification scheme above has omitted an important
+category; that is, within the current ``other'' category may be hidden
+additional categories of opinions.  As Figure \ref{top_k_volume_other}
+shows, however, even the top 10,000 most followed of these users
+accounts for a negligible fraction of attention among the remaining
+population.  
+ 
+\begin{figure}
+\label{top_k_volume_other}
+\centering
+\includegraphics[width=3in]{figures/mostRTing_user_outflow_to_random_other_users.eps}
+\caption{Average fraction of $\#$ following (blue line) and $\#$
+  tweets (red line) for a random user that are accounted for by the
+  top K most retweeted users in the ``Other'' category}
+\end{figure}
+
+
+\subsubsection{Homophily of attention}
+
+As indicated above, the top $20K$ elite users account for almost $50 \%$ of
+all attention within Twitter; yet this population of users comprises less
+than $0.05\%$ of the population.
+% As we can see in Figure \ref{fig:topuser_to_other}, for an ordinary
+% Twitter user, a significant portion of people he follows are among the
+% small number of ``elite'' users we identified, and an even higher
+% portion of the tweets he receives are directly from those elite users.
+In other words, although Twitter clearly reflects the conventional wisdom
+that audiences have become increasingly fragmented, it nevertheless shows
+remarkable concentration of information production and received attention
+among a relatively small number of actors. Even if the media has lost
+attention relative to other elites, information flows have not become
+egalitarian by any means.
+
+The prominence of elite users raises the question of how these different
+categories listen to each other.  To address this issue, we compute the
+percentage of following links and received tweets among elite
+categories. Specifically, Table \ref{tab:flow_among_categories} shows the
+average percentage of friends/tweets category $i$ get from category
+$j$. Table \ref{tab:flow_among_categories} shows striking homophily with
+respect to attention: celebrities overwhelmingly pay attention to other
+celebrities, media actors pay attention to other media actors, and so on.
+The one slight exception to this rule is that organizations pay more attention
+to bloggers than to themselves.  In general, in fact,
+attention paid by organizations is more evenly distributed across
+categories than for any other category.
+
+\begin{table}
+\centering
+\begin{scriptsize}
+\caption{Information flow among the elite categories}
+\label{tab:flow_among_categories}
+\vspace{2pt}
+\begin{tabular}{|c|r|r|r|r|}
+\hline
+\% of friends &	in celeb  &	in media &	in org	& in blog \\\hline
+celeb	& \bf{30.56} & 3.63 & 1.99 & 1.64 \\ \hline
+media	& 3.59 & \bf{16.67} & 2.07 & 2.15 \\ \hline
+org	& 3.62 & 3.33 &	\bf{7.38} & 2.65 \\ \hline
+blog	& 4.41 & 2.27 &	2.03 &	\bf{10.25} \\ \hline
+\hline
+\% of tweets &	from celeb	&from media	&from org	&from blog \\ \hline
+celeb	& \bf{38.27} & 6.23 & 1.55 & 3.98\\ \hline
+media	&3.91 & \bf{26.22} & 1.66 & 5.69 \\ \hline
+org	&4.64 & 6.41 &	8.05 & \bf{8.70} \\ \hline
+blog	&4.94 & 3.89 & 1.58 & \bf{22.55} \\ \hline
+\end{tabular}
+\end{scriptsize}
+\end{table}
+
+\begin{figure}
+\centering
+\includegraphics[width=3in]{figures/visualization_500K_tweets.eps}
+\caption{Share of attention among elite categories}
+\label{fig:topuser_to_other}
+\end{figure}
+
+
+
+\section{ZZZZZ: Transmissive probability}
+ZZZZZ: should we combine this section with previous or next section?
+
+For information that do spread, most previous works study the factors that contribute to the spread at each hop, independently. (ZZZZZ related work).
+
+The categorization of actors, as introduced previously, also helped shed some light on the one-hop diffusion probability, depending on the type of users in the diffusion edge, and people's interest at different types of content.
+
+My contribution:
+\begin{enumerate}
+\item Show homophily at diffusion;
+\item Show difference in attention and influence (as measured by RTs)
+\item Show people's interest at different content.
+\end{enumerate}
+
+\subsection*{People}
+The origin of information will influence how it will be RTed.
+ 
+Before proceeding, it is helpful to differentiate between two mechanisms by
+which information can diffuse in Twitter. The first is via retweeting, when
+a user, having received a tweet, subsequently rebroadcasts it to his or her
+own followers. In some instances, users retweet each other using the
+official retweet function provided by Twitter, but in other cases they
+credit the retweet with an informal convention, most commonly either ``RT
+@user" or ``via @user.'' The second mechanism is what we label
+reintroduction, where a user independently tweets a URL that has previously
+been introduced by another user.
+%\footnote{Because users do sometimes retweet other users without
+%  acknowledgement, we have likely misclassified some fraction of retweets
+%  as reintroductions. One way to address this issue would be to count as a
+%  retweet any appearance of a URL that had previously been tweeted by a
+%  user that the current user is following. However, this solution raises
+%  additional problems, and in any case does not occur sufficiently
+%  frequently to affect our results; thus we treat all reappearances of a
+%  URL as reintroductions unless specifically acknowledged as a retweet.}.
+
+In addition to attention, Table \ref{tab:rt_breakdown} shows how much
+information originating from each category is retweeted by other
+categories, while Table \ref{tab:reintro_breakdown} shows how much is
+subsequently reintroduced.  As with attention, both retweeting and
+reintroduction activities are strongly homophilous among elite categories;
+however, bloggers are disproportionately responsible for retweeting and
+reintroducing URLs originated by all categories. This result reflects the
+characterization of bloggers as recyclers and filters of information;
+however, Table \ref{tab:rt_breakdown} and \ref{tab:reintro_breakdown} also
+show that the total number of URLs either RT'd or reintroduced by bloggers
+is vastly outweighed by the number retweeted or reintroduced by ordinary
+users.  Even though on a per-capita basis, therefore, bloggers
+disproportionately occupy the role of information recyclers, their actual
+impact is relatively minimal (see Figure \ref{fig:topuser_to_other}).
+
+\begin{table*}
+\centering
+\caption{RTs among categories}
+\label{tab:rt_breakdown}
+\begin{tabular}{|l|r|r|r|r|r|r|}
+\hline
+ &  by celeb & by media & by org & by blog & by other & TOTAL\\ \hline
+celeb & 4,334 & 1,489 &	1,543 &	5,039 &	1,070,318  & 1,082,723\\ \hline
+media & 4,624 & 40,263 & 7,628&32,027 & 5,204,719  & 5,289,261\\ \hline
+org & 1,570 & 2,539 & 18,937 & 11,175 & 1,479,017 & 1,513,238\\ \hline
+blog & 3,710 & 6,382 & 5,762 & 99,818 & 3,457,631 & 3,573,303\\ \hline
+other & 34,455 & 93,934 & 86,630 & 318,537 & 34,814,456 & 35,348,012\\ \hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}
+\centering
+\caption{Re-introductions among categories}
+\label{tab:reintro_breakdown}
+\begin{tabular}{|l|r|r|r|r|r|r|}
+\hline
+& by celeb & by media & by org & by blog & by other & TOTAL\\ \hline
+celeb &	2,868 & 1,239 & 522 & 1,664 & 488,229 & 494,522\\ \hline
+media & 1,678 & 205,165 & 2,439	& 9,681	& 2,006,888 & 2,225,851\\ \hline
+org & 816 & 1,511 & 8,628 & 3,711 & 610,373 & 625,039\\ \hline
+blog & 1,415	& 5,644	& 1,416	& 52,909 & 1,148,137 & 1,209,521\\ \hline
+other & 45,547 & 793,741 & 69,441 & 335,690 & 86,853,224 & 88,097,643\\ \hline
+\end{tabular}
+\end{table*}
+
+\begin{figure}
+\centering
+\includegraphics[width=3in]{figures/rt_topUsers_500K.eps}
+\caption{RT behavior among elite categories}
+\label{fig:RT_topuser}
+\end{figure}
+
+\subsection{Content}
+People have different interest at different content. So the type of content can also determine what a person will RT.
+
+Given the large size of the URL population in our observation period
+($260M$), and the large number of ways in which one can classify content
+(video vs. text, news vs. entertainment, political news vs. sports news,
+etc.), classifying even a small fraction of URLs according to content is an
+onerous task. Bakshy et al \cite{bakshy_11}, for example, used Amazon's
+Mechanical Turk to classify a stratified sample of 1,000 URLs along a
+variety of dimensions; however, this method does not scale well to larger
+sample sizes.
+
+Instead, we restrict attention to URLs originated by the New York Times
+which, with over 2.5M followers, is the second-most followed news
+organization on Twitter after CNN Breaking News. NY Times, however, is
+roughly ten times as active as CNN Breaking News, so is a better source of
+data. To classify NY Times content, we exploit a convenient feature of
+their format---namely that all NY Times URLs are classified in a consistent
+way by the section in which they appear (e.g. US, World, Sports, Science,
+Arts, etc)
+~\footnote{http://www.nytimes.com/year/month/day/category/\\title.html?ref=category}.
+Of the 6398 New York Times bit.ly URLs observed, 6370 could be successfully
+unshortened and assigned to one of 21 categories. Of these, however, only 9
+categories had more than 100 URLs over the observation period, one of
+which---``NY region''---was highly specific to the New York metropolitan
+area; thus we focused our attention on the remaining 8 topical categories.
+Figure \ref{fig:nytimes_categories} shows the overall RT and reintroduction
+rates by category. World news is the most popular category, followed by US
+news, business, and sports, where increasingly niche categories like
+Health, Arts, Science, and Technology are less popular still.  In general,
+the overall pattern is replicated for all categories of users, but there
+are some minor deviations: In particular, organizations show
+disproportionately little interest in business and arts-related stories,
+and disproportionately high interest in science, technology, and possibly
+world news. Celebrities, by contrast, show greater interest in sports and
+less interest in health, while the media shows somewhat greater interest in
+US news stories.
+
+% ======= 
+% Instead, we adopt a more limited approach. First, we restrict attention
+% to URLs originated by one of just two major news organizations, the New
+% York Times and CNN; and second, after unshortening all such URLs, we
+% exploit a convenient feature of their format---namely that all such URLs
+% are classified in a consistent way by the section in which they appear
+% (e.g. US, World, Sports, Science, Arts, etc).  For example, all New York
+% Times URLs that appear in the business section have the format:
+% http://www.nytimes.com/XXXX/XX/XX/business/123abc.html?ref=business,
+% while CNN has an analogous structure; thus it is a trivial matter to
+% associate all 6,398 NYTimes and 1,804 CNN URLs with the corresponding
+% topic section.
+
+\begin{figure}
+\centering
+\includegraphics[width=3in]{figures/nyt_url_cat.eps}
+\caption{Number of RT's and Reintroductions of New York Times stories by content category}
+\label{fig:nytimes_categories}
+\end{figure}
+
+In addition, we also consider the accumulated RT/Reintroduction behavior for a
+small selection of the most popular URLs. As Figure \ref{fig:popular_URLs}
+shows, the link to the official White House blog, which expressed the
+administration's initial response to the Haiti earthquake, was rebroadcast
+in largely the same manner by all categories of users, as was the
+announcement of President Obama winning the Nobel Peace Prize.  By
+contrast, the news story announcing the unexpected death of the actress
+Brittany Murphy was rebroadcast largely by bloggers, while the breaking
+news about Tiger Woods' accident and affair was picked up mostly by the
+news media and other celebrities.  Finally, Figure \ref{fig:popular_URLs}
+shows two examples of URLs that exhibit very different patterns from news
+stories.  First, the URL for DealPlus, a website for ``finding, discussing,
+and sharing thousands of deals and coupons for all types of stores,'' was
+popular among ordinary users, but almost completely ignored by all
+categories of elite users. And second, the video for the song ``Brick by
+Boring Brick," by the band Paramore, was again reposted mostly by ordinary
+users, but in this case celebrities also reposted it.  Although this
+analysis is far from systematic, it suggests that different categories of
+users respond to different sorts of content in ways that are consistent
+with our classification scheme.
+
+\begin{figure}
+\centering
+\includegraphics[width=3in]{figures/pop_url_cat_RT.eps}
+\caption{Number of RT's and Reintroductions of most popular URLs originating from media and other}
+\label{fig:popular_URLs}
+\end{figure}
+
+
+
+\section{Persistence of information}
+In our work, we noticed that although a small amount of information spread and travels, among them, a substantial portion has a very long lifespan. We think this is very interesting phenomenon that has not been well investigated yet. 
+
+
+\subsection{Lifespan by the category of originator}
+ZZZZZ: Content produced by different people have different persistence. Blogger's role of information filter.
+
+By lifetime, we mean the time lag between the first and last
+appearance of a given URL on Twitter. Naively, measuring lifetime seems a
+trivial matter; however, it is complicated by the finite observation
+window, which results in ``censoring'' of our data. In other words, a URL
+that is last observed towards the end of the observation period may be
+retweeted or reintroduced after the period ends, while correspondingly, a
+URL that is first observed toward the beginning of the observation window
+may in fact have been introduced before the window began. What we observe
+as the lifetime of a URL, in other words, is in reality a lower bound on
+the lifetime. Although this limitation does not create much of a problem
+for short-lived URLs---which account for the vast majority of our
+observations---it does create large biases for long lived URLs. In
+particular, URLs that appear towards the end of our observation period will
+be systematically classified as shorter-lived than URLs that appear towards
+the beginning.
+
+To address the censoring problem, we seek to determine a buffer $\delta$ at
+both the beginning and the end of our $223$ day period, and only count URLs
+as having a lifetime of $\tau$ if (a) they do not appear in the first
+$\delta$ days, (b) they first appear in the interval between the buffers,
+and (c) they do not appear in the last $\delta$ days.  As Figure
+\ref{fig:censoring} shows, to determine $\delta$ we first split the $223$
+day period into two segments - the first 133 day training segment and the last 90 day testing segment, and then ask: if we (a) observe a URL first appear in
+the first $163 - \delta$ days and (b) do not see it in the $\delta$
+days prior to the splitting point, how likely are we see it in the last 90 days?
+Clearly this depends on the actual lifetime of the URL, where initially we
+know for each URL that it persists for at least $\tau$ days. As the longer a URL lives, the more likely it will re-appear in the future, Figure
+\ref{fig:tau_v_delta} shows the upper-bound on lifetime for which we
+can determine the actual lifetime with $95 \%$ accuracy as a function of
+$\delta$. Finally, because we require a beginning and ending buffer, and
+because we can only classify a URL as having lifetime $\tau$ if it
+appears at least $\tau$ days before the end of our window, we need to pick
+$\tau$ and $\delta$ such that $\tau + 2\delta < 223$. From Figure
+\ref{fig:tau_v_delta}, we determined that $\tau = 60$ and $\delta=48$
+sufficiently satisfy our constraints.
+
+%%DW: Insert Figures: (a) schematic of window estimation procedure; (b) tau vs delta tau
+
+%%SW: done
+
+\begin{figure}
+\centering
+\includegraphics[width=3in]{figures/window_estimation_procedure_scheme.eps}
+\caption{Schematic of window estimation procedure}
+\label{fig:censoring}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=3in]{figures/tau_delta.eps}
+\caption{Upperbound of $\tau$ with confidence level > 0.95, as a function of $\delta$.}
+\label{fig:tau_v_delta}
+\end{figure}
+
+
+ZZZZZ: some of the numbers here should be move above!!!
+
+Figure \ref{fig:lifespan_category} is the histogram of the lifespan of
+URLs, grouped by the category of users who introduced the
+URLs\footnote{This figure only shows URLs that appeared in our dataset more
+than once.  The majority of the URLs (220M) appeared only once, which is 10
+times as many URLs as had a lifespan of only a day.}.  
+%
+URLs initiated by the elite categories exhibit a similar distribution over
+lifespan to those initiated by ordinary users. As Figure
+\ref{fig:lifespan_percentage_category} shows, however, when looking at the
+percentage of URLs of different lifespans initiated by each category,
+we see two additional results: first, URLs originated by media actors
+generate a large portion of short-lived URLs (especially URLs with
+lifespan 0, which are URLs that only appeared once); and second, URLs
+originated by bloggers are overrepresented among the longer-lived content.
+Both these results can be accounted for by the type of content
+that originates from different sources: whereas news stories tend to be
+replaced by updates on a daily or more frequent basis, the sorts of
+stories that are picked up by bloggers are of more persistent interest, and
+so are more likely to be RT'd or reintroduced months or even years after
+their initial introduction.
+
+
+\begin{figure}
+\centering
+\includegraphics[width=3in]{figures/url_lifespan_by_categories_500K_censored.eps}
+\caption{Histogram of lifespan of URLs originating from different categories}
+\label{fig:lifespan_category}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=3in]{figures/url_lifespan_percentage_by_categories_500K_censored.eps}
+\caption{Percentage of URL initiated by 5 categories, with different lifespan}
+\label{fig:lifespan_percentage_category}
+\end{figure}
+
+
+A second related point, is illustrated by Figure
+\ref{fig:RT_lifespan_category}, which shows the average RT rate = (\# of
+retweets) / (total \# of occurrences) of URLs with different lifespan,
+grouped by categories\footnote{Note here that URLs with lifespan = 0 are
+  those URLs that only appeared once in our dataset, thus the RT rate is
+  zero.}. 
+%
+Unsurprisingly, URLs introduced by elite users are much more likely than
+those introduced by ordinary users to be RT'd---a result that is likely
+driven by the higher-than-average number of followers for elite users.
+Somewhat less expected, however, is that for all categories the majority of
+appearances of URLs after their initial introduction derives not from
+rebroadcasting, hence diffusion within Twitter, but rather from
+reintroduction. As large and diverse as Twitter is, in other words, it is
+nevertheless a subset of a much larger media ecosystem; that is, content
+``lives'' outside of Twitter, where users can rediscover it
+repeatedly. Some of this content---such as daily news stories---has a
+relatively short period of relevance, after which a given story is unlikely
+to be reintroduced or rebroadcast. At the other extreme, classic music
+videos, movie clips, and long-format magazine articles have lifespans that
+are effectively unbounded, and can be rediscovered and reintroduced by
+Twitter users indefinitely without losing relevance.
+
+\begin{figure}
+\centering
+\includegraphics[width=3in]{figures/url_lifespan_RTrate_by_categories_500K_censored.eps}
+\caption{Lifetime ~ avg RT rate, by categories}
+\label{fig:RT_lifespan_category}
+\end{figure}
+
+To shed more light on the nature of long-lived content on Twitter, we used
+the bit.ly API service to unshorten 35K of the most long-lived URLs (URLs
+that lived at least 200 days), and mapped them into 21034 web domains. As
+Figure \ref{fig:longlived_urls} shows, the population of long-lived URLs is
+dominated by videos, music, and books, consistent with our interpretation
+above that certain types of online content retain their relevance
+indefinitely, and their persistence on Twitter is driven mostly by users
+rediscovering content outside of the Twitter ecosystem.
+
+\begin{figure}
+\centering
+\includegraphics[width=3in]{figures/domains_breakdown_longlived_urls.eps}
+\caption{Top 20 domains for URLs that lived more than 200 days}
+\label{fig:longlived_urls}
+\end{figure}
+
+% \subsection{Predicting Lifetime} 
+%
+% Although the previous analysis shows that URLs initiated by certain types
+% of users have higher-than-average retweet rates, and that certain types
+% of content are overrepresented among long-lived URLs, it does not
+% necessarily follow that one can predict either the success or lifespan of
+% a URL with much confidence. Bakshy et al. \cite{bakshy_11}, for example,
+% found that although large cascades tend to be initiated by users with
+% large $\#$ followers and successful track records, most instances of URLs
+% introduced by users with those attributes do not generate large cascades.
+% Here we find a similar result.
+
+%% Describe model and results.
+
+
+\subsection{Content}
+
+Informatoin filtering does not mean high interpersonal influence. The persistence of long-last content can not be fully contributed to contagion process - the role of content. 
+
+Evidence: RT rate for information with different lifespan. 
+
+Role of content? Domain breakdown.
+
+\subsubsection{Data}
+To study content in more details, we introduce a smaller Twitter dataset with richer HTML content. 
+
+\subsubsection{Relationship between content and persistence}
+Strong collrection between content and the persistence of information.
+
+\subsection{Negative influence}
+
+\subsubsection{Data}
+Orkut: social network with detailed structure, spread of behavior.
+
+
+\chapter{Answer social science questions with social media data}
+\section{Lasswell's Maxim}
+
+\section{Two-step flow}
+
+\section{Social movement}
 
 
 \chapter{the interaction between people and information}

@@ -2,8 +2,8 @@
 \contentsline {section}{Dedication}{iv}
 \contentsline {section}{Acknowledgements}{v}
 \contentsline {section}{Table of Contents}{vi}
-\contentsline {section}{List of Tables}{vii}
-\contentsline {section}{List of Figures}{viii}
+\contentsline {section}{List of Tables}{viii}
+\contentsline {section}{List of Figures}{ix}
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {1.1}The Influencer Problem}{2}
 \contentsline {subsection}{\numberline {1.1.1}Life of information in Social Media}{2}
@@ -21,14 +21,42 @@
 \contentsline {subsection}{\numberline {2.3.1}Temporal pattern detection}{5}
 \contentsline {subsection}{\numberline {2.3.2}Trend detection}{5}
 \contentsline {section}{\numberline {2.4}Lingusitic analysis}{5}
-\contentsline {section}{\numberline {2.5}Collecting data from the web}{5}
-\contentsline {section}{\numberline {2.6}MapReduce and parallel network algorithms}{5}
-\contentsline {chapter}{\numberline {3}the interaction between people and information}{6}
-\contentsline {chapter}{\numberline {4}the role of content}{7}
-\contentsline {chapter}{\numberline {5}network structure}{8}
-\contentsline {chapter}{\numberline {6}Social media in Arab Spring Movement}{9}
-\contentsline {section}{\numberline {6.1}Data}{9}
-\contentsline {section}{\numberline {6.2}Method and Results}{11}
-\contentsline {section}{\numberline {6.3}Conclusion}{12}
-\contentsline {chapter}{\numberline {7}Conclusion}{14}
-\contentsline {chapter}{\numberline {A}Chapter 1 of appendix}{15}
+\contentsline {section}{\numberline {2.5}On-line social network as the lab for studying information diffusion}{5}
+\contentsline {subsection}{\numberline {2.5.1}Twitter}{5}
+\contentsline {subsection}{\numberline {2.5.2}Other on-line social media}{7}
+\contentsline {section}{\numberline {2.6}Web as a source for knowledge}{7}
+\contentsline {section}{\numberline {2.7}MapReduce and parallel network algorithms}{7}
+\contentsline {chapter}{\numberline {3}The life of information: the interaction between people and content in online networks}{9}
+\contentsline {section}{\numberline {3.1}The production and consumption of information: distribution of attention}{10}
+\contentsline {subsection}{\numberline {3.1.1}Data And Methods}{11}
+\contentsline {subsubsection}{Twitter Follower Graph}{11}
+\contentsline {subsubsection}{Twitter Firehose}{11}
+\contentsline {subsubsection}{Twitter Lists}{11}
+\contentsline {subsubsection}{Snowball sample of Twitter Lists}{13}
+\contentsline {subsubsection}{Activity Sample of Twitter Lists}{15}
+\contentsline {subsection}{\numberline {3.1.2}Distribution of attention}{16}
+\contentsline {subsubsection}{Concentration of attention}{16}
+\contentsline {subsubsection}{Homophily of attention}{20}
+\contentsline {section}{\numberline {3.2}ZZZZZ: Transmissive probability}{22}
+\contentsline {subsection}{\numberline {3.2.1}Content}{24}
+\contentsline {section}{\numberline {3.3}Persistence of information}{28}
+\contentsline {subsection}{\numberline {3.3.1}Lifespan by the category of originator}{28}
+\contentsline {subsection}{\numberline {3.3.2}Content}{33}
+\contentsline {subsubsection}{Data}{33}
+\contentsline {subsubsection}{Relationship between content and persistence}{33}
+\contentsline {subsection}{\numberline {3.3.3}Negative influence}{34}
+\contentsline {subsubsection}{Data}{34}
+\contentsline {chapter}{\numberline {4}Answer social science questions with social media data}{35}
+\contentsline {section}{\numberline {4.1}Lasswell's Maxim}{35}
+\contentsline {section}{\numberline {4.2}Two-step flow}{35}
+\contentsline {section}{\numberline {4.3}Social movement}{35}
+\contentsline {chapter}{\numberline {5}the interaction between people and information}{36}
+\contentsline {chapter}{\numberline {6}the role of content}{37}
+\contentsline {chapter}{\numberline {7}Network effect and behavioral contagion}{38}
+\contentsline {chapter}{\numberline {8}Diffusion without active dissemination}{39}
+\contentsline {chapter}{\numberline {9}Social media in Arab Spring Movement}{40}
+\contentsline {section}{\numberline {9.1}Data}{40}
+\contentsline {section}{\numberline {9.2}Method and Results}{42}
+\contentsline {section}{\numberline {9.3}Conclusion}{43}
+\contentsline {chapter}{\numberline {10}Conclusion}{45}
+\contentsline {chapter}{\numberline {A}Chapter 1 of appendix}{46}
