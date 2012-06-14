@@ -2,61 +2,82 @@
 \contentsline {section}{Dedication}{iv}
 \contentsline {section}{Acknowledgements}{v}
 \contentsline {section}{Table of Contents}{vi}
-\contentsline {section}{List of Tables}{viii}
-\contentsline {section}{List of Figures}{ix}
-\contentsline {chapter}{\numberline {1}Introduction}{1}
-\contentsline {section}{\numberline {1.1}The Influencer Problem}{2}
-\contentsline {subsection}{\numberline {1.1.1}Life of information in Social Media}{2}
-\contentsline {subsection}{\numberline {1.1.2}Modeling personal influence}{2}
-\contentsline {subsection}{\numberline {1.1.3}The intersection between content and people}{2}
-\contentsline {section}{\numberline {1.2}The role of content in diffusion process}{2}
-\contentsline {subsection}{\numberline {1.2.1}Subsection heading goes here}{3}
-\contentsline {subsubsection}{Subsubsection 1 heading goes here}{3}
-\contentsline {subsubsection}{Subsubsection 2 heading goes here}{3}
-\contentsline {section}{\numberline {1.3}Diffusion and network structure}{3}
-\contentsline {chapter}{\numberline {2}Background}{4}
-\contentsline {section}{\numberline {2.1}Social theories}{5}
-\contentsline {section}{\numberline {2.2}Diffusion models}{5}
-\contentsline {section}{\numberline {2.3}Temporal analysis}{5}
-\contentsline {subsection}{\numberline {2.3.1}Temporal pattern detection}{5}
-\contentsline {subsection}{\numberline {2.3.2}Trend detection}{5}
-\contentsline {section}{\numberline {2.4}Lingusitic analysis}{5}
-\contentsline {section}{\numberline {2.5}On-line social network as the lab for studying information diffusion}{5}
-\contentsline {subsection}{\numberline {2.5.1}Twitter}{5}
-\contentsline {subsection}{\numberline {2.5.2}Other on-line social media}{7}
-\contentsline {section}{\numberline {2.6}Web as a source for knowledge}{7}
-\contentsline {section}{\numberline {2.7}MapReduce and parallel network algorithms}{7}
-\contentsline {chapter}{\numberline {3}The life of information: the interaction between people and content in online networks}{9}
-\contentsline {section}{\numberline {3.1}The production and consumption of information: distribution of attention}{10}
-\contentsline {subsection}{\numberline {3.1.1}Data And Methods}{11}
-\contentsline {subsubsection}{Twitter Follower Graph}{11}
-\contentsline {subsubsection}{Twitter Firehose}{11}
-\contentsline {subsubsection}{Twitter Lists}{11}
-\contentsline {subsubsection}{Snowball sample of Twitter Lists}{13}
-\contentsline {subsubsection}{Activity Sample of Twitter Lists}{15}
-\contentsline {subsection}{\numberline {3.1.2}Distribution of attention}{16}
-\contentsline {subsubsection}{Concentration of attention}{16}
-\contentsline {subsubsection}{Homophily of attention}{20}
-\contentsline {section}{\numberline {3.2}ZZZZZ: Transmissive probability}{22}
-\contentsline {subsection}{\numberline {3.2.1}Content}{24}
-\contentsline {section}{\numberline {3.3}Persistence of information}{28}
-\contentsline {subsection}{\numberline {3.3.1}Lifespan by the category of originator}{28}
-\contentsline {subsection}{\numberline {3.3.2}Content}{33}
-\contentsline {subsubsection}{Data}{33}
-\contentsline {subsubsection}{Relationship between content and persistence}{33}
-\contentsline {subsection}{\numberline {3.3.3}Negative influence}{34}
-\contentsline {subsubsection}{Data}{34}
-\contentsline {chapter}{\numberline {4}Answer social science questions with social media data}{35}
-\contentsline {section}{\numberline {4.1}Lasswell's Maxim}{35}
-\contentsline {section}{\numberline {4.2}Two-step flow}{35}
-\contentsline {section}{\numberline {4.3}Social movement}{35}
-\contentsline {chapter}{\numberline {5}the interaction between people and information}{36}
-\contentsline {chapter}{\numberline {6}the role of content}{37}
-\contentsline {chapter}{\numberline {7}Network effect and behavioral contagion}{38}
-\contentsline {chapter}{\numberline {8}Diffusion without active dissemination}{39}
-\contentsline {chapter}{\numberline {9}Social media in Arab Spring Movement}{40}
-\contentsline {section}{\numberline {9.1}Data}{40}
-\contentsline {section}{\numberline {9.2}Method and Results}{42}
-\contentsline {section}{\numberline {9.3}Conclusion}{43}
-\contentsline {chapter}{\numberline {10}Conclusion}{45}
-\contentsline {chapter}{\numberline {A}Chapter 1 of appendix}{46}
+\contentsline {section}{List of Tables}{ix}
+\contentsline {section}{List of Figures}{x}
+\contentsline {part}{I\hspace {1em}Introduction and Background}{1}
+\contentsline {chapter}{\numberline {1}Introduction}{2}
+\contentsline {section}{\numberline {1.1}The Influencer Problem}{3}
+\contentsline {subsection}{\numberline {1.1.1}Life of information in Social Media}{4}
+\contentsline {subsection}{\numberline {1.1.2}Modeling personal influence}{4}
+\contentsline {subsection}{\numberline {1.1.3}The intersection between content and people}{4}
+\contentsline {section}{\numberline {1.2}The role of content in diffusion process}{4}
+\contentsline {subsection}{\numberline {1.2.1}Subsection heading goes here}{4}
+\contentsline {subsubsection}{Subsubsection 1 heading goes here}{4}
+\contentsline {subsubsection}{Subsubsection 2 heading goes here}{5}
+\contentsline {section}{\numberline {1.3}Diffusion and network structure}{5}
+\contentsline {chapter}{\numberline {2}Background}{6}
+\contentsline {section}{\numberline {2.1}Social theories}{7}
+\contentsline {section}{\numberline {2.2}Diffusion models}{7}
+\contentsline {section}{\numberline {2.3}Temporal analysis}{7}
+\contentsline {subsection}{\numberline {2.3.1}Temporal pattern detection}{7}
+\contentsline {subsection}{\numberline {2.3.2}Trend detection}{7}
+\contentsline {section}{\numberline {2.4}Lingusitic analysis}{7}
+\contentsline {section}{\numberline {2.5}On-line social network as the lab for studying information diffusion}{7}
+\contentsline {subsection}{\numberline {2.5.1}Twitter}{7}
+\contentsline {subsection}{\numberline {2.5.2}Other on-line social media}{9}
+\contentsline {section}{\numberline {2.6}Web as a source for knowledge}{9}
+\contentsline {section}{\numberline {2.7}MapReduce and parallel network algorithms}{9}
+\contentsline {part}{II\hspace {1em}The life of information: the interaction between people and content in online networks}{11}
+\contentsline {chapter}{\numberline {3}The production and consumption of information: distribution of attention}{13}
+\contentsline {section}{\numberline {3.1}Data And Methods}{14}
+\contentsline {subsection}{\numberline {3.1.1}Twitter Follower Graph}{14}
+\contentsline {subsection}{\numberline {3.1.2}Twitter Firehose}{14}
+\contentsline {subsection}{\numberline {3.1.3}Twitter Lists}{14}
+\contentsline {subsection}{\numberline {3.1.4}Snowball sample of Twitter Lists}{16}
+\contentsline {subsection}{\numberline {3.1.5}Activity Sample of Twitter Lists}{18}
+\contentsline {section}{\numberline {3.2}Distribution of attention}{19}
+\contentsline {subsection}{\numberline {3.2.1}Concentration of attention}{19}
+\contentsline {subsection}{\numberline {3.2.2}Homophily of attention}{23}
+\contentsline {chapter}{\numberline {4}ZZZZZ: Transmissive probability}{25}
+\contentsline {section}{\numberline {4.1}People}{25}
+\contentsline {section}{\numberline {4.2}Content}{27}
+\contentsline {chapter}{\numberline {5}Persistence of information}{31}
+\contentsline {section}{\numberline {5.1}Lifespan by the category of originator}{31}
+\contentsline {section}{\numberline {5.2}Content}{34}
+\contentsline {subsection}{\numberline {5.2.1}Data}{37}
+\contentsline {subsubsection}{Summary}{37}
+\contentsline {subsubsection}{Persistence of URLs}{38}
+\contentsline {subsection}{\numberline {5.2.2}Predicting temporal patterns based on content}{39}
+\contentsline {subsubsection}{Identifying information with two distinct temporal patterns}{40}
+\contentsline {subsubsection}{Features}{41}
+\contentsline {subsubsection}{Classifier performance}{42}
+\contentsline {subsection}{\numberline {5.2.3}How temporal patterns vary with types of content}{43}
+\contentsline {subsubsection}{LIWC analysis}{44}
+\contentsline {subsubsection}{Topic analysis}{46}
+\contentsline {subsubsection}{Trending words analysis}{49}
+\contentsline {subsection}{\numberline {5.2.4}The quality and persistence of YouTube videos}{51}
+\contentsline {section}{\numberline {5.3}Negative influence}{54}
+\contentsline {subsection}{\numberline {5.3.1}Data}{55}
+\contentsline {subsection}{\numberline {5.3.2}Arrival and departure correlation among friends}{56}
+\contentsline {subsection}{\numberline {5.3.3}Dynamics of local neighborhoods}{59}
+\contentsline {subsubsection}{Dependence on local properties}{60}
+\contentsline {subsubsection}{Interaction between local properties}{62}
+\contentsline {subsubsection}{Predict the departure of user}{64}
+\contentsline {subsection}{\numberline {5.3.4}Structural trends in network topology}{67}
+\contentsline {part}{III\hspace {1em}Answer social science questions with social media data}{73}
+\contentsline {chapter}{\numberline {6}Lasswell's Maxim}{75}
+\contentsline {chapter}{\numberline {7}Two-step flow}{76}
+\contentsline {chapter}{\numberline {8}Social movement}{77}
+\contentsline {part}{IV\hspace {1em}ZZZZZ: Previous structure...possibly move to intro}{78}
+\contentsline {chapter}{\numberline {9}the interaction between people and information}{79}
+\contentsline {chapter}{\numberline {10}the role of content}{80}
+\contentsline {chapter}{\numberline {11}Network effect and behavioral contagion}{81}
+\contentsline {chapter}{\numberline {12}Diffusion without active dissemination}{82}
+\contentsline {chapter}{\numberline {13}Social media in Arab Spring Movement}{83}
+\contentsline {section}{\numberline {13.1}Background}{83}
+\contentsline {section}{\numberline {13.2}Data}{83}
+\contentsline {section}{\numberline {13.3}Method and Results}{87}
+\contentsline {section}{\numberline {13.4}Conclusion}{87}
+\contentsline {section}{\numberline {13.5}Future work}{89}
+\contentsline {chapter}{\numberline {14}Conclusion}{90}
+\contentsline {chapter}{\numberline {A}Chapter 1 of appendix}{91}

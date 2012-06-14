@@ -15,10 +15,13 @@
 \usepackage{moreverb}
 \usepackage{subfigure}
 \usepackage{epsfig}
-\usepackage{subfigure}
+%\usepackage{subfigure}
 \usepackage{hangcaption}
 \usepackage{txfonts}
 \usepackage{palatino}
+\usepackage{url}
+%\usepackage{subfig}
+
 
 %if you're having problems with overfull boxes, you may need to increase
 %the tolerance to 9999
@@ -70,12 +73,30 @@ Your acknowledgements go here. Make sure it sits inside the brackets.
 \normalspacing \setcounter{page}{1} \pagenumbering{arabic}
 \pagestyle{cornell} \addtolength{\parskip}{0.5\baselineskip}
 
+\part{Introduction and Background}
+
 \chapter{Introduction}
 Understanding how information spreads in the society has attracted a growing interest from both practitioners and scholars. It is an essential element for many interesting problems, such as the diffusion of innovation, formation of public opinion, product adoption, and viral marketing. 
 
 Historically, one of the biggest challenges in the study of information diffusion is data collection. Given the difficulty of observing and tracing the diffusion process over all possible channels, most empirical studies in this field have been conducted manually by sociologists and communication researchers, through in-person interviews or standardized surveys of population samples. Therefore, these studies are largely confined by the scale and the data accuracy. As a result, existing theoretical models in the literature have relied on many assumptions about the underlying diffusion mechanism instead of empirical evidence. Being widely applied, these models are, however, hard to be verified or rebutted empirically on a large scale. 
 
 In recent years, the abundance of digital records of online interactions has provided us both the explicit network structure and detailed dynamics, supporting global-scale, quantitative study of diffusion in the real world. Using these large scale datasets collected from social media sites (i.e. Twitter, Orkut), this thesis addresses the following three questions: ``who influences whom?'', ``how do different types of information spread?'',  and ``how does the network structure impact the diffusion process?''
+
+Viewing the diffusion of information as an organic process, we study each stage in its lifecycle, from production, dissemination, to comsuption (deceased). Each part is motivated by social science problems and theories, and aim at contribute deeper insights about how information flow in the society and its impact.
+
+our work mainly contributed to the aspectes in the lifecycle of information diffusion that are overlooked by previous studies:
+\begin{enumerate}
+\item Production: people's external influence, especially, the role of mass media
+\item Dissemination: temporal dynamics and the role of content
+\item End-of-life: how does disengagement happen?
+\end{enumerate}
+
+In the end, we will examine a diffusion process that closely tight the online and offline world together - Arab spring. Contributions:
+\begin{enumerate}
+\item Trace the evolution, and unveal the dynamicss of social movement using digital logs;
+\item Understand the role and impact of social media in societal changes;
+\end{enumerate}
+
 
 \section{The Influencer Problem}
 Can we estimate person influence and pick out the influencers?
@@ -176,7 +197,7 @@ MapReduce is good with easy-parallelible tasks, hard for tasks that need certain
 Methods to convert a global problem to a series of mapreduce jobs~\cite{Suri-Triangle-2011}.
 
 
-\chapter{The life of information: the interaction between people and content in online networks}
+\part{The life of information: the interaction between people and content in online networks}
 
 We study the lifespan of information, from production, flow, to consumption. We can also extend our findings to general diffusion process, the spread of behavior.
 
@@ -191,7 +212,7 @@ My contributions:
 \item (ZZZZZ: possible remove) Diffusion as an organic process integrating people, content, and time.
 \end{enumerate}
 
-\section{The production and consumption of information: distribution of attention}
+\chapter{The production and consumption of information: distribution of attention}
 
 Typical lifespan of a piece of information on social media is one-way, zero or one hop - depending how a hop is define: from production directly to (potentially) consumption, without any additional node in the chain.
 
@@ -208,15 +229,15 @@ Our contributions:
 
 ZZZZZ Put two-step flow in next chapter?
 
-\subsection{Data And Methods}
-\subsubsection{Twitter Follower Graph}
+\section{Data And Methods}
+\subsection{Twitter Follower Graph}
 \label{sec:follower}
 In order to understand how information is flowing in the Twitter system, we
 need to know the channels by which it flows; that is, who is following whom
 on Twitter.  To this end, we used the data shared\footnote{At the time of this study, the data was free to download from http://an.kaist.ac.kr/traces/WWW2010.html} by Kwak et al.~\cite{kwak_10}, which included 42M users and 1.5B edges.  This data
 represents a crawl of the follower graph seeded with all users on Twitter as observed by July 31st, 2009.
 
-\subsubsection{Twitter Firehose}
+\subsection{Twitter Firehose}
 \label{sec:firehose}
 In addition, we were interested in the content that was being
 shared---particularly bit.ly URLs---so that we could trave the flow of
@@ -224,7 +245,7 @@ information through the Twitter graph.  We examined all tweets over a 223
 day period from July 28, 2009 to March 8, 2010 using the data from the
 Twitter ``firehose''.  From these 5B tweets we observed 260M bit.ly URLs.
 
-\subsubsection{Twitter Lists}
+\subsection{Twitter Lists}
 \label{sec:classify}
 Our method for classifying users exploits a relatively recent feature of
 Twitter: Twitter Lists. Since its launch on November 2, 2009, Twitter Lists
@@ -269,7 +290,7 @@ snowball sample and an activity sample---each with some advantages and
 disadvantages, discussed below.
 
 
-\subsubsection{Snowball sample of Twitter Lists}
+\subsection{Snowball sample of Twitter Lists}
 The first method for identifying elite users employed snowball sampling.
 For each category, we chose a number of seed users that were highly
 representative of the desired category and appeared on many
@@ -360,7 +381,7 @@ $l_2$		& 91873 & 171912 & 22518 & 19946 \\ \hline
 \end{table}
 
 
-\subsubsection{Activity Sample of Twitter Lists}
+\subsection{Activity Sample of Twitter Lists}
 Although the snowball sampling method is convenient and is easily
 interpretable with respect to our theoretical motivation, it is also
 potentially biased by our particular choice of seeds. To address this
@@ -379,8 +400,6 @@ any introduced by the snowball sample; thus obtaining similar results from
 the two samples should give us confidence that our findings are not
 artifacts of the sampling procedure.
 
-%% DW: Refer to Table
-%% WM: done
 \begin{table}
 \centering
 \begin{scriptsize}
@@ -406,13 +425,13 @@ blog & 140,251& 19,946 & 49,987 &17,259\\
 % \caption{}
 % \end{figure}
 
-\subsection{Distribution of attention}
+\section{Distribution of attention}
 
 After categorizing people into categories, we can calculate the amount of attention sent and received by each category, at a global level. The way we do it is to show the reach of the ``elite'' categories. It can be considered as the influence of each category, as well as an estimate of the impact of the information introducted by each category. In other words, it is the maximal reach of the information produced by each category.
 
 
 
-\subsubsection{Concentration of attention}
+\subsection{Concentration of attention}
 With either sampling method, the initial categorization of users is quite
 coarse and noisy as a result of the arbitrary labeling allowed in Twitter
 Lists.  To filter categories to the most representative users, we further
@@ -591,7 +610,7 @@ population.
 \end{figure}
 
 
-\subsubsection{Homophily of attention}
+\subsection{Homophily of attention}
 
 As indicated above, the top $20K$ elite users account for almost $50 \%$ of
 all attention within Twitter; yet this population of users comprises less
@@ -652,7 +671,7 @@ blog	&4.94 & 3.89 & 1.58 & \bf{22.55} \\ \hline
 
 
 
-\section{ZZZZZ: Transmissive probability}
+\chapter{ZZZZZ: Transmissive probability}
 ZZZZZ: should we combine this section with previous or next section?
 
 For information that do spread, most previous works study the factors that contribute to the spread at each hop, independently. (ZZZZZ related work).
@@ -666,8 +685,8 @@ My contribution:
 \item Show people's interest at different content.
 \end{enumerate}
 
-\subsection*{People}
-The origin of information will influence how it will be RTed.
+\section{People}
+The origin of information will influence how it will be RTed. 
  
 Before proceeding, it is helpful to differentiate between two mechanisms by
 which information can diffuse in Twitter. The first is via retweeting, when
@@ -739,7 +758,7 @@ other & 45,547 & 793,741 & 69,441 & 335,690 & 86,853,224 & 88,097,643\\ \hline
 \label{fig:RT_topuser}
 \end{figure}
 
-\subsection{Content}
+\section{Content}
 People have different interest at different content. So the type of content can also determine what a person will RT.
 
 Given the large size of the URL population in our observation period
@@ -827,11 +846,11 @@ with our classification scheme.
 
 
 
-\section{Persistence of information}
+\chapter{Persistence of information}
 In our work, we noticed that although a small amount of information spread and travels, among them, a substantial portion has a very long lifespan. We think this is very interesting phenomenon that has not been well investigated yet. 
 
 
-\subsection{Lifespan by the category of originator}
+\section{Lifespan by the category of originator}
 ZZZZZ: Content produced by different people have different persistence. Blogger's role of information filter.
 
 By lifetime, we mean the time lag between the first and last
@@ -869,10 +888,6 @@ appears at least $\tau$ days before the end of our window, we need to pick
 $\tau$ and $\delta$ such that $\tau + 2\delta < 223$. From Figure
 \ref{fig:tau_v_delta}, we determined that $\tau = 60$ and $\delta=48$
 sufficiently satisfy our constraints.
-
-%%DW: Insert Figures: (a) schematic of window estimation procedure; (b) tau vs delta tau
-
-%%SW: done
 
 \begin{figure}
 \centering
@@ -927,6 +942,13 @@ their initial introduction.
 \label{fig:lifespan_percentage_category}
 \end{figure}
 
+
+
+\section{Content}
+
+As shown previously that the content originated by different people exhibit different lifespan, but it is very hard to predict the lifetime. The persistence of long-last content can not be fully contributed to contagion process - the role of content. 
+
+Evidence: Low RT-rate for long-lasting content.
 
 A second related point, is illustrated by Figure
 \ref{fig:RT_lifespan_category}, which shows the average RT rate = (\# of
@@ -988,35 +1010,996 @@ rediscovering content outside of the Twitter ecosystem.
 
 %% Describe model and results.
 
+Following up these findings, we start to look for intrinsic qualities of the content that effectively determine the dissemination process, especially, the persistence of information. 
 
-\subsection{Content}
 
-Informatoin filtering does not mean high interpersonal influence. The persistence of long-last content can not be fully contributed to contagion process - the role of content. 
+Two main contributions:
 
-Evidence: RT rate for information with different lifespan. 
+\begin{itemize}
+% (this is method but not contribution)\item We find power-law in the distribution of the lastingness of webpages and then formalize the problem into a binary classification problem.
+\item We build a classifier that predicts the decay/persistence of information with textual features, providing one of the first empirical studies of the connection between content and temporal variations of information in online social media.
+\item We investigate the properties of the text that are associated
+with different temporal patterns, finding significant differences in
+word usage and sentiment between rapidly-fading and long-lasting information.
+\end{itemize}
 
-Role of content? Domain breakdown.
 
-\subsubsection{Data}
+
+\subsection{Data}
 To study content in more details, we introduce a smaller Twitter dataset with richer HTML content. 
 
-\subsubsection{Relationship between content and persistence}
-Strong collrection between content and the persistence of information.
+\subsubsection{Summary}
+In this study, we used the dataset publicly shared by the authors of \cite{Jaewon:2011}\footnote{http://snap.stanford.edu/data/twitter7.html}, 
+consisting of approximately $20\%$-$30\%$ of all the tweets generated between June 1, 2009 and December 31, 2009. 
+%Since it is collected over a continuous period of time, this dataset is desirable to study the temporal patterns of information. 
+We only study the temporal patterns of bit.ly URLs for two reasons, 
+following the arguments of \cite{Shaomei:2011}. First, 
+shortened URLs have a unique token that is easily traceable in individual tweets. 
+Second, the associated webpages provide a much richer source of content beyond the 140-character limit of tweets. 
+From the total 476M tweets contained in the dataset, we find 118M distinct URLs embedded in 186M tweets. 
+Among all the URLs, nearly half of them (56M) are bit.ly URLs (i.e., start with http://bit.ly/). 
+For simplicity, we only extract the time series of bit.ly URLs and use them as a representative sample of all temporal patterns. 
+Considering that a large portion of URLs mentioned in Twitter are spam and may not be able to provide meaningful content, 
+we restrict our study to the bit.ly URLs that appeared more than 10 times in retweets \footnote{We recognize a post as retweet when it contains ``RT @'' or ``via @''.}, 
+which gives us 131K bit.ly URLs. 
+We are able to crawl 117K webpages pointed to by these bit.ly URLs, the remaining 14K URLs that we fail to crawl are mostly misspelled 
+or linked to webpages that no longer exist. 
 
-\subsection{Negative influence}
+%% possibly move to the next section?
+We further restrict our study to URLs that are mentioned more than 50 times in order to remove spam and have sufficient observations to measure temporal dynamics, which leaves us with 21K URLs. 
+In the rest of this paper, when we talk about URLs and temporal patterns, we mean these 21K bit.ly URLs and the temporal pattern in their time series.
 
-\subsubsection{Data}
+\subsubsection{Persistence of URLs}
+After extracting the data of interest, we first propose a quantitative metric of persistence and present some insights on the overall temporal pattern of the URLs we study.
+
+As the focus of this study is how fast URLs fade, we measure decay rates following peak attention. 
+For each URL $u$, let the hour of maximum attention (also called
+the peak of attention) be hour $0$. 
+Then the {\em decay time} $t_u$ is defined as the hour after the peak 
+when the number of mentions first reaches $75\%$ of the total.
+Instead of measuring the time lag between the first and last mention of a given URL \cite{Shaomei:2011}, we intentionally choose to measure the time lag from the peak of attention to the point when the URL fades away, as given the limited observation window when the dataset was collected, it is not obvious to determine when exactly a URL was first introduced or last appeared on Twitter.
+The distribution of $t_u$ approximately 
+follows a power-law (see Figure 1\ref{fig:tu_distribution}), as found previously in the distribution of URL lifespan \cite{Shaomei:2011}.
+Among all URLs we studied, the mean $t_u$ is 217.3  hour and the median $t_u$ is 19 hours.
+
+%\vspace{-0.1in}
+\begin{figure}[htb!]
+\label{fig:tu_distribution}
+\centering
+\epsfig{figure=figures/tu_distribution.eps, width=2.5in}
+%\vspace{-0.3in}
+\caption{Distribution of URL decay time $t_u$}
+\end{figure}
+
+We further examine the relationship between $t_u$ and the overall popularity of URLs. Figure ~\ref{fig:tu_tweet_rt} shows the average number of tweets and retweets accumulated by each URL as a function of $t_u$. Given the power-law distribution of $t_u$, we bin URLs by the integer part of $\log_2(t_u)$, and calculate the mean for each bin.  Although the persistent URLs are mentioned in slightly more tweets, the rapidly-fading URLs do better at attracting retweets. This result is consistent with previous findings that the longevity of information is determined not by diffusion, but by independent generation of tweets of the same content over time \cite{Shaomei:2011}.
+
+%\vspace{-0.1in}
+\begin{figure}[htb!]
+\label{fig:tu_tweet_rt}
+\centering
+\epsfig{figure=figures/tu_rt_tweet.eps, width=3.3in}
+%\vspace{-0.3in}
+\caption{URL overall popularity as a funtion of $t_u$}
+\end{figure}
+
+
+\subsection{Predicting temporal patterns based on content}
+Strong correlation between content and the persistence of information.
+
+In this section, we formally define the temporal pattern classification task and present our findings.
+
+\subsubsection{Identifying information with two distinct temporal patterns}
+
+We start by casting our question into a binary classification problem
+in which class 1 is defined as consisting of those
+URLs with $t_u < 6$ and class 0 is defined
+defined as consisting of those
+URLs with $t_u > 24$. In this way we get a positive class
+with 7042 examples and a negative class with 6185 examples. We exclude
+the 7K examples in the middle, as the data is much noisier and the
+persistence of these URLs is ambiguous --- our goal in this first
+exploration of persistence prediction is to construct a 
+well-defined and tractable task from which we can understand whether there
+are features that meaningfully separate rapidly-fading URLs
+from long-lasting ones.
+ 
+
+%    To study whether the content of webpage is related with its temporal pattern, as we have introduced in the Section \ref{sec:data}, we take the two distinct temporal patterns and formalize the problem into a binary classification.
+
+%    To elaborate, we take the peak hour of attention as the signal that the hottest time point of the webpage, denoted as time $0$. Starting from the peak, we define the hour when  \# of tweets containing the url reaches $75\%$ of the total volume we observed as the signal that this webpage has faded away, denoted as hour $t$.
+
+%    As for labeling each webpage, according to our observation, we take the urls with $t < 6$ and $t > 24$ as two distinct temporal patterns and label them as following:
+
+%\begin{itemize}
+%\item $t < 6$: urls die fast in this class. They tend to be soon ignored after they get attention.They are labeled as positive class (+).
+%\item $t > 24$: urls last much longer in this class. They receive continuous attention.We label them as negative class (-).
+%\end{itemize}
+
+%Details about the number of instances in each class are shown in \ref{tb:classnumber}
+
+%\begin{table}
+%\caption{Number of Instances}
+%\label{tb:classnumber}
+%\centering
+%\begin{tabular}{|c|c|c|}
+%\hline
+%& Positive & Negative \\
+%\hline
+%Number & 6185 & 7042 \\
+%\hline
+%\end{tabular}
+%\end{table}
+
+To better illustrate our classification scheme, we apply the time series normalization method introduced in \cite{Jaewon:2011} and calculate the centroid of time series for each class, as shown in Figure 3\ref{fig:classexample}. The two classes we define do in fact collectively exhibit very different temporal patterns: URLs of the positive class fade away slowly, with periodic, multiple peaks of attention; URLs of the negative class have a single spike and a rapid decay afterwards.
+ 
+
+%Figure \ref{fig:classexample} shows the temporal pattern of the centroid in the two classes. (generated according to the method introduced in [Yang and Leskovec 2011].)
+
+%\vspace{-0.1in}
+\begin{figure}[htb!]
+\label{fig:classexample}
+\centering
+\epsfig{figure=figures/class_centroids.eps, width=2.5in}
+\caption{Normalized time series centroids for two classes}
+%\vspace{-0.2in}
+\end{figure}
+
+\subsubsection{Features}
+To predict the temporal class of URLs, we extract and experiment with the following four incremental sets of unigram features from the HTML webpages linked by the URLs (one-character tokens and those that consist only of numbers are filtered out):
+
+\begin{itemize}
+\item Header. The text in the header of HTML, within tags ``$<$title$>$'',``$<$description$>$'', and ``$<$keywords$>$''. 
+\item Header + URL.  In addition to Header, this feature set also uses the terms tokenized from the URL links embedded in the HTML (i.e.,within ``$<$href$>$'' ). 
+\item Header + Body. In addition to Header, this feature set includes all the text in the body of HTML. 
+\item Header + URL + Body. This feature set combines all the features mentioned above. 
+\end{itemize}
+
+As mentioned above, to get more meaningful unigram features, after tokenizing all the textual content into word terms, we filter the terms with length 1 (e.g., ``s'', ``t'') and the terms consisting of only numbers. As the dimension increases tremendousely in the last 3 sets of features, we also filter the infrequent terms (i.e., terms with total frequency less than 20). Table 1\ref{table:feature-sets} gives a summary of the number of features in each set.
+
+\begin{table}[t]
+\label{table:feature-sets}
+\caption{Feature size}
+\begin{tabular}{c|c}
+\hline
+ \emph{Feature} & \emph{$\#$ of unique unigram terms} \\
+\hline
+Header & 18471  \\
+\hline
+Header + URL & 27433 \\
+\hline
+Header + Body & 59475 \\
+\hline
+Header + Body + URL & 76487\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Classifier performance}
+To predict the persistence of webpages, we employ a Support Vector Machine (SVM)\footnote{The SVM package we use is SVMLight, \url{http://svmlight.joachims.org/}} classifier with a binary representation of unigram features (if a term appears in a webpage, the corresponding coordinate has value 1, and value 0 otherwise). To work with high-dimensional features, we use the linear SVM kernel for efficiency. 
+We also apply the default parameters for SVM classifier for a fair comparison among different sets of features. Table \ref{table:performance} gives the performance of classifiers with different sets of features using 10-fold cross validation. 
+
+%In this part we presents the performance of classifiers. We use svmlight\footnote{http:\\blabla}. To make a fair comparison, we use default parameters, that is, SVM with linear kernel. The performance is shown in Table \ref{tb:performance}. The experiment is generated by 10-fold cross validation in the dataset.
+
+\begin{table}[t]
+\caption{Results for predicting lastingness of information}
+\label{table:performance}
+\begin{tabular}{c|c|c|c}
+\hline
+\emph{Feature} & \emph{Accuracy} & \emph{Pos F1} & \emph{Neg F1}\\
+\hline
+Header & 0.6909 & 0.7399 & 0.6186 \\
+\hline
+Header + URL & 0.7177 & 0.7666 & 0.6423\\
+\hline
+Header + Body & 0.7136 & 0.7664 & 0.6296\\
+\hline
+Header + Body + URL & 0.7224 & 0.7708 & 0.6478\\
+\hline
+\end{tabular}
+\end{table}
+
+Table \ref{table:performance} shows that in general, the simple linear-kernel SVM classifier can predict the persistent/rapidly-fading category of URLs with impressively high accuracy (around $70\%$), as comparedd to $53\%$ for always predicting positive. Also, the F1 score for positive class is around $75\%$, which shows a remarkable balance of precision and recall at identifying the persistent content. This result provides strong evidences for the connection between the content of HTML pages and the persistence of the associated URLs.  Moreover, comparing across 4 feature sets, we see that the more information we have about the content, the better the classifier performs. This finding further confirms the relationship between textual content and the persistence of attention of the information.
+
+%As we can see in the Table, the Accuracy is around 70\%, and the F1 score for negative class (long lasting urls) reaches 75\%. It shows that we can predict temporal pattern with  content. Also, the more information we have the performance is better. It further validates our assumption that the contents of webpage are related to the temporal pattern.
+
+\subsection{How temporal patterns vary with types of content}
+The SVM classifier shows that the content provides enough information
+to predict persistence reasonably well.
+However, SVMs are not as effective at providing a readily
+comprehensible sense for which properies of the text are
+the most related to the variations in
+temporal patterns. Here we address this question, 
+by looking more closely at the textual content and identifying
+the aspects that exhibit the 
+most significant difference across temporal classes.
+
+%%After showing the connection between content and temporal pattern, we now describe different aspects of content that are associated with the persistence of information.
+\subsubsection{LIWC analysis}
+
+Linguistic Inquiry and Word Count (LIWC) \cite{liwc} is a widely used text analysis tool that maps words onto 60 pre-defined categories, covering linguistic, psychological, and social dimensions. Using LIWC categories, we start by comparing the distribution of words across two classes.
+
+
+\begin{figure*}[htb!]
+ \label{fig:liwc-dist}
+ \centering
+ \epsfig{figure=figures/liwc_distribution.eps, width=6.5in}
+\caption{Class distribution in 60 LIWC dimensions, using words from HTML header}
+\end{figure*}
+
+%Using LIWC dictionary, we generate a 60-dimension binary vector based on the Header feature for each URL (the value for a given dimension is 1 when there is at least one word under the corresponding LIWC category in the extracted header text). 
+We say a LIWC category occurs in a URL when we find at least one word under that category from the header of the associated HTML page.\footnote{We also conduct the same analysis with text from the other 3 feature sets, however, since the number of words increases markedly in these feature sets, and LIWC dictionary many times maps a word into multiple categories, the binary vector for each URL is easily saturated and the $f_w(t)$ curve becomes too flat to show interesting difference.} Figure 4\ref{fig:liwc-dist} shows the percentage of occurrence for all LIWC categories in webpages from two classes. As illustrated by Figure 4\ref{fig:liwc-dist}, the two classes differ the most in the following three groups of LIWC categories,
+\begin{itemize}
+\item Emotion: \emph{posemo} (positive emotion), \emph{negemo} (negative emotion).
+\item Cognitive process: \emph{cogmech} (cognitive process), \emph{insight} (words like \emph{think}, \emph{know}, \emph{consider}), \emph{incl} (inclusive, words like \emph{and}, \emph{with}, \emph{include}), \emph{discrep} (discrepancy, words like \emph{should}, \emph{would}, \emph{count}).
+\item Part of speech: \emph{verb} (common verbs), \emph{auxverb} (auxiliary verbs), \emph{preps} (prepositions), \emph{present} (present tense, words like \emph{is},\emph{does}, \emph{hear}), \emph{future} (future tense, words like \emph{will},\emph{gonna}).
+\end{itemize}
+% related to emotions (\emph{posemo},\emph{negemo}), cognitive process (\emph{cogmech\footnote{Words related to cognitive process.}},\emph{insight\footnote{Insight: words like think, know, consider.}},\emph{incl}\footnote{Inclusive, words like and, with, include.},\emph{discrep}\footnote{Discrepancy, words like should, would, count.}), and certain parts of speech (\emph{verb},\emph{auxverb}\footnote{Auxiliary verbs.}, \emph{}). work and leisure, and some linguistic categories.
+
+%\vspace{-0.1in}
+\begin{figure*}[htb!]
+ \label{fig:liwc-trend}
+ \centering
+ \epsfig{figure=figures/liwc_trends.eps, width=6.5in}
+\caption{Trending LIWC categories}
+\end{figure*}
+
+To better see the trend in the frequency of specific categories as a function of $t_u$, for each category $w$, we define $f_w(t)$ as the fraction of occurrences of $w$ in all URLs $u$ for which $t_u=t$, and plot $y=f_w(t)$ for different groups of LIWC categories in Figure 5\ref{fig:liwc-trend}.
+
+
+
+Again, to balance the power-law distribution of $t_u$, we bin $t_u$ by integer part of $\log_2(t_u)$, and plot the value $f_x(w)$ for each bin $x$ (instead of hour $x$). In this way, the later bins would still contain a substantial number of URLs so that the probabilistic curve is smoother. Similar as in \cite{Berger:10,Hansen:11} we find the sentiment of content plays an important role in its dynamics: there is a clear trend of words with positive emotion rising in the persistent content, and the opposite for words with negative emotion. However, the amount of words related to affect stays more or less constant across $t_u$. We also see a drop of words related to cogntive process  when $t_u$ increases, suggesting that, content associated with more complicated cognitive process can be more viral\cite{Berger:10}, yet not so persistent. Not surprisingly, we find that rapidly-fading content with more words related to actions (verb, auxverb, preps) and tense (present, future), presumably because these webpages contain more action-demanding, time-ciritical information that expires after a certain event or time.
+
+%positive emotion (\emph{posemo}) words rising in the persistence content, and opposite for negative emotion (\emph{negemo}) words. However, the amount of words related to affect stays more or less constant across $t_u$. We also see a big decrease of words related to cogntive process (\emph{cogmech}) in persistent content, adding to the results reported by Berger and Milkman (2010) that news articles that demands more cognitive efforts are more likely to be emailed to friends. Not surprisingly, words associated with future tense appear less in the long-lasting content. The higher portion of common verbs (\emph{verb}), auxilliary verbs (\emph{auxverb}) and prepositions (\emph{preps}) in lower $t_u$ matches with previous results that the content related to actions is more likely to fade away quickly.
+
+
+
+
+%Title words
+%    * URLs in (+) class: funct, cogmech, verb, auxverb, preps, article, relativ, time, negemo
+%    * URLs in (-) class: work, posemo, leisure, affect, money, pronoun, 
+
+
+\subsubsection{Topic analysis}
+
+Although LIWC offers the most straightforward insights from the text, as a manually-generated, pre-defined category system, it is limited by the underlying psychololinguistic concepts.
+%To account for the possible miss of dimensions defined 
+%inherent bias introduced by LIWC categorization scheme, in this part,
+To extend the dimensions of text described in LIWC, we also build topic models that represent mixtures of words,
+and see how these topics vary across our temporally-defined classes.
+For this we use 
+Latent Dirichlet Allocation (LDA)\footnote{We use the software
+from \url{http://www.cs.princeton.edu/~blei/lda-c/index.html}
+with the number of topics set to 50.
+}, a flexible generative model for collections of discrete data\cite{Blei:03}. Here, we use it to find proper underlying generative probabilistic semantics from content. We use the corpus consisting of the unigrams in the two classes. 
+With the topic distribution for each document, we try to study whether the temporal patterns are correlated with ``topics''. 
+First, we will show the probability of topics in the two classes and find those topics with significant differences across different topics.  
+Then we interpret these topics to find some differences between
+persistent webpages and rapidly-fading webpages. As for the details of
+running LDA, we use the features in ``header+body'' because we find
+that when using features from URLs, the results will include some
+irregular words, while with only ``header'', it cannot include enough
+words in detail. 
+
+First, since the output of LDA provides a
+continuous value of topic weight for each document, we cast it into binary by assigning 1 when the weight is above the default value. For each topic, we compute the probability that one
+document contains this topic in the positive class and in the negative class
+respectively. More specifically, we conduct a paired t-test between the two classes on each topic and find that, on 39 topics, the two classes are  different at significance level $\alpha=5\%$. 24 of them are with p-value $0$. This shows that these two classes differ significantly in the space of topics.
+Figure 6\ref{fig:ldadistribution} shows topics distribution in all 50 topics.  
+We notice that the most significant differences occur at topics 18, 25 (with a high probability in rapidly-fading webpages), and topics 32, 37 (with a high probability in persistent webpages).
+
+\begin{figure*}[htb!]
+ \label{fig:ldadistribution}
+ \centering
+ \epsfig{figure=figures/topics_distribution.eps, width=6.5in}
+\caption{Class distribution in 50 LDA topics, using words from HTML header and body}
+\end{figure*}
+
+Providing a closer look at those topics, Table 3\ref{tb:ldatopics}
+shows top 20 words given by the topic model. We see some similar
+phenomena as in previous section: words related to strong - and mostly negative - emotions tend to appear more in the topics highly weighted in rapidly-fading webpages. For example, negative words, such as ``die'', ``freaking'', ``incredibly'', ``incredible'' and ``destroy'', show up in topic 18 and 25. 
+In the topics associated with persistent webpages, interestingly, we notice an increase of nouns.
+% I'd omit this, unless there's stronger evidence. --Jon
+% We also find some more interesting
+% evidence that persistent webpages are more objective. 
+%The words in the
+%rapidly-fading webpages are related to much stronger emotion, such as
+%``freaking'', ``incredibly'', ``incredible'' and ``destroy'', whereas
+%in slow-fading webpages, more nouns appear.
+
+\begin{table}[t]
+\centering
+\label{tb:ldatopics}
+\caption{LDA Topics}
+\small
+\begin{tabular}{c|c|c|c}
+\hline
+\emph{Topic 32} & \emph{Topic 37} & \emph{Topic 18} & \emph{Topic 25}\\
+\hline
+fred & incident & net & die\\
+net & website & dan & gov\\
+care & subscriber & fred & fields\\
+produce & clean & pack & static\\
+incident & rates & gov & say\\
+mas & net & impressed & expensive\\
+office & considering & read & read\\
+hello & potentially & native & york\\
+julian & die & worm & freaking\\
+teen & gov & user & seek\\
+red & money & attempts & destroy\\
+democratic & donation & treatment & dear\\
+boy & dennis & august & supporters\\
+tagging & seek & incredibly & tagged\\
+ways & read & incident & office\\
+opinion & dislike & potentially & microwave\\
+read & il & talented & challenges\\
+different & challenges & die & fred\\
+british & posted & placed & british\\
+heads & kind & busy & august\\
+\hline
+\end{tabular}
+\normalsize
+\end{table}
+
+\subsubsection{Trending words analysis}
+After measuring the content in LIWC categories and latent topics, in this part, we examine the content with more details, trying to discover the nuance between classes at the word level. We calculate and compare the most representative words in the two classes. Picking the words to describe a collection of documents can be turned into a trend detection problem: let the webpages of negative class be the corpus of early period and the webpages of positive class be the later period, negative class can thus be described by the most significant ``falling words'' whereas the positive class can be described by the most significant ``rising words''.  To do so, we apply the methods as presented in \cite{Kleinberg:2004} on the Header feature set, and generate the top 20 trending words for each class (see Table 4\ref{table:trending-words})\footnote{We also tried the same method on the other three feature sets, but as the number of terms largely increases, the data becomes too noisy to be described with a few words, and the results are difficult to interprete.}. 
+
+\begin{table}[t]
+\label{table:trending-words}
+\caption{Representative words for two temporal classes}
+\small
+%\begin{tabular}{p{0.45in}|p{0.43in}|p{0.45in}|p{0.45in}|p{0.43in}|p{0.45in}}
+\begin{tabular}{c|c|c|c|c|c}
+\hline
+\multicolumn{2}{c|}{\emph{Absolute change}} 
+& \multicolumn{2}{|c|}{\emph{Relative change}} 
+& \multicolumn{2}{|c}{\emph{Prob. change}} \\
+\hline
+\emph{pos} & \emph{neg} & \emph{pos} & \emph{neg} & \emph{pos} & \emph{neg} \\
+\hline
+twibbon & cnn & twibbon & cnn & small & plan \\
+marketing & google & marketing & blogs & mp3 & net \\
+support & iphone & contest & source & creative & better \\
+giveaway & blogs & trailer & finest & open & girl \\
+quot & america & review & onion & view & file \\
+free & source & support & apple & vs & touch \\
+best & apple & vote & house & story & smashing \\
+contest & onion & giveaway & iphone & kids & pictures \\
+win & finest & big & white & ipod & using \\
+review & app & movie & guardian & american & organizing \\
+design & house & design & google & know & cancer \\
+trailer & white & quot & users & party & game \\
+vote & jackson & win & app & dj & technology \\
+big & live & good & download & use & want \\
+amp & official & best & america & star & page \\
+movie & uk & love & jackson & things & single \\
+good & obama & green & public & daily & don \\
+home & iran & week & myspace & care & action \\
+music & michael & funny & today & life & watch \\
+love & guardian & version & uk & song & need \\
+\hline
+\end{tabular}
+\normalsize
+\end{table}
+%\vspace{-0.1in}
+
+
+To get the words that are most meaningful, we filter all the numbers, and the words with frequency less than 20 (mostly specific names) or greater than 400 (mostly stopwords and website names). As discussed in \cite{Kleinberg:2004}, trending words identified by the three metrics have different bias. Words based on \emph{normalized absolute change} are biased towards words that are frequent in both classes. Words selected by \emph{relative change} are biased towards words frequent in one class but not the other. Words selected by \emph{probablistic change} are the ones that based on the frequency of occurrence in one class, most unlikely to be seen in the other class. Although \cite{Kleinberg:2004} recommends the probabilistic change as a metric that gives the cleanest results, 
+we find the selected words in all three categories highlight
+interesting points that reinforce, and provide some intuitive basis for,
+the results to emerge from the LIWC analysis earlier in this section.
+\begin{itemize}
+\item normalized absolute/relative change. First of all, we again find the persistent content most represented by positive words (e.g. \emph{good}, \emph{best}, \emph{love}). In terms of the semantics of content, the persistent webpages are more related to art (e.g. \emph{music}, \emph{movie}), advertisement, and online marketing (e.g. \emph{twibbon}, \emph{marketing}, \emph{givaway}, \emph{free}, \emph{win}, \emph{review}), whereas the rapidly-fading webpages contain more news (e.g. cnn, google, onion, guardian, blogs), and names (e.g. \emph{michael jackson}, \emph{white house}, \emph{obama}, \emph{iran}, \emph{america}, \emph{uk}).
+% as well as art (e.g. music, movie).Also, the persistent content (positive) are more related to advertisement and online marketing (e.g. twibbon, marketing, givaway, free, win, review), whereas the fleeting content (negative) contains more news (e.g. cnn, google, onion, guardian, blogs) and names (e.g. michael jackson, white house, obama, iran, america, uk). 
+\item probabilistic change. By this metric, we find the trending words for persistent content are more associated with lifestyle (e.g. \emph{party}, \emph{dj}, \emph{care}, \emph{life}, \emph{song}) and family (e.g. \emph{kids}, \emph{care}, \emph{life}), whereas the short-lived content again has a higher portion of words related to time critical concepts (e.g. \emph{technology}, \emph{game}), or action (e.g., \emph{plan}, \emph{touch}, \emph{using}, \emph{want}, \emph{action}, \emph{watch}, \emph{need}).
+\end{itemize}
+
+These results are mostly consistent with the findngs from the previous parts, confirming the prominence of positive emotion in the persistent content, and the fleetingness of content with many action and time-critical terms. The distinct existence of news and art content of two classes supports the claim by authors of \cite{Shaomei:2011} that the persistent content - although not as viral as news - exhibits more association with art.
+
+%Filtering all the numbers, all the words with freq less than 20, the top 300 most freq words (stop words)
+
+
+%\begin{figure}
+%\caption{Word Analysis}
+%\label{fig:wordtrend}
+%\centering
+%\epsfig{figure=fig/word_trends_logbin.eps, width=3in}
+%\end{figure}
+
+%Observations:
+%1. the word ``youtube'' is trending towards URLs with greater $t_u$ value, whereas ``iphone'' and ``facebook'' are more prominent in the URLs with smaller $t_u$ value;
+%2. words like ``tech'' and ``music'' seem neutral in both categories.
+
+
+\subsection{The quality and persistence of YouTube videos}
+In our dataset of 20K bit.ly URLs, there is a significant portion ($15\%$) of them linked to YouTube videos. Among these linked videos, 707 are already removed by the user and 2304 are still available online. Noting that the \emph{content} of videos may not be accurately represented by the text of the YouTube page, we conduct a separate study of the persistence of YouTube videos, leveraging the user rating feature YouTube provides - namely, \emph{likes} and \emph{dislikes} - to assess the content from the quality perspective.
+
+First, Figure 7\ref{fig:youtube_tu} shows the distribution of decay time $t_u$ for the 2304 available YouTube videos. In contrast to the overall distribution of $t_u$ for all URLs (see Figure 1\ref{fig:tu_distribution}), YouTube videos in general receive a longer span of attention. 
+
+%\vspace{-0.1in}
+\begin{figure}[htb!]
+\label{fig:youtube_tu}
+\centering
+\epsfig{figure=figures/youtube_tu_distribution.eps, width=2.5in}
+\vspace{-0.1in}
+\caption{Distribution of $t_u$ for YouTube videos}
+\end{figure}
+
+
+We also study the user-rated quality of these 2304 videos as a
+function of $t_u$. Figure 8 shows two indicators
+of the quality (a) the average likes/dislikes rate, (b) the ratio of
+\emph{bad} videos, for videos in each bin of $t_u$(the binning method
+is the same as in previous sections). Interestingly, we find that
+although the quality of video overall increases with $t_u$, there is a
+drop of quality in the middle - videos with medium persistence seem to
+be of the worst quality.  
+
+\begin{figure}[htb!]
+\centering
+\begin{tabular}{cc}
+\includegraphics[width=1.7in]{figures/youtube_like_dislike_rate.eps}
+& \includegraphics[width=1.56in]{figures/youtube_bad_rate.eps} \\
+(a) Average likes/dislike rate & (b) Bad video rate
+\end{tabular}
+\caption{The quality of videos as a function of decay time $t_u$. \emph{Like/dislike rate} is the number of likes divided by the number of dislikes. \emph{Bad videos} are those with the number of dislikes greater than half of the number of likes. There are in total 83 out of 2304 ``bad'' videos by our definition.}
+\end{figure}
+
+Sampling videos with different $t_u$ values suggests a further
+way to break the YouTube videos in our set into categories.
+We find that the most persistent videos are mostly music videos,
+again underscoring the increasing appearance of art-related
+topics in this class.
+On the other hand, many home-recorded
+video clips have very small value of $t_u$; as seen in Figure
+2\ref{fig:tu_tweet_rt}, content that fades away quickly might not have
+lasting value, but in general is more viral. 
+% I'm not sure I follow this; I'd either expand on it or omit. --Jon
+% As suggested in
+% \cite{Berger:10,Hansen:11}, viral content also tends to carry more
+% positive sentiments - which can be the reason why people like more
+% these amateur video clips.
+
+\begin{figure}[htb!]
+\label{fig:youtube_comment_view}
+\centering
+\epsfig{figure=figures/youtube_comment_view.eps, width=3.3in}
+%\vspace{-0.1in}
+\caption{Average number of views and comments as a funtion of $t_u$}
+\end{figure}
+
+Finally, in Figure 9\ref{fig:youtube_comment_view}, we consider the
+number of views and comments on the videos in our set.
+We find an increase in views and comments particularly for 
+very large values of $t_u$, in a way that is more extreme
+than the variation in the number of tweets from 
+Figure 2\ref{fig:tu_tweet_rt}, and that also forms an intriguing
+contrast with the trend in the number of RTs from that figure.
+Understanding how persistence translates into these secondary
+popularity measures such as view count is an interesting question.
+
+%\begin{figure}
+%\caption{Comparing likes and dislikes of YouTube videos. \emph{Bad videos} are defined as videos with the number of dislikes greater than half of the number of likes. There are 83 out of 2304 videos are ``bad'' by our definition.}
+%\label{fig:youtubelike}
+%\centering
+%\epsfig{figure=fig/youtube_like_dislike.eps, width=5in}
+%\end{figure}
+
+%Regarding to our previous concerns that the long-lasting URLs can be spamy, it does not seem to be the case, at least for YouTube videos: the long-lasting ones are not disliked more than liked comparing to the short-lived ones. In fact, the long-lasting ones have a slightly higher likes/dislikes ration than the short-lived ones, on average.
+
+
+
+\section{Negative influence}
+
+After talking about the origination and dissemination of information, now we will study the end-of-life of diffusion. 
+
+Here, the diffusion process is the engagement on an online social network. It can be analogized to how people engagement with certain topic in social media.
+
+Disengagment can be considered as a negative diffusion. To better see the trend, we compare the natural arrival and departure of users
+in several communities, and ask whether the dynamics of arrival, which
+have been studied in some depth, also explain the dynamics of
+departure, which are not as well studied.
+
+Through study of the Dblp co-autorship  network and a large online social network, we show that the
+dynamics of departure behave differently from the dynamics of
+formation.  In particular, the departure of a user with few friends,
+say less than 20, may be understood most accurately as a function of
+the raw number of friends who are active.  For the majority of users
+with larger numbers of friends, however, departure is best predicted
+by the overall fraction of activity within a user's neighborhood,
+independent of size.  We then study global properties of the subgraphs
+induced by active and inactive users, and show that active users tend
+to belong to a core that is densifying and is significantly denser than
+the inactive users. Further, the inactive set of users
+exhibit a higher density and lower conductance than the degree distribution 
+alone can explain. These two aspects suggest that nodes at the fringe are
+more likely to depart and additionally induce inactive and subsequent departure
+of neighboring nodes in tightly-knit communities. 
+
+\subsection{Data}
 Orkut: social network with detailed structure, spread of behavior.
 
+In this section, we study the dynamics of arrival and departure using a snapshot
+of the DBLP co-authorship graph and a well-known social network.  The DBLP snapshot
+that we consider contains 1072718 nodes and 1839605 edges, for each author we store his/her co-authors
+and the year of the last publication. Furthermore for each author to author edge we also
+store the year of the first publication. in the rest of the paper we will refer to
+it as DBLP. The network we study contains millions of
+users and over a billion edges.  For each user, we have the timestamp
+of signup and last login, and for each edge, we have the timestamp of
+edge creation. In the rest of the paper we will refer to this network as SN.  
 
-\chapter{Answer social science questions with social media data}
-\section{Lasswell's Maxim}
+To study the pattern of user arrivals and departures, we first
+describe each user at each timestamp as either active or inactive,
+based on his most recent activity time. Given a snapshot of the SN network
+at time $t$, we consider a user \emph{inactive} if his last login time
+is earlier than two months prior to $t$, and consider a user
+\emph{active} otherwise. Given a snapshot of the DBLP network
+at time $t$, we consider a user \emph{inactive} if he/she has not published any 
+paper in the earlier than five year prior to $t$, and consider a user
+\emph{active} otherwise. Note that our results do not depend on the time frame that we used. In fact, they hold for two quite different networks and time frames.
 
-\section{Two-step flow}
+\subsection{Arrival and departure correlation among friends}
 
-\section{Social movement}
+In this section, we study the basic properties of arrivals and
+departures.  We wish to understand whether users typically arrive
+and/or depart together in social networks.  However, we cannot
+directly compare gaps between arrivals and departures of friends, as
+networks are not stationary---consider for example the case of a
+network that grows very rapidly during a brief period, resulting in a
+flurry of temporally-proximate arrivals, leading to a mistaken
+conclusion that arrivals tend to be tightly clustered in time.
+
+We must therefore normalize in some way against global rates of
+arrival and departure, which we do by the following technique. Given a snapshot of the network at time $t$, we
+consider two samples of user-pairs, one in which the pair of users are
+friends, and another in which the pair of users is chosen uniformly
+from all possible pairs\footnote{Note that although technically, it is possible for a random pair to be a pair of friends, 
+%as we only sample 1M among the total tens of billions of possible pairs, 
+given the service policy that each user has a rather small upperbound for the number of friends, the chance of a random pair being friends is negligible.}.  We then consider the distribution of the gap in arrival time between pairs in the two cases.  Differences in these
+distributions will then highlight temporal correlation of arrivals of
+friends compared to strangers.
+
+To study departures, we adopt the same technique.  We consider only
+inactive users, and generate again a set of
+pairs of friends, and another set of pairs chosen uniformly at random.
+In this section, we fix $t$  then define the last login time of inactive users as their departure time. We pick 1M pairs for each of these four sample groups, and shows the
+Cumulative Distribution Function (CDF) for these distributions in Figure~\ref{fig:time_gap_cdf}.
+
+\begin{figure}[h]
+\centering
+\vspace{-8pt}
+\subfigure[SN]{\label{fig:orkut_time_gap_cdf}\includegraphics[width=0.20\textwidth]{figures/arrival_and_departure_time_gap_cdf.eps}}       \hspace{0.03\textwidth}            
+\subfigure[Dblp]{\label{fig:dblp_time_gap_cdf}\includegraphics[width=0.20\textwidth]{figures/dblp_arrival_and_departure_time_gap_cdf.eps}}
+\caption{\small The CDF curve for the difference in arrival and departure
+  time between friends and random pairs of users.}
+ \label{fig:time_gap_cdf}
+\vspace{-3pt}
+\end{figure}
+
+The CDF for both arrivals and departures of friends lies significantly
+above the CDF for random pairs, indicating that friends both arrive
+and depart together, in comparison to the control group of random
+pairs.  As the figure shows, in the case of SN $43\%$ of random pairs depart within 200
+days of one another, while $61\%$ of friends depart within the same
+period, a large relative increase of $41\%$. We find similar pattern in the time interval of arrival - only $31\%$ of random pairs arrive within 200 days, but $45\%$ of friends arrive within the same period. This observation is even more evident in Dblp where the lines are clearly apart.
+
+To quantify the differences, we plot in
+Figure~\ref{fig:friend_random_cdf_gap} the distribution of absolute
+difference in the CDF values at each time, for arrivals and
+departures(at least in SN).  The correlation of departures is seen to be stronger than
+the correlation of arrivals, although the two gaps peak around roughly
+the same value.
 
 
+%% A possible explanation for this observation is that some of the
+%% friendship only formed online - after two friends both sign up to the
+%% service, thus the impact of friendship of this kind is weak, or does
+%% not exist before a user arrives. Evidence for this explanation can be
+%% seen in Figure~\ref{fig:friend_signup}.
+
+%%TODO(shaomei): add description, more discussion 
+
+\begin{figure}[h]
+\centering
+\small
+\vspace{-8pt}
+\subfigure[SN]{\label{fig:orkut_friend_random_cdf_gap}\includegraphics[width=0.20\textwidth]{figures/friend_random_cdf_gap.eps}}     \hspace{0.03\textwidth}              
+\subfigure[Dblp]{\label{fig:dblp_friend_random_cdf_gap}\includegraphics[width=0.20\textwidth]{figures/dblp_friend_random_cdf_gap.eps}}
+%\epsfig{file=}
+\caption{\small Gap between CDF curves.}
+\label{fig:friend_random_cdf_gap}
+\vspace{-3pt}
+\end{figure}
+
+We also consider the eventual set of friends acquired by a user at the snapshot time $t$, and
+ask whether those friends join before or after the user.  First, in contrast to the observations in previous research\cite{Backstrom:2006}, the number of friends who already signed up seem to have a ``diminishing effect'' only on the case of the co-authorship graph and not of SN. In Figure~\ref{fig:friend_signup_count}, we see that in SN as the number of adopted friends increases, the probability of a user signup increases, but rather linearly, throughout almost the entire range x-axis. On the other hand, the expected
+fraction of friend pairs joining before the user will always be 0.5, as the friend network is undirected and each edge contributes one pair in
+which $a$ joins before $b$, and the opposite pair in which the reverse
+happens.  Thus, for regular graphs (of constant degree), the mean of
+the distribution of fraction of friends already signed up will be at
+0.5.  The results are shown in Figure~\ref{fig:friend_signup}.  True
+social networks are of course non-regular, and while the distribution
+of plot (Figure~\ref{fig:friend_signup_fraction}) appears largely symmetrical, there are some outliers.  In particular, both in SN there are more than 20 times as many users users for whom, at
+signup, 100\% of their friends have already signed up, compared to
+users for whom 0\% of their eventual friends have already signed up. These can be explained by many low-degree nodes who are attracted to the network by a friendship invitation but never really engage in the network afterwards. In Dblp the situation is a bit different, this is probably explainable by the fact that several papers are written by community of student that after the master or the PhD do not publish any more. Overall, we think that there is certain network effect towards the arrival of users, however, this effect is quite weak in the formation of the network, and may not be enough to actively engage users after they sign up.
+
+%These are explained by high-degree nodes who tend to arrive relatively
+%early in the system, inviting many friends who join but never become
+%aggressive about inviting additional friends.
+
+%%TODO(shaomei): plot the friend_signup_count in CDF.
+
+\begin{figure}[ht]
+\centering
+\small
+\vspace{-8pt}
+\subfigure[Count(SN)]{\label{fig:friend_signup_count}\includegraphics[width=0.15\textwidth]{figures/friend_signup_count_dist.eps}}       \hspace{0.03\textwidth}          
+\subfigure[Fraction(SN)]{\label{fig:friend_signup_fraction}\includegraphics[width=0.15\textwidth]{figures/friend_signup_frac_dist.eps}}\\
+\vspace{-8pt}
+\subfigure[Count(Dblp)]{\label{fig:dblp_friend_signup_count}\includegraphics[width=0.15\textwidth]{figures/dblp_friend_signup_count_dist.eps}}       \hspace{0.03\textwidth}   
+\subfigure[Fraction(Dblp)]{\label{fig:dblp_friend_signup_fraction}\includegraphics[width=0.15\textwidth]{figures/dblp_friend_signup_frac_dist.eps}}
+\caption{\small Count and Fraction of friends already signed-up when user
+  signs up.}
+\label{fig:friend_signup}
+\vspace{-3pt}
+\end{figure}
+
+Our conclusion from this set of graphs is that friends tend to arrive
+and depart together, but departures are more tightly clustered than
+arrivals.  This observation relates only to individual friends, while
+we expect that the effects are better understood in terms of the
+entire ``neighborhood'' of friends in the graph.
+
+Arrivals are difficult to study in this model, as the nature of the
+neighborhood is largely unknown to a new user until after the decision
+to join.  Other authors consider the related problem of joining a
+particular group as the adoption of an innovation within the substrate
+of an existing social network.  For example, \cite{Backstrom:2006}
+consider joining an interest group within the LiveJournal network.  We
+may therefore employ our longitudinal data to flesh out the picture
+given by this earlier, by looking more closely at the impact of the
+neighborhood structure on departure.  Subsequently, we then relate the
+results back to known literature on adoption of innovations around
+group membership, to compare what is known about arrivals and
+departures.
+
+\subsection{Dynamics of local neighborhoods}
+
+\begin{comment}
+To test the correlation in departure among friends, we begin by simply comparing the difference in last login times between friends and random pairs of users. 
+%Here the departure time is defined as the last login time, for users who are inactive. 
+We randomly sample 8 million friendship edges and 8 million random pairs of inactive nodes, calculate the gap $\delta_t$ (in days) for each pair, and plot the CDF curves in Figure~\ref{fig:inactive_timing_cdf}. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[height=60mm,width=60mm]{figure/departure_time_gap_cdf.eps}
+%\epsfig{file=}
+\caption{The CDF curve for the difference in last login times between inactive users who are friends and random pairs of inactive users.}
+\label{fig:inactive_timing_cdf}
+\end{figure}
+
+In Figure~\ref{fig:inactive_timing_cdf}, the curve for friends is
+constantly above the curve for random pairs, showing that someone is
+much more likely to login if his/her friends are logging in
+frequently. For example, when $\delta_t=180$, the gap between the two
+CDF curves is around $0.15$; we see around half of the friendship
+edges have both nodes logged in within 180 days, and only $35\%$ of
+the random pairs logged in within this interval.  
+\end{comment}
+
+As shown in previous section (Figure~\ref{fig:time_gap_cdf}), friends are more likely than strangers to have logged in within around half year of
+one another.  This dramatic difference causes us next to look beyond
+single-edge correlations to properties of the entire neighborhood of a
+node.
+
+\subsubsection{Dependence on local properties}
+The correlation in the timing of last login among friends suggests the effect of friends' inactivity on the decrease of activities on an individual. To better understand how a user's departure is influenced by his local community, in this section, we look at the probability of a user's departure in relation to the following four properties related to the user's neighborhood.
+
+%\vspace{-5pt}
+\begin{itemize}\addtolength{\itemsep}{-.35\baselineskip} 
+\item number of active friends;
+\vspace{-5pt}
+\item fraction of active friends;
+\vspace{-5pt}
+\item number of inactive friends;
+\vspace{-5pt}
+\item number of inactive friends who left in the past 6 months;
+\end{itemize}
+\vspace{-5pt}
+
+\begin{figure*}[htb]
+\centering
+\vspace{-8pt}
+\subfigure[]{\label{fig:orkut_p_k_active_curve}\includegraphics[width=0.18\textwidth]{figures/p_k_active_curves.eps}} \hspace{0.05\textwidth}
+\subfigure[]{\label{fig:orkut_p_k_curve}\includegraphics[width=0.18\textwidth]{figures/p_k_curves.eps}}\hspace{0.05\textwidth}
+\subfigure[]{\label{fig:dblp_p_k_active_curve}\includegraphics[width=0.18\textwidth]{figures/dblp_p_k_active_curves.eps}} \\
+\vspace{-8pt}
+\subfigure[]{\label{fig:dblp_p_k_curve}\includegraphics[width=0.18\textwidth]{figures/dblp_p_k_curves.eps}}\hspace{0.05\textwidth}
+\subfigure[]{\label{fig:orkut_p_f_active_curve}\includegraphics[width=0.18\textwidth]{figures/p_f_active_curves.eps}}\hspace{0.05\textwidth}
+\subfigure[]{\label{fig:orkut_p_r_curve}\includegraphics[width=0.18\textwidth]{figures/p_r_curves.eps}}
+\label{fig:p_plots}
+\caption{\small Probability of departure as function of different local properties. Where (a) is $p$ as f(active friend count) in SN, (b) is $p$ as f(inactive friend count) in SN, (c) is $p$ as f(active friend count) in Dblp, (d) is $p$ as f(inactive friend count) in Dblp, (e) is $p$ as f(active friend fraction) in SN and (f) is $p$ as f(inactive friends who left in the past 6 months) in SN.}
+%\vspace{-3pt}
+\end{figure*}
+
+To study how the probability of a user becoming inactive depends on the number of friends who are active, we use a similar method as in \cite{Backstrom:2006}: we first take two snapshots $(t_0, t_1)$ of the network, three months apart in SN and three years apart in Dblp; we then find all pairs $(u,k)$ such that $u$ is active at the time of first snapshot $t_0$, and has $k$ friends who are also active at $t_0$; $p(k)$ is calculated as the fraction of such pairs $(u,k)$ for a given $k$ such that $u$ had left the network at the time of second snapshot $t_1$. In other words, $p(k)$ is the fraction of active users who left the network in the next three months, given that $k$ friends are active at the first snapshot time. Figure~\ref{fig:orkut_p_k_active_curve} and Figure~\ref{fig:dblp_p_k_active_curve} shows the curves of $p(k)$ at three different sample points of $t_0$. In a similar way, we can fix $f$ as the fraction of friends who are active at time $t_0$, and calculate the probability $p(f)$ of an active user leaving the network as function of $f$ (see Figure~\ref{fig:orkut_p_f_active_curve}). Note that for this figure and all the following figures involving the fraction of active/inactive friends, we exclude all the nodes with no friends in SN, which are around $10\%$ of all active users as of 2011/1/1, and among those users, $35\%$ of them left within three months. 
+
+Not surprisingly, Figure~\ref{fig:orkut_p_k_active_curve}, Figure~\ref{fig:dblp_p_k_active_curve} and Figure~\ref{fig:orkut_p_f_active_curve} show that as more and more friends stay active, a user is less and less likely to be inactive. The curve of $p(k)$ (see Figure~\ref{fig:orkut_p_k_active_curve}) also matches very well with what has been seen in other domains \cite{Backstrom:2006}, exhibiting the ``diminishing returns'' property - as the number of active friends $k$ increases, the probability of departure continues to decline, but more and more slowly, eventually converging to a constant for very large values of $k$. This observation indicates that the marginal gain of having each additional active friend is quite significant for users with a small number of active friends, but rather negligible when a user has already more than 50 active friends. In contrast, in Figure~\ref{fig:orkut_p_f_active_curve}, we do not see such a ``diminishing returns'' trend, but a steeper, and almost constant rate of decrease in the probability of departure throughout the course when the fraction of active friends increases. This is an interesting observation that has not been previously seen (specifically in various positive influence studies). 
+%This suggests that the fraction of active friends has a stronger effect on the probability of departure than the count of active friends. 
+% I commented this last sentence since currently theory is only for number, and also in some other plots we see number also as being quite important. So perhaps better not to make this categorical statement - Atish.
+
+To see how the inactivity of the neighborhood influences the departure of a user, we also plot the probability of departure as a function of number of inactive friends, in Figure~\ref{fig:orkut_p_k_curve} and Figure~\ref{fig:dblp_p_k_curve}. The curves in Figure~\ref{fig:orkut_p_k_curve} and Figure~\ref{fig:dblp_p_k_curve} show an interesting trend of decreasing slope through time: while the probability of a user departing increases with the growth in the number of inactive friends in initially, it becomes more and more insensitive to the value of $k$ in the later curves. This phenomenon is quite intriguing to us: if the departure of friends do have a clear effect on the departure of the user, as shown in the earlier curves, why is this effect diminished so much in the latest years? To answer this question, we note that we are counting the number of inactive friends as prior to the time of each snapshot, but many of them could have been inactive for a long time thus could hardly influence the user's experience in the network at the snapshot time. Figure \ref{fig:orkut_p_r_curve} confirms this idea, showing that the curves we see in Figure~\ref{fig:orkut_p_k_curve} are somewhat misleading -  in general, the probability of user's departure constantly grows with the number of friends $r$ who \emph{recently} became inactive (when $r$ is not too small). 
+ 
+%Figure~\ref{fig:p_k_curve} shows the curves of $p(k)$ at three different sample points of $t_0$. The results surprisingly contrasts our expectation in two ways. First, there is an initial drop in the probability of departure along with the increase of $k$ - especially, when $k$ grow from $0$ to $1$, the probability of a user leaving drops for over/about $50\%$. Second, the remainder of each curve shows small (2009,2010) or no (2011) increase in $p(k)$ as $k$ grows. It seems that through time, the departure of a user is more and more insensitive to the number of friends who have already left. 
+
+%A possible explanation for the first phenomenon is that the user with $0$ departed friends are those who either never engaged in the network, or make decisions independently of their friends' activities, thus are less attached to the network and are more likely to leave; and for those who have engaged in the network, the departure of one or two friends is hardly noticeable, thus the small non-zero value of $k$ is associated with a low departure rate.
+
+%The second phenomenon is more intriguing to us: if the departure of friends do have an positive effect on the departure of the user, as shown in the earlier curve, why does $p(k)$ stays flat as $k$ increases, in the year of 2011? To answer this question, we note that we are counting the number of inactive friends as prior to the time of each snapshot, but many of them could have been inactive for a long time thus could hardly influence the user's experience in the network at the snapshot time. Figure \ref{fig:p_r_curve} confirms this idea, showing that the curves we see in Figure~\ref{fig:p_k_curve} are somewhat misleading -  in general, the probability of user departure constantly grows with the number of friends $r$ who \emph{recently} became inactive (when $r$ is not too small).   
+
+
+%\begin{figure}[h]
+%\centering
+%\includegraphics[height=60mm,width=60mm]{fig/p_r_curves.eps}
+%\caption{The probability $p$ of leaving the network in the next 3 months as a function of the number of friends $r$ left the network in the past 6 months prior to the snapshot time.}
+%\label{fig:p_r_curve}
+%\end{figure}
+
+
+%Having found the dependence of the probability of user becoming inactive on the number of inactive friends, we now explore the relationship between a user's departure and the fraction of inactive friends in his neighborhood, as shown in Figure~\ref{fig:p_f_curve}. Similarly to what we have seen previously, after an initial drop, the probability of a user leaving the network increases as the percentage of inactive friends grows. However, the curves in Figure~\ref{fig:p_f_curve} exhibit a much steeper slope than previous ones, suggesting a stronger correlation between the probability of user departure and the fraction of friends who have departed. 
+
+\subsubsection{Interaction between local properties}
+
+The results of the previous section provide qualitative evidence that an individual's probability of departure is related to the activeness of his neighborhood. Intuitively, as more and more friends leave a social network, a user will start to feel desolated and will be more likely to leave as well. Our previous results also suggest that the fraction of friends who are active/inactive contributes to the overall atmosphere of the neighborhood, and that this matters more than the raw number of active/inactive friends. However, does that apply to all users? Do the highly connected users act differently than the more marginally connected ones? Can people really notice and act on the degeneration of their neighborhood, or will they stay as long as there are a few active friends, in spite of a large fraction of their friends having left? To address these issues, we compute the probability of user's departure in SN in relation to the interaction between local properties. Specifically, in Figure~\ref{fig:p_f_3_level}, we divide users into three groups based on their degrees, and plot the probability of departure as a function of the number/fraction of active friends, for each group separately. We note that for users with different levels of connectivity in the network, the curves of $p(f)$ (Figure~\ref{fig:p_f_3_level}) are qualitatively identical. This result demonstrates again that the fraction of friends who are active has a stronger effect on the probability of an individual's departure, regardless of the size of the user's neighborhood.
+% Again I am not sure if we should omit or reword this last sentence - Atish
+
+In addition, we aggregate users by the fraction of active/inactive friends, and look at how the probability of departure depends on the number of active/inactive friends for each group (see Figure~\ref{fig:p_k_3_level}). There are two things we note from Figure~\ref{fig:p_k_3_level}: First, for users with different fractions of inactive friends, there is a big gap between their probabilities of departure - for example, compared to users with less than $10\%$ friends left (blue line in Figure~\ref{fig:p_k_inactive_3_level}), users who have more than $50\%$ friends left (red line in Figure~\ref{fig:p_k_inactive_3_level}) are $10$ times more likely to leave as well. Second, once the user is in an inactive part of the neighborhood, the raw count of inactive friends has little effect in determining the probability of the user's departure (green line in Figure~\ref{fig:p_k_active_3_level}). Note that the blue line in Figure~\ref{fig:p_k_active_3_level} is very noisy because there are very few people in a highly obsolete neighborhood but still with a substantial amount of active friends. We still plot it just to be symmetric with Figure~\ref{fig:p_k_inactive_3_level}.
+
+\begin{figure*}[htb!]
+\centering
+\vspace{-8pt}
+\subfigure[]{\label{fig:p_f_3_level}\includegraphics[width=0.2\textwidth]{figures/p_f_active_3_levels.eps}}
+\hspace{0.05\textwidth}   
+\subfigure[]{\label{fig:p_k_active_3_level}\includegraphics[width=0.2\textwidth]{figures/p_k_active_3_levels.eps}} \hspace{0.05\textwidth}   
+%\subfigure[$p(f)$ group by total number of friends.]{\label{fig:p_f_active_3_level}\includegraphics[width=0.35\textwidth]{fig/p_f_active_3_levels.eps}}\\
+\subfigure[]{\label{fig:p_k_inactive_3_level}\includegraphics[width=0.2\textwidth]{figures/p_k_3_levels.eps}}
+\hspace{0.05\textwidth}               
+%\subfigure[$p(f)$ group by total number friends.]{\label{fig:p_f_3_level}\includegraphics[width=0.35\textwidth]{fig/p_f_3_levels.eps}}
+\caption{\small Probability of departure as function of local properties, at different levels of active/inactive friend fraction and friend count (snapshot taken at time $t=$2011/1/1). in SN}
+\label{fig:p_k_3_level}
+%\vspace{-5pt}
+\end{figure*}
+
+\subsubsection{Predict the departure of user}
+Given a strong correlation between the probability of a user becoming inactive and the inactivity of his friends, the next question is, can we actually predict individuals's departures based on local properties? In this section, we explore the problem of modeling the departure of users using simple linear regression models and decision tree classifiers. In particular in this subsection we will focus exclusively on SN because we have a richer set of feature available.
+
+To start, we formalize our problem as a binary classification task in which class 1 is defined as consisting of those users who were active as of Jan 1st, 2011 ($t_0$) and departed within two months after $t_0$, and class 0 is defined as consisting of those who stayed active for two months after $t_0$. We then randomly sample 500K positive examples and negative examples separately, from all the users who were active at $t$. Note that among all examples, there are $90\%$ negative and only $10\%$ positive examples; our sampling scheme provides a more balanced distribution of examples of both classes. 
+
+We extract two sets of local features for each user:
+\begin{itemize}
+%\vspace{-8pt}
+
+	\item Neighborhood features. The local structural properties of the user's direct neighborhood, including the number of friends who already departed, the number of friends who are active, the number of friends who departed recently (six months prior to $t_0$), and the fraction of friends who departed recently.
+\vspace{-8pt}
+
+	\item Activity features. The properties reflecting user's participation to activities in the network, including the number of contents he received, the number of contents he sent, and the number of status updates.
+\end{itemize}
+
+To predict the departure of users, we train a simple decision tree (REPTree) classifier on our examples. Table \ref{table:performance} gives the performance of the classifier with different sets of features under 10-fold cross validation. 
+
+\begin{table}[t]
+	\small
+	\centering
+	\caption{ \small Predict user departure with decision tree}
+	\label{table:performance}
+	\begin{tabular}{c|c|c|c}
+	\hline
+	\emph{Feature} & \emph{Accuracy} & \emph{F1 pos} & \emph{ROC area}\\
+	\hline
+	Neighborhood & 0.694 & 0.694 & 0.755 \\
+	\hline
+	Activity & 0.730 & 0.735 & 0.801 \\
+	\hline
+	All & 0.755 & 0.761 & 0.833 \\
+	\hline
+	\end{tabular}
+\end{table}
+
+Table \ref{table:performance} shows that relying on only local features of individuals, the simple decision tree classifier can predict the departure of user with high accuracy ($75\%$ with all features, as compared to $50\%$ for always predicting one class). This result demonstrates a strong connection between user's local properties and the propensity of departure. Moreover, comparing across 3 sets of features, we see that although the activity features are more powerful, neighborhood features can also provide rather accurate insights on the departure of users. 
+
+The decision tree classifier demonstrates that local properties provide strong evidence to predict the departure of user. It also suggests that the activity features are more effective at predicting user departure. However, the decision trees we trained contain over a thousand nodes and thus is too complicated to illustrate how the local properties influence the probability of user departure. To better understand the effect of different features, we also fit the data with a logistic regression model that predicts the probability of departure. The model is constructed on 7 independent variable covering both neighborhood features and activity features, the results of the model is summarized in Table~\ref{table:logistic_regression_result}
+
+\begin{table}[t]
+\small
+	\centering
+	\small
+	\caption{\small Summary of logistic regression model on $p_{departure}$}
+	\small
+	\label{table:logistic_regression_result}
+	\begin{tabular}{c|r|l}
+	\hline
+	\emph{Feature} & \emph{Coefficient} & \emph{$p$ value} \\
+	\hline
+	1/(number of active friends) & 0.0579 & $<2e-16$ ***\\
+	\hline
+	fraction of active friends & -1.5340 & $<2e-16$ ***\\
+	\hline
+	number of friends left recently & 0.0067 & $<2e-16$ ***\\
+	\hline
+	fraction of friends left recently & -0.0020 & 0.0737 . \\
+	\hline
+	number of contents received & -0.0012 & $<2e-16$ *** \\
+	\hline
+	number of contents sent & 0.0000 & $1.28e-06$ *** \\
+	\hline
+	number of status updates & -0.0017 & $<2e-16$ *** \\
+	\hline
+	\end{tabular}
+	\normalsize
+\end{table}
+
+We evaluate the logistic regression model using 10-fold cross validation as well, and it only slightly under-performs the decision tree classifier, with the ROC area as 0.774. 
+
+The results of the regression model nicely confirm the descriptive results we showed previously, and quantify the effect of different variables on the departure probability. In particular, from Table~\ref{table:logistic_regression_result}, we see that the existence of active friends and continued activities, both decrease a user's tendency to depart while the number of friend who departed recently contribute to this tendency. We also notice that although most of the activity variables and the neighborhood variables have very high significance (very low p-value) in the estimated model, each unit of the fraction of active friends has the most substantial effect on the probability of user departure.
+
+%(TODO:(shaomei) Disucss more the results of logistic regression model)
+
+\subsection{Structural trends in network topology}
+\label{sec:global}
+
+\begin{figure*}[htb!]
+\centering
+\subfigure[active(SN)]{\label{fig:orkut_edge_active}\includegraphics[width=0.20\textwidth]{figures/edges_active.eps}}                \hspace{0.1\textwidth} 
+\subfigure[inactive(SN)]{\label{fig:orkut_edge_inactive}\includegraphics[width=0.20\textwidth]{figures/edges_inactive.eps}} \hspace{0.1\textwidth}
+\subfigure[semi-active(SN)]{\label{fig:orkut_edge_semi_active}\includegraphics[width=0.20\textwidth]{figures/edges_semi_active.eps}}\\
+\subfigure[active(Dblp)]{\label{fig:dblp_edge_active}\includegraphics[width=0.20\textwidth]{figures/dblp_edges_active.eps}}                 \hspace{0.1\textwidth}
+\subfigure[inactive(Dblp)]{\label{fig:dblp_edge_inactive}\includegraphics[width=0.20\textwidth]{figures/dblp_edges_inactive.eps}} \hspace{0.1\textwidth}
+\subfigure[semi-active(Dblp)]{\label{fig:dblp_edge_semi_active}\includegraphics[width=0.20\textwidth]{figures/dblp_edges_semi_active.eps}}
+\caption{Distribution of edges, indicated by the ratio of actual number of edges over the expected number of edges (formed in random process).}
+\label{fig:edges}
+\end{figure*}
+
+We explore the overall structural changes that occur in the network as a result of the departure of several users, as well as the steady arrival of new users. Topological changes have been studied in the context of new nodes arriving but here we pay specific attention to how the global structure changes as a result of the departure or decline of user activities based on their local neighborhoods. 
+
+To get a sense of the how the structure of the network evolves over time, we
+first study the distribution of edges among active and inactive
+nodes. Specially, we look at the edges between active nodes (Figure~\ref{fig:orkut_edge_active} and Figure~\ref{fig:dblp_edge_active}), edges between
+inactive nodes (Figure~\ref{fig:orkut_edge_inactive} and Figure~\ref{fig:dblp_edge_inactive}), and the edges across active and inactive nodes (Figure~\ref{fig:orkut_edge_semi_active} and Figure~\ref{fig:dblp_edge_semi_active}), and plot the
+ratio between the actual number of edges over the expected value over time.
+%
+%Shaomei: Silvio, Atish, I am not sure how the expected number is calcuated here..can you add this part?
+Here, the expected number of edges is computed based on the total number of edges, $|E|$, in the network and the number of nodes in each of the active and inactive sets. The expected number of edges of any type is the expected number of edges if the the total $|E|$ edges are placed between randomly chosen pairs of nodes.
+
+
+%The plot for the number of active, inactive, and total number of nodes in the networks is shown in Figure~\ref{fig:nodes}. The corresponding plot for the total number of active edges, inactive edges, and semi-active edges (one end node active and other inactive) are shown in Figure~\ref{fig:edges}. The corresponding expected numbers, as measured based on the overall number of edges and number of nodes, is also shown in the same figure. 
+
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width = 1.0\linewidth]{fig/nodes.eps}
+%\caption{Nodes}
+%\label{fig:nodes}
+%\end{figure}
+
+
+%\begin{figure}[h]
+%\centering
+%\includegraphics[height=60mm,width=60mm]{fig/edges.eps}
+%\caption{Edges}
+%\label{fig:edges}
+%\end{figure}
+
+To understand the overall structure among the sets of active and inactive nodes, we study the density and conductance of these two sub-networks in the rest of this section.
+
+Figure~\ref{fig:density} and plots the overall density of the active (\ref{fig:density_active} and \ref{fig:dblp_density_active}) and inactive (\ref{fig:density_inactive} and \ref{fig:dblp_density_inactive}) set of nodes, as a function of time. For comparison, we also plot the {\em expected} densities of the respective sets, as determined by the number of active and inactive nodes and edges and the degree distributions. 
+
+We here define density of a set of nodes(or average induced degree) as the number of edges between them divided by the number of nodes; i.e. for a set of nodes $S$, $density(S) = \frac{|E(S, S)|}{|S|}$ (here $E(S, S)$ contains all edges $(u, v)$ such that $u, v\in S$). Therefore, the density of set $S$ is half of the average induced degree of the set of nodes in $S$. In order to compare the the density we observe for the set of active nodes and the set of inactive nodes, we define an {\em expected} density for each of these components. The expected density of the inactive set of nodes could be computed simply as the density of the entire graph times the fraction of inactive nodes. 
+
+However, we even use a stronger baseline to see if the trends we observe are a result of a trend more than just that of degrees. Therefore, we compute expected density subject to the overall degree constraints on active and inactive nodes as follows. 
+
+Consider each edge as occupying two slots (end points), each slot being in either $S_a$ (the active set of nodes), or $S_i$ (the inactive set of nodes); therefore $S_a\cup S_i = V(G)$. Let the fraction of all these slots that are in $S_i$ be $P_i$ (which is the number of edges going across the active and inactive component plus twice the number of edges in the inactive component); therefore the number of such slots occupied in $S_a$ is $P_a = (1-P_i)$. Suppose that all the $|E|$ edges were randomly placed in two slots each, with probabilities determined such that in expectation we respect $P_i$ and $P_a$, then we consider the induced density of this process as the expected density (for respective components). Notice that this is a more stringent baseline for our comparison. Therefore, an edge is contained in the inactive component with probability $P_i^2$ and so the expected density of the inactive set is $(|E|P_i^2)/|S_i|$. Similarly the expected density of the active component can be computed. 
+
+\begin{figure}[htb!]
+\centering
+\small
+\subfigure[active]{\label{fig:density_active}\includegraphics[width=0.20\textwidth]{figures/density_active.eps}}           \hspace{0.03\textwidth}     
+\subfigure[inactive]{\label{fig:density_inactive}\includegraphics[width=0.20\textwidth]{figures/density_inactive.eps}}\\
+\vspace{-5pt}
+\subfigure[active]{\label{fig:dblp_density_active}\includegraphics[width=0.20\textwidth]{figures/dblp_density_active.eps}}     \hspace{0.03\textwidth}           
+\subfigure[inactive]{\label{fig:dblp_density_inactive}\includegraphics[width=0.20\textwidth]{figures/dblp_density_inactive.eps}}
+\caption{Density of the active and inactive subnetworks}
+\label{fig:density}
+\end{figure}
+
+%\begin{figure}[h]
+%\centering
+%\includegraphics[height=60mm,width=60mm]{fig/density.eps}
+%\caption{Density}
+%\label{fig:density}
+%\end{figure}
+
+The plots on these densities in Figure~\ref{fig:density} shows that the density
+of the active set $density(S_a)$ increases rapidly with increase in
+time. Comparing this with the plot on distribution of edges in
+Figures~\ref{fig:edges}, we see that as the number of inactive nodes starts
+increasing, the number of edges in the active set, and correspondingly its
+density, becomes much higher than the density of the inactive set of nodes. We
+notice that the density of the active set is only marginally higher than its
+expected density. However, for inactive nodes, the density is significantly
+higher than the expected density, even conditioned on the degree
+distribution. This is only explainable by the fact that the decision to depart
+is correlated across edges, as supported by our local analysis; the nodes that
+are departing are still probably at the periphery of the network (since the
+inactive set has much lower density than the active set), but these inactive
+nodes continue to be internally well-connected because of a higher-than-expected
+density. This strengthens the evidence from previous sections that a node's
+likelihood to become inactive is influenced by the extent of neighboring
+inactivity.
+
+After learning about the connectedness of the active/inactive subnetwork separately, we now switch our gear to look at the connection of each subnetwork to the rest of social graph. We use conductance to measure the amount of possible connections between different sets of nodes in a network. 
+
+\begin{figure}[htb!]
+\centering
+\subfigure[SN]{\label{fig:density_active}\includegraphics[width=0.20\textwidth]{figures/conductance.eps}}                \hspace{0.03\textwidth}
+\subfigure[Dblp]{\label{fig:dblp_density_inactive}\includegraphics[width=0.20\textwidth]{figures/dblp_conductance.eps}}
+\caption{Conductance of the active and inactive sets}
+\label{fig:conductance}
+\end{figure}
+
+Conductance of a set of nodes $S$, $\phi(s)$ is measured as $\phi(S) = \frac{|E(S, V(G)\S)|}{|E(S)|}$. Here $E(S, V(G)\S)$ contains all edges $(u, v)$ such that $u\in S, v\notin S$, and $|E(S)| = 2|E(S, S)| + |E(S, V(G)\S)|$. So notice that conductance is always less than $1$, and any set with more than half its edges going across to the complement set has a conductance of more than $\frac{1}{3}$. We again measure the conductance of sets $S_a$ and $S_i$ through time and compare with their expected conductances (see Figure~\ref{fig:conductance}). The computation of expected conductance is also performed in a similar manner to as described previously for expected density. 
+
+We see a similar trend in conductance in Figure~\ref{fig:conductance} as seen for densities. The conductance of the active set of nodes $S_a$, $\phi(S_a)$ remains somewhat less than the conductance expected for this set. This suggests that there are somewhat fewer edges going across from $S_a$ to the inactive set $S_i$ and far more edges within $S_a$ itself, than would be expected. The conductance plots for the set of inactive nodes however is again more contrasting. $\phi(S_i)$ remains far lower than the expected conductance. Nodes that are becoming inactive continue to have many more edges within, than one would expect. This clearly suggests that the inactive set of nodes are influencing neighbors to inactivity. Yet again, the absolute conductance value still suggests that nodes at the periphery of the network are more susceptible to becoming inactive. 
+
+The takeaway from these plots are two fold. Firstly, of course, these trends
+corroborate our findings from the previous sections suggesting that there is a
+strong influence of inactivity on its neighborhood and that nodes are much more
+likely to depart from the network if they are surrounded by inactive
+nodes. However, these plots on global measures such as density and conductance
+also suggest a picture of the evolving network. With the active set's density
+being much higher than the inactive, and the inactive set showing higher than
+expected density and lower than average conductance, we are led to believe that
+nodes in the {\em core} of the network are much more likely to survive, while
+nodes at the periphery are more susceptible to departure.
+
+%, and may influence their neighborhood communities towards inactivity.
+% 
+%% It appears that the spread and influence of inactivity is slowly resulting in
+%% the network peeling away from outside; however, the central core that is dense
+%% and has low conductance (i.e. tightly knit within and sparsely connected
+%% outside), is far more resilient to spreading inactivity. 
+%% Perhaps peripheral nodes are more easily lured away from the network by a
+%% combination of external forces and neighboring inactivity. At the other end, the
+%% very well-connected central active set seems to survive and densify through
+%% time, despite widespread departure of nodes.
+
+
+
+
+\part{Answer social science questions with social media data}
+
+Information diffusion is a long term intersting problem in social science. Problems and small lit-review.
+
+
+Online social media data provide us for the first time a more or less complete corpus to examine these social phenomenons in details. 
+
+
+To handle data at this scale, we apply mixed methods and develop new tools (such as MR). 
+
+By finding pattern in these large-scale dataset, we shed light on some long standing social science questions. 
+
+Need to bear in mind that what we have found might be characteristics for social media, and might not be general truth in the offline environment. 
+
+ZZZZZ: future work, compare results with other social media or offline data.
+
+
+A better understanding of diffusion dynamics can contribute to some interesting long-term social science questions, such as the pattern of communications, diffusion of innovation, unfolding of social movements. Today¡¯s user behavior data in social media can help us examine and possibly answer these questions quantitatively at a very large scale.
+
+\chapter{Lasswell's Maxim}
+
+\chapter{Two-step flow}
+
+\chapter{Social movement}
+
+
+\part{ZZZZZ: Previous structure...possibly move to intro}
 \chapter{the interaction between people and information}
 
 In~\cite{Wu-Twitter-2011}, we studied the production, flow, and consumption of information in Twitter. As suggested in previous research in public communications, we classified users into 5 categories (celebrities, bloggers, mass media, organizations, and others) and found a striking concentration of attention on a small number of ``elite'' users on Twitter, as well as a significant homophily within categories. We also applied the classical ``two-step flow'' theory of communications in the context of social media sites such as Twitter. Our results confirmed that there are a large number of intermediary users who actively filter and disseminate information from media to the masses, and the composition of intermediaries is highly diverse. We also examined the lifespan and content of URLs broadcasted by different categories of users. We found that although content picked up by bloggers tends to stimulate a more persistent interest, the longevity of information is determined not by diffusion process, but by many different users independently rediscovering the same content.
@@ -1039,6 +2022,9 @@ In this paper, we compared the dynamics of user arrival and departure in online 
 \chapter{Social media in Arab Spring Movement}
     Joining social media data with real world events, we are able to study one of the most interesting (and also the most difficult) parts in media communication research (Lasswell's maxim): the effect of information. One of my ongoing projects is to study the role of social media in social movements, in order to understand how the propagation of information is leading or reflecting societal changes. We have collected a large number of tweets and twitter networks related to big social movements (i.e., Middle East Revolution, Occupy WallStreet Movement). Using effective algorithms for community detection, hub detection, trend detection, and opinion mining, we will be able to identify the informal structure of massive communication networks for social movements and study the diffusion of ideology and behaviors within and across organizational/geographical boundaries.
 
+\section{Background}
+
+
 
 \section{Data}
 To collect a substantial set of users and their tweets from the Middle East area in the period of the recent social movements, we first identified a set of countries of interest, including Tunisia, Egypt, Libya, Bahrain, Iran, Iraq, Israel, Algeria, Morocco, Saudi Arabia, Kuwait, Yemen, United Arab Emirates, Palenstine, Quatar, Oman, Jordan, Cyprus, Syria, and Lebanon. For each country, we used Yahoo Maps APIs to get the list of cities and towns in that country, together with the geographical centroid point for each city/town, in the form of (latitude, longitude).
@@ -1060,7 +2046,47 @@ In the end, we crawled the maximal available history of tweets generated by thes
 
 Here is a breakdown of the amount of data we collected from each country.
 
+\begin{table}
+\centering
+%\begin{scriptsize}
+\caption{Summary of Twitter data collected from Middle East countries}
+\label{tab:arab_spring_data_summary}
+\begin{tabular}{|c|r|r|}
+\hline
+Country 		& number of users	& number of tweets \\ \hline
+Egypt		& $30,270$	& $6,451,149$ \\ \hline
+Kuwait	& $23,475$ 	& $9,526,023$ \\ \hline 
+Saudi Arabia & $16,147$ 	& $7,202,700$ \\ \hline
+Israel	& $11,292$ & $3,063,959$ \\ \hline 
+United Arab Emirates & $9,536$ & $4,147,190$ \\ \hline
+Oman	& $3,617$ & $1,348,999$ \\ \hline
+Bahrain & $3,018$ & $793,595$ \\ \hline
+Jordan & $2,535$ & $375,352$ \\ \hline
+Morocco & $2,114$ & $520,618$ \\ \hline
+Iran & $1,983$ & $1,111,373$ \\ \hline
+Lebanon & $1,901$ & $395,609$ \\ \hline
+Tunisia & $1,680$ & $410,628$ \\ \hline
+Iraq & $1,132$ & $277,080$ \\ \hline
+Qatar & $1,083$ & $502,199$ \\ \hline
+Syria & $631$ & $123,907$ \\ \hline
+Cyprus & $556$ & $180,394$ \\ \hline
+Turkey & $528$ & $158,832$ \\ \hline 
+Algeria & $507$ & $109,864$ \\ \hline
+Libya & $337$ & $91,032$ \\ \hline
+Yemen & $319$ & $66,884$ \\ \hline
+total & 112,661 & 36,857,387 \\ \hline
+\end{tabular}
+%\end{scriptsize}
+\end{table}
+
+
+ZZZZZ: Talk about data sparseness issue. For country specific study, we use only a few countries that have high enough data density.
+
+
 To compare the diffusion of protest and non-protest content on Twitter, we first identify protest-related tweets. We say a tweet is related to protest if it contains at least one protest hashtag .  Protest hashtags are hand-picked by political scientists. However, as there are hundreds of thousands of  hashtags in our dataset, it is not feasible for political scientists to manually label all the hashtags. To effectively identify protest-related hashtags while maintaining a high recall, we narrow the pool of hashtags to be examined based on two metrics: (1) the volume of tweets containing the hashtag; and (2) the bursty-ness (as defined by Kleinberg 2004 KDD) of the hashtag occurrence. In this way, we narrow the scope down to only the top 1000 most frequently used hashtags and the top 1000 most bursty hashtags. We then have the experts to only go through those 2000 hashtags, and are able to identify about 500 protest-related hashtags among them.
+
+ZZZZZ: more about the selection of protest-related hashtags introduces false positive and true negatives.
+
 
 \section{Method and Results}
 As shown in the previous section, there had been a substantial amount of protest content introduced by Egyptian users on Twitter, even before Jan 25, 2011, when the first big protests took place in Tahrir Square, Cairo. Who were V those foresighted users? Were they planning and organizing the protests? Were  they qualitatively different than other users on Twitter? In this section, we will investigate these questions, focusing on the relationship between the status of users and their earliness at participating in the protest activities on Twitter.
@@ -1075,6 +2101,9 @@ By analyzing Twitter activity in Middle East area during the Arab Spring movemen
 For the future work, we want to extend our study to the diffusion of protest content among countries and communities through social media. Another interesting direction is to understand how mass media (newspaper, TV, radio) and social media interact and influence each other in social movements.
 
 This work presents one of the largest studies on the role of social media in the Arab Spring movement. Using over 2 million tweets generated by 110 thousand users in 11 Middle East countries during early 2011, we depict the landscape of aggregated Twitter usage in those countries as the revolution unfolded. Our results suggest that social media has been used to both lead and reflect real world protest activities. Compared to non-protest-related content on Twitter, we find that protest-related content travels directionally from central users to peripheral users, and the adoption of protest-related content can be modeled by a complex contagion process. 
+
+\section{Future work}
+Join with Facebook results and news media data.
 
 \chapter{Conclusion}
     In summary, I am deeply intrigued by the developing characteristics of information diffusion in online social media. Thanks to the Internet and social media technologies, I believe that we are heading towards a more democratic era where revolutions can be started by ordinary people and the power to change is in the hands of the masses. As part of this process, social media sites such as Facebook and Twitter have also evolved from friendship networks to a much broader platform for organizing social/political changes and communicating with various communities. I hope my work can help understand this movement and foster the effective flow of information in the society.
