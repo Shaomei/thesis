@@ -2,8 +2,8 @@
 \contentsline {section}{Dedication}{iv}
 \contentsline {section}{Acknowledgements}{v}
 \contentsline {section}{Table of Contents}{vi}
-\contentsline {section}{List of Tables}{ix}
-\contentsline {section}{List of Figures}{x}
+\contentsline {section}{List of Tables}{vii}
+\contentsline {section}{List of Figures}{viii}
 \contentsline {part}{I\hspace {1em}Introduction and Background}{1}
 \contentsline {chapter}{\numberline {1}Introduction}{2}
 \contentsline {section}{\numberline {1.1}The Influencer Problem}{3}
@@ -75,9 +75,17 @@
 \contentsline {chapter}{\numberline {12}Diffusion without active dissemination}{82}
 \contentsline {chapter}{\numberline {13}Social media in Arab Spring Movement}{83}
 \contentsline {section}{\numberline {13.1}Background}{83}
-\contentsline {section}{\numberline {13.2}Data}{83}
-\contentsline {section}{\numberline {13.3}Method and Results}{87}
-\contentsline {section}{\numberline {13.4}Conclusion}{87}
-\contentsline {section}{\numberline {13.5}Future work}{89}
-\contentsline {chapter}{\numberline {14}Conclusion}{90}
-\contentsline {chapter}{\numberline {A}Chapter 1 of appendix}{91}
+\contentsline {section}{\numberline {13.2}Data}{85}
+\contentsline {section}{\numberline {13.3}Method and Results}{88}
+\contentsline {subsection}{\numberline {13.3.1}Identify Protest content on Twitter}{88}
+\contentsline {subsection}{\numberline {13.3.2}Global}{90}
+\contentsline {subsubsection}{Temporal Patterns}{90}
+\contentsline {subsubsection}{Top-down}{90}
+\contentsline {subsubsection}{Outside-in}{91}
+\contentsline {subsection}{\numberline {13.3.3}Local}{91}
+\contentsline {subsection}{\numberline {13.3.4}Attention Network}{91}
+\contentsline {subsection}{\numberline {13.3.5}Triangle effect}{92}
+\contentsline {section}{\numberline {13.4}Conclusion}{92}
+\contentsline {section}{\numberline {13.5}Future work}{93}
+\contentsline {chapter}{\numberline {14}Conclusion}{94}
+\contentsline {chapter}{\numberline {A}Chapter 1 of appendix}{95}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2012.6.13)  14 JUN 2012 16:52
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2012.6.13)  15 JUN 2012 16:14
 entering extended mode
 **diffusion.tex
 ("C:\Users\Shaomei\Documents\My Dropbox\cu_thesis-2.9\diffusion.tex"
@@ -242,41 +242,41 @@ LaTeX Warning: Label `fig:dblp_density_inactive' multiply defined.
 LaTeX Warning: Label `sub@fig:dblp_density_inactive' multiply defined.
 
 )
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 45.
-LaTeX Font Info:    Try loading font information for OML+txmi on input line 45.
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 49.
+LaTeX Font Info:    Try loading font information for OML+txmi on input line 49.
 
  (C:\Users\Shaomei\AppData\Roaming\MiKTeX\2.8\tex\latex\txfonts\omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 45.
-LaTeX Font Info:    Try loading font information for OMS+txsy on input line 45.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 49.
+LaTeX Font Info:    Try loading font information for OMS+txsy on input line 49.
 
 
 (C:\Users\Shaomei\AppData\Roaming\MiKTeX\2.8\tex\latex\txfonts\omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 45.
-LaTeX Font Info:    Try loading font information for OMX+txex on input line 45.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 49.
+LaTeX Font Info:    Try loading font information for OMX+txex on input line 49.
 
 
 (C:\Users\Shaomei\AppData\Roaming\MiKTeX\2.8\tex\latex\txfonts\omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 45.
-LaTeX Font Info:    Try loading font information for U+txexa on input line 45.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 49.
+LaTeX Font Info:    Try loading font information for U+txexa on input line 49.
 
 (C:\Users\Shaomei\AppData\Roaming\MiKTeX\2.8\tex\latex\txfonts\utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Try loading font information for OT1+ppl on input line 45.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 49.
 
 ("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\psnfss\ot1ppl.fd"
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
@@ -286,12 +286,12 @@ Title page
 
 ]
 Copyleft page
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 48.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 52.
 ("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\psnfss\omsppl.fd"
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 48.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 52.
  [2
 
 ]
@@ -301,7 +301,7 @@ Abstract
 ]
 Vita
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 56.
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 60.
 [3
 
 
@@ -310,58 +310,26 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
 ] [5
 
 
-] ("C:\Users\Shaomei\Documents\My Dropbox\cu_thesis-2.9\diffusion.toc"
-LaTeX Font Info:    Try loading font information for OT1+txr on input line 1.
- (C:\Users\Shaomei\AppData\Roaming\MiKTeX\2.8\tex\latex\txfonts\ot1txr.fd
-File: ot1txr.fd 2000/12/15 v3.1
-)
-LaTeX Font Info:    Try loading font information for U+txmia on input line 1.
-
-(C:\Users\Shaomei\AppData\Roaming\MiKTeX\2.8\tex\latex\txfonts\utxmia.fd
-File: utxmia.fd 2000/12/15 v3.1
-)
-LaTeX Font Info:    Try loading font information for U+txsya on input line 1.
-
-(C:\Users\Shaomei\AppData\Roaming\MiKTeX\2.8\tex\latex\txfonts\utxsya.fd
-File: utxsya.fd 2000/12/15 v3.1
-)
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 1.
-
-(C:\Users\Shaomei\AppData\Roaming\MiKTeX\2.8\tex\latex\txfonts\utxsyb.fd
-File: utxsyb.fd 2000/12/15 v3.1
-)
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 1.
-
-(C:\Users\Shaomei\AppData\Roaming\MiKTeX\2.8\tex\latex\txfonts\utxsyc.fd
-File: utxsyc.fd 2000/12/15 v3.1
-)
-LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 7.
-
-[6
-
-
-] [7])
+] ("C:\Users\Shaomei\Documents\My Dropbox\cu_thesis-2.9\diffusion.toc")
 \tf@toc=\write3
- [8] ("C:\Users\Shaomei\Documents\My Dropbox\cu_thesis-2.9\diffusion.lot")
+ [6
+
+
+] ("C:\Users\Shaomei\Documents\My Dropbox\cu_thesis-2.9\diffusion.lot")
 \tf@lot=\write4
- [9
+
+[7
 
 
-] ("C:\Users\Shaomei\Documents\My Dropbox\cu_thesis-2.9\diffusion.lof"
-Underfull \hbox (badness 1147) in paragraph at lines 41--41
- [][][] []\OT1/ppl/m/n/10.95 Probability of de-par-ture as func-tion of dif-fer
--ent lo-cal prop-er-ties. 
- []
-
-[10
-
-
-])
+] ("C:\Users\Shaomei\Documents\My Dropbox\cu_thesis-2.9\diffusion.lof")
 \tf@lof=\write5
- [11]
+
+[8
+
+
+]
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 76.
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 80.
  [1
 
 
@@ -369,37 +337,70 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <24.88> not available
 Chapter 1.
 [2
 
-] [3]
+]
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 105.
+ [3]
 
 LaTeX Warning: Citation `Leskovec-Newscycle-2009' on page 4 undefined on input 
-line 111.
+line 115.
 
-[4] [5]
+[4]
+LaTeX Font Info:    Try loading font information for OT1+txr on input line 139.
+
+ (C:\Users\Shaomei\AppData\Roaming\MiKTeX\2.8\tex\latex\txfonts\ot1txr.fd
+File: ot1txr.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Try loading font information for U+txmia on input line 139.
+
+
+(C:\Users\Shaomei\AppData\Roaming\MiKTeX\2.8\tex\latex\txfonts\utxmia.fd
+File: utxmia.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Try loading font information for U+txsya on input line 139.
+
+
+(C:\Users\Shaomei\AppData\Roaming\MiKTeX\2.8\tex\latex\txfonts\utxsya.fd
+File: utxsya.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 139.
+
+
+(C:\Users\Shaomei\AppData\Roaming\MiKTeX\2.8\tex\latex\txfonts\utxsyb.fd
+File: utxsyb.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 139.
+
+
+(C:\Users\Shaomei\AppData\Roaming\MiKTeX\2.8\tex\latex\txfonts\utxsyc.fd
+File: utxsyc.fd 2000/12/15 v3.1
+)
+[5]
 Chapter 2.
 [6
 
 ] [7] [8] [9]
 
 LaTeX Warning: Citation `Suri-Triangle-2011' on page 10 undefined on input line
- 197.
+ 201.
 
 [10] [11
 
 ] [12]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--237
+Underfull \hbox (badness 10000) in paragraph at lines 241--241
 [][]\OT1/ppl/m/n/10 At the time of this study, the data was free to down-load f
 rom
  []
 
 
-LaTeX Warning: Citation `kwak_10' on page 13 undefined on input line 237.
+LaTeX Warning: Citation `kwak_10' on page 13 undefined on input line 241.
 
 [13
 
 ]
-Underfull \hbox (badness 1259) in paragraph at lines 242--247
+Underfull \hbox (badness 1259) in paragraph at lines 246--251
 []\OT1/ppl/m/n/12 In ad-di-tion, we were in-ter-ested in the con-tent that was 
 be-ing shared---
  []
@@ -407,10 +408,10 @@ be-ing shared---
 [14]
 
 LaTeX Warning: Reference `sec:introduction' on page 15 undefined on input line 
-270.
+274.
 
 [15]
-Underfull \hbox (badness 2865) in paragraph at lines 304--314
+Underfull \hbox (badness 2865) in paragraph at lines 308--318
 \OT1/ppl/m/n/12 kikolani, smart-blog-gerz, El-e-ment321, bran-dona-cox, re-mark
 -ablog-ger,
  []
@@ -431,7 +432,7 @@ pe eps)
 
 <figures/mostRTing_user_outflow_to_random_other_users.eps> [23]
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 651.
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 655.
 File: figures/visualization_500K_tweets.eps Graphic file (type eps)
 
 <figures/visualization_500K_tweets.eps> [24]
@@ -442,7 +443,7 @@ Chapter 4.
 File: figures/rt_topUsers_500K.eps Graphic file (type eps)
  <figures/rt_topUsers_500K.eps> [26]
 
-LaTeX Warning: Citation `bakshy_11' on page 27 undefined on input line 768.
+LaTeX Warning: Citation `bakshy_11' on page 27 undefined on input line 772.
 
 [27]
 File: figures/nyt_url_cat.eps Graphic file (type eps)
@@ -473,35 +474,35 @@ File: figures/domains_breakdown_longlived_urls.eps Graphic file (type eps)
 
 <figures/domains_breakdown_longlived_urls.eps> [35] [36]
 
-LaTeX Warning: Citation `Jaewon:2011' on page 37 undefined on input line 1032.
+LaTeX Warning: Citation `Jaewon:2011' on page 37 undefined on input line 1036.
 
 
-LaTeX Warning: Citation `Shaomei:2011' on page 37 undefined on input line 1036.
+LaTeX Warning: Citation `Shaomei:2011' on page 37 undefined on input line 1040.
 
 
 [37]
 
-LaTeX Warning: Citation `Shaomei:2011' on page 38 undefined on input line 1060.
+LaTeX Warning: Citation `Shaomei:2011' on page 38 undefined on input line 1064.
 
 
 
-LaTeX Warning: Citation `Shaomei:2011' on page 38 undefined on input line 1062.
+LaTeX Warning: Citation `Shaomei:2011' on page 38 undefined on input line 1066.
 
 
 File: figures/tu_distribution.eps Graphic file (type eps)
 <figures/tu_distribution.eps> [38]
 
-LaTeX Warning: Citation `Shaomei:2011' on page 39 undefined on input line 1074.
+LaTeX Warning: Citation `Shaomei:2011' on page 39 undefined on input line 1078.
 
 
 File: figures/tu_rt_tweet.eps Graphic file (type eps)
 <figures/tu_rt_tweet.eps> [39]
 
-LaTeX Warning: Citation `Jaewon:2011' on page 40 undefined on input line 1133.
+LaTeX Warning: Citation `Jaewon:2011' on page 40 undefined on input line 1137.
 
 File: figures/class_centroids.eps Graphic file (type eps)
 <figures/class_centroids.eps> [40]
-Overfull \hbox (26.47209pt too wide) in paragraph at lines 1151--1152
+Overfull \hbox (26.47209pt too wide) in paragraph at lines 1155--1156
 [][]\OT1/ppl/m/n/12 Header. The text in the header of HTML, within tags ``$\OML
 /txmi/m/it/12 <$\OT1/ppl/m/n/12 title$\OML/txmi/m/it/12 >$\OT1/ppl/m/n/12 '',``
 $\OML/txmi/m/it/12 <$\OT1/ppl/m/n/12 description$\OML/txmi/m/it/12 >$\OT1/ppl/m
@@ -509,65 +510,65 @@ $\OML/txmi/m/it/12 <$\OT1/ppl/m/n/12 description$\OML/txmi/m/it/12 >$\OT1/ppl/m
  []
 
 [41]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 1178
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 1182
 .
  ("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) [42]
 
-LaTeX Warning: Citation `liwc' on page 43 undefined on input line 1219.
+LaTeX Warning: Citation `liwc' on page 43 undefined on input line 1223.
 
 [43]
 File: figures/liwc_distribution.eps Graphic file (type eps)
  <figures/liwc_distribution.eps>
-Overfull \hbox (50.58878pt too wide) in paragraph at lines 1225--1226
+Overfull \hbox (50.58878pt too wide) in paragraph at lines 1229--1230
  [][][] 
  []
 
 [44]
 File: figures/liwc_trends.eps Graphic file (type eps)
  <figures/liwc_trends.eps>
-Overfull \hbox (50.58878pt too wide) in paragraph at lines 1242--1243
+Overfull \hbox (50.58878pt too wide) in paragraph at lines 1246--1247
  [][][] 
  []
 
 
-LaTeX Warning: Citation `Berger:10' on page 45 undefined on input line 1250.
+LaTeX Warning: Citation `Berger:10' on page 45 undefined on input line 1254.
 
 
-LaTeX Warning: Citation `Hansen:11' on page 45 undefined on input line 1250.
+LaTeX Warning: Citation `Hansen:11' on page 45 undefined on input line 1254.
 
 
-LaTeX Warning: Citation `Berger:10' on page 45 undefined on input line 1250.
+LaTeX Warning: Citation `Berger:10' on page 45 undefined on input line 1254.
 
 [45]
 
-LaTeX Warning: Citation `Blei:03' on page 46 undefined on input line 1273.
+LaTeX Warning: Citation `Blei:03' on page 46 undefined on input line 1277.
 
 [46]
 File: figures/topics_distribution.eps Graphic file (type eps)
  <figures/topics_distribution.eps>
-Overfull \hbox (50.58878pt too wide) in paragraph at lines 1293--1294
+Overfull \hbox (50.58878pt too wide) in paragraph at lines 1297--1298
  [][][] 
  []
 
 [47]
 
 LaTeX Warning: Citation `Kleinberg:2004' on page 48 undefined on input line 134
-4.
+8.
 
 [48]
 
-LaTeX Warning: Citation `Kleinberg:2004' on page 49 undefined on input line 138
-6.
+LaTeX Warning: Citation `Kleinberg:2004' on page 49 undefined on input line 139
+0.
 
 
-LaTeX Warning: Citation `Kleinberg:2004' on page 49 undefined on input line 138
-6.
+LaTeX Warning: Citation `Kleinberg:2004' on page 49 undefined on input line 139
+0.
 
 [49] [50]
 
-LaTeX Warning: Citation `Shaomei:2011' on page 51 undefined on input line 1396.
+LaTeX Warning: Citation `Shaomei:2011' on page 51 undefined on input line 1400.
 
 
 [51]
@@ -599,37 +600,37 @@ File: figures/dblp_friend_random_cdf_gap.eps Graphic file (type eps)
 <figures/dblp_friend_random_cdf_gap.eps>
 
 LaTeX Warning: Citation `Backstrom:2006' on page 57 undefined on input line 161
-5.
+9.
 
 [57]
 File: figures/friend_signup_count_dist.eps Graphic file (type eps)
  <figures/friend_signup_count_dist.eps>
-Underfull \hbox (badness 10000) in paragraph at lines 1636--1636
+Underfull \hbox (badness 10000) in paragraph at lines 1640--1640
 []\OT1/ppl/m/n/10 (a)
  []
 
 File: figures/friend_signup_frac_dist.eps Graphic file (type eps)
 <figures/friend_signup_frac_dist.eps>
-Underfull \hbox (badness 10000) in paragraph at lines 1637--1637
+Underfull \hbox (badness 10000) in paragraph at lines 1641--1641
 [][]\OT1/ppl/m/n/10 (b) Frac-
  []
 
 File: figures/dblp_friend_signup_count_dist.eps Graphic file (type eps)
 <figures/dblp_friend_signup_count_dist.eps>
-Underfull \hbox (badness 10000) in paragraph at lines 1639--1639
+Underfull \hbox (badness 10000) in paragraph at lines 1643--1643
 []\OT1/ppl/m/n/10 (c)
  []
 
 File: figures/dblp_friend_signup_frac_dist.eps Graphic file (type eps)
 <figures/dblp_friend_signup_frac_dist.eps>
-Underfull \hbox (badness 10000) in paragraph at lines 1640--1640
+Underfull \hbox (badness 10000) in paragraph at lines 1644--1644
 [][]\OT1/ppl/m/n/10 (d) Frac-
  []
 
 [58]
 
-LaTeX Warning: Citation `Backstrom:2006' on page 59 undefined on input line 165
-7.
+LaTeX Warning: Citation `Backstrom:2006' on page 59 undefined on input line 166
+1.
 
 [59]
 File: figures/p_k_active_curves.eps Graphic file (type eps)
@@ -648,12 +649,12 @@ File: figures/p_r_curves.eps Graphic file (type eps)
  <figures/p_r_curves.eps>
 
 LaTeX Warning: Citation `Backstrom:2006' on page 60 undefined on input line 172
-5.
+9.
 
 [60]
 
-LaTeX Warning: Citation `Backstrom:2006' on page 61 undefined on input line 172
-7.
+LaTeX Warning: Citation `Backstrom:2006' on page 61 undefined on input line 173
+1.
 
 [61] [62] [63]
 File: figures/p_f_active_3_levels.eps Graphic file (type eps)
@@ -671,7 +672,7 @@ File: figures/edges_inactive.eps Graphic file (type eps)
 File: figures/edges_semi_active.eps Graphic file (type eps)
 
 <figures/edges_semi_active.eps>
-Underfull \hbox (badness 10000) in paragraph at lines 1853--1853
+Underfull \hbox (badness 10000) in paragraph at lines 1857--1857
 [][]\OT1/ppl/m/n/10 (c) semi-
  []
 
@@ -682,7 +683,7 @@ File: figures/dblp_edges_inactive.eps Graphic file (type eps)
 File: figures/dblp_edges_semi_active.eps Graphic file (type eps)
 
 <figures/dblp_edges_semi_active.eps>
-Underfull \hbox (badness 10000) in paragraph at lines 1856--1856
+Underfull \hbox (badness 10000) in paragraph at lines 1860--1860
 [][]\OT1/ppl/m/n/10 (f) semi-
  []
 
@@ -724,14 +725,14 @@ Chapter 8.
 Chapter 9.
 
 LaTeX Warning: Citation `Wu-Twitter-2011' on page 79 undefined on input line 20
-05.
+09.
 
 [79
 
 ]
 Chapter 10.
 
-LaTeX Warning: Citation `Wu-ICWSM-2011' on page 80 undefined on input line 2011
+LaTeX Warning: Citation `Wu-ICWSM-2011' on page 80 undefined on input line 2015
 .
 
 [80
@@ -746,22 +747,32 @@ Chapter 12.
 
 ]
 Chapter 13.
+
+LaTeX Warning: Citation `IPTPS' on page 83 undefined on input line 2032.
+
 [83
 
-]
-Underfull \hbox (badness 1178) in paragraph at lines 2034--2035
+] [84]
+Underfull \hbox (badness 1178) in paragraph at lines 2114--2115
 \OT1/ppl/m/n/12 seeds, and re-trieved the pro-files of all the seeds, and all t
 he neigh-bors
  []
 
-[84] [85] [86] [87] [88] [89]
+[85] [86] [87] [88]
+
+LaTeX Warning: Reference `' on page 89 undefined on input line 2189.
+
+
+LaTeX Warning: Reference `' on page 89 undefined on input line 2191.
+
+[89] [90] [91] [92] [93]
 Chapter 14.
-[90
+[94
 
 ]
 Appendix A.
 No file diffusion.bbl.
-[91
+[95
 
 ] ("C:\Users\Shaomei\Documents\My Dropbox\cu_thesis-2.9\diffusion.aux")
 
@@ -772,12 +783,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3517 strings out of 495286
- 46875 string characters out of 3179895
- 107549 words of memory out of 3000000
- 6614 multiletter control sequences out of 15000+200000
+ 3519 strings out of 495286
+ 46884 string characters out of 3179895
+ 107513 words of memory out of 3000000
+ 6616 multiletter control sequences out of 15000+200000
  33737 words of font info for 102 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  30i,9n,37p,1593b,342s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on diffusion.dvi (103 pages, 249788 bytes).
+Output written on diffusion.dvi (104 pages, 219500 bytes).

@@ -21,6 +21,9 @@
 \usepackage{palatino}
 \usepackage{url}
 %\usepackage{subfig}
+\usepackage{verbatim}
+
+%\renewcommand{\comment}[1]{}
 
 
 %if you're having problems with overfull boxes, you may need to increase
@@ -34,6 +37,7 @@
 \renewcommand{\topfraction}{0.85}
 \renewcommand{\textfraction}{0.1}
 \renewcommand{\floatpagefraction}{0.75}
+
 
 \title {The Dynamics of Information Diffusion on On-line Social Networks}
 \author {Shaomei Wu}
@@ -1672,7 +1676,7 @@ We randomly sample 8 million friendship edges and 8 million random pairs of inac
 
 \begin{figure}[h]
 \centering
-\includegraphics[height=60mm,width=60mm]{figure/departure_time_gap_cdf.eps}
+\includegraphics[height=60mm,width=60mm]{figures/departure_time_gap_cdf.eps}
 %\epsfig{file=}
 \caption{The CDF curve for the difference in last login times between inactive users who are friends and random pairs of inactive users.}
 \label{fig:inactive_timing_cdf}
@@ -2023,10 +2027,86 @@ In this paper, we compared the dynamics of user arrival and departure in online 
     Joining social media data with real world events, we are able to study one of the most interesting (and also the most difficult) parts in media communication research (Lasswell's maxim): the effect of information. One of my ongoing projects is to study the role of social media in social movements, in order to understand how the propagation of information is leading or reflecting societal changes. We have collected a large number of tweets and twitter networks related to big social movements (i.e., Middle East Revolution, Occupy WallStreet Movement). Using effective algorithms for community detection, hub detection, trend detection, and opinion mining, we will be able to identify the informal structure of massive communication networks for social movements and study the diffusion of ideology and behaviors within and across organizational/geographical boundaries.
 
 \section{Background}
+ZZZZZ: Summary of Arab Spring movement, major event timeline.
+
+ZZZZZ: We observed a sharp increase of the social media usage during the arab spring period\cite{IPTPS}.  Such increase is considered not an accident but a driving force of the social movement \cite{}.
+
+However, there is a debate about the role of social media in the revolution.
+
+Previous research in this domain:
+\begin{comment}
+1. Gilad Lotan, Erhardt Graeff, Mike Ananny, Devin Gaffney, Ian
+Pearce, and danah boyd (2011). "The Revolutions Were Tweeted:
+Information Flows during the 2011 Tunisian and Egyptian Revolutions."
+International Journal of Communications 5, Feature 1375-1405.
+http://www.danah.org/papers/2011/IJOC.html
+
+2. Kate Starbird, and Leysia Palen, "(How) Will the Revolution be
+Retweeted? Information Diffusion and the 2011 Egyptian Uprising", CSCW
+2012
+http://www.cs.colorado.edu/~palen/StarbirdPalen_RevolutionRetweeted.pdf
+
+3.Philip N. Howard, Aiden Duffy, Deen Freelon, Will Mari, and Marwa
+Mazaid, "Opening Closed Regimes. What Was the Role of Social Media
+During the Arab Srping?", Working paper 2011.1
+http://dl.dropbox.com/u/12947477/publications/2011_Howard-Duffy-Freelon-Hussain-Mari-Mazaid_pITPI.pdf
+
+4. Sandra Gonzalez-Bailon, Javier Borge-Holthoefer, Alejandro Rivero,
+and Yamir Mareno, "The Dynamics of Protest Recruitment through an
+Online Network" , Nature, Scientific Reports, 2011/12/15
+http://www.nature.com/srep/2011/111215/srep00197/pdf/srep00197.pdf
+
+There aren't (yet) many scholarly articles that examine the actual process of
+mobilization in the Arab Spring. I know of people working on them, but
+nothing published yet.
+
+That said, POMEPS had a review of the Egyptian revolution that
+discusses the important role of activists in mobilization (attached
+here.) Similarly, Marc Lynch's book "The Arab Uprising: The Unfinished
+Revolutions of the New Middle East" and James Gelvin's "The Arab
+Uprising: What Everyone Needs to Know" are two good books that
+*describe* how the processes unfolded and both of these texts discuss
+the role of Egyptian activists and their development since 2006. They
+are more for an educated but general audience, however, and none of
+them have claims about one factor being more important than the other,
+but they all discuss how central April 6, the Muslim Brotherhood, etc.
+were for mobilization in Egypt. If we want substantive support of the
+data, these could be useful.
+
+Similarly, there are many articles in online journals/magazines that
+also argue for the role of organized groups in Egypt. For example:
+
+Who is behind the Egyptian Revolt?
+http://www.thenation.com/blog/158159/whos-behind-egypts-revolt
+
+The Praxis of the Egyptian Revolution
+http://www.merip.org/mer/mer258/praxis-egyptian-revolution
+\end{comment}
+
+Questions to answer:
+\begin{enumerate}
+\item Whether Twitter is leading or responding to the social events?
+\item How were the protest organized and spread (on the social media)?
+\end{enumerate}
+
+We collected data and conducted one of the largest empirical studies of these questions. Our contributions:
+\begin{enumerate}
+\item show a landscape of Arab Spring in social media space in Middle East countries;
+\item show the top-down spread of protest on Twitter;
+\item show the outside-in spread of protest on Twitter.
+\end{enumerate}
+
+
+In a 2010 New Yorker essay written just prior to the onset of the Arab Spring, Malcolm Gladwell1 famously proclaimed that ``the revolution will not be tweeted'', based on his assessment of the weak social ties in the Twitter user network. This sparked a lively debate with critics who pointed to the growing use of social media in the 2008 South Korean candlelight protests in opposition to the KOR-US Free Trade Agreement, in the civil unrest in Moldova and Iran protesting election results in 2009, and more recently the Arab Spring and London riots. The Tunisian and Egyptian revolutions, especially, have been dubbed as the ``Twitter Revolutions''\cite{} leading to numerous newspaper articles and government officials praising the ``wired and shrewd`` local activists.\cite{} 
+
+Most of this debate and proclamations, however, are based on anecdotal evidence and are not empirically grounded. An increasing use of social media during periods of protest could be a response to the events, no different than conventional reportage by news media. Therefore, the case for Twitter as a protest medium requires evidence that an upsurge in protest content occurred prior to the outbreak of protest. A recent article by Howard et. al. \cite{} attempts to accomplish this goal, but the data is not detailed enough to establish whether protest content occurred before or after protest onset.
 
 
 
 \section{Data}
+
+We did two-step crawl to get large amount of geographical constrained data. First find users from interested areas, then use them as seeds to crawl their neighbors (based on the homophily idea, their neighbors should be more likely to be physically near them).
+
 To collect a substantial set of users and their tweets from the Middle East area in the period of the recent social movements, we first identified a set of countries of interest, including Tunisia, Egypt, Libya, Bahrain, Iran, Iraq, Israel, Algeria, Morocco, Saudi Arabia, Kuwait, Yemen, United Arab Emirates, Palenstine, Quatar, Oman, Jordan, Cyprus, Syria, and Lebanon. For each country, we used Yahoo Maps APIs to get the list of cities and towns in that country, together with the geographical centroid point for each city/town, in the form of (latitude, longitude).
 
 After we had the centroid points of cities/towns within a country, we used Twitter search APIs to retrieve all the recent tweets generated within 100 miles from every centroid point in that country. We then parsed these tweets and extracted the authors of these tweets.
@@ -2080,18 +2160,71 @@ total & 112,661 & 36,857,387 \\ \hline
 \end{table}
 
 
-ZZZZZ: Talk about data sparseness issue. For country specific study, we use only a few countries that have high enough data density.
-
-
-To compare the diffusion of protest and non-protest content on Twitter, we first identify protest-related tweets. We say a tweet is related to protest if it contains at least one protest hashtag .  Protest hashtags are hand-picked by political scientists. However, as there are hundreds of thousands of  hashtags in our dataset, it is not feasible for political scientists to manually label all the hashtags. To effectively identify protest-related hashtags while maintaining a high recall, we narrow the pool of hashtags to be examined based on two metrics: (1) the volume of tweets containing the hashtag; and (2) the bursty-ness (as defined by Kleinberg 2004 KDD) of the hashtag occurrence. In this way, we narrow the scope down to only the top 1000 most frequently used hashtags and the top 1000 most bursty hashtags. We then have the experts to only go through those 2000 hashtags, and are able to identify about 500 protest-related hashtags among them.
-
-ZZZZZ: more about the selection of protest-related hashtags introduces false positive and true negatives.
+We noticed the data sparseness issue in our dataset. However, compared with other data source, we have a good coverage of users from Egypt and .... \cite{}. As a result, in most of the studies we present below, we use only those countries that have good data density.
 
 
 \section{Method and Results}
-As shown in the previous section, there had been a substantial amount of protest content introduced by Egyptian users on Twitter, even before Jan 25, 2011, when the first big protests took place in Tahrir Square, Cairo. Who were V those foresighted users? Were they planning and organizing the protests? Were  they qualitatively different than other users on Twitter? In this section, we will investigate these questions, focusing on the relationship between the status of users and their earliness at participating in the protest activities on Twitter.
+
+\subsection{Identify Protest content on Twitter}
+
+To compare the diffusion of protest and non-protest content on Twitter, we first identify protest-related tweets. 
+
+Two major approaches in previous studies: first, tracing only specific keywords or URLs that known are related to protest\cite{}; second, tracing the flow of tweets by well-known activist users\cite{}. 
+
+ZZZZZ: (TODO) add the mobilization time for the identified activist users (maybe in the mobilization part)!
+
+Similarly to previous studies \cite{}{}, our first attempt is to have experts read through a sample of collected tweets and identify keywords or phrases associated with protest; during this process, our expert coders observed that most protest tweets contained with protest-related hashtags, such as $\#$Jan25 and $\#$Egypt. 
+
+Based on this insight, we say a tweet is related to protest if it contains at least one protest hashtag. Now the problem becomes to effectively pick protest-related hashtags from hundreds of thousands of hashtags seen in our dataset. On the trade-off between accuracy and recall, we narrow the pool of hashtags to be examined based on two metrics: (1) the volume of tweets containing the hashtag; and (2) the bursty-ness (as defined by Kleinberg 2004 KDD) of the hashtag occurrence. In this way, we narrow the scope down to only the top 1000 most frequently used hashtags and the top 1000 most bursty hashtags. We then have the experts to only go through those 2000 hashtags, and label them as protest-related or not. 
+
+It turns out that it is not trival to label the hashtags even for domain experts, especially in the context of our study. After the first round, the experts agreed on about 500 hashtags to be protest related, which includes most of the names of countries and cities where big protests had taken place (e.g., Egypt, Bahrain, Cairo). Although most of these hashtags are indeed used with protest content during the protest period, they are also used for non-protest content such as Egypt tourism and Bahrain flood (ZZZZZ: need to check the fact), and thus introduced certain amount of false positive, especially, before or inbetween the time when the protests were taking place.
+
+False positive is worrisome because it might amplify the effect of social media in the revolution, and the results of our studies below are sensitive to false positive.
+
+ZZZZZ: why is it better to miss protesters than to mis-identify them?
+
+Knowing that social media only give us a subset of protestres no matter how accurately we identify them, we decide to take a more conservative selection of protst-related hashtags which are exclusively used by protesters, and not worry so much about true negative. We have experts go through the set of 600 protest hashtags again and keep only the ones that are protest dates, names of major players (activists and politicians), and words related to the revolution (jasmine, constitution, free+protesters name). There are around 200 hashtags in this list. 
+
+
+Most frequently used protest hashtags are listed in Table~\ref{}, compared with the top non-protest hashtags in the same dataset.
+
+Most frequently used hashtags and most bursty hashtags are listed in Table~\ref{}, together with their labeling.
+
+ZZZZZ: (TODO) table of most frequent and most bursty hashtags.
+
+
+
+(Note here we consider those who sympathetic to the protest also protesters - they do not need to actually go out to the street - will be an interesting future study though, need a lot better NLP stuff to classify tweets as street tweets of sympathy tweets.)
+
+
+ZZZZZ: further restriction of the conservative set of hashtags.
+
+\subsection{Global}
+
+\subsubsection{Temporal Patterns}
+
+Temporal patterns of activities.
+
+
+Temporal patterns of mobilization.
+
+
+\subsubsection{Top-down}
+
+As shown in the previous section, there had been a substantial amount of protest content introduced by Egyptian users on Twitter, even before Jan 25, 2011, when the first big protests took place in Tahrir Square, Cairo. Who were those foresighted users? Were they planning and organizing the protests? Were they qualitatively different than other users on Twitter? In this section, we will investigate these questions, focusing on the relationship between the status of users and their earliness at participating in the protest activities on Twitter.
 
 To start, we first represent the earliness of a user by his mobilization day. A user u's mobilization day d(u), is defined as the day when u first used any protest hashtag. We then quantify the status of user u on day t,  by the number of Twitter followers u has on day t. In order to show the aggregated status of users who started to participate in the protest at different times, we group users by their mobilization day d, and calculate f(d), the median value of user status, for each group. In Figure 4, we plot f(d) for d between December 10, 2010 and January 25, 2011. Here we can see a clear trend of decreasing status as the mobilization day gets  closer to the actual protest day.
+
+\subsubsection{Outside-in}
+
+\subsection{Local}
+\subsection{Attention Network}
+To study the spread of content, 
+
+\subsection{Triangle effect}
+
+
+
 
 \section{Conclusion}
 By analyzing Twitter activity in Middle East area during the Arab Spring movement, we have shown that social media were used to both activate and reflect the on-goings of Middle East social movement. The relative weights of these two roles differed across countries. In particular, Egyptian users actively used Twitter to plan protests and call for a critical mass, and the users from Saudi Arabia or UAE mostly used Twitter to support or comment on on-going events. We also found that protest content travelled directionally from the central to the peripheral of the Twitter network:  most protest memes were initiated by hub users and later picked up by the masses.  At the individual level, we found that the adoption of protest content can be modeled by the complex contagion process - while the overall adoption rate of protest content is relatively low, people become significantly more likely to start tweeting about the protest when more than 2 friends already doing so. 
