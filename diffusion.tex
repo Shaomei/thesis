@@ -95,6 +95,14 @@ our work mainly contributed to the aspectes in the lifecycle of information diff
 \item End-of-life: how does disengagement happen?
 \end{enumerate}
 
+
+\begin{enumerate}
+\item Production: what can we know about the diffusion when the information is created - persistance (compared with the seed selection problem);
+\item Dissemination: influencers, content, network structure, and the interaction among them.
+\item End-of-life: network effect on disengagement.
+\end{enumerate}
+
+
 In the end, we will examine a diffusion process that closely tight the online and offline world together - Arab spring. Contributions:
 \begin{enumerate}
 \item Trace the evolution, and unveal the dynamicss of social movement using digital logs;
@@ -2169,13 +2177,13 @@ We noticed the data sparseness issue in our dataset. However, compared with othe
 
 To compare the diffusion of protest and non-protest content on Twitter, we first identify protest-related tweets. 
 
-Two major approaches in previous studies: first, tracing only specific keywords or URLs that known are related to protest\cite{}; second, tracing the flow of tweets by well-known activist users\cite{}. 
+Two major approaches in previous studies: first, tracing only specific keywords or URLs that known are related to protest\cite{Lotan-2011,Howard-2011}; second, tracing the flow of tweets by well-known activist users\cite{Starbird-2012,Lotan-2011}. 
 
 ZZZZZ: (TODO) add the mobilization time for the identified activist users (maybe in the mobilization part)!
 
-Similarly to previous studies \cite{}{}, our first attempt is to have experts read through a sample of collected tweets and identify keywords or phrases associated with protest; during this process, our expert coders observed that most protest tweets contained with protest-related hashtags, such as $\#$Jan25 and $\#$Egypt. 
+Similarly to previous studies \cite{Lotan-2011,Howard-2011}, our first attempt is to rely on experts' domain knowledge on keywords and phrases associated with protest. We work with politican scientists and sociologists with expertise on Middle East politics and social movement, provide them with sample of tweets from both ordinary users and known activitists for possible textual signals of protest-related content. During this process, our experts observed that most protest tweets contained with protest-related hashtags, such as $\#$Jan25 and $\#$Egypt. 
 
-Based on this insight, we say a tweet is related to protest if it contains at least one protest hashtag. Now the problem becomes to effectively pick protest-related hashtags from hundreds of thousands of hashtags seen in our dataset. On the trade-off between accuracy and recall, we narrow the pool of hashtags to be examined based on two metrics: (1) the volume of tweets containing the hashtag; and (2) the bursty-ness (as defined by Kleinberg 2004 KDD) of the hashtag occurrence. In this way, we narrow the scope down to only the top 1000 most frequently used hashtags and the top 1000 most bursty hashtags. We then have the experts to only go through those 2000 hashtags, and label them as protest-related or not. 
+Based on this observation, we say a tweet is related to protest if it contains at least one protest hashtag. Now the problem becomes to effectively pick protest-related hashtags from hundreds of thousands of hashtags seen in our dataset. On the trade-off between accuracy and recall, we narrow the pool of hashtags to be examined based on two metrics: (1) the volume of tweets containing the hashtag; and (2) the bursty-ness (as defined by Kleinberg 2004 KDD) of the hashtag occurrence. In this way, we narrow the scope down to only the top 1000 most frequently used hashtags and the top 1000 most bursty hashtags. We then have the experts to only go through those 2000 hashtags, and label them as protest-related or not. 
 
 It turns out that it is not trival to label the hashtags even for domain experts, especially in the context of our study. After the first round, the experts agreed on about 500 hashtags to be protest related, which includes most of the names of countries and cities where big protests had taken place (e.g., Egypt, Bahrain, Cairo). Although most of these hashtags are indeed used with protest content during the protest period, they are also used for non-protest content such as Egypt tourism and Bahrain flood (ZZZZZ: need to check the fact), and thus introduced certain amount of false positive, especially, before or inbetween the time when the protests were taking place.
 
@@ -2194,10 +2202,11 @@ ZZZZZ: (TODO) table of most frequent and most bursty hashtags.
 
 
 
-(Note here we consider those who sympathetic to the protest also protesters - they do not need to actually go out to the street - will be an interesting future study though, need a lot better NLP stuff to classify tweets as street tweets of sympathy tweets.)
+(Note here we consider those who sympathetic to the protest also protesters - they do not need to actually go out to the street - will be an interesting future study though, need a lot better NLP stuff to classify tweets as street tweets or sympathy tweets.)
 
 
 ZZZZZ: further restriction of the conservative set of hashtags.
+ZZZZZ: set cover results
 
 \subsection{Global}
 
@@ -2213,13 +2222,34 @@ Temporal patterns of mobilization.
 
 As shown in the previous section, there had been a substantial amount of protest content introduced by Egyptian users on Twitter, even before Jan 25, 2011, when the first big protests took place in Tahrir Square, Cairo. Who were those foresighted users? Were they planning and organizing the protests? Were they qualitatively different than other users on Twitter? In this section, we will investigate these questions, focusing on the relationship between the status of users and their earliness at participating in the protest activities on Twitter.
 
-To start, we first represent the earliness of a user by his mobilization day. A user u's mobilization day d(u), is defined as the day when u first used any protest hashtag. We then quantify the status of user u on day t,  by the number of Twitter followers u has on day t. In order to show the aggregated status of users who started to participate in the protest at different times, we group users by their mobilization day d, and calculate f(d), the median value of user status, for each group. In Figure 4, we plot f(d) for d between December 10, 2010 and January 25, 2011. Here we can see a clear trend of decreasing status as the mobilization day gets  closer to the actual protest day.
+To start, we first represent the earliness of a user by his mobilization day. A user $u$'s mobilization day $d(u)$, is defined as the day when $u$ first used any protest hashtag. We then quantify the status of user $u$ on day $t$,  by the number of Twitter followers $u$ has on day $t$. In order to show the aggregated status of users who started to participate in the protest at different times, we group users by their mobilization day d, and calculate $f(d)$, the median value of user status, for each group. In Figure 4, we plot $f(d)$ for $d$ between December 10, 2010 and March 31, 2011. Here we can see a clear trend of decreasing status as the mobilization day gets closer to the actual protest day, followed by a rapid drop around January 25, 2011, when the first big protests broke out in Egypt.
 
-\subsubsection{Outside-in}
+
+ZZZZZ: As social media sites such as Twitter and Facebook have enjoyed a big market growth in Middle East region during movement period, to control the size of population in our study, we also limit the population to Egyptian users whose accounts existed prior to December 1, 2010, and show the $f(d)$ plot for only this population in Figure~\ref{}. 
+
+ZZZZZ: We can see the similar trend in this fixed set of population.
+
+
+ZZZZZ: Although it is clear that  people who mobilized earlier in general have a higher status than those who mobilized late (especially, after Jan 25 2011). We also see a variation of status among the early mobilized users (those who mobilized during December 2010), that their median status first went up, then went down. After reading the sample of tweets from users who mobilized in the period before Dec 15, between Dec 15 and Dec 25, and between Dec 25 and Jan 5, 
+we found that (some. underlying reason that people who mobilized between Dec 15-25 have the highest status among all (for example, anything people mobilized in different periods did different? Are they calling for action or stating their position)?)
+
+
+Our finding is consistent with the qualitative studies results that the protest is moved by a small set of leading figures and spread out from them to everybody. We show evidence that at least on Twitter, the protest has been spread in top-down manner.
+
+
 
 \subsection{Local}
+In this section, we study how protest content spread from person to person, as a function of individuals' neighborhood properties.
+
+
 \subsection{Attention Network}
-To study the spread of content, 
+We first construct the attention network of users from the interested area using the ``@'' mentions from the tweets they generated: we say a user A is paying attention to a user B if A mentioned B in his tweets for at least $k$ times in our collection of tweets during the protest period. Although the value of $k$ is set to 3 in \cite{Romero-2011}, here we vary it among 1,2,3,4, and show that our results are robust among these small values of $k$. In the rest of this chapter, unless specified, we use the network with $k$ equals to 3.
+
+We visualize the biggest connected component of the network (see Figure~\ref{}. In Figure~\ref{}, each node represents a user and a directed edge represents the direction of attention. Here, each node is color-coded by the country he is from, and the color of the edge is determined by the source of attention. More specifically, if user A mentioned user B for at least 3 times, there will be an edge from B to A, colored the same as user B. Note that for the complexity reason, this is only a $20\%$ random sample of all nodes and the edges associated with them in the @-mention network.
+
+
+\subsubsection{Outside-in}
+In this section, we measure the among of 
 
 \subsection{Triangle effect}
 
