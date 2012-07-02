@@ -67,7 +67,8 @@ This document is dedicated to all Cornell graduate students.
 \end{dedication}
 
 \begin{acknowledgements}
-Your acknowledgements go here. Make sure it sits inside the brackets.
+Thanks to my advisors Michael Macy, Jon Kleinberg, Dan Cosley. Many thanks to Duncan Watts, Jake Hofman, Winter Mason and everyone from Yahoo Resarch. Thanks to Andrew Tomkins and Google Research. Thanks to Ben Lickly, Shenwei Liu, Patrick Park, Yongren Shi, Chris Cameron, Tim Novikoff, Johan, Daniel, Jure for discussion. Thanks for Hyunyong, Karin, Theresa, Yookyung for always offering good insights. Thanks to my family for supporting!!!
+
 \end{acknowledgements}
 
 \contentspage
@@ -80,11 +81,57 @@ Your acknowledgements go here. Make sure it sits inside the brackets.
 \part{Introduction and Background}
 
 \chapter{Introduction}
-Understanding how information spreads in the society has attracted a growing interest from both practitioners and scholars. It is an essential element for many interesting problems, such as the diffusion of innovation, formation of public opinion, product adoption, and viral marketing. 
+%With the invention of print, telephone, the Internet, the amount of information a person can 
+However cynical Postman is, he has made a point that medium has an effect on both the form of information and the way it is disseminated and processed. Through the evolution of communication technology, information has become more and more easier to be produced, faster to be propagated, and more accessible.
 
-Historically, one of the biggest challenges in the study of information diffusion is data collection. Given the difficulty of observing and tracing the diffusion process over all possible channels, most empirical studies in this field have been conducted manually by sociologists and communication researchers, through in-person interviews or standardized surveys of population samples. Therefore, these studies are largely confined by the scale and the data accuracy. As a result, existing theoretical models in the literature have relied on many assumptions about the underlying diffusion mechanism instead of empirical evidence. Being widely applied, these models are, however, hard to be verified or rebutted empirically on a large scale. 
+With the huge IPO of FB and the great pontential expected from Twitter, social media and social marketing have become the new silicion valley favorite and created a new wave of glamous bubbles.
 
-In recent years, the abundance of digital records of online interactions has provided us both the explicit network structure and detailed dynamics, supporting global-scale, quantitative study of diffusion in the real world. Using these large scale datasets collected from social media sites (i.e. Twitter, Orkut), this thesis addresses the following three questions: ``who influences whom?'', ``how do different types of information spread?'',  and ``how does the network structure impact the diffusion process?''
+
+Information diffusion has been a long intriguing topic for social scientists and economists. It is an essential element of many interesting problems, such as the diffusion of innovation\cite{}, formation of public opinion\cite{}, adoption of new products\cite{}. Historically, most of the research in this area has been done through field observations and/or phone surveys\cite{}. Confined by the methodology, their results are uaually based on the spread of a specific opinion or product in rather small/localized networks. 
+
+
+The development of the Internet and the emergence of a whole new set of communication technologies on top of it has largely changed the way people  gather and disseminate information, and brought both challenge and opportunity to a better understanding of how information spreads in the society.
+Historically, most empirical studies in this area were based on data collected through in-person interviews and phone surveys\cite{}, targeted with a specific opinion or product that is under diffusion. Confined by the methodology, theories and conclusions drew from these research suffer at scale and data accuracy, and are challenged in today's massive, hybrid communication environment. Meanwhile, the popularity of eletronic communication tools has offered new possibilities for obtaining much better data on how information and behavior spread over large population. The abundance of digital records of online interactions can provide large amounts of data on both explicit network structure and detailed dynamics, supporting large-scale, quantitative study of diffusion in the real world.
+
+Using these large scale datasets collected from social media sites (i.e. Twitter, Orkut), we study three major components of information diffusion process:
+\begin{itemize}
+\item \emph{People}, who are the ``influentials'' and whom are they influencing\cite{}?
+\item \emph{Network}, how does the macro- and micro-level structure of the network affect the diffusion process\cite{}?
+\item \emph{Content}, does different types of information spread differently\cite{}?
+\end{itemize}
+
+Although still a young filed, there has been a growing literature on measuring and examinng these components, mostly focused on modeling and predicting the scale of cascade\cite{}. Built on top of existing research, this thesis will contribute our knowledge about the dynamics of information diffusion on online social networks, from three perspectives.
+
+First, we study the ``virality'' of diffusion from two new angles. Instead of scale, we focused on the temporal patterns of cascades. Within this scope, we, in particular, have placed our attention to the persistence of information, studying why certain information has a very long lifespan while most of the information lasts shortly in social media. We also look at the ``negative'' virality - the virality of ``inactivity'', and show how user disengagement, similar to user engagement, has a network effect on overall user inactivity.
+
+Second, we examine the exogenous properties of actors and artifacts beyond the closed, single-medium communication network. Our results show that, diffusion should be studied in context, taking into account the socio-cultural factors that constantly interact with the diffusion process. For example, we find that the persistent attention to certain content can be better explained by the innate quality of the content itself, rather than the mechanism of how it spreads in the network. We also show that, despite the connectivity and demographics, certain users are more influential on social media as they carry their established role (and fame) from the world outside social media. These findings argue that, online social networks are not isolated systems, but instead, a part of the global communication networks with many existing channels, actors, and communication artifacts.
+
+Third, we study different components of diffusion not only by themselves, but also the interaction between them. Information diffusion is an interactive process between people and content, mediated by the communication networks. Different components of diffusoin do not exist in isolation. People with high influence tend to cluster together\cite{}, and the location in the network can tell us a lot about a person's status\cite{}. In our work, we show that different people have different preference of content and invididual's influence is context-dependent.
+
+%In the end, we will examine a diffusion process that closely tight the online and offline world together - Arab spring. Contributions:
+%\begin{enumerate}
+%\item Trace the evolution, and unveal the dynamicss of social movement using digital logs;
+%\item Understand the role and impact of social media in societal changes;
+%\end{enumerate}
+
+This thesis is an inter-disciplinary effort. Although most of the results are quantitatively and drew from analysis on large data sets, I worked closely with sociologists, computer scientists, phycologists, communication scholars, and political scientists, and try to conduct my research with not only computational methods but also theories and insights from different fields. As a result, I hope the findings from this work are not limited to online social networks, but can also help uncover the nature of information diffusion process acorss online and offline spaces.
+
+%Finally, we study the arab spring movement and hope that the insights from our work is not limited to online social networks but also help uncover the nature of information diffusion process across online and offline environement.
+
+\section{The predictability of virality}
+Inspried by the examples of big cascade, and the market buzz, 
+most existing work has focused on modeling and predicting the scale of diffusion (i.e., virality). 
+
+However, in practice, it is hard to plan and produce viral spread on purpose. In fact, recent debates on the predictability of virality.
+
+
+% Understanding how information spreads in the society has attracted a growing interest from both practitioners and scholars. It is an essential element for many interesting problems, such as the diffusion of innovation, formation of public opinion, product adoption, and viral marketing. 
+
+%Historically, one of the biggest challenges in the study of information diffusion is data collection. Given the difficulty of observing and tracing the diffusion process over all possible channels, most empirical studies in this field have been conducted manually by sociologists and communication researchers, through in-person interviews or standardized surveys of population samples. Therefore, these studies are largely confined by the scale and the data accuracy. As a result, existing theoretical models in the literature have relied on many assumptions about the underlying diffusion mechanism instead of empirical evidence. Being widely applied, these models are, however, hard to be verified or rebutted empirically on a large scale. 
+
+%In recent years, the abundance of digital records of online interactions has provided us both the explicit network structure and detailed dynamics, supporting global-scale, quantitative study of diffusion in the real world. 
+
+%Using these large scale datasets collected from social media sites (i.e. Twitter, Orkut), this thesis addresses the following three questions: ``who influences whom?'', ``how do different types of information spread?'',  and ``how does the network structure impact the diffusion process?''
 
 Viewing the diffusion of information as an organic process, we study each stage in its lifecycle, from production, dissemination, to comsuption (deceased). Each part is motivated by social science problems and theories, and aim at contribute deeper insights about how information flow in the society and its impact.
 
@@ -103,11 +150,6 @@ our work mainly contributed to the aspectes in the lifecycle of information diff
 \end{enumerate}
 
 
-In the end, we will examine a diffusion process that closely tight the online and offline world together - Arab spring. Contributions:
-\begin{enumerate}
-\item Trace the evolution, and unveal the dynamicss of social movement using digital logs;
-\item Understand the role and impact of social media in societal changes;
-\end{enumerate}
 
 
 \section{The Influencer Problem}
@@ -223,6 +265,7 @@ My contributions:
 \item Study the temporal pattern of information, especially, the persistence. Most previous work focused on the spikes but not the persistence.
 \item (ZZZZZ: possible remove) Diffusion as an organic process integrating people, content, and time.
 \end{enumerate}
+
 
 \chapter{The production and consumption of information: distribution of attention}
 
