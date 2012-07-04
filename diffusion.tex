@@ -100,9 +100,11 @@ Using these large scale datasets collected from social media sites (i.e. Twitter
 \item \emph{Content}, does different types of information spread differently\cite{}?
 \end{itemize}
 
-Although still a young filed, there has been a growing literature on measuring and examinng these components, mostly focused on modeling and predicting the scale of cascade\cite{}. Built on top of existing research, this thesis will contribute our knowledge about the dynamics of information diffusion on online social networks, from three perspectives.
+Although still a young filed, there has been a growing literature on measuring and examinng these components, mostly focused on modeling and predicting the scale of cascade\cite{}. In this thesis, I will discuss our exploration on these three components of diffusion, highlighting our contributions on the following three aspects.
 
-First, we study the ``virality'' of diffusion from two new angles. Instead of scale, we focused on the temporal patterns of cascades. Within this scope, we, in particular, have placed our attention to the persistence of information, studying why certain information has a very long lifespan while most of the information lasts shortly in social media. We also look at the ``negative'' virality - the virality of ``inactivity'', and show how user disengagement, similar to user engagement, has a network effect on overall user inactivity.
+%Built on top of existing research, this thesis will contribute our knowledge about the dynamics of information diffusion on online social networks, from three perspectives.
+
+First, we study the ``virality'' of diffusion from an new angle. Instead of scale, we focused on the temporal patterns of cascades. Within this scope, we, in particular, have placed our attention to the persistence of information, studying why certain information has a very long lifespan while most of the information lasts shortly in social media. We also look at the ``negative'' virality - the virality of ``inactivity'', and show how user disengagement, similar to user engagement, has a network effect on overall user inactivity.
 
 Second, we examine the exogenous properties of actors and artifacts beyond the closed, single-medium communication network. Our results show that, diffusion should be studied in context, taking into account the socio-cultural factors that constantly interact with the diffusion process. For example, we find that the persistent attention to certain content can be better explained by the innate quality of the content itself, rather than the mechanism of how it spreads in the network. We also show that, despite the connectivity and demographics, certain users are more influential on social media as they carry their established role (and fame) from the world outside social media. These findings argue that, online social networks are not isolated systems, but instead, a part of the global communication networks with many existing channels, actors, and communication artifacts.
 
@@ -119,10 +121,42 @@ This thesis is an inter-disciplinary effort. Although most of the results are qu
 %Finally, we study the arab spring movement and hope that the insights from our work is not limited to online social networks but also help uncover the nature of information diffusion process across online and offline environement.
 
 \section{The predictability of virality}
-Inspried by the examples of big cascade, and the market buzz, 
-most existing work has focused on modeling and predicting the scale of diffusion (i.e., virality). 
 
-However, in practice, it is hard to plan and produce viral spread on purpose. In fact, recent debates on the predictability of virality.
+With viral videos and memes outbreak and circulating in the Internet almost everyday, brands and politicians are eager to leverage the power of social networks and run online campaigns that ``go viral''. The demand from the market, contrasted with our lack of knowledge on the mechanism behind viral phenomenons, has catalyzed many studies focusing on modeling and predicting the virality of diffusion process. In this line of work, virality is usually defined and measured in three aspects: 
+\begin{enumerate}
+\item \emph{Scale}: the size of cascade tree originated from the original node. e.g., the cascade Facebook fanning pages;
+\item \emph{Range}: the maximal chain length in the diffusion network. e.g., blog\cite{Leskovec-SDM-07}. 
+\item \emph{Transmission probability}. As most existing research describe diffusion process with epidemic models\footnote{More discussion about epidemic models can be found in Chapter 2}, transmission probability is the probability a virus travels through a directional edge in the network and infects the end node. In the context of social networks, transmission probability is mapped to  the success rate of interpersonal recommendations in electronic market\cite{Leskovec-EC-2006}, the probability a tweet is retweeted by the followers of the tweet's author\cite{}, and the likelihood a user mark a Flickr photo as favorite after seeing a friend doing so\cite{}.
+\end{enumerate}
+
+Using large scale online social networks data, researchers have employed a whole set of computational tools to asset different aspects of cascades that may lead themselvs to viral\cite{}. However, in practice, it is still very difficult to engineer a success viral campaign\cite{}. In fact, most marketers and public relation professionals still rely heavily on experience and intuition when launching online campaigns, and most of them received long-tailed attention\cite{}. Although the virality is still the holy grail for marketers, there has been an ascending trend that put the whole idea of ``predicting virality'' in doubt. 
+
+In their Science article published in 2006, Salganik et al\cite{Salganik-2006} explored the unpredictability of song ratings, arguing that, despite the quality of music, the best predictor for a song's popularity is actually the popularity itself: the songs that received first few thumbs-ups usually rise up to be the hit, even if the first thumbs-ups are given randomly. Some later work show that the quality of initiators does not correlate well with the final scale of cascades\cite{Sun-2009,Bakshy-2011}. While the structure.....ZZZZZ
+
+There are two major factors that might contribute to the difficulity of predicting virality. First, as most studies observed, the power-law (or log-normal) distribution of the popularity of online content results in a skewed training set consisting of many unsuccessful examples and only a few successful examples. While most machine learning algorithms are not robust to skewed training sets\cite{Provost-2001}, the common practice of biased sampling can over compensate the successful cases and overlook the unsuccessful ones. As a result, most characteristics we discovered in the positive class can also be found in the negative class - the predictive model would fail to tell one from the other. Second, as we mentioned before, given the fact that online communications is an integrated part of the global communication networks, there are many exogenous factors that can not be controlled or observed in the communication channel where the data is collected. The complexity and the fuzziness of real world diffusion process is innately inadequate to be fully captured by epidemic models/cite{}.
+
+Understanding the difficulty of this task does not mean that it is unsolvable. We have seen a stready progress towards a better understanding of the virality, incorporting theories and methods from multiple fields (e.g., \cite{complex contagion, Bakshy-2011}). While it is a long-term, heavily invested problem, we think it is worthwhile to investigate some different metrics for the success of cascade. During our study on the flow of information on Twitter, we find that, although skewed as well, the distribution of the lifespan of information has a much heavier tail towards the end, showing a substantial amount of information that are surprisingly persistent in the fast-paced system. When looking at the items that are consistently tweeted over a long period of time, we realize that, most of them can not be characterized by any of the traditional metrics for virality: they are not often retweeted by the followers, they do not spread through long-chains, and they are usually not part of super-sized cascades. However, as they stir a constant string of interest that is so presistent and steady, long-lasting cascades can also be considered as ``success'' cascades in a large aspect.
+
+Although many work on temporal analysis, and 
+Similar pattern has also been found in the viewing of YouTube videos\cite{crane:2008,Szabo-2010}, most of them concentrated on the peak and intensity, not the longevity.
+
+``early temporal dynamics is important at predicting the final popularity'' \cite{Szabo-2010}. ``without early temporal dynamics, semantics is important''.
+
+ With a lot of efforts investigated on this problem, we would like to switch 
+  
+%Inspried by the examples of big cascade, and the market buzz, 
+%most existing work has focused on modeling and predicting the scale of diffusion (i.e., virality). 
+
+%Two major reasons for the ``unpredictability''.
+
+%First, power law of popularity - large majority of unsuccessl events that are over-looked, and given the number, they pontentially exhibit all characteristics of viral examples.
+
+We also made efforts on predicting the scale. Then we switch our gear to studying the temporal dynamics of information, following an emerging line of research\cite{}. Patterns they have shown... In current study of temporal dynamics, most work on the trend, and the peaks. However, we start to look at the longevity of information, and ask what makes information persistent. Interestingly, the distribution of lifespan does not follow power-law, but instead, with a large number of items with super long lifespan. When looking these items, we find they can not be characterized by any of the viral metrics above. They are not viral, nor generated by long-chains, and usually not part of big cascade.  However, they are very interesting because... (they are like organic process that does not die!)
+
+Existing efforts on predicting the popularity with early activity patterns\cite{Szabo-2010}.
+
+%Second, exogenous characterstics - the innate inadequate of epidemic models. When we think to model virality, we need to think in a bigger context (details in following sections).
+
 
 
 % Understanding how information spreads in the society has attracted a growing interest from both practitioners and scholars. It is an essential element for many interesting problems, such as the diffusion of innovation, formation of public opinion, product adoption, and viral marketing. 
@@ -160,6 +194,22 @@ Think of influence in context:
 \item domain influence: masspersonal (celebrities, bloggers, organizations)
 \item personal influence: tie strength, content, language, timing (accidental influencers)
 \end{enumerate}
+
+Influencers can be found by one's location in the network. Competing theories: centrality, bridging effect, closeness of local community. \cite{mason}
+
+Influence by demographic (gender)
+
+Influence by tie strength: density of communication, connection to sheepie people.
+
+We propose: influence by exogenous status and social roles.
+
+\section{The role of content}
+
+
+\section{The network effect of disengagement}
+
+
+%\section{The journey ahead}
 
 \subsection{Life of information in Social Media}
 How long should we expect a piece of information to live in the social media space ~\cite{Leskovec-Newscycle-2009}? Who are involved in each stage (production, circulation, and consumption) of lifecycle of information? 
@@ -2310,6 +2360,9 @@ This work presents one of the largest studies on the role of social media in the
 
 \section{Future work}
 Join with Facebook results and news media data.
+
+Study the interaction between network and content.
+
 
 \chapter{Conclusion}
     In summary, I am deeply intrigued by the developing characteristics of information diffusion in online social media. Thanks to the Internet and social media technologies, I believe that we are heading towards a more democratic era where revolutions can be started by ordinary people and the power to change is in the hands of the masses. As part of this process, social media sites such as Facebook and Twitter have also evolved from friendship networks to a much broader platform for organizing social/political changes and communicating with various communities. I hope my work can help understand this movement and foster the effective flow of information in the society.
