@@ -52,9 +52,11 @@
 \makecopyright
 
 \begin{abstract}
-Your abstract goes here. Make sure it sits inside the brackets. If not,
-your biosketch page may not be roman numeral iii, as required by the
-graduate school.
+Although there has been a long history of studying the diffusion of information in various social science fields, existing theories are mostly built on direct observations in small networks or survey responses from large samples. As a result, it is hard to verify or refute these theories empirically on a large scale. In recent years, the abundance of digital records of online interactions has provided us for the first time both the explicit network structure and detailed dynamics, supporting global-scale, quantitative study of diffusion in the real world. Using these large scale datasets collected from social media sites, my research is to mainly address the following three questions about the process of information diffusion: ``who influence whom?'',  ``how do different types of information spread?'',  and ``how does the network structure impact the diffusion process?'' 
+
+Different from other diffusion research, my work is centralized around the persistence of information.
+
+
 \end{abstract}
 
 \begin{biosketch}
@@ -209,7 +211,7 @@ The role of the influentials as trend makers has been a center piece of many cla
 There are several classic theories about the characteristics of the influentials. Dating back to the 50s, Katz and Lazarsfeld coined the term ``opinion leaders''. They claimed that, comparing to ordinary people, opinion leaders have more social connections and are more media-savvy\cite{katz_lazarsfeld}. Later, scholars studying the diffusion of innovations also suggested that opinion leaders usually own ``greater exposure to mass media than their followers'', ``are more cosmopolite'', ``have greater social participation'' , ``have higher socioeconomic status'', and ``are more innovative''\cite{rogers-2003}. Similar ideas are illustrated in best-selling books, in which authors claims that the influentials are ``connectors'', ``mavens'', and ``salesmen''\cite{gladwell}, and that influentials play their role actively and constantly, providing suggestions from what to buy to who to vote for\cite{}.
 
 One critic to the classic theories is their lack of empirical supports. Although intuitively sound, these theories about influentials are too general to be operationalized or examined in practice. It was only since the abundance of online interaction data that we saw a new line of empirical work on measuring and quantifying personal influence in diffusion. Most of these work studied influence in two aspects: personal attributes such as demographics and activities, network attributes such as connectivity and position in the network. 
-Although both aspects are usually considered and studied, most work showed the network attributes more relevant to personal influence\cite{Sun-2009,Bakshy-2011,Kempe-2003,kwak_10,Leskovec-EC-2006,humberman, cha&mislove}. 
+Although both aspects are usually considered and studied, most work showed the network attributes more relevant to personal influence\cite{Sun-2009,Bakshy-2011,Kempe-2003,kwak_10,Leskovec-EC-2006,Cha-2009}. 
 
 %Many work studied people in different demographics groups and the associated impact in diffusion process. However, although some research showed that age and gender are related with the tendency of adopting a new product\cite{}, most existing work found no siginificant correlation between individuals' demographics and their likelihood of seeding big cascades\cite{Sun-2009,Bakshy-2011}. Instead, people argued, it is the position in the network and the strength of social ties that makes some people more influential than the rest\cite{Kempe-2003,kwak_10,Leskovec-EC-2006,huberman, cha&mislove}. 
 
@@ -373,7 +375,16 @@ Individuals are selective at what content they like to read and share.
 \section{The network effect of disengagement}
 The structure of network is another interesting component of diffusion research. At a local level, many studies have shown the correlation of activity among friends in online communities, and tried to understand the effect of neighborhood structure on the spread of information, or behavior. Classic theory on product adoption suggests an ``S-shape'' curve\cite{Bass:1969} in which the probability of adopting a new product grows slowly with a small number of adopted friends $k$, rapidly as $k$ increases, and quickly saturates once $k$ reaches a certain point. But recent empirical work based on online data showed that the adoption probability follows a ``deminishing return'' curve in which it first grows rapidly at small values $k$, then gradually stops to grow as $k$ gets large\cite{Backstrom:2006,Romero-2011}. When studying the local structure in depth, people found that, the structural closeness of local community (measured by triadic closures or cluster coefficient) has a siginificatn effect at the probability of adoption\cite{Backstrom:2006}, however, such effect may differ by the types of content under diffusion\cite{Romero-2011}.
 
-In addition to the research efforts on local structure, a number of studies looked at global structure of networks, in the understanding of macro-level dynamics of diffusion. The structure of network can determine (and explain) certain characteristics of cascades that run on top of it. \cite{viral-virus}.  \cite{chain-letter}
+In addition to the research efforts on local structure, a number of studies looked at global structure of networks, in the understanding of macro-level dynamics of diffusion. The structure of network can determine (and explain) certain characteristics of cascades that run on top of it. \cite{pastor-satorras01}.  \cite{Nowell-2008} \cite{Gruhl-2004}
+\cite{Eguiluz-2002}
+
+One refinement is to consider a more accurate model of power-law networks.
+Egu´ýluz and Klemm [10] have demonstrated a non-zero epidemic threshold under the SIS model
+3
+in power-law networks produced by a certain generative model that takes into account the high
+clustering coefficient - the probability that two neighbors of a node are themselves neighbors—
+found in real social networks [28].
+
 
 While most existing work focuses on the growth of networks and the increase of activity, our work differs by shifting efforts to the dynamics of user departure from social networks, and the decline of activity. What leads people to depart from their social networks? Is inactivity also contagious? One could argue that since inactivity is by definition less visible than activity, it should have less effect on influencing an individual's behavior. However, the extreme case in which all friends of a user depart suggests that, eventually, there must be an effect. 
 
@@ -496,6 +507,122 @@ My contributions:
 \chapter{Exogenous influence and opinion leaders on Twitter}
 \label{chap:influece}
 Inadequety of network-metrics of influence. Borrowed insights from communication studies - mixed influence both externally and internally. The external influence need to be studied in the entire media ecosystem that contains the online social media.
+
+
+A longstanding objective of media communications research is to fully
+investigate what is known as Lasswell's maxim: ``who says what to whom in
+what channel with what effect''~\cite{lasswell_48}. Named after Harold
+Lasswell, a pioneer of the field, Lasswell's maxim is easy to state but
+hard to analyze, in part because it is in general difficult to observe
+information flows in large populations, and in part because different
+channels have very different attributes and effects. Historically,
+communications theorists have distinguished between ``mass'' communication,
+defined as ``one-way message transmissions from one source to a large,
+relatively undifferentiated and anonymous audience,'' and ``interpersonal''
+communication, which is generally considered to imply a ``two-way message
+exchange between two or more
+individuals.''~\cite{walther_10}. Corresponding to this dichotomy,
+communication theorists have long debated the relative importance of mass
+vs. interpersonal communication. Whereas early theories such as the
+so-called ``hypodermic model'' posited that mass media exerted direct and
+relatively strong effects on public opinion, mid-century
+researchers~\cite{lazarsfeld, katz_lazarsfeld, merton, coleman_et_al}
+argued that the mass media influenced the masses only indirectly, via what
+they called a two-step flow of communications, where the critical
+intermediate layer was occupied by a category of media-savvy individuals
+called opinion leaders. The resulting ``limited effects'' paradigm was then
+subsequently challenged by a new generation of
+researchers~\cite{gitlin_78}, who claimed that the real importance of the
+mass media lay in its ability to set the agenda of public discourse. But in
+recent years rising public skepticism of mass media, along with changes in
+media and communication technology, have tilted conventional academic
+wisdom once more in favor of interpersonal communication, which some
+identify as a ``new era'' of minimal effects~\cite{bennett_iyengar_08}.
+
+Recent changes in technology, however, have increasingly undermined
+the validity of the mass vs. interpersonal distinction.  On the one
+hand, over the past few decades mass communication has experienced a
+proliferation of new channels, including cable television, satellite
+radio, specialist book and magazine publishers, and of course an array
+of web-based media such as sponsored blogs, online communities, and
+social news sites. Correspondingly,
+the traditional mass audience once associated with, say, network television
+has fragmented into many smaller audiences, each of which increasingly
+selects the information to which it is exposed, and in some cases
+generates the information itself.  Meanwhile,
+interpersonal communication has become amplified through personal
+blogs, email lists, and social networking sites to afford individuals
+ever larger audiences. Together, these two trends have greatly
+obscured the historical distinction between mass and interpersonal
+communications, leading some scholars to refer instead to
+``masspersonal'' communications \cite{walther_10}.
+
+Nowhere is the erosion of traditional categories more apparent than in
+the micro-blogging platform Twitter.
+% As noted in section \ref{sec:introduction} the fragmentation of
+% traditional media channels, along with the concomitant rise of social
+% media, have blurred the boundaries between mass and interpersonal
+% communications. In particular, audiences associated with formerly
+% ``mass'' media have shrunk, while social media platforms have
+% empowered individuals to communicate directly with large public
+% audiences; that is, without the intermediation of a media
+% organization. 
+To illustrate, the top ten most followed users on Twitter are not
+corporations or media organizations, but individual people, mostly
+celebrities. Moreover, these individuals communicate directly with their
+followers, often managing their accounts themselves, thus bypassing the
+traditional intermediation of the mass media between celebrities and fans.
+In addition to conventional celebrities, a new class of ``semi-public''
+individuals like bloggers, authors, journalists, and subject matter
+experts, have come to occupy an interesting role on Twitter, in some cases
+becoming more prominent than traditional public figures such as celebrities
+and elected officials.  Finally, in spite of these shifts towards
+masspersonal communication on Twitter, media organizations, along with
+corporations, governments, and NGO's all remain represented among highly
+followed users, and are often extremely active.
+
+Twitter, therefore, provides an interesting context in which to address
+Lasswell's maxim, especially as Twitter---unlike television, radio, and
+print media---enables one to easily observe information flows among the
+members of its ecosystem.  However, the effects (e.g. changes in behavior,
+attitudes, etc) remain difficult to measure on Twitter, and so we limit our
+focus to the ``who says what to whom'' part of Laswell's maxim.
+
+% observe, and causality is even harder to assert. The result is that
+% theories of communication have been difficult to verify or refute
+% empirically.
+
+%% DJW: note here that because "effects" are hard to observe, we focus on
+%% the "who says what to whom" part.
+%% WM: done
+% JMH: do we want to expand this to four main contributions?  
+
+% WM: It seems like these three points cover the four contributions
+% outlined in the abstract, and the first point here is just using Twitter
+% lists.  We could rewrite---might make it more clear/consistent, but I'm
+% not sure it's necessary.
+
+To this end, our paper makes three main contributions:
+\begin{itemize}
+\item We introduce a method for classifying users, using Twitter
+  Lists, into ``elite'' and ``ordinary'' users, further classifying
+  elite users into one of four categories of interest---media,
+  celebrities, organizations, and bloggers.
+\item We investigate the flow of information among these categories,
+  finding that although audience attention is highly concentrated on a
+  minority of elite users, much of the information they produce
+  reaches the masses indirectly via a large population of
+  intermediaries. %, often called opinion leaders.
+\item We find that different categories of users place slightly
+  different emphasis on different types of content, and that different
+  content types exhibit dramatically different characteristic
+  lifespans, ranging from less than a day to months.
+\end{itemize}
+
+Our paper differs from this earlier work by shifting attention from
+the ranking of individual users in terms of various influence measures
+to the flow of information among different categories of users.
+
 
 
 Typical lifespan of a piece of information on social media is one-way, zero or one hop - depending how a hop is define: from production directly to (potentially) consumption, without any additional node in the chain.
