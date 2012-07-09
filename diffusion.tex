@@ -52,9 +52,15 @@
 \makecopyright
 
 \begin{abstract}
-Although there has been a long history of studying the diffusion of information in various social science fields, existing theories are mostly built on direct observations in small networks or survey responses from large samples. As a result, it is hard to verify or refute these theories empirically on a large scale. In recent years, the abundance of digital records of online interactions has provided us for the first time both the explicit network structure and detailed dynamics, supporting global-scale, quantitative study of diffusion in the real world. Using these large scale datasets collected from social media sites, my research is to mainly address the following three questions about the process of information diffusion: ``who influence whom?'',  ``how do different types of information spread?'',  and ``how does the network structure impact the diffusion process?'' 
+Although there has been a long history of studying the diffusion of information in various social science fields, existing theories are mostly built on direct observations in small networks or survey responses from large samples. As a result, it is hard to verify or refute these theories empirically on a large scale. In recent years, the abundance of digital records of online interactions has provided us for the first time both the explicit network structure and detailed dynamics, supporting global-scale, quantitative study of diffusion in the real world. Using these large scale datasets collected from social media sites, this thesis is to mainly address the following three questions about the process of information diffusion: ``who influence whom?'',  ``how do different types of information spread?'',  and ``how does the network structure impact the diffusion process?'' 
+%To better understand influence in a hybrid communication channel such as Twitter,
 
-Different from other diffusion research, my work is centralized around the persistence of information.
+To understand how influence migrates across mediums, we study user's influence on social media based on their role in the global media ecosystem. By categorizing Twitter accounts into elite (i.e. celebrities, media outlets, organizations, and bloggers) and ordinary users, we find a striking concentration of attention on a minority of elite users, and significant homophily within elite categories. On the other hand, following the definition of ``opinion leaders'' in the classical ``two-step flow'' theory, we find a large population of opinion leaders who serve as a layer of intermediaries between the elite users and the masses. 
+
+In contrast to previous diffusion research on the virality of information, our work focuses on the persistence of information, in relation to people and content. Fist, we see a systematical difference, in lifespan, for information broadcase by different categories of users. Second, we find a strong association between the content and the temporal dynamics of information: rapidly-fading information contains significantly more words related to negative emotion, actions, and more complicated cognitive processes, whereas persistent information contains more words related to positive emotion, leisure, and lifestyle.
+ 
+In the end, we study the local and global structure of a decaying online social network. Although there is a significant correlation in both arrival and departure among friends, we show that the dynamics of departure behave differently from the dynamics of arrival. 
+In particular, for the majority of users with a sufficient number (e.g., greater than 20) of friends, departure is best predicted by the overall fraction of activity within a user¡¯s neighborhood, independent of size. We also find that active users tend to belong to a core that is densifying and is significantly denser than the inactive users, and the inactive set of users exhibit a higher density and lower conductance than the degree distribution alone can explain. These two aspects suggest that nodes at the fringe are more likely to depart, and therefore induce inactive and subsequent departure of neighboring nodes in tightly-knitcom-munities.
 
 
 \end{abstract}
@@ -85,33 +91,36 @@ Many many many thanks to my committee!
 
 \chapter{Introduction}
 %With the invention of print, telephone, the Internet, the amount of information a person can 
-However cynical Postman is, he has made a point that medium has an effect on both the form of information and the way it is disseminated and processed. Through the evolution of communication technology, information has become more and more easier to be produced, faster to be propagated, and more accessible.
+%However cynical Postman is, he has made a point that medium has an effect on both the form of information and the way it is disseminated and processed. Through the evolution of communication technology, information has become more and more easier to be produced, faster to be propagated, and more accessible.
 
-With the huge IPO of FB and the great pontential expected from Twitter, social media and social marketing have become the new silicion valley favorite and created a new wave of glamous bubbles.
+%With the huge IPO of FB and the great pontential expected from Twitter, social media and social marketing have become the new silicion valley favorite and created a new wave of glamous bubbles.
 
-
-Information diffusion has been a long intriguing topic for social scientists and economists. It is an essential element of many interesting problems, such as the diffusion of innovation\cite{}, formation of public opinion\cite{}, adoption of new products\cite{}. Historically, most of the research in this area has been done through field observations and/or phone surveys\cite{}. Confined by the methodology, their results are uaually based on the spread of a specific opinion or product in rather small/localized networks. 
-
+Information diffusion has been a long intriguing topic for scholars from different fields. It is an essential element of many interesting problems, such as the diffusion of innovation\cite{rogers-2003}, formation of public opinion\cite{katz_lazarsfeld,Watts-2007}, adoption of new products\cite{Bass:1969}. Historically, most of the research in this area has been done through field observations and/or phone surveys\cite{katz_57,rogers-2003}. Confined by the methodology, their results are uaually based on the spread of a specific opinion or product in rather localized networks. 
 
 The development of the Internet and the emergence of a whole new set of communication technologies on top of it has largely changed the way people  gather and disseminate information, and brought both challenge and opportunity to a better understanding of how information spreads in the society.
 Historically, most empirical studies in this area were based on data collected through in-person interviews and phone surveys\cite{}, targeted with a specific opinion or product that is under diffusion. Confined by the methodology, theories and conclusions drew from these research suffer at scale and data accuracy, and are challenged in today's massive, hybrid communication environment. Meanwhile, the popularity of eletronic communication tools has offered new possibilities for obtaining much better data on how information and behavior spread over large population. The abundance of digital records of online interactions can provide large amounts of data on both explicit network structure and detailed dynamics, supporting large-scale, quantitative study of diffusion in the real world.
 
 Using these large scale datasets collected from social media sites (i.e. Twitter, Orkut), we study three major components of information diffusion process:
 \begin{itemize}
-\item \emph{People}, who are the ``influentials'' and whom are they influencing\cite{}?
-\item \emph{Network}, how does the macro- and micro-level structure of the network affect the diffusion process\cite{}?
-\item \emph{Content}, does different types of information spread differently\cite{}?
+\item \emph{People}, who are the ``influentials'' and whom are they influencing?
+\item \emph{Content}, does different types of information spread differently?
+\item \emph{Network}, what can the macro- and micro-level structure of the network tell us about the underlying mechanism that drives the diffusion process?
 \end{itemize}
 
-Although still a young filed, there has been a growing literature on measuring and examinng these components, mostly focused on modeling and predicting the scale of cascade\cite{}. In this thesis, I will discuss our exploration on these three components of diffusion, highlighting our contributions on the following three aspects.
+Although still a young field, there has been a growing literature that studied these components, mostly focused on modeling and predicting the scale or the spikiness of cascade. Building on top of existing knowledge, our exploration on these three components highlights the following three contributions:
+
+%In this thesis, I will discuss our exploration on these three components of diffusion, highlighting our contributions on the following three aspects.
 
 %Built on top of existing research, this thesis will contribute our knowledge about the dynamics of information diffusion on online social networks, from three perspectives.
 
-First, we study the ``virality'' of diffusion from an new angle. Instead of scale, we focused on the temporal patterns of cascades. Within this scope, we, in particular, have placed our attention to the persistence of information, studying why certain information has a very long lifespan while most of the information lasts shortly in social media. We also look at the ``negative'' virality - the virality of ``inactivity'', and show how user disengagement, similar to user engagement, has a network effect on overall user inactivity.
+First, we study the ``virality'' of diffusion with new aspects. Instead of scale, we focus on the temporal patterns of cascades, in particular, the persistence of information. We notice that certain information has a very long lifespan whereas most of the information only exists shortly in social media. We also look at the ``negative'' virality - the virality of ``inactivity'', and show how user disengagement, similar to user engagement, has a network effect but operates slightly differently.
 
-Second, we examine the exogenous properties of actors and artifacts beyond the closed, single-medium communication network. Our results show that, diffusion should be studied in context, taking into account the socio-cultural factors that constantly interact with the diffusion process. For example, we find that the persistent attention to certain content can be better explained by the innate quality of the content itself, rather than the mechanism of how it spreads in the network. We also show that, despite the connectivity and demographics, certain users are more influential on social media as they carry their established role (and fame) from the world outside social media. These findings argue that, online social networks are not isolated systems, but instead, a part of the global communication networks with many existing channels, actors, and communication artifacts.
+Second, we examine the exogenous properties of actors and artifacts beyond the closed, single-medium communication network. For example, by looking in-depth at the textual characteristics, we find that the persistent attention to certain content can be better explained by the innate quality of the content, independent from the mechanism of how it spreads in the network. We also find that, despite the connectivity and demographics, certain users are more influential on social media because of their established role (and fame) from the world outside social media. These results suggest that, diffusion process should be studied in context, considering the socio-cultural factors that constantly interact with the information cascade.
 
-Third, we study different components of diffusion not only by themselves, but also the interaction between them. Information diffusion is an interactive process between people and content, mediated by the communication networks. Different components of diffusoin do not exist in isolation. People with high influence tend to cluster together\cite{}, and the location in the network can tell us a lot about a person's status\cite{}. In our work, we show that different people have different preference of content and invididual's influence is context-dependent.
+%Our results show that, diffusion should be studied in context, taking into account the socio-cultural factors that constantly interact with the diffusion process. 
+%These findings suggest that, online social networks are not isolated systems, but instead, a part of the global communication networks with many existing channels, actors, and communication artifacts.
+
+Third, we study different components of diffusion not only by themselves, but also the interaction between them. As information diffusion is an interactive process between people and content, mediated by the communication networks, different components of diffusoin do not exist in isolation. People with high influence tend to cluster together\cite{Aral-2012}, and the location in the network can tell us a lot about a person's status\cite{Kempe-2003,Backstrom:2006}. In our work, we show that different people have different preference of content and invididual's influence is topic-dependent.
 
 %In the end, we will examine a diffusion process that closely tight the online and offline world together - Arab spring. Contributions:
 %\begin{enumerate}
@@ -119,7 +128,7 @@ Third, we study different components of diffusion not only by themselves, but al
 %\item Understand the role and impact of social media in societal changes;
 %\end{enumerate}
 
-This thesis is an inter-disciplinary effort. Although most of the results are quantitatively and drew from analysis on large data sets, I worked closely with sociologists, computer scientists, phycologists, communication scholars, and political scientists, and try to conduct my research with not only computational methods but also theories and insights from different fields. As a result, I hope the findings from this work are not limited to online social networks, but can also help uncover the nature of information diffusion process acorss online and offline spaces.
+This thesis is an inter-disciplinary effort. Although most of the results are quantitative and are drew from analysis on large online datasets, I have worked closely with experts from various fields including sociologists, computer scientists, phycologists, communication scholars, and political scientists. During this process, I try to conduct my research with not only computational methods but also theories and insights from different fields. As a result, I hope our findings are not limited to online social networks, but can also help uncover the nature of information diffusion process acorss online and offline spaces.
 
 %Finally, we study the arab spring movement and hope that the insights from our work is not limited to online social networks but also help uncover the nature of information diffusion process across online and offline environement.
 
@@ -129,16 +138,16 @@ With viral videos and memes outbreak and circulating in the Internet almost ever
 \begin{enumerate}
 \item \emph{Scale}: the size of cascade tree originated from the original node. e.g., the cascade Facebook fanning pages;
 \item \emph{Range}: the maximal chain length in the diffusion network. e.g., blog\cite{Leskovec-SDM-07}. 
-\item \emph{Transmission probability}. As most existing research describe diffusion process with epidemic models, transmission probability is the probability a virus travels through a directional edge in the network and infects the end node. In the context of social networks, transmission probability is mapped to  the success rate of interpersonal recommendations in electronic market\cite{Leskovec-EC-2006}, the probability a tweet is retweeted by the followers of the tweet's author\cite{}, and the likelihood a user mark a Flickr photo as favorite after seeing a friend doing so\cite{}.
+\item \emph{Transmission probability}. As most existing research describe diffusion process with epidemic models, transmission probability is the probability a virus travels through a directional edge in the network and infects the end node. In the context of social networks, transmission probability is mapped to  the success rate of interpersonal recommendations in electronic market\cite{Leskovec-EC-2006}, the probability a tweet is retweeted by the followers of the tweet's author\cite{Bakshy-2011}, and the likelihood a user mark a Flickr photo as favorite after seeing a friend doing so\cite{Cha-2009}.
 \end{enumerate}
 
-Using large scale online social networks data, researchers have employed a whole set of computational tools to asset different aspects of cascades that may lead themselvs to viral\cite{}. However, in practice, it is still very difficult to engineer a success viral campaign\cite{}. In fact, most marketers and public relation professionals still rely heavily on experience and intuition when launching online campaigns, and most of them received long-tailed attention\cite{}. Although the virality is still the holy grail for marketers, there has been an ascending trend that put the whole idea of ``predicting virality'' in doubt. 
+Using large scale online social networks data, researchers have employed a whole set of computational tools to asset different aspects of cascades that may lead themselves to viral. However, in practice, it is still very difficult to engineer a success viral campaign\cite{Bakshy-2011}. In fact, most marketers and public relation professionals still rely heavily on experience and intuition when launching online campaigns, which mostly received attention in a short timespan\cite{Jaewon-2011,crane:2008,Wu-ICWSM-2011,Wu-Twitter-2011}. Although the virality is still the holy grail for marketers, there has been an ascending suspicion on the whole idea of ``predicting virality''.
 
-In their Science article published in 2006, Salganik et al\cite{Salganik-2006} explored the unpredictability of song ratings, arguing that, despite the quality of music, the best predictor for a song's popularity is actually the popularity itself: the songs that received first few thumbs-ups usually rise up to be the hit, even if the first thumbs-ups are given randomly. Some later work show that the quality of initiators does not correlate well with the final scale of cascades\cite{Sun-2009,Bakshy-2011}. While the structure.....ZZZZZ
+In their Science article published in 2006, Salganik et al\cite{Salganik-2006} explored the unpredictability of song ratings, argued that, despite the quality of music, the best predictor for a song's popularity is actually the popularity itself: the songs that received first few thumbs-ups usually rise up to be the hit, even if the first thumbs-ups are given randomly. Some later work showed that the quality of initiators does not predict well with the final scale of cascades\cite{Sun-2009,Bakshy-2011}. Although some studies showed that the structure of the subgraph induced by existing adopters do have a role in behaviro adoption\cite{Backstrom:2006,Romero-2011,Leskovec-SDM-07}, such role is not consistent in other studies\cite{Bakshy-2011}, and may depend on the context of diffusion\cite{Centola:2007}.
 
-There are two major factors that might contribute to the difficulity of predicting virality. First, as most studies observed, the power-law (or log-normal) distribution of the popularity of online content results in a skewed training set consisting of many unsuccessful examples and only a few successful examples. While most machine learning algorithms are not robust to skewed training sets\cite{Provost-2000}, the common practice of biased sampling can over compensate the successful cases and overlook the unsuccessful ones. As a result, most characteristics we discovered in the positive class can also be found in the negative class - the predictive model would fail to tell one from the other. Second, as we mentioned before, given the fact that online communications is an integrated part of the global communication networks, there are many exogenous factors that can not be controlled or observed in the communication channel where the data is collected. The complexity and the fuzziness of real world diffusion process is innately inadequate to be fully captured by epidemic models/cite{}.
+There are two major factors that might contribute to the difficulty of predicting virality. First, as most studies observed, the power-law (or log-normal) distribution of the popularity of online content results in a skewed training set consisting of many unsuccessful examples and only a few successful examples. While most machine learning algorithms are not robust to skewed training sets\cite{Provost-2000}, the common practice of biased sampling can over-compensate the successful cases and overlook the unsuccessful ones. As a result, most characteristics we discovered in the positive class can also be found in the negative class - the predictive model would fail to tell one from the other. Second, as we mentioned before, given the fact that online communications is an integrated part of the global communication networks, there are many exogenous factors that can not be controlled or observed in the communication channel where the data is collected. The complexity and the fuzziness of real world diffusion process is innately inadequate to be fully captured by epidemic models\cite{Bakshy-2011,Cha-2010}.
 
-Understanding the difficulty of this task does not mean that it is unsolvable. We have seen tremendous progress towards a better understanding of the virality, incorporting theories and methods from multiple fields (e.g., \cite{complex contagion, Bakshy-2011}). As part of these efforts, we study the \emph{transmission probability} of URLs among different categories of users on Twitter. Our results show that influential users are much more likely to propogate information from those who are similar to them (for more details, see Chapter~\ref{chap:influece}).
+Understanding the difficulty of this task does not mean that it is unsolvable. We have seen tremendous progress towards a better understanding of the virality, incorporting theories and methods from multiple fields (e.g., \cite{Centola:2007, Bakshy-2011}). As part of these efforts, we also study the \emph{transmission probability} of URLs among different categories of users on Twitter. Our results show that influential users are much more likely to pass on information from those who are similar to them (for more details, see Chapter~\ref{chap:influece}).
 
 Meanwhile, during our study of the spread of URLs on Twitter, we discovered and explored some new metrics for the success of cascade. We first noticed that,  although skewed as well, the distribution of the lifespan of information has a much heavier tail towards the end. In other words, there is a substantial amount of information that is consistently tweeted over a long period of time, in the fast-paced medium such as Twitter. When examining the persistent items in depth, we realized that, most of them can not be characterized by any of the traditional metrics for virality: they do not receive many retweets, they do not spread through long-chains, and they are usually not part of super-sized cascades. However, as they generate comparably large interest that lasts for a signficantly long period of time, we believe that persistent content are interesting enough to be studied as ``success'' examples of diffusion as well.
 
@@ -205,33 +214,34 @@ In our work, we compare the lifespan of information by its initiator and content
 
 %Uniqlo - flagship stores in NYC, featuring ``community heros'' such as restaurant owner and street fair organizer.
 
-The role of the influentials as trend makers has been a center piece of many classic theories about information diffusion process\cite{katz_lazarsfeld,rogers-2003}. The existence, and the importance, of the influentials also populated by several best-selling books such as The Tipping Point\cite{gladwell} and The Influentials\cite{}. Today, challenged by the unbounded opportunity (and efforts) to reach the masses, marketers and PR firms are especially eager to leverage the power of the influentials to ``tip'' their products. But, who are the influentials? 
+The role of the influentials as trend makers has been a center piece of many classic theories about information diffusion process\cite{katz_lazarsfeld,rogers-2003}. The existence, and the importance, of the influentials also populated by several best-selling books such as The Tipping Point\cite{Gladwell:2002} and The Influentials\cite{keller_berry}. Today, challenged by the unbounded opportunity (and efforts) to reach the masses, marketers and PR firms are especially eager to leverage the power of the influentials to ``tip'' their products. But, who are the influentials? 
 %Can we estimate person influence and pick out the influencers?
 
-There are several classic theories about the characteristics of the influentials. Dating back to the 50s, Katz and Lazarsfeld coined the term ``opinion leaders''. They claimed that, comparing to ordinary people, opinion leaders have more social connections and are more media-savvy\cite{katz_lazarsfeld}. Later, scholars studying the diffusion of innovations also suggested that opinion leaders usually own ``greater exposure to mass media than their followers'', ``are more cosmopolite'', ``have greater social participation'' , ``have higher socioeconomic status'', and ``are more innovative''\cite{rogers-2003}. Similar ideas are illustrated in best-selling books, in which authors claims that the influentials are ``connectors'', ``mavens'', and ``salesmen''\cite{gladwell}, and that influentials play their role actively and constantly, providing suggestions from what to buy to who to vote for\cite{}.
+There are several classic theories about the characteristics of the influentials. Dating back to the 50s, Katz and Lazarsfeld coined the term ``opinion leaders''. They claimed that, comparing to ordinary people, opinion leaders have more social connections and are more media-savvy\cite{katz_lazarsfeld}. Later, scholars studying the diffusion of innovations also suggested that opinion leaders usually own ``greater exposure to mass media than their followers'', ``are more cosmopolite'', ``have greater social participation'' , ``have higher socioeconomic status'', and ``are more innovative''\cite{rogers-2003}. Similar ideas are illustrated in best-selling books, in which authors claims that the influentials are ``connectors'', ``mavens'', and ``salesmen''\cite{gladwell}, and that influentials play their role actively and constantly, providing suggestions from what to buy to who to vote for\cite{keller_berry}.
 
-One critic to the classic theories is their lack of empirical supports. Although intuitively sound, these theories about influentials are too general to be operationalized or examined in practice. It was only since the abundance of online interaction data that we saw a new line of empirical work on measuring and quantifying personal influence in diffusion. Most of these work studied influence in two aspects: personal attributes such as demographics and activities, network attributes such as connectivity and position in the network. 
-Although both aspects are usually considered and studied, most work showed the network attributes more relevant to personal influence\cite{Sun-2009,Bakshy-2011,Kempe-2003,kwak_10,Leskovec-EC-2006,Cha-2009}. 
+One critic to the classic theories is their lack of empirical supports. Although intuitively sound, these theories about influentials are too general to be operationalized or examined in practice. It was only since the abundance of online interaction data that we saw a new line of empirical work on measuring and quantifying personal influence in diffusion. Most of these work studied influence in two aspects: personal attributes such as demographics and activities, network attributes such as connectivity and position in the network.  Although both aspects are usually considered and studied, most work showed the network attributes more relevant to personal influence\cite{Sun-2009,Bakshy-2011,Kempe-2003,kwak_10,Leskovec-EC-2006,Cha-2009}. 
 
 %Many work studied people in different demographics groups and the associated impact in diffusion process. However, although some research showed that age and gender are related with the tendency of adopting a new product\cite{}, most existing work found no siginificant correlation between individuals' demographics and their likelihood of seeding big cascades\cite{Sun-2009,Bakshy-2011}. Instead, people argued, it is the position in the network and the strength of social ties that makes some people more influential than the rest\cite{Kempe-2003,kwak_10,Leskovec-EC-2006,huberman, cha&mislove}. 
 
 However, we find current knowledge on influence and influentials still limited for several reasons. First, as most work focused on big cascades, the results can be biased towards the ``successful'' events that are deemed to be rare\cite{Bakshy-2011}.
 
-In addition, the \emph{context} of influence is usually overlooked. Influence deos not exist in vacumne. It needs to be exercized by people, with certain communication medium. The context of influence is important, because individuals influence can differ by their expertise\cite{Cha-2010}, the subject\cite{Leskovec-EC-2006}, and the communication channels\cite{}. Existing empirical studies measure influence in a variety of ways, from the size of diffusion tree, to the probability of passing the cascade to the next hop. As a result, current definition of influence is not only inconsistent but also ambiguous: different types of influence are usually studied as a whole, regardless differnet mechanisms that operate behind them. As a result, homophily can be 
+In addition, the \emph{context} of influence is usually overlooked. Influence deos not exist in vacumne. It needs to be exercized by people, with certain communication medium. The context of influence is important, because individuals influence can differ by their expertise\cite{Cha-2010}, the subject\cite{Leskovec-EC-2006}, and the communication channels\cite{Wu-Twitter-2011}. Existing empirical studies measure influence in a variety of ways, from the size of diffusion tree, to the probability of passing the cascade to the next hop. As a result, current definition of influence is not only inconsistent but also ambiguous: different types of influence are usually studied as a whole, regardless differnet mechanisms that operate behind them. As a result, different types of influence are mixed and studied as if driven by a single mechanism. And the exogenous influence migrated from other channels is usually mixed and mistaken as interpersonal influence in social media system studied.
 
- With any of the exsiting metrics, influence 
+%As a result, homophily can be 
 
-As a result, current definition of influence is not only inconsistent but also ambiguous. Across studies, influence is measured in various ways, from the size of diffusion tree, to the probability of passing the cascade to the next hop. With any of the exsiting metrics, the influence measured is usually driven by a mix effect of social contagion, homophily, and exogenous factors. However, most 
+%With any of the exsiting metrics, influence 
 
-Several recent research has raised concerns on attributing homophily as social contagion\cite{}, but the exogenous factors are still largely overlooked. 
+%As a result, current definition of influence is not only inconsistent but also ambiguous. Across studies, influence is measured in various ways, from the size of diffusion tree, to the probability of passing the cascade to the next hop. With any of the exsiting metrics, the influence measured is usually driven by a mix effect of social contagion, homophily, and exogenous factors. However, most 
 
-Bloggers follow the news threads participate in the news cycle originated by mass media with an amazing regularity. 
+%Several recent research has raised concerns on attributing homophily as social contagion\cite{}, but the exogenous factors are still largely overlooked. 
 
-Such inconsistency not only makes it impossible to compare the results across studies, but also introduces the ambiguity in the meaning of influence. 
+%Bloggers follow the news threads participate in the news cycle originated by mass media with an amazing regularity. 
 
-As a result, different types of influence are mixed and studied as if driven by a single mechanism.
+%Such inconsistency not only makes it impossible to compare the results across studies, but also introduces the ambiguity in the meaning of influence. 
 
-As discussed before, in today's hybrid communication environment, the dissemination of information usually happened in multiple channels, driven by a mixed influence from mass media to family and friends. Even in online social media such as Twitter, individual's decision to retweet a message, is usually  
+%As a result, different types of influence are mixed and studied as if driven by a single mechanism.
+
+%As discussed before, in today's hybrid communication environment, the dissemination of information usually happened in multiple channels, driven by a mixed influence from mass media to family and friends. Even in online social media such as Twitter, individual's decision to retweet a message, is usually  
 
 %However, some recent studies have challenged this whole idea about 
 
@@ -267,89 +277,56 @@ highly concentrated on a minority of elite users, much of the information they p
 %In short, influence is very much context-dependent.
 
 
-Sometimes influence is not defined by individual's properties, but by the susceptible their neighbors are\cite{Sun-2009,Watts-2007}.
+%Sometimes influence is not defined by individual's properties, but by the susceptible their neighbors are\cite{Sun-2009,Watts-2007}.
 
-Influencers can be found by one's location in the network. Competing theories: centrality, bridging effect, closeness of local community. \cite{mason}
-\cite{Kempe-2003}
+%Influencers can be found by one's location in the network. Competing theories: centrality, bridging effect, closeness of local community. \cite{mason}
+%\cite{Kempe-2003}
 
 
-influential individuals are
-less susceptible to influence than non-influential individuals and that they cluster in
-the network, which suggests that influential people with influential friends help
-spread this product.
+%influential individuals are
+%less susceptible to influence than non-influential individuals and that they cluster in
+%the network, which suggests that influential people with influential friends help
+%spread this product.
 
-Influence by demographic (gender)
+%Influence by demographic (gender)
 
 %younger users are more susceptible than older users, men are more influential than women, women influence men more than they influence other women, and married individuals are the least susceptible to influence in the decision to adopt the product we studied\cite{}.
 
-disagreement\cite{Sun-2009,...}
+%disagreement\cite{Sun-2009,...}
 
-Influence by tie strength: density of communication, connection to sheepie people.
+%Influence by tie strength: density of communication, connection to sheepie people.
 
-Influence based on past performance\cite{Bakshy-2011}.
+%Influence based on past performance\cite{Bakshy-2011}.
 
-All theories incorporated in Klout's algorithm - commercialized but heavily critized.
+%All theories incorporated in Klout's algorithm - commercialized but heavily critized.
 
-In addition to the distinction between local and global signals, it 
-is important to classify systems into two separate categories based
-on whether their dynamics are endogenous without external drivers,
-or exogenous and driven externally, or both. These distinctions
-are useful because they identify the fundamental characteristics of
-the system, and hence enable systematic comparisons with other
-systems. Epidemic spreading in a closed system is an example of an
-endogenous process with local transmission, because the pathogens
-need to be passed from one person to another in close
-physical proximity. Similarly, it is possible to model the spread of
-innovations such as the uptake of new hybrid crops by farmers as
-an endogenous social contagion process, and to try to distinguish
-between different types of local processes that may underlie the
-observed rate at which the innovation is adopted (26). However,
-studies of social influence which focus on local and endogenous
-processes such as word-of-mouth transmission are almost always
-open to the challenge that they neglect equally important exogenous
-effects such as marketing or mass advertising, and typically
-trying to separate these two confounding factors is highly problematic.
-For instance, a reanalysis (27) of the classic diffusion
-studies on how prescriptions for an antibiotic drug spread among
-physicians in different communities (10, 11) suggests that marketing
-efforts, in this context corresponding to external drivers, can
-account for most of the observed behavior. Although in general
-both endogenous and exogenous effects may be present in both
-online and offline systems, as part of our research design we have
-identified a system that does not have an exogenous component.
-Instead, both local and global signals are generated endogenously
-within the system, that is, there is no exogenous driver. This is in
-contrast to classic innovation diffusion models (e.g., 28), which
-feature one rate of contagion from within the group (local signal)
-and another externally imposed (as opposed to endogenously
-generated) rate of contagion from outside the group (global signal).
-Another important feature is that here the user has an active
-role in deciding whether or not to adopt an application.
+% The following paragraph is copied pasted from Aral-2012
+%In addition to the distinction between local and global signals, it  is important to classify systems into two separate categories based on whether their dynamics are endogenous without external drivers, or exogenous and driven externally, or both. These distinctions are useful because they identify the fundamental characteristics of the system, and hence enable systematic comparisons with other systems. Epidemic spreading in a closed system is an example of an endogenous process with local transmission, because the pathogens need to be passed from one person to another in close physical proximity. Similarly, it is possible to model the spread of innovations such as the uptake of new hybrid crops by farmers as an endogenous social contagion process, and to try to distinguish between different types of local processes that may underlie the observed rate at which the innovation is adopted (26). However, studies of social influence which focus on local and endogenous processes such as word-of-mouth transmission are almost always open to the challenge that they neglect equally important exogenous effects such as marketing or mass advertising, and typically trying to separate these two confounding factors is highly problematic. For instance, a reanalysis (27) of the classic diffusion studies on how prescriptions for an antibiotic drug spread among physicians in different communities (10, 11) suggests that marketing efforts, in this context corresponding to external drivers, can account for most of the observed behavior. Although in general both endogenous and exogenous effects may be present in both online and offline systems, as part of our research design we have identified a system that does not have an exogenous component. Instead, both local and global signals are generated endogenously within the system, that is, there is no exogenous driver. This is in contrast to classic innovation diffusion models (e.g., 28), which feature one rate of contagion from within the group (local signal) and another externally imposed (as opposed to endogenously generated) rate of contagion from outside the group (global signal). Another important feature is that here the user has an active role in deciding whether or not to adopt an application.
 
-We propose: influence by exogenous status and social roles.
-Think of influence in context:
-\begin{enumerate}
-\item general influence: mass media
-\item domain influence: masspersonal (celebrities, bloggers, organizations)
-\item personal influence: tie strength, content, language, timing (accidental influencers)
-\end{enumerate}
+%We propose: influence by exogenous status and social roles.
+%Think of influence in context:
+%\begin{enumerate}
+%\item general influence: mass media
+%\item domain influence: masspersonal (celebrities, bloggers, organizations)
+%\item personal influence: tie strength, content, language, timing (accidental influencers)
+%\end{enumerate}
 
 \section{The role of content}
-Although it has been a common belief that different types of information spread differently, the role of content in diffusion process has not been examined thoroughly and systematically. 
+Although it has been a common belief that different types of information spread differently, the role of content in diffusion process has not been examined thoroughly and systematically. Most empirical work in this area focused on the relationship between information virality and content\cite{Berger-2010,Hansen:11}, while some explored the connection between the temporal patterns and the content\cite{Gruhl-2004,crane:2008}. However, these studies are limited either by the lack of observations, or -- when viewed as content-base predictions -- by the relatively weak predictive power. 
 
-Most empirical work in this area focused on the relationship between information virality and content. 
+%Some studies the temporal patterns.
 
-Some studies the temporal patterns.
+%Results from these work are general, or lack of predictive power.
 
-Results from these work are general, or lack of predictive power.
+There are several major challenges here. First, the content itself is difficult to track, especially when it travles and mutates across multiple media channels over a long period time\cite{Leskovec-Newscycle-2009}.  Second, predicting the virality of information at an individual level is a very hard problem by itself\cite{Bakshy-2011,Szabo-2010}. Third, given the focus of past work on how people interact with information, modeling such dynamics becomes extremely complicated with many unpredictable elements involved\cite{yang-2010,Yang-2011,Wu-Twitter-2011,Bakshy-2011}. 
 
+In Chapter~\ref{chap:content}, we study the relationship between content and temporal dynamics of diffusion on Twitter. 
 
-There are several major challenges here. First, the information itself is difficult to track, especially when it travles and evolves across multiple social media systems over time\cite{Leskovec-Newscycle-2009}. The dynamics and diversity of information in online space 
+We tackle the information tracking problem by taking advantage of the URL shorteners (e.g. bit.ly, TinyURL, etc) commonly adopted by Twitter users. Considering each webpage as a unit of information, the URL shortening services tag a page with a unique token that is easily traceable in Twitter communications. As a result, we able able to track the whole lifespan of a specific webpage by the inclusion of the shortened URL in tweets. 
 
- Second, predicting the virality of information at an individual level is a very hard problem by itself\cite{Bakshy-2011,Szabo-2010}. Third, given the focus of past work on how people interact with information, modeling such dynamics becomes extremely complicated with many unpredictable elements involved\cite{yang-2010,Yang-2011,Wu-Twitter-2011,Bakshy-2011}. As a result, most existing results are very general, and lack of predictive power. 
+In response to the difficulty of predicting the virality (e.g., scale, tranmission probability), we shift our attention to the persistency of information. We compare two extreme temporal patterns in the decay rate of URLs embedded in tweets, defining a predicting task to distinguish between URLs that fade rapidly following their peak of popularity and those that fade more slowly. Our experiments show a strong connection between content and the temporal dynamics of information.
 
-In Chapter~\ref{chap:content}, we study the relationship between content and temporal dynamics of diffusion on Twitter. We tackle the information tracking problem by taking advantage of the URL shorteners (e.g. bit.ly, TinyURL, etc) commonly adopted by Twitter users. Considering each webpage as a unit of information, the URL shortening services tag a page with a unique token that is easily traceable in Twitter communications. As a result, we able able to track the whole lifespan of a specific webpage by the inclusion of the shortened URL in tweets. Also, by studying the webpages instead of individual tweets, we have a much richer, and more static corpus of content that allows us to simplify our model by focusing on the textual content instead of the users, while still maintaining sufficient degree of freedom to generate 
-Another advantage of our approach is that if we can predict the temporal pattern of information based on content alone, we will be able to do that at a very stage, presumably when the information is first generated - which can be of interest to practioners. 
+Also, by studying the webpages instead of individual tweets, we have a much richer, and more static corpus of content that allows us to simplify our model by focusing on the textual content instead of the users, while still maintaining sufficient degree of freedom to generate Another advantage of our approach is that if we can predict the temporal pattern of information based on content alone, we will be able to do that at a very stage, presumably when the information is first generated - which can be of interest to practioners. 
 
 In summary, we study intrinsic qualities of the content that may effectly determine the dissemination process, especially, the persistence of information. Our two main contributions include:
 \begin{itemize}
@@ -359,60 +336,46 @@ In summary, we study intrinsic qualities of the content that may effectly determ
 
 
 
-While most existing research studied content under diffusion at the topic level\cite{Leskovec-EC-2006,Romero-2011}, we conduct in-depth text level analysis, looking at the content not only by types but also by its linguistic properties such as sentiment and part of speech.
+%While most existing research studied content under diffusion at the topic level\cite{Leskovec-EC-2006,Romero-2011}, we conduct in-depth text level analysis, looking at the content not only by types but also by its linguistic properties such as sentiment and part of speech.
 
-Recommendations of different categories of products\cite{Leskovec-EC-2006}.
-temporal dynamics of different content\cite{crane:2008}.
-adoption of different types of Twitter hashtags\cite{Romero-2011}.
-tweets including a hyperlink generates bigger cascade.\cite{yang-2010}
-``semantic analysis of content is useful when no early click-through information is available''\cite{Szabo-2010}
+%Recommendations of different categories of products\cite{Leskovec-EC-2006}.
+%temporal dynamics of different content\cite{crane:2008}.
+%adoption of different types of Twitter hashtags\cite{Romero-2011}.
+%tweets including a hyperlink generates bigger cascade.\cite{yang-2010}
+%``semantic analysis of content is useful when no early click-through information is available''\cite{Szabo-2010}
 
-We found that information with cultural values last long.
-We 
+%We found that information with cultural values last long. 
 
-Individuals are selective at what content they like to read and share.
+%Individuals are selective at what content they like to read and share.
 
 \section{The network effect of disengagement}
-The structure of network is another interesting component of diffusion research. At a local level, many studies have shown the correlation of activity among friends in online communities, and tried to understand the effect of neighborhood structure on the spread of information, or behavior. Classic theory on product adoption suggests an ``S-shape'' curve\cite{Bass:1969} in which the probability of adopting a new product grows slowly with a small number of adopted friends $k$, rapidly as $k$ increases, and quickly saturates once $k$ reaches a certain point. But recent empirical work based on online data showed that the adoption probability follows a ``deminishing return'' curve in which it first grows rapidly at small values $k$, then gradually stops to grow as $k$ gets large\cite{Backstrom:2006,Romero-2011}. When studying the local structure in depth, people found that, the structural closeness of local community (measured by triadic closures or cluster coefficient) has a siginificatn effect at the probability of adoption\cite{Backstrom:2006}, however, such effect may differ by the types of content under diffusion\cite{Romero-2011}.
+The structure of network is another interesting component of diffusion research. 
 
-In addition to the research efforts on local structure, a number of studies looked at global structure of networks, in the understanding of macro-level dynamics of diffusion. The structure of network can determine (and explain) certain characteristics of cascades that run on top of it. \cite{pastor-satorras01}.  \cite{Nowell-2008} \cite{Gruhl-2004}
-\cite{Eguiluz-2002}
+At a local level, many studies have shown the correlation of activity among friends in online communities, and tried to understand the effect of neighborhood structure on the spread of information, or behavior. Classic theory on product adoption suggests an ``S-shape'' curve\cite{Bass:1969} in which the probability of adopting a new product grows slowly with a small number of adopted friends $k$, rapidly as $k$ increases, and quickly saturates once $k$ reaches a certain point. But recent empirical work based on online data showed that the adoption probability follows a ``deminishing return'' curve in which it first grows rapidly at small values $k$, then gradually stops to grow as $k$ gets large\cite{Backstrom:2006,Romero-2011}. When studying the local structure in depth, people found that, the structural closeness of local community (measured by triadic closures or cluster coefficient) has a siginificatn effect at the probability of adoption\cite{Backstrom:2006}, however, such effect may differ by the types of content under diffusion\cite{Romero-2011}.
 
-One refinement is to consider a more accurate model of power-law networks.
-Egu´ýluz and Klemm [10] have demonstrated a non-zero epidemic threshold under the SIS model
-3
-in power-law networks produced by a certain generative model that takes into account the high
-clustering coefficient - the probability that two neighbors of a node are themselves neighbors—
-found in real social networks [28].
+In addition to the research efforts on local structure, a number of studies looked at global structure of networks, in the understanding of macro-level dynamics of diffusion. Fixing the diffusion model for local dynamics (e.g., epidemic models, independent cascade models, threshold models), the global structure of network can determine (and explain) certain characteristics of cascades that run on top of it. For example, in \cite{pastor-satorras01}, the authors argues that the persistence of low-contagious virus in computer network systems is a result of the scale-free structure of the network.  In many other work, the global structure of the diffusion network is used as benchmark for generative models that simulate the mechnism of diffusion\cite{Eguiluz-2002,Gruhl-2004,Nowell-2008}.
 
+%One refinement is to consider a more accurate model of power-law networks.
+%Egu´ýluz and Klemm [10] have demonstrated a non-zero epidemic threshold under the SIS model 3
+%in power-law networks produced by a certain generative model that takes into account the high
+%clustering coefficient - the probability that two neighbors of a node are themselves neighbors—
+%found in real social networks [28].
 
 While most existing work focuses on the growth of networks and the increase of activity, our work differs by shifting efforts to the dynamics of user departure from social networks, and the decline of activity. What leads people to depart from their social networks? Is inactivity also contagious? One could argue that since inactivity is by definition less visible than activity, it should have less effect on influencing an individual's behavior. However, the extreme case in which all friends of a user depart suggests that, eventually, there must be an effect. 
 
-In Chapter~\ref{chap:network}, we study these questions in the context of the Dblp co-autorship network and a large online social network. We show that the network effect of departure operates differently from the network effect of
-formation.  In particular, the departure of a user with few friends,
-say less than 20, may be understood most accurately as a function of
-the raw number of friends who are active.  For the majority of users
-with larger numbers of friends, however, departure is best predicted
-by the overall fraction of activity within a user's neighborhood,
-independent of size.  We then study global properties of the subgraphs
-induced by active and inactive users, and show that active users tend
-to belong to a core that is densifying and is significantly denser than
-the inactive users. Further, the inactive set of users
-exhibit a higher density and lower conductance than the degree distribution 
-alone can explain. These two aspects suggest that nodes at the fringe are
-more likely to depart and additionally induce inactive and subsequent departure
-of neighboring nodes in tightly-knit communities. 
+In Chapter~\ref{chap:network}, we study these questions in the context of the Dblp co-autorship network and a large online social network. We show that the network effect of departure operates differently from the network effect of formation.  In particular, the departure of a user with few friends, say less than 20, may be understood most accurately as a function of the raw number of friends who are active.  For the majority of users with larger numbers of friends, however, departure is best predicted by the overall fraction of activity within a user's neighborhood, independent of size.  We then study global properties of the subgraphs induced by active and inactive users, and show that active users tend to belong to a core that is densifying and is significantly denser than
+the inactive users. Further, the inactive set of users exhibit a higher density and lower conductance than the degree distribution alone can explain. These two aspects suggest that nodes at the fringe are more likely to depart, and therefore induce inactive and subsequent departure of neighboring nodes in tightly-knit communities. 
 
-Our results can be generalized to information diffusion.
+Although our study starts from the inactivity of users in onlie communities, the results are verified in other social networks such as DBLP, thus should be also generalizable to the decay of attention in information diffusion process.
 
 
-locally, clustered behavior, 
+%locally, clustered behavior, 
 
-globally, the temporal evolution of network structure can tell us about the mechanism driving the dynamics of networks.
+%globally, the temporal evolution of network structure can tell us about the mechanism driving the dynamics of networks.
 
-look at microlevel social mechanisms
+%look at microlevel social mechanisms
 
-chain letter
+%chain letter
 
 %\section{The journey ahead}
 
@@ -486,7 +449,6 @@ MapReduce is good with easy-parallelible tasks, hard for tasks that need certain
 
 Methods to convert a global problem to a series of mapreduce jobs~\cite{Suri-Triangle-2011}.
 
-\end{comment}
 
 %\part{The life of information: the interaction between people and content in online networks}
 
@@ -504,61 +466,26 @@ My contributions:
 \end{enumerate}
 
 
+\end{comment}
+
+
 \chapter{Exogenous influence and opinion leaders on Twitter}
 \label{chap:influece}
-Inadequety of network-metrics of influence. Borrowed insights from communication studies - mixed influence both externally and internally. The external influence need to be studied in the entire media ecosystem that contains the online social media.
+Several work studied user influence on Twitter with different topological and activity measures\cite{kwak_10,Cha-2010,weng_10}. Most of them found these measures inadequate at describing the notion of influence on Twitter, only capturing part of the dynamics observed. In addition, people noticed a significant presence of ``mass-media'' communications on Twitter\cite{kwak_10}, and top users are influential not only by ``information value'' but by the ``name value'' they hold outside of Twitter\cite{Cha-2010}. Our work explored the mass-media aspect of Twitter, and studied the influence of different categories of ``elite'' users, from ``mass-media'', to ``mass-personal''.
+
+There is a distinct difference in the mechanisms that drive ``mass'' influence and ``interpersonal'' influence. According to classic communication theories, mass influence is exerted through ``oneway message transmissions from one source to a large,  relativelyundifferentiated and anonymous audience'', whereas, ``interpersonal'' influence plays out through ``two-way message exchange between two or more individuals.''
 
 
-A longstanding objective of media communications research is to fully
-investigate what is known as Lasswell's maxim: ``who says what to whom in
-what channel with what effect''~\cite{lasswell_48}. Named after Harold
-Lasswell, a pioneer of the field, Lasswell's maxim is easy to state but
-hard to analyze, in part because it is in general difficult to observe
-information flows in large populations, and in part because different
-channels have very different attributes and effects. Historically,
-communications theorists have distinguished between ``mass'' communication,
-defined as ``one-way message transmissions from one source to a large,
-relatively undifferentiated and anonymous audience,'' and ``interpersonal''
-communication, which is generally considered to imply a ``two-way message
-exchange between two or more
-individuals.''~\cite{walther_10}. Corresponding to this dichotomy,
-communication theorists have long debated the relative importance of mass
-vs. interpersonal communication. Whereas early theories such as the
-so-called ``hypodermic model'' posited that mass media exerted direct and
-relatively strong effects on public opinion, mid-century
-researchers~\cite{lazarsfeld, katz_lazarsfeld, merton, coleman_et_al}
-argued that the mass media influenced the masses only indirectly, via what
-they called a two-step flow of communications, where the critical
-intermediate layer was occupied by a category of media-savvy individuals
-called opinion leaders. The resulting ``limited effects'' paradigm was then
-subsequently challenged by a new generation of
-researchers~\cite{gitlin_78}, who claimed that the real importance of the
-mass media lay in its ability to set the agenda of public discourse. But in
-recent years rising public skepticism of mass media, along with changes in
-media and communication technology, have tilted conventional academic
-wisdom once more in favor of interpersonal communication, which some
-identify as a ``new era'' of minimal effects~\cite{bennett_iyengar_08}.
+%Our word differs from this earlier work by shifting attention to the ranking of individual users in terms of various
+%influence measures to the flow of information among different categories of users. 
 
-Recent changes in technology, however, have increasingly undermined
-the validity of the mass vs. interpersonal distinction.  On the one
-hand, over the past few decades mass communication has experienced a
-proliferation of new channels, including cable television, satellite
-radio, specialist book and magazine publishers, and of course an array
-of web-based media such as sponsored blogs, online communities, and
-social news sites. Correspondingly,
-the traditional mass audience once associated with, say, network television
-has fragmented into many smaller audiences, each of which increasingly
-selects the information to which it is exposed, and in some cases
-generates the information itself.  Meanwhile,
-interpersonal communication has become amplified through personal
-blogs, email lists, and social networking sites to afford individuals
-ever larger audiences. Together, these two trends have greatly
-obscured the historical distinction between mass and interpersonal
-communications, leading some scholars to refer instead to
-``masspersonal'' communications \cite{walther_10}.
+%In this sense, it is similar to the work by \cite{crane:2008} and \cite{}
 
-Nowhere is the erosion of traditional categories more apparent than in
-the micro-blogging platform Twitter.
+Recent changes in technology, however, have increasingly undermined the validity of the mass vs. interpersonal distinction.  On the one hand, over the past few decades mass communication has experienced a proliferation of new channels, including cable television, satellite radio, specialist book and magazine publishers, and of course an array of web-based media such as sponsored blogs, online communities, and social news sites. Correspondingly, the traditional mass audience once associated with, say, network television
+has fragmented into many smaller audiences, each of which increasingly selects the information to which it is exposed, and in some cases generates the information itself.  Meanwhile, interpersonal influence has become amplified through personal blogs, email lists, and social networking sites to afford individuals ever larger audiences. Together, these two trends have greatly obscured the historical distinction between mass and interpersonal influence, leading some scholars to refer instead to
+``masspersonal'' influence\cite{walther_10}.
+
+Twitter has showcased this erosion of traditional categories of influence.
 % As noted in section \ref{sec:introduction} the fragmentation of
 % traditional media channels, along with the concomitant rise of social
 % media, have blurred the boundaries between mass and interpersonal
@@ -581,12 +508,7 @@ masspersonal communication on Twitter, media organizations, along with
 corporations, governments, and NGO's all remain represented among highly
 followed users, and are often extremely active.
 
-Twitter, therefore, provides an interesting context in which to address
-Lasswell's maxim, especially as Twitter---unlike television, radio, and
-print media---enables one to easily observe information flows among the
-members of its ecosystem.  However, the effects (e.g. changes in behavior,
-attitudes, etc) remain difficult to measure on Twitter, and so we limit our
-focus to the ``who says what to whom'' part of Laswell's maxim.
+Twitter, therefore, provides an interesting context in which to study the effect of exogenous factors on social media, especially as Twitter---unlike television, radio, and print media---enables one to easily observe information flows among the members of its ecosystem.  However, the effects (e.g. changes in behavior, attitudes, etc) remain difficult to measure on Twitter, and so our study of influence is limited to the distribution of attention and the internsity of interaction within Twitter platform.
 
 % observe, and causality is even harder to assert. The result is that
 % theories of communication have been difficult to verify or refute
@@ -604,41 +526,36 @@ focus to the ``who says what to whom'' part of Laswell's maxim.
 
 To this end, our paper makes three main contributions:
 \begin{itemize}
-\item We introduce a method for classifying users, using Twitter
-  Lists, into ``elite'' and ``ordinary'' users, further classifying
-  elite users into one of four categories of interest---media,
+\item We introduce a method for classifying users with their external status, using Twitter
+  Lists, into ``elite'' and ``ordinary'' users. We further classify elite users into one of four categories of interest---media,
   celebrities, organizations, and bloggers.
-\item We investigate the flow of information among these categories,
-  finding that although audience attention is highly concentrated on a
+\item We investigate the potential influence of these categories, based on how their opinion reach and stimulate the public. We find that although audience attention is highly concentrated on a
   minority of elite users, much of the information they produce
   reaches the masses indirectly via a large population of
   intermediaries. %, often called opinion leaders.
-\item We find that different categories of users place slightly
+\item We show that different categories of users place slightly
   different emphasis on different types of content, and that different
   content types exhibit dramatically different characteristic
   lifespans, ranging from less than a day to months.
 \end{itemize}
 
-Our paper differs from this earlier work by shifting attention from
-the ranking of individual users in terms of various influence measures
-to the flow of information among different categories of users.
+%Our paper differs from this earlier work by shifting attention from the ranking of individual users in terms of various influence measures to the flow of information among different categories of users.
 
 
+%Typical lifespan of a piece of information on social media is one-way, zero or one hop - depending how a hop is define: from production directly to (potentially) consumption, without any additional node in the chain.
 
-Typical lifespan of a piece of information on social media is one-way, zero or one hop - depending how a hop is define: from production directly to (potentially) consumption, without any additional node in the chain.
+%Why is it interesting to study the direction production-consumption flow of information? 1. Majority of information; 2. Interesting social science problem; 3. very similar to mass communication - debates on the role of social media; 4. significant effect of environmental influence that will largely determine public opinion formation; 
 
-Why is it interesting to study the direction production-consumption flow of information? 1. Majority of information; 2. Interesting social science problem; 3. very similar to mass communication - debates on the role of social media; 4. significant effect of environmental influence that will largely determine public opinion formation; 
+%In this seciton, we focus on the production and consumption of information. Our study is led by classic communication theories: debate on two modes of communications. Different people play different roles, and which role they are playing is largely determined by two factors: (1) internally, their own goal, taste, and agenda; (2) externally, the amount of attention they enjoyed from the public. 
 
-In this seciton, we focus on the production and consumption of information. Our study is led by classic communication theories: debate on two modes of communications. Different people play different roles, and which role they are playing is largely determined by two factors: (1) internally, their own goal, taste, and agenda; (2) externally, the amount of attention they enjoyed from the public. 
+%Our contributions:
+%\begin{enumerate}
+%\item introduce a low-cost, crowd-sourcing method to classify users into categories that parallel to media/communication research;
+%\item investigate one-way, one-hop flow of information among these categories, present a high level picture of the distribution of attention;
+%\item show the interaction between people and content. 
+%\end{enumerate}
 
-Our contributions:
-\begin{enumerate}
-\item introduce a low-cost, crowd-sourcing method to classify users into categories that parallel to media/communication research;
-\item investigate one-way, one-hop flow of information among these categories, present a high level picture of the distribution of attention;
-\item show the interaction between people and content. 
-\end{enumerate}
-
-ZZZZZ Put two-step flow in next chapter?
+%ZZZZZ Put two-step flow in next chapter?
 
 \section{Data And Methods}
 \subsection{Twitter Follower Graph}
@@ -838,8 +755,7 @@ blog & 140,251& 19,946 & 49,987 &17,259\\
 
 \section{Distribution of attention}
 
-After categorizing people into categories, we can calculate the amount of attention sent and received by each category, at a global level. The way we do it is to show the reach of the ``elite'' categories. It can be considered as the influence of each category, as well as an estimate of the impact of the information introducted by each category. In other words, it is the maximal reach of the information produced by each category.
-
+After categorizing people into categories, we can calculate the amount of attention sent and received by each category, at a global level. The approach we take is to measure the reach of the ``elite'' categories, which can be considered as the influence of each category, as well as an estimate of the impact of the information introduced by each category. In other words, it is the maximal reach of the information produced by each category.
 
 
 \subsection{Concentration of attention}
@@ -966,8 +882,6 @@ Oprah & TIME & ollehkt & dooce \\
 \end{table}
 
 
-ZZZZZ: Move the paragraph and tables below to content part.
-
 To confirm the validity of these categories, we now consider the number of
 URLs introduced by various categories. As Table \ref{tab:urls_initiated}
 (left column) shows, the vast majority of URLs are initiated by ordinary
@@ -1021,7 +935,7 @@ population.
 \end{figure}
 
 
-\subsection{Homophily of attention}
+\subsection{Homophily of influence}
 
 As indicated above, the top $20K$ elite users account for almost $50 \%$ of
 all attention within Twitter; yet this population of users comprises less
@@ -1081,7 +995,7 @@ blog	&4.94 & 3.89 & 1.58 & \bf{22.55} \\ \hline
 \end{figure}
 
 
-
+\begin{comment}
 \chapter{ZZZZZ: Transmissive probability}
 ZZZZZ: should we combine this section with previous or next section?
 
@@ -1098,6 +1012,14 @@ My contribution:
 
 \section{People}
 The origin of information will influence how it will be RTed. 
+\end{comment}
+
+Figure~\ref{fig:attention_to_top_k_elite}, it should be noted, shows only how many URLs
+are received by category $i$ from category $j$, a particularly
+weak measure of attention for the simple reason that many
+tweets go unread. A stronger measure of attention, therefore,
+is to consider instead only those URLs introduced by
+category $i$ that are subsequently retweeted by category $j$.
  
 Before proceeding, it is helpful to differentiate between two mechanisms by
 which information can diffuse in Twitter. The first is via retweeting, when
@@ -1169,8 +1091,215 @@ other & 45,547 & 793,741 & 69,441 & 335,690 & 86,853,224 & 88,097,643\\ \hline
 \label{fig:RT_topuser}
 \end{figure}
 
-\section{Content}
-People have different interest at different content. So the type of content can also determine what a person will RT.
+
+\section{Revisiting two-step flow theory: what are the opinion leaders?}
+\label{sec:two-step}
+The two-step flow theory, first proposed in the 50's, is still one of the most successful theories that captured the dueling importance of mass media and interpersonal influence.  The essence of the two-step flow is that
+information passes from the media to the masses not directly, as supposed
+by early theories of mass communication, but rather via an intermediary
+layer of \emph{opinion leaders}, who act as filters and interpreters for their
+followers. Although deeply ackowledged by marketers, it has been difficult to identify opinion leaders at a large scale, or quantify their impact to the public. As we have already gathered a confident list of mass media accounts, it becomes a natural problem for us to verify the two-step flow theory on Twitter, and ask, what are the opinion leaders, and what proportion of the information originating from media sources is broadcast directly to the masses, and what proportion is transmitted indirectly via some population of intermediaries. In addition, we may inquire whether these intermediaries,
+to the extent they exist, are drawn from other elite categories or from
+ordinary users, as claimed by the two-step flow theory; and if the latter,
+in what respects they differ from other ordinary users.
+
+Before proceeding with this analysis, we note that there are two ways
+information can pass through an intermediary in Twitter. The first is
+via retweeting, which occurs when a users explicitly rebroadcasts a
+URL that he or she has received from a friend, along with an explicit
+acknowledgement of the source---either using the official retweet
+functionality provided by Twitter or by making use of an informal
+convention such as ``RT @user" or ``via @user.''  Alternatively, a
+user may tweet a URL that has previously been posted, but without
+acknowledgement of a source; in this case we assume the information
+was independently rediscovered and label this a ``reintroduction'' of
+content.
+%The second mechanism is what we label reintroduction, where a user
+%subsequently tweets a URL that has previously been introduced by another
+%user, but without the acknowledgment, in which case we assume the
+%information has been rediscovered independently.
+% (where we note that because users do sometimes retweet other users
+% without acknowledgement, we have likely misclassified some fraction of
+% retweets as reintroductions).  
+For the purposes of studying when a user receives information directly from
+the media or indirectly through an intermediary, we treat retweets and
+reintroductions equivalently.  If the first occurrence of a URL in Twitter
+came from a media user, but a user received the URL from another source,
+then that source can be considered an intermediary, whether they are
+citing the source within Twitter by retweeting the URL, or reintroducing
+it, having discovered the URL outside of Twitter.
+
+To quantify the extent to which ordinary users get their information
+indirectly versus directly from the media, we sampled 1M random ordinary
+users\footnote{As before, performing this analysis for the entire
+  population of over 40M ordinary users proved to be computationally
+  unfeasible.}, and for each user, counted the number $n$ of bit.ly URLs
+they had received that had originated from one of our 5K media users, where
+of the 1M total, 600K had received at least one such URL.  For each member
+of this 600K subset we then counted the number $n_2$ of these URLs that
+they received via non-media friends; that is, via a two-step flow. The
+average fraction $n_2/n = 0.46$
+%%DW: Check that this number stays the same
+therefore represents the proportion of media-originated content that
+reaches the masses via an intermediary rather than directly. As Figure
+\ref{fig:two_step_volume} shows, however, this average is somewhat
+misleading.  In reality, the population comprises two types---those who
+receive essentially all of their media-originating information via two-step
+flows and those who receive virtually all of it directly from the media.
+Unsurprisingly, the former type is exposed to less total media than the
+latter.  What is surprising, however, is that even users who received up to
+100 media URLs during our observation period received all of them via intermediaries.
+
+
+%%DW to SW: need to put figure in SVN
+\begin{figure}
+\centering
+\includegraphics[width=5in]{figures/1M_random_sample_two_step_flow_ratio.eps}
+\caption{Percentage of information that received via an
+  intermediary as a function of total volume of media content to which
+  a user is exposed}
+\label{fig:two_step_volume}
+\end{figure}
+
+% ======= 
+% Differentiating these opinion leaders from ordinary users, however, is
+% difficult. To begin with, Table ~\ref{rt_breakdown} shows that very few
+% URLs are RT'd by any elite category; thus the bulk of the retweeting and
+% reintroduction that we observe is attributable to users we have
+% classified as ordinary. Conceivably, our classification scheme above has
+% omitted an important category; that is, within the current ``other''
+% category may be hidden additional categories of opinions.  As Figure
+% \ref{top_k_volume_other} shows, however, even the top 10,000 of these
+% users who retweeted the most accounts for a negligible fraction of
+% attention among the remaining population.  To the extent that there
+% exists a meaningful population of opinion leaders, therefore, it is
+% highly distributed.  In fact, for the above 60K sample of recipients, the
+% corresponding population of referrers is 160,000---that is, the set of
+% opinion leaders is actually larger than the corresponding population of
+% followers. Moreover, as Table \ref{two_step_intermediaries} shows, almost
+% all of these intermediaries are ordinary users.
+
+
+Who are these intermediaries, and how many of them are there? In total, the
+population of intermediaries is smaller than that of the users who rely on
+them, but still surprisingly large, roughly 490K, the vast majority of
+which (484K, or 99\%) are classified as ordinary users, not elites. To
+illustrate the difference, we note that whereas the top 20K elite users
+collectively account for nearly 50\% of attention, the top 10K
+most-followed ordinary users account for only 5\%.
+% the 480K ``ordinary'' intermediaries account for only ????\%
+%%DJW Need to fill in this number, which I think Shaomei calculated at some
+%% point SW(1/22/11): I can't find this number for 480K intermediaries in
+%% my blog. Duncan, do you think it's in one of the emails? can you search
+%% your inbox? If we can't get the exact number, can we somehow assume it
+%% is small based on the relatively small attention attracted by the top
+%% ordinary users?
+Moreover, Figure~\ref{fig:two_step_volume}c also shows that at least some
+intermediaries also receive the bulk of their media content indirectly,
+just like other ordinary users.
+
+Comparing Figure~\ref{fig:two_step_volume}a and
+~\ref{fig:two_step_volume}c, however, we note that intermediaries are not
+like other ordinary users in that they are exposed to considerably more
+media than randomly selected users (9165 media-originated URLs on average
+vs. 1377),
+%% DJW: more numbers to fill in.
+hence the number of intermediaries who rely on two-step flows is smaller
+than for random users. In addition, we find that on average intermediaries
+have more followers than randomly sampled users (543 followers versus 34)
+and are also more active (180 tweets on average, versus 7). Finally,
+Figure~\ref{fig:opinion_leadership} shows that although all intermediaries,
+by definition, pass along media content to at least one other user, a
+minority satisfies this function for multiple users, where we note that the
+most prominent intermediaries are disproportionately drawn from the 4\% of
+elite users---Ashton Kucher (aplusk), for example, acts as an intermediary
+for over 100,000 users.
+
+% 
+% \begin{figure}
+% \centering
+% \includegraphics[width=3in]{figures/1M_comparison_tweets_followers_opinionleader_ordinaryuser.pdf}
+% \caption{Comparison of \# followers and \# tweets for intermediaries and randomly sampled users respectively}
+% \label{fig:opinion_leaders_stats}
+% \end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=3.5in]{figures/opinion_leader_referral_freq.eps}
+\caption{Frequency of intermediaries binned by \# randomly sampled users to whom they transmit media content}
+\label{fig:opinion_leadership}
+\end{figure}
+
+
+% Although ordinary in terms of the attention they
+% receive, however, intermediaries differ from recipients
+% in two respects. First, as Figure \ref{fig:two_step_volume} shows, intermediaries are
+% exposed to considerably more media than recipients; and second, they
+% receive a larger fraction of media-originating URLs directly from media
+% sources (although they are themselves the recipients of referred links
+% 26\% of the time).
+
+% These results stand in contrast with the recent marketing literature,
+% which has tended to emphasize the importance of a few ``special
+% people'' in promoting social change \ref{gladwell}. 
+
+% In terms of the volume of information received, therefore, this result appears to
+% support the two-step-flow model of communication~\cite{katz_lazarsfeld},
+% which claims precisely that information does not flow directly from the
+% media to the masses, but passes first through an intermediate layer of
+% ``opinion leaders'' who decide which information to rebroadcast to their
+% followers, and which to ignore.
+
+Interestingly, these results are all broadly consistent with the original
+conception of the two-step flow, advanced over 50 years ago, which
+emphasized that opinion leaders were ``distributed in all occupational
+groups, and on every social and economic level,'' corresponding to our
+classification of most intermediaries as
+ordinary~\cite{katz_lazarsfeld}. The original theory also emphasized that
+opinion leaders, like their followers, also received at least some of their
+information via two-step flows, but that in general they were more exposed
+to the media than their followers---just as we find here. Finally, the
+theory predicted that opinion leadership was not a binary attribute, but
+rather a continuously varying one, corresponding to our finding that
+intermediaries vary widely in the number of users for whom they act as
+filters and transmitters of media content.  Given the length of time that
+has elapsed since the theory of the two-step flow was articulated, and the
+transformational changes that have taken place in communications technology
+in the interim---given, in fact, that a service like Twitter was likely
+unimaginable at the time---it is remarkable how well the theory agrees with
+our observations.
+
+%%DJW: In the abstract and intro we say that we also find some interesting
+%%differences.  So either we should specificy some differences, or we
+%%should delete the bits where we claim to find them. Do we think there are
+%%interesting differences?  500K seems like a lot, but KL don't specify any
+%%number, so it's not inconsisent with what they say. Also the blurry
+%%boundary between elite and ordinary opinion leaders adds color to the
+%%concept, but is again not inconsistent with anything KL said.
+
+\begin{comment}
+\begin{table}
+\centering
+\caption{Referrers of Media-originating URLs}
+\label{tab:two_step_intermediaries}
+\begin{tabular}{lr}
+celeb	& 770 \\ 
+media	& 2,796 \\ 
+org	& 904 \\ 
+blog	& 1,732 \\ 
+other	& 152,628 \\
+\end{tabular}
+\end{table}
+\end{comment}
+
+\section{The interaction between people and content}
+\label{sec:interaction}
+The results in Section~\ref{sec:attention} demonstrate the ``elite'' users
+account for a substantial portion of all of the attention on Twitter, but
+also show clear differences in how the attention is allocated to the
+different elite categories. As illustrated previously, users have natural preferences on content, and influence on Twitter is topic-dependent\cite{Leskovec-EC-2006,Cha-2010}. It is therefore interesting to consider what
+kinds of content is being shared by these categories. 
 
 Given the large size of the URL population in our observation period
 ($260M$), and the large number of ways in which one can classify content
@@ -1255,178 +1384,228 @@ with our classification scheme.
 \label{fig:popular_URLs}
 \end{figure}
 
+\section{Lifespan of content by category}
+\label{sec:lifespan}
+% Returning the motivating question in Section \ref{introduction}, ``who
+% says what to whom with what effect,'' we now address the issue of
+% effects. As noted in Section \ref{introduction} the nature of the data
+% available precludes observing the kinds of effects, such as voting or
+% purchasing behavior, that communications researchers have been most
+% interested in. Nevertheless, we can consider a more limited type of
+% effect--namely the duration for which information persists.
 
+% In the second part of our study, we investigate the effect of the
+% originating category on.  \begin{itemize} % DW: Already covered in
+% previous section \item How much information first introduced by each
+% category is retweeted and reintroduced by other categories?  \item How
+% does the originating category relate to the lifespan and success of a
+% URL?  \item For certain special cases where we can also classify the
+% content of a URL, how does content type modify the above?  \end{itemize}
 
-\chapter{Content and the persistence of information}
-\label{chap:content}
-In our work, we noticed that although a small amount of information spread and travels, among them, a substantial portion has a very long lifespan. We think this is very interesting phenomenon that has not been well investigated yet. 
+In addition to different types of content, URLs introduced by different
+types of elite users or ordinary users may exhibit different lifespans,
+by which we mean the time lag between the first and last appearance of a
+given URL on Twitter.
 
+Naively, measuring lifespan seems a trivial matter; however, a finite
+observation period---which results in censoring of our
+data---complicates this task. In other words, a URL that is last observed
+towards the end of the observation period may be retweeted or reintroduced
+after the period ends, while correspondingly, a URL that is first observed
+toward the beginning of the observation window may in fact have been
+introduced before the window began. What we observe as the lifespan of a
+URL, therefore, is in reality a lower bound on the lifespan. Although
+this limitation does not create much of a problem for short-lived
+URLs---which account for the vast majority of our observations---it does potentially
+create large biases for long lived URLs. In particular, URLs that appear
+towards the end of our observation period will be systematically classified
+as shorter-lived than URLs that appear towards the beginning.
 
-\section{Lifespan by the category of originator}
-ZZZZZ: Content produced by different people have different persistence. Blogger's role of information filter.
+%%DW: Insert Figures: () schematic of window estimation procedure; (b) tau vs delta tau
 
-By lifetime, we mean the time lag between the first and last
-appearance of a given URL on Twitter. Naively, measuring lifetime seems a
-trivial matter; however, it is complicated by the finite observation
-window, which results in ``censoring'' of our data. In other words, a URL
-that is last observed towards the end of the observation period may be
-retweeted or reintroduced after the period ends, while correspondingly, a
-URL that is first observed toward the beginning of the observation window
-may in fact have been introduced before the window began. What we observe
-as the lifetime of a URL, in other words, is in reality a lower bound on
-the lifetime. Although this limitation does not create much of a problem
-for short-lived URLs---which account for the vast majority of our
-observations---it does create large biases for long lived URLs. In
-particular, URLs that appear towards the end of our observation period will
-be systematically classified as shorter-lived than URLs that appear towards
-the beginning.
-
-To address the censoring problem, we seek to determine a buffer $\delta$ at
-both the beginning and the end of our $223$ day period, and only count URLs
-as having a lifetime of $\tau$ if (a) they do not appear in the first
-$\delta$ days, (b) they first appear in the interval between the buffers,
-and (c) they do not appear in the last $\delta$ days.  As Figure
-\ref{fig:censoring} shows, to determine $\delta$ we first split the $223$
-day period into two segments - the first 133 day training segment and the last 90 day testing segment, and then ask: if we (a) observe a URL first appear in
-the first $163 - \delta$ days and (b) do not see it in the $\delta$
-days prior to the splitting point, how likely are we see it in the last 90 days?
-Clearly this depends on the actual lifetime of the URL, where initially we
-know for each URL that it persists for at least $\tau$ days. As the longer a URL lives, the more likely it will re-appear in the future, Figure
-\ref{fig:tau_v_delta} shows the upper-bound on lifetime for which we
-can determine the actual lifetime with $95 \%$ accuracy as a function of
-$\delta$. Finally, because we require a beginning and ending buffer, and
-because we can only classify a URL as having lifetime $\tau$ if it
-appears at least $\tau$ days before the end of our window, we need to pick
-$\tau$ and $\delta$ such that $\tau + 2\delta < 223$. From Figure
-\ref{fig:tau_v_delta}, we determined that $\tau = 60$ and $\delta=48$
-sufficiently satisfy our constraints.
 
 \begin{figure}
 \centering
+\subfigure{
+\includegraphics[width=5in]{figures/window_estimation_scheme.eps}
+\label{fig:censoring_a}
+}
+\subfigure{
 \includegraphics[width=5in]{figures/window_estimation_procedure_scheme.eps}
-\caption{Schematic of window estimation procedure}
+\label{fig:censoring_b}
+}
+\caption{(a) Definition of URL lifespan $\tau$ (b) Schematic of lifespan estimation procedure}
 \label{fig:censoring}
 \end{figure}
+% 
+% \begin{figure}
+% \centering
+% \includegraphics[width=3in]{figures/tau_delta.pdf}
+% \caption{Upperbound of $\tau$ with confidence level $>$ 0.95, as a function of $\delta$.}
+% \label{fig:tau_v_delta}
+% \end{figure}
 
-\begin{figure}
+To address the censoring problem, we seek to determine a buffer
+$\delta$ at both the beginning and the end of our $223$-day period,
+and only count URLs as having a lifespan of $\tau$ if (a) they do not
+appear in the first $\delta$ days, (b) they first appear in the
+interval between the buffers, and (c) they do not appear in the last
+$\delta$ days, as illustrated in Figure~\ref{fig:censoring_a}.
+% That is, we seek a value for $\delta$ which balances the
+% number of URLs whose lifetimes we report with the degree of accuracy
+% to which these lifespans can be estimated.
+To determine $\delta$ we first split the $223$ day period into two
+segments---the first 133 day estimation period and the last 90 day
+evaluation period (see Figure~\ref{fig:censoring_b})---and then ask: if we
+(a) observe a URL first appear in the first $(133 - \delta)$ days and (b) do
+not see it in the $\delta$ days prior to the onset of the evaluation period, how likely
+are we see it in the last 90 days?  Clearly this depends on the actual
+lifespan of the URL, as the longer a URL lives, the more likely it will
+re-appear in the future. Using this estimation/evaluation split, we find an
+upper-bound on lifespan for which we can determine the actual lifespan with
+$95 \%$ accuracy as a function of $\delta$. Finally, because we require a
+beginning and ending buffer, and because we can only classify a URL as
+having lifespan $\tau$ if it appears at least $\tau$ days before the end of
+our window, we need to pick $\tau$ and $\delta$ such that $\tau + 2\delta
+\leq 223$. We determined that $\tau = 70$ and $\delta=70$ sufficiently
+satisfied our constraints; thus for the following analysis, we consider
+only URLs that have a lifespan $\tau \leq 70$~\footnote{We also performed our analysis with different values of $\tau$, finding very similar results; thus our conclusions are robust with respect to the details of our estimation procedure.}.
+
+
+\begin{figure}[ht]
 \centering
-\includegraphics[width=5in]{figures/tau_delta.eps}
-\caption{Upperbound of $\tau$ with confidence level > 0.95, as a function of $\delta$.}
-\label{fig:tau_v_delta}
-\end{figure}
-
-
-ZZZZZ: some of the numbers here should be move above!!!
-
-Figure \ref{fig:lifespan_category} is the histogram of the lifespan of
-URLs, grouped by the category of users who introduced the
-URLs\footnote{This figure only shows URLs that appeared in our dataset more
-than once.  The majority of the URLs (220M) appeared only once, which is 10
-times as many URLs as had a lifespan of only a day.}.  
-%
-URLs initiated by the elite categories exhibit a similar distribution over
-lifespan to those initiated by ordinary users. As Figure
-\ref{fig:lifespan_percentage_category} shows, however, when looking at the
-percentage of URLs of different lifespans initiated by each category,
-we see two additional results: first, URLs originated by media actors
-generate a large portion of short-lived URLs (especially URLs with
-lifespan 0, which are URLs that only appeared once); and second, URLs
-originated by bloggers are overrepresented among the longer-lived content.
-Both these results can be accounted for by the type of content
-that originates from different sources: whereas news stories tend to be
-replaced by updates on a daily or more frequent basis, the sorts of
-stories that are picked up by bloggers are of more persistent interest, and
-so are more likely to be RT'd or reintroduced months or even years after
-their initial introduction.
-
-
-\begin{figure}
-\centering
-\includegraphics[width=5in]{figures/url_lifespan_by_categories_500K_censored.eps}
-\caption{Histogram of lifespan of URLs originating from different categories}
+\subfigure[Count]{
+\includegraphics[width=3.5in]{figures/url_lifespan_by_categories_500K_censored.eps}
 \label{fig:lifespan_category}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=5in]{figures/url_lifespan_percentage_by_categories_500K_censored.eps}
-\caption{Percentage of URL initiated by 5 categories, with different lifespan}
+}
+\subfigure[Percent]{
+\includegraphics[width=3.5in]{figures/url_lifespan_percentage_by_categories_500K_censored.eps}
 \label{fig:lifespan_percentage_category}
+}
+\caption{\ref{fig:lifespan_category} Count and
+  \ref{fig:lifespan_percentage_category} percentage of URLs initiated by
+  4 categories, with different lifespans}
+\label{fig:lifespan}
 \end{figure}
 
 
-
-\section{Content}
-
-As shown previously that the content originated by different people exhibit different lifespan, but it is very hard to predict the lifetime. The persistence of long-last content can not be fully contributed to contagion process - the role of content. 
-
-Evidence: Low RT-rate for long-lasting content.
-
-A second related point, is illustrated by Figure
-\ref{fig:RT_lifespan_category}, which shows the average RT rate = (\# of
-retweets) / (total \# of occurrences) of URLs with different lifespan,
-grouped by categories\footnote{Note here that URLs with lifespan = 0 are
-  those URLs that only appeared once in our dataset, thus the RT rate is
-  zero.}. 
-%
-Unsurprisingly, URLs introduced by elite users are much more likely than
-those introduced by ordinary users to be RT'd---a result that is likely
-driven by the higher-than-average number of followers for elite users.
-Somewhat less expected, however, is that for all categories the majority of
-appearances of URLs after their initial introduction derives not from
-rebroadcasting, hence diffusion within Twitter, but rather from
-reintroduction. As large and diverse as Twitter is, in other words, it is
-nevertheless a subset of a much larger media ecosystem; that is, content
-``lives'' outside of Twitter, where users can rediscover it
-repeatedly. Some of this content---such as daily news stories---has a
-relatively short period of relevance, after which a given story is unlikely
-to be reintroduced or rebroadcast. At the other extreme, classic music
-videos, movie clips, and long-format magazine articles have lifespans that
-are effectively unbounded, and can be rediscovered and reintroduced by
-Twitter users indefinitely without losing relevance.
-
-\begin{figure}
-\centering
-\includegraphics[width=5in]{figures/url_lifespan_RTrate_by_categories_500K_censored.eps}
-\caption{Lifetime ~ avg RT rate, by categories}
-\label{fig:RT_lifespan_category}
-\end{figure}
-
-To shed more light on the nature of long-lived content on Twitter, we used
-the bit.ly API service to unshorten 35K of the most long-lived URLs (URLs
-that lived at least 200 days), and mapped them into 21034 web domains. As
-Figure \ref{fig:longlived_urls} shows, the population of long-lived URLs is
-dominated by videos, music, and books, consistent with our interpretation
-above that certain types of online content retain their relevance
-indefinitely, and their persistence on Twitter is driven mostly by users
-rediscovering content outside of the Twitter ecosystem.
-
-\begin{figure}
+\begin{figure}[ht]
 \centering
 \includegraphics[width=5in]{figures/domains_breakdown_longlived_urls.eps}
 \caption{Top 20 domains for URLs that lived more than 200 days}
 \label{fig:longlived_urls}
 \end{figure}
 
-% \subsection{Predicting Lifetime} 
+Having established a method for estimating URL lifespan, we
+now explore the lifespan of URLs introduced by different categories of
+users, as shown in Figure \ref{fig:lifespan_category}.
+% \footnote{This
+%   figure only shows URLs that appeared in our dataset more than once.
+%   The majority of the URLs (220M) appeared only once, which is 10
+%   times as many URLs as had a lifespan of only a day.}.
 %
-% Although the previous analysis shows that URLs initiated by certain types
-% of users have higher-than-average retweet rates, and that certain types
-% of content are overrepresented among long-lived URLs, it does not
-% necessarily follow that one can predict either the success or lifespan of
-% a URL with much confidence. Bakshy et al. \cite{bakshy_11}, for example,
-% found that although large cascades tend to be initiated by users with
-% large $\#$ followers and successful track records, most instances of URLs
-% introduced by users with those attributes do not generate large cascades.
-% Here we find a similar result.
+URLs initiated by the elite categories exhibit a similar distribution over
+lifespan to those initiated by ordinary users. As Figure
+\ref{fig:lifespan_percentage_category} shows, however, when looking at the
+percentage of URLs of different lifespans initiated by each category, we
+see two additional results: first, URLs originated by media actors generate
+a large portion of short-lived URLs (especially URLs with $\tau=0$, those
+that only appeared once); and second, URLs originated by bloggers are
+overrepresented among the longer-lived content.  Both of these results can
+be explained by the type of content that originates from different sources:
+whereas news stories tend to be replaced by updates on a daily or more
+frequent basis, the sorts of URLs that are picked up by bloggers are of
+more persistent interest, and so are more likely to be retweeted or
+reintroduced months or even years after their initial introduction.
+Twitter, in other words, should be viewed as a subset of a much larger
+media ecosystem in which content exists and is repeatedly rediscovered by
+Twitter users. Some of this content---such as daily news stories---has a
+relatively short period of relevance, after which a given story is unlikely
+to be reintroduced or rebroadcast. At the other extreme, classic music
+videos, movie clips, and long-format magazine articles have lifespans that
+are effectively unbounded, and can seemingly be rediscovered by Twitter
+users indefinitely without losing relevance.
 
-%% Describe model and results.
+To shed more light on the nature of long-lived content on Twitter, we used
+the bit.ly API service to unshorten 35K of the most long-lived URLs (URLs
+that lived at least 200 days), and mapped them into 21034 web domains. As
+Figure \ref{fig:longlived_urls} shows, the population of long-lived URLs is
+dominated by videos, music, and consumer goods.  
+Two related points are illustrated by Figure
+\ref{fig:RT_lifespan_category}, which shows the average RT rate (the
+proportion of tweets containing the URL that are retweets of another tweet)
+of URLs with different lifespans, grouped by the categories that introduced
+the URL\footnote{Note here that URLs with lifespan = 0 are those URLs that
+  only appeared once in our dataset, thus the RT rate is zero.}.
+%
+First, for ordinary users, the majority of appearances of URLs after the
+initial introduction derives not from retweeting, but rather from
+reintroduction, where this result is especially pronounced for long-lived
+URLs.  For the vast majority of URLs on Twitter, in other words, longevity
+is determined not by diffusion, but by many different users independently
+rediscovering the same content, consistent with our interpretation above.
+% above that certain types of online content retain their relevance
+% indefinitely, and their persistence on Twitter is driven mostly by users
+% rediscovering content outside of the Twitter ecosystem.
+Second, however, for URLs introduced by elite users, the result is somewhat
+the opposite---that is, they are more likely to be retweeted than
+reintroduced, even for URLs that persist for weeks.  Although it is
+unsurprising that elite users generate more retweets than ordinary users,
+the size of the difference is nevertheless striking, and suggests that in
+spite of the dominant result above that content lifespan is determined to a
+large extent by the type of content, the source of its origin also impacts
+its persistence, at least on average---a result that is consistent with
+previous findings~\cite{bakshy_11}.
 
-Following up these findings, we start to look for intrinsic qualities of the content that effectively determine the dissemination process, especially, the persistence of information. 
+\section{Conclusion}
+\label{sec:conclusion}
+In this chapter, we investigated the influencer problem by incorporating exogenous influence into the context of Twitter.  
+In particular, we find that although audience attention has indeed fragmented among
+a wider pool of content producers than classical models of mass media,
+attention remains highly concentrated, where roughly 0.05\% of the population
+accounts for almost half of all posted URLs.  Within this
+population of elite users, moreover, we find that attention is highly homophilous, with
+celebrities following celebrities, media following media, and bloggers
+following bloggers.  Second, we find considerable support for the two-step
+flow of information---almost half the information that originates from the
+media passes to the masses indirectly via a diffuse intermediate layer of
+opinion leaders, who although classified as ordinary users, are more
+connected and more exposed to the media than their followers.  Third, we
+find that although all categories devote a roughly similar fraction of
+their attention to different categories of news (World, U.S., Business,
+etc), there are some differences---organizations, for example, devote a
+surprisingly small fraction of their attention to business-related news.
+% We also find that certain types of popular URLs attract quite
+% different levels of attention from different categories, reflecting
+% their distinct interests. 
+We also find that different types of content exhibit very different
+lifespans: media-originated URLs are disproportionately represented among
+short-lived URLs while those originated by bloggers tend to be
+overrepresented among long-lived URLs. Finally, we find that the
+longest-lived URLs are dominated by content such as videos and music, which
+are continually being rediscovered by Twitter users and appear to persist
+indefinitely. We will further investigate the role of content in the diffusion process in next chapter.
+
+By restricting our attention to URLs shared on Twitter, our conclusions are
+necessarily limited to one narrow cross-section of the media landscape.  An
+interesting direction for future work would therefore be to apply similar
+methods to quantifying influence via more traditional channels, such
+as TV and radio on the one hand, and interpersonal interactions on the
+other hand.  Moreover, although our approach of defining a limited set of
+predetermined user-categories allowed for relatively convenient analysis
+and straightforward interpretation, it would be interesting to explore
+automatic classification schemes from which additional user categories
+could emerge.
+%In particular, such an approach would allow one to examine the category of
+% opinion leaders in more detail, possibly identifying opinion leaders for
+% different topics, as has been proposed elsewhere ~\cite{weimann_94}.
+
+%Finally, another two areas for future work are first, to extract content information in a more systematic manner---the ``what'' of Lasswell's maxim; and second, to focus more on the effects of communication by merging the data regarding information flow on Twitter with other sources of outcome data, such as the opinions or actions of the recipients of the information.
 
 
-Two main contributions:
-
+\chapter{The role of content}
+\label{chap:content}
+As shown in previous chapter, the content originated by different people exhibit different lifespan, however, the connection between content and authors are relatively weak thus does not have much predictive power (for example, bloggers can write about a variety of things). In this chapter, we present a large scale empirical study directly on the textual content in relationship to the perisistence of information. Our goal is to look for intrinsic qualities of the content that effectively affect the dissemination process, especially, resulting in different lifespans of information. We make two main contributions:
 \begin{itemize}
 % (this is method but not contribution)\item We find power-law in the distribution of the lastingness of webpages and then formalize the problem into a binary classification problem.
 \item We build a classifier that predicts the decay/persistence of information with textual features, providing one of the first empirical studies of the connection between content and temporal variations of information in online social media.
@@ -1435,10 +1614,9 @@ with different temporal patterns, finding significant differences in
 word usage and sentiment between rapidly-fading and long-lasting information.
 \end{itemize}
 
-
+In the following sections of this chapter, we first provide an overview of the data we are using for this study, then present a binary classifier that predicts the persistence of URLs, using texual features from webpages pointed to by the URLs. We further examine and discuss different aspects of the content that are correlated with the difference in temporal patterns. In the end, we provide some additional insights about the quality of YouTube videos in relationship to the decay time.
 
 \subsection{Data}
-To study content in more details, we introduce a smaller Twitter dataset with richer HTML content. 
 
 \subsubsection{Summary}
 In this study, we used the dataset publicly shared by the authors of \cite{Yang-2011}\footnote{http://snap.stanford.edu/data/twitter7.html}, 
@@ -1496,12 +1674,9 @@ We further examine the relationship between $t_u$ and the overall popularity of 
 
 
 \subsection{Predicting temporal patterns based on content}
-Strong correlation between content and the persistence of information.
-
 In this section, we formally define the temporal pattern classification task and present our findings.
 
 \subsubsection{Identifying information with two distinct temporal patterns}
-
 We start by casting our question into a binary classification problem
 in which class 1 is defined as consisting of those
 URLs with $t_u < 6$ and class 0 is defined
@@ -1901,6 +2076,13 @@ popularity measures such as view count is an interesting question.
 
 %Regarding to our previous concerns that the long-lasting URLs can be spamy, it does not seem to be the case, at least for YouTube videos: the long-lasting ones are not disliked more than liked comparing to the short-lived ones. In fact, the long-lasting ones have a slightly higher likes/dislikes ration than the short-lived ones, on average.
 
+\section{Conclusion}
+In this chapter, we explore the relationship between content and the temporal dynamics of information in the context of TWitter. In particular, we find that using the textual features extracted from the content, we can predict the persistence of information with high accuracy. Second, we employ different text analysiss techniques to understand the nature of content that contributes to persistence. We examin and compare the fleeting and lasting content on three aspects, including the psychologuistic characteristics, trending words, and latent topics distribution. We find that the persistent information is more related to content with long-term value, such as positive emotions, life, family, and art. On the other hand, the rapidly-fading content contains
+ mostly time-critical information that carries relatively more negative
+sentiments, demanding more cognitive effort, or is associated with
+quick action.
+
+By restricting our scope of study to the time series of bit.ly URLs mentioned on Twitter, our findings can be limited to the types of social media and the dynamics of information they support. An interesting direction for future work could be studying the content and temporal patterns of information across systems. One possibility is to use the transcribed content of TV, radio, together with materials from online social madia. Also, since we only predicted the persistence of content for two extreme cases, it would be interesting to further investigate the connection between content and persistence as a continuous variable.
 
 
 \chapter{Network structure and the spread of disengagement}
@@ -1908,35 +2090,94 @@ popularity measures such as view count is an interesting question.
 
 %\section{Negative influence}
 
-After talking about the origination and dissemination of information, now we will study the end-of-life of diffusion. 
+There has been significant focus on the dynamics of propagation in social networks, especially, with the local and global structure involved\cite{Newman:2002,Dodds:2005,Bakshy-2011,Leskovec:2007,Backstrom:2006,Romero-2011,Nowell-2008,Gruhl-2004}. In many cases, such as the decision to become a member or use a product, the story does not end at
+adoption.  Instead, the user may decide at any point to cease using
+the product, or to depart the community.  It is not clear that a
+decision of this type, to ``reverse'' a prior socially-mediated
+decision to adopt, will follow the same dynamics as the original
+decision to adopt.  In this paper, we study this question in the
+context of arrivals and departures within online social networks.
 
-Here, the diffusion process is the engagement on an online social network. It can be analogized to how people engagement with certain topic in social media.
+A natural place to look for models of arrivals and departures is the
+existing literature on the spread of infectious physical disease.
+These models often include a recovery component\cite{Newman:2002,
+  Dodds:2005}, which is akin to a reversal of the decision to become
+infected.  Typically, however, this component assumes that an infected
+user recovers based on properties of the immune system, without
+reference to any social process.  In our case, we are motivated by the
+metaphor of a user at a party with friends.  The user is more likely
+to attend upon discovering that some number of friends will also
+attend.  If some or all of the friends then opt to depart, whether for
+a new party or to curl up with a good book, then the original user is
+much more likely to follow suit.  Hence, we anticipate that social
+forces play a significant role in both arrivals and departures.
 
-Disengagment can be considered as a negative diffusion. To better see the trend, we compare the natural arrival and departure of users
-in several communities, and ask whether the dynamics of arrival, which
-have been studied in some depth, also explain the dynamics of
-departure, which are not as well studied.
+We begin to address this question with a basic study of the temporal
+correlation of arrivals and departures, and show that both processes
+introduce significant correlation among friends; in fact, we show that time intervals between
+the departure of friends are more tightly distributed than the
+equivalent distribution of gaps between arrival of friends.
 
-Through study of the Dblp co-autorship  network and a large online social network, we show that the
-dynamics of departure behave differently from the dynamics of
-formation.  In particular, the departure of a user with few friends,
-say less than 20, may be understood most accurately as a function of
-the raw number of friends who are active.  For the majority of users
-with larger numbers of friends, however, departure is best predicted
-by the overall fraction of activity within a user's neighborhood,
-independent of size.  We then study global properties of the subgraphs
-induced by active and inactive users, and show that active users tend
-to belong to a core that is densifying and is significantly denser than
-the inactive users. Further, the inactive set of users
-exhibit a higher density and lower conductance than the degree distribution 
-alone can explain. These two aspects suggest that nodes at the fringe are
-more likely to depart and additionally induce inactive and subsequent departure
-of neighboring nodes in tightly-knit communities. 
+In this sense, we might consider arrival as the propagation of a
+``join'' virus, and departure as simply the propagation of a new
+virus, in this case representing the decision to cease usage.
+However, this formulation is at odds with our conception of the
+underlying process.  It is plausible that seeing one friend join a
+social network, then two, then three, might impel a user to join, as
+we see in prior work~\cite{Backstrom:2006}.  However, once a user has two
+hundred friends, will the departure of one, then two, then three friends 
+have a qualitatively different impact on the user's likelihood to
+depart?  Perhaps like the decision to join, the decision to depart
+depends more on the number of active friends than the number of
+inactive friends.  Or perhaps departure is a fundamentally different
+decision that depends on an assessment of the pulse of the
+neighborhood, captured more accurately by the fraction of friends who
+remain active.
+
+We study this question in the context of a large social network, and
+argue that in fact a hybrid of these models provides the most accurate
+characterization.  While number of active neighbors is known to be a
+strong predictor of joining a group, for users with twenty or more
+friends, overall neighborhood activity, measured by the fraction of
+friends who remain active, is by far the best predictor of likelihood
+to depart.  Surprisingly, this likelihood is linear in the fraction of
+active friends throughout almost its entire range, and the linear form
+is identical in both slope and intercept for several different buckets
+of neighborhood size.  Raw counts of inactive friends have low
+predictive power, and raw counts of active friends, while stronger,
+remain weak compared to the overall fraction of active friends.  On
+the other hand, for users with fewer than twenty friends, the actual
+count of active friends remains a strong predictor of likelihood to
+depart. From these findings we reach a picture that users with few
+friends rely heavily on their continued presence, while users with
+more friends are pushed one unit closer to departure by each
+successive fraction of existing friends observed to depart.
+
+From this emerging local picture of behavior, we may then ask how
+arrival and departure dynamics interact with the global structure of
+the graph.  In particular, we seek to understand where departures
+happen in the graph.  It is possible, for example, that departures
+tend to occur as high-status users in the core of the graph choose to
+depart in search of the next big thing.  Alternately, it is possible
+that departure happens at the ``fringes'' of the graph, and then
+spreads inwards from there.  We study this problem by computing the
+density and conductance of the subgraphs of active and inactive users
+through time, and comparing these results to thought experiments in
+which each node decides independently whether to remain active.  These
+experiments allow us to conclude that a core of active nodes remains
+at much higher internal density than the set of inactive nodes. We
+also compare the densities observed against the expected density and
+conductance under a planted degree constraint model.  The results
+suggest that although the inactive set of nodes densifies, its densification is
+not just a consequence of the degree distribution, but really a
+consequence of well-connected cluster of nodes from the fringes
+departing.  We are led to believe that departures happen from the
+fringes and heavily influence their immediate neighborhoods, while
+an internal dense core of active nodes survives.
 
 \section{Data}
-Orkut: social network with detailed structure, spread of behavior.
 
-In this section, we study the dynamics of arrival and departure using a snapshot
+In this chapter, we study the structure properties in relation to the arrival and departure of users, using a snapshot
 of the DBLP co-authorship graph and a well-known social network.  The DBLP snapshot
 that we consider contains 1072718 nodes and 1839605 edges, for each author we store his/her co-authors
 and the year of the last publication. Furthermore for each author to author edge we also
@@ -1957,8 +2198,8 @@ paper in the earlier than five year prior to $t$, and consider a user
 \emph{active} otherwise. Note that our results do not depend on the time frame that we used. In fact, they hold for two quite different networks and time frames.
 
 \section{Arrival and departure correlation among friends}
-In this section, we study the basic properties of arrivals and
-departures.  We wish to understand whether users typically arrive
+In this section, we study the temporal patterns of arrivals and
+departures, for both local dynamics and global trends.  We wish to understand whether users typically arrive
 and/or depart together in social networks.  However, we cannot
 directly compare gaps between arrivals and departures of friends, as
 networks are not stationary---consider for example the case of a
@@ -2080,7 +2321,7 @@ results back to known literature on adoption of innovations around
 group membership, to compare what is known about arrivals and
 departures.
 
-\section{Dynamics of local neighborhoods}
+\section{Effect of local neighborhoods}
 
 \begin{comment}
 To test the correlation in departure among friends, we begin by simply comparing the difference in last login times between friends and random pairs of users. 
@@ -2379,6 +2620,28 @@ nodes in the {\em core} of the network are much more likely to survive, while
 nodes at the periphery are more susceptible to departure.
 
 \section{Conclusion}
+In this chapter, we have studied the dynamics of user departure from
+online social networks, from the perspectives of local and global network structure. 
+We considered the influence of local
+neighborhoods on the behavior of nodes as well as studied global
+changes in the network topology. At the local level, we studied
+individuals and the dynamics in their local neighborhood, measured the
+probability of user arrival and departure in relation to the
+activity of their friends. Our findings are three fold: first, there
+is a strong clustered effect in the timing of departure among friends
+while this is not as visible in arrivals; second, although both
+numbers and fractions of neighborhood (in)activity are correlated to
+the probability of the individual's departure, the fraction of
+inactive friends has arguably the strongest effect on the departure
+probability, providing an interesting complement to literature on arrivals which
+shows number of active friends as the most predictive of these
+measures; third, once a significant fraction of friends depart, the
+overall connectivity of individuals in the entire network does not
+save the user from leaving the network. At the global level, we looked
+at the trend of network topological properties over the past few
+years, showing that as the network evolves, users at the peripheral
+region of the network are more likely to depart in groups; yet an internal core
+of the network survives and densifies over time. 
 
 %, and may influence their neighborhood communities towards inactivity.
 % 
@@ -2632,8 +2895,6 @@ In this section, we measure the among of
 
 \subsection{Triangle effect}
 
-\end{comment}
-
 
 \section{Conclusion}
 By analyzing Twitter activity in Middle East area during the Arab Spring movement, we have shown that social media were used to both activate and reflect the on-goings of Middle East social movement. The relative weights of these two roles differed across countries. In particular, Egyptian users actively used Twitter to plan protests and call for a critical mass, and the users from Saudi Arabia or UAE mostly used Twitter to support or comment on on-going events. We also found that protest content travelled directionally from the central to the peripheral of the Twitter network:  most protest memes were initiated by hub users and later picked up by the masses.  At the individual level, we found that the adoption of protest content can be modeled by the complex contagion process - while the overall adoption rate of protest content is relatively low, people become significantly more likely to start tweeting about the protest when more than 2 friends already doing so. 
@@ -2649,10 +2910,13 @@ Join with Facebook results and news media data.
 
 Study the interaction between network and content.
 
+\end{comment}
+
 
 \chapter{Conclusion}
-    In summary, I am deeply intrigued by the developing characteristics of information diffusion in online social media. Thanks to the Internet and social media technologies, I believe that we are heading towards a more democratic era where revolutions can be started by ordinary people and the power to change is in the hands of the masses. As part of this process, social media sites such as Facebook and Twitter have also evolved from friendship networks to a much broader platform for organizing social/political changes and communicating with various communities. I hope my work can help understand this movement and foster the effective flow of information in the society.
+%    In summary, I am deeply intrigued by the developing characteristics of information diffusion in online social media. Thanks to the Internet and social media technologies, I believe that we are heading towards a more democratic era where revolutions can be started by ordinary people and the power to change is in the hands of the masses. As part of this process, social media sites such as Facebook and Twitter have also evolved from friendship networks to a much broader platform for organizing social/political changes and communicating with various communities. I hope my work can help understand this movement and foster the effective flow of information in the society.
 
+We study three major aspects of information diffusion process: influencers, content, and network structure. In the future, I would like to study the impact of information in both on-line and off-line environement, and leverage my work to foster the effective flow of information in the society.
 
 \appendix
 \chapter{Chapter 1 of appendix}
