@@ -98,7 +98,7 @@ Many many many thanks to my committee!
 Information diffusion has been a long intriguing topic for scholars from different fields. It is an essential element of many interesting problems, such as the diffusion of innovation\cite{rogers-2003}, formation of public opinion\cite{katz_lazarsfeld,Watts-2007}, adoption of new products\cite{Bass:1969}. Historically, most of the research in this area has been done through field observations and/or phone surveys\cite{katz_57,rogers-2003}. Confined by the methodology, their results are uaually based on the spread of a specific opinion or product in rather localized networks. 
 
 The development of the Internet and the emergence of a whole new set of communication technologies on top of it has largely changed the way people  gather and disseminate information, and brought both challenge and opportunity to a better understanding of how information spreads in the society.
-Historically, most empirical studies in this area were based on data collected through in-person interviews and phone surveys\cite{}, targeted with a specific opinion or product that is under diffusion. Confined by the methodology, theories and conclusions drew from these research suffer at scale and data accuracy, and are challenged in today's massive, hybrid communication environment. Meanwhile, the popularity of eletronic communication tools has offered new possibilities for obtaining much better data on how information and behavior spread over large population. The abundance of digital records of online interactions can provide large amounts of data on both explicit network structure and detailed dynamics, supporting large-scale, quantitative study of diffusion in the real world.
+Historically, most empirical studies in this area were based on data collected through in-person interviews and phone surveys\cite{rogers-2003,katz_lazarsfeld}, targeted with a specific opinion or product that is under diffusion. Confined by the methodology, theories and conclusions drew from these research suffer at scale and data accuracy, and are challenged in today's massive, hybrid communication environment. Meanwhile, the popularity of eletronic communication tools has offered new possibilities for obtaining much better data on how information and behavior spread over large population. The abundance of digital records of online interactions can provide large amounts of data on both explicit network structure and detailed dynamics, supporting large-scale, quantitative study of diffusion in the real world.
 
 Using these large scale datasets collected from social media sites (i.e. Twitter, Orkut), we study three major components of information diffusion process:
 \begin{itemize}
@@ -151,7 +151,7 @@ Understanding the difficulty of this task does not mean that it is unsolvable. W
 
 Meanwhile, during our study of the spread of URLs on Twitter, we discovered and explored some new metrics for the success of cascade. We first noticed that,  although skewed as well, the distribution of the lifespan of information has a much heavier tail towards the end. In other words, there is a substantial amount of information that is consistently tweeted over a long period of time, in the fast-paced medium such as Twitter. When examining the persistent items in depth, we realized that, most of them can not be characterized by any of the traditional metrics for virality: they do not receive many retweets, they do not spread through long-chains, and they are usually not part of super-sized cascades. However, as they generate comparably large interest that lasts for a signficantly long period of time, we believe that persistent content are interesting enough to be studied as ``success'' examples of diffusion as well.
 
-The study of information longevity is generally missed in the study of information diffusion, even among the string of research on the temporal dynamics of cascades\cite{Yang-2011,and others}. Although some previous work also spotted the lastiningness of certain content\cite{crane:2008,Szabo-2010}, researchers usually concentrate on modeling the speed, intensity, and scale of the peak of attention, while treating the long-last content as corner cases.
+The study of information longevity is generally missed in the study of information diffusion, even among the string of research on the temporal dynamics of cascades\cite{Yang-2011,crane:2008,Leskovec:2005}. Although some previous work also spotted the lastiningness of certain content\cite{crane:2008,Szabo-2010}, researchers usually concentrate on modeling the speed, intensity, and scale of the peak of attention, while treating the long-last content as corner cases.
 %Although there has been a growing interst at studying the temporal dynamics of diffusion process\cite{Yang-2011,and others}, most work has concentrated on the peak of attention, but not the longevity. %studying how fast the peak is accumulated\cite{}, how attention are distributed around the peak\cite{}, and how long the cycle is when there are more than one peaks\cite{}. 
 %Even in previous work that also spotted the lastingness of certain content\cite{crane:2008,Szabo-2010}, authors were trying to predict the speed and intensity of the burst of attention while treating the long-last content as corner cases. 
 In our work, we compare the lifespan of information by its initiator and content, and ask what makes certain things so persistently eye-catching in a world where information is overly rich and attention is remarkably scarce\cite{Simon-1971}. Our major findings include:
@@ -595,7 +595,7 @@ classifying users, both in terms of their importance to the community
 There is not yet a standard way to classify users by lists, or even a
 central portal to obtain lists for all users. In order to capture the
 variety of users invloved in mass media, masspersonal, and interpersonal
-commmunication described in section \ref{sec:introduction} in a reasonably
+commmunication described previously in a reasonably
 parsimonious manner, we restrict our attention to four classes of what we
 call ``elite'' users: media, celebrities, organizations (including both
 public and private), and bloggers. In addition to these elite users, we
@@ -759,6 +759,7 @@ After categorizing people into categories, we can calculate the amount of attent
 
 
 \subsection{Concentration of attention}
+\label{sec:attention}
 With either sampling method, the initial categorization of users is quite
 coarse and noisy as a result of the arbitrary labeling allowed in Twitter
 Lists.  To filter categories to the most representative users, we further
@@ -772,7 +773,7 @@ user received from everyone the user follows in each category.  We sampled
 100K random ``ordinary'' users and calculated the average information flow
 from the ``elite'' users using these two measures.
 
-Figure \ref{fig:attention_elites_snowball} shows that each category
+Figure~\ref{fig:attention_elites_snowball} shows that each category
 accounts for a significant share of both the following links and also the
 tweets received by an average user, where celebrities outrank all other
 categories, followed by the media, organizations, and bloggers.  Also of
@@ -920,13 +921,13 @@ other	& 244,228,364 & 6.10\\
 
 Conceivably, our classification scheme above has omitted an important
 category; that is, within the current ``other'' category may be hidden
-additional categories of opinions.  As Figure \ref{top_k_volume_other}
+additional categories of opinions.  As Figure~\ref{fig:top_k_volume_other}
 shows, however, even the top 10,000 most followed of these users
 accounts for a negligible fraction of attention among the remaining
 population.  
  
 \begin{figure}
-\label{top_k_volume_other}
+\label{fig:top_k_volume_other}
 \centering
 \includegraphics[width=5in]{figures/mostRTing_user_outflow_to_random_other_users.eps}
 \caption{Average fraction of $\#$ following (blue line) and $\#$
@@ -1482,8 +1483,8 @@ only URLs that have a lifespan $\tau \leq 70$~\footnote{We also performed our an
 \includegraphics[width=3.5in]{figures/url_lifespan_percentage_by_categories_500K_censored.eps}
 \label{fig:lifespan_percentage_category}
 }
-\caption{\ref{fig:lifespan_category} Count and
-  \ref{fig:lifespan_percentage_category} percentage of URLs initiated by
+\caption{(a) Count and
+  (b) percentage of URLs initiated by
   4 categories, with different lifespans}
 \label{fig:lifespan}
 \end{figure}
@@ -1556,6 +1557,14 @@ spite of the dominant result above that content lifespan is determined to a
 large extent by the type of content, the source of its origin also impacts
 its persistence, at least on average---a result that is consistent with
 previous findings~\cite{bakshy_11}.
+
+\begin{figure}
+\centering
+\includegraphics[width=2.6in]{figures/url_lifespan_RTrate_by_categories_500K_censored.eps}
+\caption{Average RT rate by lifespan for each of the originating categories}
+\label{fig:RT_lifespan_category}
+\end{figure}
+
 
 \section{Conclusion}
 \label{sec:conclusion}
@@ -1648,8 +1657,8 @@ the peak of attention) be hour $0$.
 Then the {\em decay time} $t_u$ is defined as the hour after the peak 
 when the number of mentions first reaches $75\%$ of the total.
 Instead of measuring the time lag between the first and last mention of a given URL \cite{Wu-Twitter-2011}, we intentionally choose to measure the time lag from the peak of attention to the point when the URL fades away, as given the limited observation window when the dataset was collected, it is not obvious to determine when exactly a URL was first introduced or last appeared on Twitter.
-The distribution of $t_u$ shows heavy tail(see Figure 1\ref{fig:tu_distribution}), as found previously in the distribution of URL lifespan\cite{Wu-Twitter-2011}.
-%The distribution of $t_u$ approximately follows a power-law (see Figure 1\ref{fig:tu_distribution}), as found previously in the distribution of URL lifespan \cite{Wu-Twitter-2011}.
+The distribution of $t_u$ shows heavy tail(see Figure~\ref{fig:tu_distribution}), as found previously in the distribution of URL lifespan\cite{Wu-Twitter-2011}.
+%The distribution of $t_u$ approximately follows a power-law (see Figure \ref{fig:tu_distribution}), as found previously in the distribution of URL lifespan \cite{Wu-Twitter-2011}.
 Among all URLs we studied, the mean $t_u$ is 217.3  hour and the median $t_u$ is 19 hours.
 
 %\vspace{-0.1in}
@@ -1661,7 +1670,7 @@ Among all URLs we studied, the mean $t_u$ is 217.3  hour and the median $t_u$ is
 \caption{Distribution of URL decay time $t_u$}
 \end{figure}
 
-We further examine the relationship between $t_u$ and the overall popularity of URLs. Figure ~\ref{fig:tu_tweet_rt} shows the average number of tweets and retweets accumulated by each URL as a function of $t_u$. Given the power-law distribution of $t_u$, we bin URLs by the integer part of $\log_2(t_u)$, and calculate the mean for each bin.  Although the persistent URLs are mentioned in slightly more tweets, the rapidly-fading URLs do better at attracting retweets. This result is consistent with previous findings that the longevity of information is determined not by diffusion, but by independent generation of tweets of the same content over time \cite{Wu-Twitter-2011}.
+We further examine the relationship between $t_u$ and the overall popularity of URLs. Figure~\ref{fig:tu_tweet_rt} shows the average number of tweets and retweets accumulated by each URL as a function of $t_u$. Given the power-law distribution of $t_u$, we bin URLs by the integer part of $\log_2(t_u)$, and calculate the mean for each bin.  Although the persistent URLs are mentioned in slightly more tweets, the rapidly-fading URLs do better at attracting retweets. This result is consistent with previous findings that the longevity of information is determined not by diffusion, but by independent generation of tweets of the same content over time \cite{Wu-Twitter-2011}.
 
 %\vspace{-0.1in}
 \begin{figure}[htb!]
@@ -1717,7 +1726,7 @@ from long-lasting ones.
 %\end{tabular}
 %\end{table}
 
-To better illustrate our classification scheme, we apply the time series normalization method introduced in \cite{Yang-2011} and calculate the centroid of time series for each class, as shown in Figure 3\ref{fig:classexample}. The two classes we define do in fact collectively exhibit very different temporal patterns: URLs of the positive class fade away slowly, with periodic, multiple peaks of attention; URLs of the negative class have a single spike and a rapid decay afterwards.
+To better illustrate our classification scheme, we apply the time series normalization method introduced in \cite{Yang-2011} and calculate the centroid of time series for each class, as shown in Figure \ref{fig:classexample}. The two classes we define do in fact collectively exhibit very different temporal patterns: URLs of the positive class fade away slowly, with periodic, multiple peaks of attention; URLs of the negative class have a single spike and a rapid decay afterwards.
  
 
 %Figure \ref{fig:classexample} shows the temporal pattern of the centroid in the two classes. (generated according to the method introduced in [Yang and Leskovec 2011].)
@@ -1741,7 +1750,7 @@ To predict the temporal class of URLs, we extract and experiment with the follow
 \item Header + URL + Body. This feature set combines all the features mentioned above. 
 \end{itemize}
 
-As mentioned above, to get more meaningful unigram features, after tokenizing all the textual content into word terms, we filter the terms with length 1 (e.g., ``s'', ``t'') and the terms consisting of only numbers. As the dimension increases tremendousely in the last 3 sets of features, we also filter the infrequent terms (i.e., terms with total frequency less than 20). Table 1\ref{table:feature-sets} gives a summary of the number of features in each set.
+As mentioned above, to get more meaningful unigram features, after tokenizing all the textual content into word terms, we filter the terms with length 1 (e.g., ``s'', ``t'') and the terms consisting of only numbers. As the dimension increases tremendousely in the last 3 sets of features, we also filter the infrequent terms (i.e., terms with total frequency less than 20). Table \ref{table:feature-sets} gives a summary of the number of features in each set.
 
 \begin{table}[t]
 \label{table:feature-sets}
@@ -1816,7 +1825,7 @@ Linguistic Inquiry and Word Count (LIWC) \cite{liwc} is a widely used text analy
 \end{figure*}
 
 %Using LIWC dictionary, we generate a 60-dimension binary vector based on the Header feature for each URL (the value for a given dimension is 1 when there is at least one word under the corresponding LIWC category in the extracted header text). 
-We say a LIWC category occurs in a URL when we find at least one word under that category from the header of the associated HTML page.\footnote{We also conduct the same analysis with text from the other 3 feature sets, however, since the number of words increases markedly in these feature sets, and LIWC dictionary many times maps a word into multiple categories, the binary vector for each URL is easily saturated and the $f_w(t)$ curve becomes too flat to show interesting difference.} Figure 4\ref{fig:liwc-dist} shows the percentage of occurrence for all LIWC categories in webpages from two classes. As illustrated by Figure 4\ref{fig:liwc-dist}, the two classes differ the most in the following three groups of LIWC categories,
+We say a LIWC category occurs in a URL when we find at least one word under that category from the header of the associated HTML page.\footnote{We also conduct the same analysis with text from the other 3 feature sets, however, since the number of words increases markedly in these feature sets, and LIWC dictionary many times maps a word into multiple categories, the binary vector for each URL is easily saturated and the $f_w(t)$ curve becomes too flat to show interesting difference.} Figure \ref{fig:liwc-dist} shows the percentage of occurrence for all LIWC categories in webpages from two classes. As illustrated by Figure \ref{fig:liwc-dist}, the two classes differ the most in the following three groups of LIWC categories,
 \begin{itemize}
 \item Emotion: \emph{posemo} (positive emotion), \emph{negemo} (negative emotion).
 \item Cognitive process: \emph{cogmech} (cognitive process), \emph{insight} (words like \emph{think}, \emph{know}, \emph{consider}), \emph{incl} (inclusive, words like \emph{and}, \emph{with}, \emph{include}), \emph{discrep} (discrepancy, words like \emph{should}, \emph{would}, \emph{count}).
@@ -1832,7 +1841,7 @@ We say a LIWC category occurs in a URL when we find at least one word under that
 \caption{Trending LIWC categories}
 \end{figure*}
 
-To better see the trend in the frequency of specific categories as a function of $t_u$, for each category $w$, we define $f_w(t)$ as the fraction of occurrences of $w$ in all URLs $u$ for which $t_u=t$, and plot $y=f_w(t)$ for different groups of LIWC categories in Figure 5\ref{fig:liwc-trend}.
+To better see the trend in the frequency of specific categories as a function of $t_u$, for each category $w$, we define $f_w(t)$ as the fraction of occurrences of $w$ in all URLs $u$ for which $t_u=t$, and plot $y=f_w(t)$ for different groups of LIWC categories in Figure \ref{fig:liwc-trend}.
 
 
 
@@ -1873,7 +1882,7 @@ First, since the output of LDA provides a
 continuous value of topic weight for each document, we cast it into binary by assigning 1 when the weight is above the default value. For each topic, we compute the probability that one
 document contains this topic in the positive class and in the negative class
 respectively. More specifically, we conduct a paired t-test between the two classes on each topic and find that, on 39 topics, the two classes are  different at significance level $\alpha=5\%$. 24 of them are with p-value $0$. This shows that these two classes differ significantly in the space of topics.
-Figure 6\ref{fig:ldadistribution} shows topics distribution in all 50 topics.  
+Figure \ref{fig:ldadistribution} shows topics distribution in all 50 topics.  
 We notice that the most significant differences occur at topics 18, 25 (with a high probability in rapidly-fading webpages), and topics 32, 37 (with a high probability in persistent webpages).
 
 \begin{figure*}[htb!]
@@ -1883,7 +1892,7 @@ We notice that the most significant differences occur at topics 18, 25 (with a h
 \caption{Class distribution in 50 LDA topics, using words from HTML header and body}
 \end{figure*}
 
-Providing a closer look at those topics, Table 3\ref{tb:ldatopics}
+Providing a closer look at those topics, Table \ref{tb:ldatopics}
 shows top 20 words given by the topic model. We see some similar
 phenomena as in previous section: words related to strong - and mostly negative - emotions tend to appear more in the topics highly weighted in rapidly-fading webpages. For example, negative words, such as ``die'', ``freaking'', ``incredibly'', ``incredible'' and ``destroy'', show up in topic 18 and 25. 
 In the topics associated with persistent webpages, interestingly, we notice an increase of nouns.
@@ -1930,7 +1939,7 @@ heads & kind & busy & august\\
 \end{table}
 
 \subsubsection{Trending words analysis}
-After measuring the content in LIWC categories and latent topics, in this part, we examine the content with more details, trying to discover the nuance between classes at the word level. We calculate and compare the most representative words in the two classes. Picking the words to describe a collection of documents can be turned into a trend detection problem: let the webpages of negative class be the corpus of early period and the webpages of positive class be the later period, negative class can thus be described by the most significant ``falling words'' whereas the positive class can be described by the most significant ``rising words''.  To do so, we apply the methods as presented in \cite{Kleinberg:2004} on the Header feature set, and generate the top 20 trending words for each class (see Table 4\ref{table:trending-words})\footnote{We also tried the same method on the other three feature sets, but as the number of terms largely increases, the data becomes too noisy to be described with a few words, and the results are difficult to interprete.}. 
+After measuring the content in LIWC categories and latent topics, in this part, we examine the content with more details, trying to discover the nuance between classes at the word level. We calculate and compare the most representative words in the two classes. Picking the words to describe a collection of documents can be turned into a trend detection problem: let the webpages of negative class be the corpus of early period and the webpages of positive class be the later period, negative class can thus be described by the most significant ``falling words'' whereas the positive class can be described by the most significant ``rising words''.  To do so, we apply the methods as presented in \cite{Kleinberg:2004} on the Header feature set, and generate the top 20 trending words for each class (see Table \ref{table:trending-words})\footnote{We also tried the same method on the other three feature sets, but as the number of terms largely increases, the data becomes too noisy to be described with a few words, and the results are difficult to interprete.}. 
 
 \begin{table}[t]
 \centering
@@ -2003,7 +2012,7 @@ These results are mostly consistent with the findngs from the previous parts, co
 \subsection{The quality and persistence of YouTube videos}
 In our dataset of 20K bit.ly URLs, there is a significant portion ($15\%$) of them linked to YouTube videos. Among these linked videos, 707 are already removed by the user and 2304 are still available online. Noting that the \emph{content} of videos may not be accurately represented by the text of the YouTube page, we conduct a separate study of the persistence of YouTube videos, leveraging the user rating feature YouTube provides - namely, \emph{likes} and \emph{dislikes} - to assess the content from the quality perspective.
 
-First, Figure 7\ref{fig:youtube_tu} shows the distribution of decay time $t_u$ for the 2304 available YouTube videos. In contrast to the overall distribution of $t_u$ for all URLs (see Figure 1\ref{fig:tu_distribution}), YouTube videos in general receive a longer span of attention. 
+First, Figure \ref{fig:youtube_tu} shows the distribution of decay time $t_u$ for the 2304 available YouTube videos. In contrast to the overall distribution of $t_u$ for all URLs (see Figure \ref{fig:tu_distribution}), YouTube videos in general receive a longer span of attention. 
 
 %\vspace{-0.1in}
 \begin{figure}[htb!]
@@ -2041,7 +2050,7 @@ again underscoring the increasing appearance of art-related
 topics in this class.
 On the other hand, many home-recorded
 video clips have very small value of $t_u$; as seen in Figure
-2\ref{fig:tu_tweet_rt}, content that fades away quickly might not have
+\ref{fig:tu_tweet_rt}, content that fades away quickly might not have
 lasting value, but in general is more viral. 
 % I'm not sure I follow this; I'd either expand on it or omit. --Jon
 % As suggested in
@@ -2057,12 +2066,12 @@ lasting value, but in general is more viral.
 \caption{Average number of views and comments as a funtion of $t_u$}
 \end{figure}
 
-Finally, in Figure 9\ref{fig:youtube_comment_view}, we consider the
+Finally, in Figure \ref{fig:youtube_comment_view}, we consider the
 number of views and comments on the videos in our set.
 We find an increase in views and comments particularly for 
 very large values of $t_u$, in a way that is more extreme
 than the variation in the number of tweets from 
-Figure 2\ref{fig:tu_tweet_rt}, and that also forms an intriguing
+Figure \ref{fig:tu_tweet_rt}, and that also forms an intriguing
 contrast with the trend in the number of RTs from that figure.
 Understanding how persistence translates into these secondary
 popularity measures such as view count is an interesting question.
@@ -2444,13 +2453,13 @@ We extract two sets of local features for each user:
 	\item Activity features. The properties reflecting user's participation to activities in the network, including the number of contents he received, the number of contents he sent, and the number of status updates.
 \end{itemize}
 
-To predict the departure of users, we train a simple decision tree (REPTree) classifier on our examples. Table \ref{table:performance} gives the performance of the classifier with different sets of features under 10-fold cross validation. 
+To predict the departure of users, we train a simple decision tree (REPTree) classifier on our examples. Table \ref{table:departure-performance} gives the performance of the classifier with different sets of features under 10-fold cross validation. 
 
 \begin{table}[t]
 %	\small
 	\centering
 	\caption{ \small Predict user departure with decision tree}
-	\label{table:performance}
+	\label{table:departure-performance}
 	\begin{tabular}{c|c|c|c}
 	\hline
 	\emph{Feature} & \emph{Accuracy} & \emph{F1 pos} & \emph{ROC area}\\
@@ -2464,7 +2473,7 @@ To predict the departure of users, we train a simple decision tree (REPTree) cla
 	\end{tabular}
 \end{table}
 
-Table \ref{table:performance} shows that relying on only local features of individuals, the simple decision tree classifier can predict the departure of user with high accuracy ($75\%$ with all features, as compared to $50\%$ for always predicting one class). This result demonstrates a strong connection between user's local properties and the propensity of departure. Moreover, comparing across 3 sets of features, we see that although the activity features are more powerful, neighborhood features can also provide rather accurate insights on the departure of users. 
+Table \ref{table:departure-performance} shows that relying on only local features of individuals, the simple decision tree classifier can predict the departure of user with high accuracy ($75\%$ with all features, as compared to $50\%$ for always predicting one class). This result demonstrates a strong connection between user's local properties and the propensity of departure. Moreover, comparing across 3 sets of features, we see that although the activity features are more powerful, neighborhood features can also provide rather accurate insights on the departure of users. 
 
 The decision tree classifier demonstrates that local properties provide strong evidence to predict the departure of user. It also suggests that the activity features are more effective at predicting user departure. However, the decision trees we trained contain over a thousand nodes and thus is too complicated to illustrate how the local properties influence the probability of user departure. To better understand the effect of different features, we also fit the data with a logistic regression model that predicts the probability of departure. The model is constructed on 7 independent variable covering both neighborhood features and activity features, the results of the model is summarized in Table~\ref{table:logistic_regression_result}
 
@@ -2598,8 +2607,8 @@ After learning about the connectedness of the active/inactive subnetwork separat
 
 \begin{figure}[htb!]
 \centering
-\subfigure[SN]{\label{fig:density_active}\includegraphics[width=0.40\textwidth]{figures/conductance.eps}}                \hspace{0.03\textwidth}
-\subfigure[Dblp]{\label{fig:dblp_density_inactive}\includegraphics[width=0.40\textwidth]{figures/dblp_conductance.eps}}
+\subfigure[SN]{\label{fig:orkut_conductance}\includegraphics[width=0.40\textwidth]{figures/conductance.eps}}                \hspace{0.03\textwidth}
+\subfigure[Dblp]{\label{fig:dblp_conductance}\includegraphics[width=0.40\textwidth]{figures/dblp_conductance.eps}}
 \caption{Conductance of the active and inactive sets}
 \label{fig:conductance}
 \end{figure}
