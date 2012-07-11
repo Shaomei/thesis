@@ -13,17 +13,17 @@
 \usepackage{graphicx,pstricks}
 \usepackage{graphics}
 \usepackage{moreverb}
-\usepackage{subfigure}
 \usepackage{epsfig}
 %\usepackage{subfigure}
 \usepackage{hangcaption}
 \usepackage{txfonts}
 \usepackage{palatino}
 \usepackage{url}
-%\usepackage{subfig}
+\usepackage{subfig}
 \usepackage{verbatim}
 
 %\renewcommand{\comment}[1]{}
+\newcommand{\subfigure}{\subfloat}
 
 
 %if you're having problems with overfull boxes, you may need to increase
@@ -799,10 +799,10 @@ cut-off for the elite categories.
 \includegraphics[width=5in]{figures/top_users_outflow_to_random_other_users_800K.eps}
 \label{fig:top_k_elite_volume}
 }
+\label{fig:attention_to_top_k_elite}
 \caption{Average fraction of $\#$ following (blue line) and $\#$
   tweets (red line) for a random user that are accounted for by the
   top K elites users crawled}
-\label{fig:attention_to_top_k_elite}
 \end{figure}
 
 %\begin{figure}
