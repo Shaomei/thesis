@@ -2440,7 +2440,7 @@ The correlation in the timing of last login among friends suggests the effect of
 \end{itemize}
 \vspace{-5pt}
 
-\begin{figure*}[htb]
+\begin{figure}[htb]
 \centering
 %\vspace{-8pt}
 \subfigure[]{\label{fig:orkut_p_k_active_curve}\includegraphics[width=0.4\textwidth]{figures/p_k_active_curves.eps}} \hspace{0.05\textwidth}
@@ -2455,7 +2455,7 @@ The correlation in the timing of last login among friends suggests the effect of
 \caption{\small Probability of departure as function of different local properties. Where (a) is $p$ as f(active friend count) in SN, (b) is $p$ as f(inactive friend count) in SN, (c) is $p$ as f(active friend count) in Dblp, (d) is $p$ as f(inactive friend count) in Dblp, (e) is $p$ as f(active friend fraction) in SN and (f) is $p$ as f(inactive friends who left in the past 6 months) in SN.}
 \label{fig:p_plots}
 %\vspace{-3pt}
-\end{figure*}
+\end{figure}
 
 To study how the probability of a user becoming inactive depends on the number of friends who are active, we use a similar method as in \cite{Backstrom:2006}: we first take two snapshots $(t_0, t_1)$ of the network, three months apart in SN and three years apart in Dblp; we then find all pairs $(u,k)$ such that $u$ is active at the time of first snapshot $t_0$, and has $k$ friends who are also active at $t_0$; $p(k)$ is calculated as the fraction of such pairs $(u,k)$ for a given $k$ such that $u$ had left the network at the time of second snapshot $t_1$. In other words, $p(k)$ is the fraction of active users who left the network in the next three months, given that $k$ friends are active at the first snapshot time. Figure~\ref{fig:orkut_p_k_active_curve} and Figure~\ref{fig:dblp_p_k_active_curve} shows the curves of $p(k)$ at three different sample points of $t_0$. In a similar way, we can fix $f$ as the fraction of friends who are active at time $t_0$, and calculate the probability $p(f)$ of an active user leaving the network as function of $f$ (see Figure~\ref{fig:orkut_p_f_active_curve}). Note that for this figure and all the following figures involving the fraction of active/inactive friends, we exclude all the nodes with no friends in SN, which are around $10\%$ of all active users as of 2011/1/1, and among those users, $35\%$ of them left within three months. 
 
