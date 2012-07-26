@@ -9,6 +9,7 @@ all: ${PAPER}.pdf clean
 
 .FORCE:
 ${PAPER}.pdf: ${PAPER}.tex .FORCE
+	hunspell -t -d en_US *.tex
 	$(call latex,${PAPER}.tex) > /dev/null
 	bibtex ${PAPER} || true
 	$(call latex,${PAPER}.tex) > /dev/null
