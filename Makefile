@@ -1,5 +1,5 @@
-latex = (latex -interaction=nonstopmode $(1) \
-	| grep --color -A3 "\(Warning\|Error\|\!\).*" \
+latex = (pdflatex -interaction=nonstopmode $(1) \
+	| grep --color -A3 "\(Warning\|Error\|^\!\).*" \
 	|| true)
 
 
