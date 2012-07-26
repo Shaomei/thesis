@@ -14,7 +14,6 @@
 \usepackage{graphics}
 \usepackage{moreverb}
 \usepackage{epsfig}
-%\usepackage{subfigure}
 \usepackage{hangcaption}
 \usepackage{txfonts}
 \usepackage{palatino}
@@ -37,7 +36,6 @@
 \renewcommand{\topfraction}{0.85}
 \renewcommand{\textfraction}{0.1}
 \renewcommand{\floatpagefraction}{0.75}
-
 
 \title {The Dynamics of Information Diffusion on On-line Social Networks}
 \author {Shaomei Wu}
@@ -225,7 +223,7 @@ One critic to the classic theories is their lack of empirical supports. Although
 
 However, we find current knowledge on influence and influentials still limited for several reasons. First, as most work focused on big cascades, the results can be biased towards the ``successful'' events that are deemed to be rare\cite{Bakshy-2011}.
 
-In addition, the \emph{context} of influence is usually overlooked. Influence deos not exist in vacumne. It needs to be exercized by people, with certain communication medium. The context of influence is important, because individuals influence can differ by their expertise\cite{Cha-2010}, the subject\cite{Leskovec-EC-2006}, and the communication channels\cite{Wu-Twitter-2011}. Existing empirical studies measure influence in a variety of ways, from the size of diffusion tree, to the probability of passing the cascade to the next hop. As a result, current definition of influence is not only inconsistent but also ambiguous: different types of influence are usually studied as a whole, regardless differnet mechanisms that operate behind them. As a result, different types of influence are mixed and studied as if driven by a single mechanism. And the exogenous influence migrated from other channels is usually mixed and mistaken as interpersonal influence in social media system studied.
+In addition, the \emph{context} of influence is usually overlooked. Influence deos not exist in vacumne. It needs to be exercized by people, with certain communication medium. The context of influence is important, because individuals influence can differ by their expertise\cite{Cha-2010}, the subject\cite{Leskovec-EC-2006}, and the communication channels\cite{Wu-Twitter-2011}. Existing empirical studies measure influence in a variety of ways, from the size of diffusion tree, to the probability of passing the cascade to the next hop. The lack of consistency in current definition of influence also introduces ambiguity: different types of influence are usually studied as a whole, regardless different mechanisms that operate behind them. As a result, hybrid influence is observed and studied as if driven by a single mechanism. For example, exogenous influence migrated from other channels is usually mixed with and treated as interpersonal influence in most emiprical studies.
 
 %As a result, homophily can be 
 
@@ -353,7 +351,9 @@ The structure of network is another interesting component of diffusion research.
 
 At a local level, many studies have shown the correlation of activity among friends in online communities, and tried to understand the effect of neighborhood structure on the spread of information, or behavior. Classic theory on product adoption suggests an ``S-shape'' curve\cite{Bass:1969} in which the probability of adopting a new product grows slowly with a small number of adopted friends $k$, rapidly as $k$ increases, and quickly saturates once $k$ reaches a certain point. But recent empirical work based on online data showed that the adoption probability follows a ``deminishing return'' curve in which it first grows rapidly at small values $k$, then gradually stops to grow as $k$ gets large\cite{Backstrom:2006,Romero-2011}. When studying the local structure in depth, people found that, the structural closeness of local community (measured by triadic closures or cluster coefficient) has a siginificatn effect at the probability of adoption\cite{Backstrom:2006}, however, such effect may differ by the types of content under diffusion\cite{Romero-2011}.
 
-In addition to the research efforts on local structure, a number of studies looked at global structure of networks, in the understanding of macro-level dynamics of diffusion. Fixing the diffusion model for local dynamics (e.g., epidemic models, independent cascade models, threshold models), the global structure of network can determine (and explain) certain characteristics of cascades that run on top of it. For example, in \cite{pastor-satorras01}, the authors argues that the persistence of low-contagious virus in computer network systems is a result of the scale-free structure of the network.  In many other work, the global structure of the diffusion network is used as benchmark for generative models that simulate the mechnism of diffusion\cite{Eguiluz-2002,Gruhl-2004,Nowell-2008}.
+In addition to the research efforts on local structure, a number of studies looked at global structure of networks, in the understanding of macro-level dynamics of diffusion. Fixing the diffusion model for local dynamics (e.g., epidemic models, independent cascade models, threshold models), the global structure of network can determine (and explain) certain characteristics of cascades that run on top of it. For example,
+
+ in \cite{pastor-satorras01}, the authors argues that the persistence of low-contagious virus in computer network systems is a result of the scale-free structure of the network.  In many other work, the global structure of the diffusion network is used as benchmark for generative models that simulate the mechnism of diffusion\cite{Eguiluz-2002,Gruhl-2004,Nowell-2008}.
 
 %One refinement is to consider a more accurate model of power-law networks.
 %Egu´ýluz and Klemm [10] have demonstrated a non-zero epidemic threshold under the SIS model 3
@@ -379,11 +379,8 @@ Although our study starts from the inactivity of users in onlie communities, the
 
 %\section{The journey ahead}
 
-\begin{comment}
-\chapter{Background}
-A variety of methods have been applied by scholars to study the diffusion of information. From the theoretic perspective, sociologists and economists developed agent-based modeling (ABM) to explore the dynamics of diffusion in different networks and interactions [Centola and Macy 2007, Watts and Dodds 2007]. Computer scientists designed the algorithm to maximize the extent of diffusion by seeding the diffusion with specially-picked individuals [Liben-Nowell et al 2008]. 
 
-On the other hand, modeling and predicting the propensity of real world diffusion going viral through WOM process is of central interest in recent empirical studies. Built on top of the cascade model, Gruhl et al [2004] tracked the diffusion of topics in blogspace to estimate the transmission probability with an expectation-maximization(EM)-like algorithm. Leskovec et al [2007] studied interpersonal recommendations on an e-commerce site to infer the adoption probability based on the category of products and invitation history. Cha et al [2008] studied the viral process of photos being marked as favorite on the Flickr social network. By applying the SIR model with infinite recovery time, they estimated the reproduction number with the mean degree of nodes at each step of contagion. Backstrom et al. [2006] modeled the probability of a user  joining a community and the growth of communities on LiveJournal using decision trees with network structure features.
+\chapter{Background}
 
 \section{Diffusion and network structure}
 Section 3 text. The dielectric constant at the air-metal interface
@@ -402,8 +399,72 @@ and $\varepsilon_{air}$ is the dielectric constant of air.
 
 
 \section{Social theories}
+There are several competing social theories explaining how things spread in population. 
+
+One of the most popular theories is the social influence theory (also called induction theory), which focuses on the viral spread of contagion through social contacts, and consider the reason that people adopt new ideas, behaviors, and products is \emph{because} their friends already did so. The social influence theory assumes the causal relationship between individual's activities and the activities of those they interact with, stressing the influence people received from their friends when deciding whether to adopt new products or ideas. Social influence can be exerted through word-of-mouth or imitation. And the diffusion process driven by social influence is also called social contagion as it spreads through social interactions like epidemic diseases. There are many work studying the effect of social influence in different settings, such as the diffusion of innovations\cite{strang-1998}, the adoption of norms\cite{Axelrod-1986}, and the spread of topics in blogspheres\cite{Java-2006}. Among them, the most striking results are a series of studies on longitual personal health data, claiming that obesity\cite{Christakis-2007}, happiness\cite{Fowler-2008}, and smoking\cite{Christakis-2008}, are all contagious through social networks\footnote{There have been many debates around the validity of these results and methodology applied. For example, \cite{CohenCole-2008, Lyons-2010} argues that the authors of these work mistaken environmental factors and homophily as social influence.}. 
+
+An alternative theory attributes homophily as the driving force of diffusion process. Homophily, is the pheonomon that people tend to befriend with others similar to them, in other words, ``birds of a feather flock together''. As a result, products or ideas that are appealing to one's friends are likely to be appealing to the ego as well, thus will naturally spread among the group of friends. The key idea here is that individuals adoption is a result of their inherent characteristics instead of their interactions with friends. Homophily, or ``selection mechanism'', has been studied by sociologists for a long history. People found that social relationships such as friendships and marriages are more frequently formed between people with similar demographics characteristics or cultural background\cite{lazarsfeld-1954,mcpherson-2001}. Later work also found the homophily effect prevalent in online social networks, contributing to correlated tastes, opinions, and online behaviors among those who are alike\cite{Liben-Nowell-2005,kossinets-2006,Kossinets-2009}.
+
+
+The third explanation for the spread of products or actions in a social network are exogenous factors that exist outside of the network (also referred as contextual/confounding factors). Such exogenous factors include environment, events, qualities of the products under diffusion, etc. For example, the popularization of hybrid cars in California between 2008 and 2009 can be attributed mostly to the state policies such as the tax credits, rebates, and car pool privileges. In this case, two friends who both live in the bay area may purchase a hybrid car one after another, however, their decisions are made indepdently and mostly driven by the state incentives. Thus we can not conclude that one purchases a hybrid car because his friend did so, or people in bay area have an inherent preference for hybrid cars (as people in this area may not purchase hybrid cars any more after the policy ends). Although as pervalent as homophily in real world settings, the importance of exogenous factors are largely neglected in the studies of diffusion until very recently\cite{Aral-2012}. In their study of the temporal dynamics of YouTube videos, Crane and Sornette argued that the nature of information (viral, quality, junk) is an important factor that determines how it spread. More particularly, they found a class of videos that do not spread virally through social networks, but still receive a lot of attention due to exogenous reasonss suc as the quality of videos or their association with real world events\cite{crane:2008}. Also, in \cite{CohenCole-2008}, Cohen-Cole et al re-examined the studies about the social contagions of health behaviors\cite{Christakis-2007,Christakis-2008,Fowler-2008} and argued that most of observed correlation of behaviors among friends can be explained by environmental factors. 
+
+Diffusion processes driven by these three mechanisms have very similar temporal and structural patterns, and are proved to be extremely difficult to be distinguished from each other based on only observational data\cite{Aral:2009,Shalizi-2011}. As a result, many studies, led by the viral story, have a strong bias towards the social influence while overlooking homophily and exogenous factors. However, in most online and offline settings, all these mechanisms usually take effect simultaneously when the diffusion is taking place. For example, although the state incentive policies may stimulated the sales of hybrid cars at the first place, early adopters of hybrid cars may also have a very positive opinion about their purchase and recommend it to their friends; at the same time, given the relatively high income and education level of the early adopters, the homophily principle may also determine that these people and their friends are naturally more likely to appreciate and afford the ``go green'' lifestyle. These factors can also interact with each other and generate a feedback effect that accelerates the spread of new products and ideas\cite{Crandall:2008}, making it even more difficult to separate one mechanism from the others. Although difficult, it is still important to identify the major mechanism that drives the diffusion in empirical studies, as it will not only reveal the fundamentally different underlying social mechanisms, but also predict the trend of the diffusion.
+
+Different diffusion mechanisms have different origins. Social influence is usually triggered by other mechanisms such as social identity, trust, or mutual utility, and is always operationalized through social networks. On the other hand, the origin of homophily are individual's preference and benefits of communicating with alike, social selection, or environmental and structural constraints\cite{kossinets-2008}
+
+Homophily, both the social network and the diffusion process are results of homophily.
+
+
+As social influence is usually triggered by social identity, 
+A better understanding of the exogenous factors can help us design policies and products that faciliate the diffusion process.
+
+
+on personal decisions such as language aquistision\cite{JON EC paper} or dressing taste\cite{Gladwell:2002}, for 
+
+The social influence theories focuses on the viral spread of contagion through social contacts, and assumes a strong causal relationship between the 
+
+considers individuals' decision of adoption a result of their friends' previous adoption of the new product.
+
+This theory is futher populated by a series of studies of the correlation among friends on certain personal traits, claiming that obesity, happiness, and the tendency of committing suicide, are all contagious through social networks.
+
+the social influence theory considers individuals' decision of adoption a result of the previous-adoptions of the friends, for reason such as gaining social utilities\cite{Jon's language adoption work} or the trust to friends' opinion\cite{}.
+
+\subsection{Compare three mechanism}
+Historically, most studies focused on social influence (the viral story) and overlooked homophily and external factors.
+
+Recent studies show that both homophily and influence can drive the diffusion process, and it is inherently difficult to tell the difference based on only observational data. We need to be careful when explaining the mechanism of diffusion as we observed. 
+
+Why is it important to identify the mechanism if possible?
+
+Origin:
+
+Influence: social identity; mutual utility; trust on friends.
+Homophily: individual's preference and benefits of communicating with alike, social selection, environmental and structural constraints.
+Exogenous factors: events, 
+
+Appearance:
+
+Result:
+
+
+
+
+\subsection{Complex contagion and the adoption curve}
+
+\subsection{Homophily}
+
+\subsection{Social influence}
+
+\subsection{Exogenous factors}
+
+\subsection{Complex contagion}
+
+
 
 \section{Diffusion models}
+A variety of methods have been applied by scholars to study the diffusion of information. From the theoretic perspective, sociologists and economists developed agent-based modeling (ABM) to explore the dynamics of diffusion in different networks and interactions [Centola and Macy 2007, Watts and Dodds 2007]. Computer scientists designed the algorithm to maximize the extent of diffusion by seeding the diffusion with specially-picked individuals [Liben-Nowell et al 2008]. 
+
+On the other hand, modeling and predicting the propensity of real world diffusion going viral through WOM process is of central interest in recent empirical studies. Built on top of the cascade model, Gruhl et al [2004] tracked the diffusion of topics in blogspace to estimate the transmission probability with an expectation-maximization(EM)-like algorithm. Leskovec et al [2007] studied interpersonal recommendations on an e-commerce site to infer the adoption probability based on the category of products and invitation history. Cha et al [2008] studied the viral process of photos being marked as favorite on the Flickr social network. By applying the SIR model with infinite recovery time, they estimated the reproduction number with the mean degree of nodes at each step of contagion. Backstrom et al. [2006] modeled the probability of a user  joining a community and the growth of communities on LiveJournal using decision trees with network structure features.
 
 
 \section{Temporal analysis}
@@ -412,6 +473,7 @@ and $\varepsilon_{air}$ is the dielectric constant of air.
 
 \section{Lingusitic analysis}
 
+\begin{comment}
 \section{On-line social network as the lab for studying information diffusion}
 \subsection{Twitter}
 
@@ -747,10 +809,10 @@ blog & 140,251& 19,946 & 49,987 &17,259\\
 \end{table}
 
 % \begin{figure}
-% \label{top_k_volume_other}
 % \centering
 % \includegraphics[width=3in]{figures/mostRTing_user_outflow_to_random_other_users.png}
 % \caption{}
+% \label{top_k_volume_other}
 % \end{figure}
 
 \section{Distribution of attention}
@@ -799,10 +861,10 @@ cut-off for the elite categories.
 \includegraphics[width=5in]{figures/top_users_outflow_to_random_other_users_800K.eps}
 \label{fig:top_k_elite_volume}
 }
-\label{fig:attention_to_top_k_elite}
 \caption{Average fraction of $\#$ following (blue line) and $\#$
   tweets (red line) for a random user that are accounted for by the
   top K elites users crawled}
+\label{fig:attention_to_top_k_elite}
 \end{figure}
 
 %\begin{figure}
@@ -854,6 +916,7 @@ the four categories.
 \centering
 %\begin{scriptsize}
 \caption{Top 5 users in each category}
+\label{tab:top_k_examples}
 \vspace{2pt}
 \begin{tabular}{|c|c|c|c|} 
 \hline 
@@ -878,7 +941,6 @@ Oprah & TIME & ollehkt & dooce \\
 %Silver90210 & USDOL & ProOkubo & averyps \\
 %\hline
 \end{tabular}
-\label{tab:top_k_examples}
 %\end{scriptsize}
 \end{table}
 
@@ -927,12 +989,12 @@ accounts for a negligible fraction of attention among the remaining
 population.  
  
 \begin{figure}
-\label{fig:top_k_volume_other}
 \centering
 \includegraphics[width=5in]{figures/mostRTing_user_outflow_to_random_other_users.eps}
 \caption{Average fraction of $\#$ following (blue line) and $\#$
   tweets (red line) for a random user that are accounted for by the
   top K most retweeted users in the ``Other'' category}
+\label{fig:top_k_volume_other}
 \end{figure}
 
 
@@ -1560,7 +1622,7 @@ previous findings~\cite{bakshy_11}.
 
 \begin{figure}
 \centering
-\includegraphics[width=2.6in]{figures/url_lifespan_RTrate_by_categories_500K_censored.eps}
+\includegraphics[width=4in]{figures/url_lifespan_RTrate_by_categories_500K_censored.eps}
 \caption{Average RT rate by lifespan for each of the originating categories}
 \label{fig:RT_lifespan_category}
 \end{figure}
@@ -1625,9 +1687,9 @@ word usage and sentiment between rapidly-fading and long-lasting information.
 
 In the following sections of this chapter, we first provide an overview of the data we are using for this study, then present a binary classifier that predicts the persistence of URLs, using texual features from webpages pointed to by the URLs. We further examine and discuss different aspects of the content that are correlated with the difference in temporal patterns. In the end, we provide some additional insights about the quality of YouTube videos in relationship to the decay time.
 
-\subsection{Data}
+\section{Data}
 
-\subsubsection{Summary}
+\subsection{Summary}
 In this study, we used the dataset publicly shared by the authors of \cite{Yang-2011}\footnote{http://snap.stanford.edu/data/twitter7.html}, 
 consisting of approximately $20\%$-$30\%$ of all the tweets generated between June 1, 2009 and December 31, 2009. 
 %Since it is collected over a continuous period of time, this dataset is desirable to study the temporal patterns of information. 
@@ -1648,7 +1710,7 @@ or linked to webpages that no longer exist.
 We further restrict our study to URLs that are mentioned more than 50 times in order to remove spam and have sufficient observations to measure temporal dynamics, which leaves us with 21K URLs. 
 In the rest of this paper, when we talk about URLs and temporal patterns, we mean these 21K bit.ly URLs and the temporal pattern in their time series.
 
-\subsubsection{Persistence of URLs}
+\subsection{Persistence of URLs}
 After extracting the data of interest, we first propose a quantitative metric of persistence and present some insights on the overall temporal pattern of the URLs we study.
 
 As the focus of this study is how fast URLs fade, we measure decay rates following peak attention. 
@@ -1663,29 +1725,29 @@ Among all URLs we studied, the mean $t_u$ is 217.3  hour and the median $t_u$ is
 
 %\vspace{-0.1in}
 \begin{figure}[htb!]
-\label{fig:tu_distribution}
 \centering
 \epsfig{figure=figures/tu_distribution.eps, width=5in}
 %\vspace{-0.3in}
 \caption{Distribution of URL decay time $t_u$}
+\label{fig:tu_distribution}
 \end{figure}
 
 We further examine the relationship between $t_u$ and the overall popularity of URLs. Figure~\ref{fig:tu_tweet_rt} shows the average number of tweets and retweets accumulated by each URL as a function of $t_u$. Given the power-law distribution of $t_u$, we bin URLs by the integer part of $\log_2(t_u)$, and calculate the mean for each bin.  Although the persistent URLs are mentioned in slightly more tweets, the rapidly-fading URLs do better at attracting retweets. This result is consistent with previous findings that the longevity of information is determined not by diffusion, but by independent generation of tweets of the same content over time \cite{Wu-Twitter-2011}.
 
 %\vspace{-0.1in}
 \begin{figure}[htb!]
-\label{fig:tu_tweet_rt}
 \centering
 \epsfig{figure=figures/tu_rt_tweet.eps, width=5in}
 %\vspace{-0.3in}
 \caption{URL overall popularity as a funtion of $t_u$}
+\label{fig:tu_tweet_rt}
 \end{figure}
 
 
-\subsection{Predicting temporal patterns based on content}
+\section{Predicting temporal patterns based on content}
 In this section, we formally define the temporal pattern classification task and present our findings.
 
-\subsubsection{Identifying information with two distinct temporal patterns}
+\subsection{Identifying information with two distinct temporal patterns}
 We start by casting our question into a binary classification problem
 in which class 1 is defined as consisting of those
 URLs with $t_u < 6$ and class 0 is defined
@@ -1733,14 +1795,14 @@ To better illustrate our classification scheme, we apply the time series normali
 
 %\vspace{-0.1in}
 \begin{figure}[htb!]
-\label{fig:classexample}
 \centering
 \epsfig{figure=figures/class_centroids.eps, width=5in}
 \caption{Normalized time series centroids for two classes}
+\label{fig:classexample}
 %\vspace{-0.2in}
 \end{figure}
 
-\subsubsection{Features}
+\subsection{Features}
 To predict the temporal class of URLs, we extract and experiment with the following four incremental sets of unigram features from the HTML webpages linked by the URLs (one-character tokens and those that consist only of numbers are filtered out):
 
 \begin{itemize}
@@ -1753,9 +1815,9 @@ To predict the temporal class of URLs, we extract and experiment with the follow
 As mentioned above, to get more meaningful unigram features, after tokenizing all the textual content into word terms, we filter the terms with length 1 (e.g., ``s'', ``t'') and the terms consisting of only numbers. As the dimension increases tremendousely in the last 3 sets of features, we also filter the infrequent terms (i.e., terms with total frequency less than 20). Table \ref{table:feature-sets} gives a summary of the number of features in each set.
 
 \begin{table}[t]
-\label{table:feature-sets}
 \centering
 \caption{Feature size}
+\label{table:feature-sets}
 \begin{tabular}{c|c}
 \hline
  \emph{Feature} & \emph{$\#$ of unique unigram terms} \\
@@ -1771,7 +1833,7 @@ Header + Body + URL & 76487\\
 \end{tabular}
 \end{table}
 
-\subsubsection{Classifier performance}
+\subsection{Classifier performance}
 To predict the persistence of webpages, we employ a Support Vector Machine (SVM)\footnote{The SVM package we use is SVMLight, \url{http://svmlight.joachims.org/}} classifier with a binary representation of unigram features (if a term appears in a webpage, the corresponding coordinate has value 1, and value 0 otherwise). To work with high-dimensional features, we use the linear SVM kernel for efficiency. 
 We also apply the default parameters for SVM classifier for a fair comparison among different sets of features. Table \ref{table:performance} gives the performance of classifiers with different sets of features using 10-fold cross validation. 
 
@@ -1800,7 +1862,7 @@ Table \ref{table:performance} shows that in general, the simple linear-kernel SV
 
 %As we can see in the Table, the Accuracy is around 70\%, and the F1 score for negative class (long lasting urls) reaches 75\%. It shows that we can predict temporal pattern with  content. Also, the more information we have the performance is better. It further validates our assumption that the contents of webpage are related to the temporal pattern.
 
-\subsection{How temporal patterns vary with types of content}
+\section{How temporal patterns vary with types of content}
 The SVM classifier shows that the content provides enough information
 to predict persistence reasonably well.
 However, SVMs are not as effective at providing a readily
@@ -1812,16 +1874,16 @@ the aspects that exhibit the
 most significant difference across temporal classes.
 
 %%After showing the connection between content and temporal pattern, we now describe different aspects of content that are associated with the persistence of information.
-\subsubsection{LIWC analysis}
+\subsection{LIWC analysis}
 
 Linguistic Inquiry and Word Count (LIWC) \cite{liwc} is a widely used text analysis tool that maps words onto 60 pre-defined categories, covering linguistic, psychological, and social dimensions. Using LIWC categories, we start by comparing the distribution of words across two classes.
 
 
 \begin{figure*}[htb!]
- \label{fig:liwc-dist}
  \centering
  \epsfig{figure=figures/liwc_distribution.eps, width=6.5in}
 \caption{Class distribution in 60 LIWC dimensions, using words from HTML header}
+ \label{fig:liwc-dist}
 \end{figure*}
 
 %Using LIWC dictionary, we generate a 60-dimension binary vector based on the Header feature for each URL (the value for a given dimension is 1 when there is at least one word under the corresponding LIWC category in the extracted header text). 
@@ -1835,10 +1897,10 @@ We say a LIWC category occurs in a URL when we find at least one word under that
 
 %\vspace{-0.1in}
 \begin{figure*}[htb!]
- \label{fig:liwc-trend}
  \centering
  \epsfig{figure=figures/liwc_trends.eps, width=6.5in}
-\caption{Trending LIWC categories}
+ \caption{Trending LIWC categories}
+ \label{fig:liwc-trend}
 \end{figure*}
 
 To better see the trend in the frequency of specific categories as a function of $t_u$, for each category $w$, we define $f_w(t)$ as the fraction of occurrences of $w$ in all URLs $u$ for which $t_u=t$, and plot $y=f_w(t)$ for different groups of LIWC categories in Figure \ref{fig:liwc-trend}.
@@ -1857,7 +1919,7 @@ Again, to balance the power-law distribution of $t_u$, we bin $t_u$ by integer p
 %    * URLs in (-) class: work, posemo, leisure, affect, money, pronoun, 
 
 
-\subsubsection{Topic analysis}
+\subsection{Topic analysis}
 
 Although LIWC offers the most straightforward insights from the text, as a manually-generated, pre-defined category system, it is limited by the underlying psychololinguistic concepts.
 %To account for the possible miss of dimensions defined 
@@ -1886,10 +1948,10 @@ Figure \ref{fig:ldadistribution} shows topics distribution in all 50 topics.
 We notice that the most significant differences occur at topics 18, 25 (with a high probability in rapidly-fading webpages), and topics 32, 37 (with a high probability in persistent webpages).
 
 \begin{figure*}[htb!]
- \label{fig:ldadistribution}
  \centering
  \epsfig{figure=figures/topics_distribution.eps, width=6.5in}
 \caption{Class distribution in 50 LDA topics, using words from HTML header and body}
+\label{fig:ldadistribution}
 \end{figure*}
 
 Providing a closer look at those topics, Table \ref{tb:ldatopics}
@@ -1906,8 +1968,8 @@ In the topics associated with persistent webpages, interestingly, we notice an i
 
 \begin{table}[t]
 \centering
-\label{tb:ldatopics}
 \caption{LDA Topics}
+\label{tb:ldatopics}
 \small
 \begin{tabular}{c|c|c|c}
 \hline
@@ -1938,13 +2000,13 @@ heads & kind & busy & august\\
 \normalsize
 \end{table}
 
-\subsubsection{Trending words analysis}
+\subsection{Trending words analysis}
 After measuring the content in LIWC categories and latent topics, in this part, we examine the content with more details, trying to discover the nuance between classes at the word level. We calculate and compare the most representative words in the two classes. Picking the words to describe a collection of documents can be turned into a trend detection problem: let the webpages of negative class be the corpus of early period and the webpages of positive class be the later period, negative class can thus be described by the most significant ``falling words'' whereas the positive class can be described by the most significant ``rising words''.  To do so, we apply the methods as presented in \cite{Kleinberg:2004} on the Header feature set, and generate the top 20 trending words for each class (see Table \ref{table:trending-words})\footnote{We also tried the same method on the other three feature sets, but as the number of terms largely increases, the data becomes too noisy to be described with a few words, and the results are difficult to interprete.}. 
 
 \begin{table}[t]
 \centering
-\label{table:trending-words}
 \caption{Representative words for two temporal classes}
+\label{table:trending-words}
 \small
 %\begin{tabular}{p{0.45in}|p{0.43in}|p{0.45in}|p{0.45in}|p{0.43in}|p{0.45in}}
 \begin{tabular}{c|c|c|c|c|c}
@@ -2009,18 +2071,18 @@ These results are mostly consistent with the findngs from the previous parts, co
 %2. words like ``tech'' and ``music'' seem neutral in both categories.
 
 
-\subsection{The quality and persistence of YouTube videos}
+\section{The quality and persistence of YouTube videos}
 In our dataset of 20K bit.ly URLs, there is a significant portion ($15\%$) of them linked to YouTube videos. Among these linked videos, 707 are already removed by the user and 2304 are still available online. Noting that the \emph{content} of videos may not be accurately represented by the text of the YouTube page, we conduct a separate study of the persistence of YouTube videos, leveraging the user rating feature YouTube provides - namely, \emph{likes} and \emph{dislikes} - to assess the content from the quality perspective.
 
 First, Figure \ref{fig:youtube_tu} shows the distribution of decay time $t_u$ for the 2304 available YouTube videos. In contrast to the overall distribution of $t_u$ for all URLs (see Figure \ref{fig:tu_distribution}), YouTube videos in general receive a longer span of attention. 
 
 %\vspace{-0.1in}
 \begin{figure}[htb!]
-\label{fig:youtube_tu}
 \centering
 \epsfig{figure=figures/youtube_tu_distribution.eps, width=5in}
 %\vspace{-0.1in}
 \caption{Distribution of $t_u$ for YouTube videos}
+\label{fig:youtube_tu}
 \end{figure}
 
 
@@ -2059,11 +2121,11 @@ lasting value, but in general is more viral.
 % these amateur video clips.
 
 \begin{figure}[htb!]
-\label{fig:youtube_comment_view}
 \centering
 \epsfig{figure=figures/youtube_comment_view.eps, width=5in}
 %\vspace{-0.1in}
 \caption{Average number of views and comments as a funtion of $t_u$}
+\label{fig:youtube_comment_view}
 \end{figure}
 
 Finally, in Figure \ref{fig:youtube_comment_view}, we consider the
@@ -2386,8 +2448,8 @@ The correlation in the timing of last login among friends suggests the effect of
 \subfigure[]{\label{fig:orkut_p_f_active_curve}\includegraphics[width=0.4\textwidth]{figures/p_f_active_curves.eps}}
 \hspace{0.05\textwidth}
 \subfigure[]{\label{fig:orkut_p_r_curve}\includegraphics[width=0.4\textwidth]{figures/p_r_curves.eps}}
-\label{fig:p_plots}
 \caption{\small Probability of departure as function of different local properties. Where (a) is $p$ as f(active friend count) in SN, (b) is $p$ as f(inactive friend count) in SN, (c) is $p$ as f(active friend count) in Dblp, (d) is $p$ as f(inactive friend count) in Dblp, (e) is $p$ as f(active friend fraction) in SN and (f) is $p$ as f(inactive friends who left in the past 6 months) in SN.}
+\label{fig:p_plots}
 %\vspace{-3pt}
 \end{figure*}
 

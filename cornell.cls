@@ -27,7 +27,11 @@
 %%   File: crnlphd.dtx Copyright (C) 1994 Sergio Gelato
 %%   Made available without any warranty, express or implied.
 %%
+<<<<<<< HEAD
 %% $Id$
+=======
+%% $Id: cornell.dtx,v 1.11 2008/04/17 16:56:31 andru Exp $
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -46,7 +50,11 @@
 %%
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{cornell}
+<<<<<<< HEAD
 [2002/06/14 v2.6
+=======
+[2008/4/17 v2.9
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
   Cornell University thesis class]
 \newif\ifphd
 \DeclareOption{phd}{\phdtrue}
@@ -60,7 +68,11 @@
 \DeclareOption{halfcornellheadings}{\halfcornellheadingstrue \cornellheadingsfalse}
 \DeclareOption{normalsizeheadings}{\smallerheadingsfalse}
 \DeclareOption{smallerheadings}{\smallerheadingstrue}
+<<<<<<< HEAD
 \ExecuteOptions{halfcornellheadings}
+=======
+\ExecuteOptions{cornellheadings}
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
 \ExecuteOptions{smallerheadings}
 \DeclareOption{10pt}{%
  \iffinal%
@@ -104,6 +116,24 @@
 \ProcessOptions
 
 \iffinal\LoadClass[12pt]{report}[1994/06/01]\else\LoadClass{report}[1994/06/01]\fi
+<<<<<<< HEAD
+=======
+\newif\ifpdf
+\ifx\pdfoutput\undefined
+\else
+  \ifx\pdfoutput\relax
+  \else
+    \ifcase\pdfoutput
+    \else
+      \pdftrue
+    \fi
+  \fi
+\fi
+\ifpdf
+  \setlength{\pdfpagewidth}{8.5in}
+  \setlength{\pdfpageheight}{11in}
+\fi
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
 \ifcornellheadings
   \def\@makechapterhead#1{%
     \begin{center}%
@@ -123,6 +153,21 @@
       \MakeUppercase{\bfseries #1}
     \end{center}%
     }
+<<<<<<< HEAD
+=======
+  \def\@makechapterhead#1{%
+    \vspace*{50\p@}%
+    {\parindent \z@ \raggedright \normalfont
+      \ifnum \c@secnumdepth >\m@ne
+          \huge\bfseries \@chapapp\space \thechapter
+          \par\nobreak
+          \vskip 20\p@
+      \fi
+      \interlinepenalty\@M
+      \singlespacing \Huge \bfseries #1\par\nobreak
+      \vskip 40\p@
+    }}
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
   \ifsmallerheadings
     \def\@makechapterhead#1{%
       {\parindent \z@ \raggedright \normalfont
@@ -131,7 +176,11 @@
             \par\nobreak
         \fi
         \interlinepenalty\@M
+<<<<<<< HEAD
         \LARGE \bfseries #1\par\nobreak
+=======
+        \singlespacing \LARGE \bfseries #1\par\nobreak
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
       }}
   \fi
 \fi
@@ -172,6 +221,17 @@
 \else
 \fi
 \newcommand{\ps@cornell}{%
+<<<<<<< HEAD
+=======
+\def\@oddhead{}
+\def\@oddfoot{\hfil\thepage\hfil}%
+\def\@evenhead{}%
+\def\@evenfoot{\@oddfoot}%
+\def\chaptermark##1{}%
+\def\sectionmark##1{}%
+}
+\newcommand{\ps@oldcornell}{%
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
 \def\@oddhead{{\slshape\rightmark}\hfil\thepage}%
 \def\@oddfoot{}%
 \def\@evenhead{\thepage\hfil{\slshape\leftmark}}%
@@ -199,6 +259,10 @@
            {\settowidth\labelwidth{\@biblabel{#1}}%
             \leftmargin\labelwidth
             \advance\leftmargin\labelsep
+<<<<<<< HEAD
+=======
+    \itemsep=12pt
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
             \@openbib@code
             \usecounter{enumiv}%
             \let\p@enumiv\@empty
@@ -206,15 +270,25 @@
       \sloppy\clubpenalty4000\widowpenalty4000%
       \sfcode`\.=\@m\relax
       \addcontentsline{toc}{chapter}{\bibname}
+<<<<<<< HEAD
       \singlespacing}
+=======
+      \listspacing{bib}}
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
      {\def\@noitemerr
        {\@latex@warning{Empty `thebibliography' environment}}%
       \normalspacing
       \endlist}
 
+<<<<<<< HEAD
 \newcommand{\@titlesize}{\Large}
 \newcommand{\@subtitlesize}{\large}
 \newcommand{\@authorsize}{\normalsize} % No Pharaoh he.
+=======
+\newcommand{\@titlesize}{\fontsize{18}{24}\selectfont}
+\newcommand{\@subtitlesize}{\fontsize{12}{24}\selectfont}
+\newcommand{\@authorsize}{\normalsize\doublespacing} % No Pharaoh he.
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
 \newcommand{\@conferralmonth}{January}
 \newcommand{\@conferralyear}{1995}
 
@@ -230,7 +304,13 @@
 
 \renewcommand{\maketitle}{%
   \begin{titlepage}%
+<<<<<<< HEAD
     \begin{center}%
+=======
+    \realsinglespacing
+    \begin{center}%
+      \hrule height 0.5in width 0pt % force vertical space at top
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
       \@titlesize \expandafter\uppercase\expandafter{\@title}
     \end{center}
     \vfill
@@ -249,6 +329,10 @@
       \@author \\
       \@conferralmonth\ \@conferralyear
     \end{center}
+<<<<<<< HEAD
+=======
+    \vspace{0.25in}
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
   \end{titlepage}
 }
 
@@ -264,18 +348,31 @@
 \newenvironment{copyrightpage}{%
   \typeout{Copyleft page}
   \pagestyle{empty}
+<<<<<<< HEAD
   \null\vfil
   \begin{center}
 }{%
   \end{center}
   \vfil\null
+=======
+  \null\vfill
+  \begin{center}
+}{%
+  \end{center}
+  \vfill\null
+  \newpage
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
   \clearpage%
 }
 
 \newcommand{\makecopyright}{%
   \begin{copyrightpage}
   \copyright\ \@copyrightyear{} \@copyrightholder \\
+<<<<<<< HEAD
   ALL RIGHTS RESERVED \\[.5in]
+=======
+  ALL RIGHTS RESERVED
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
   \end{copyrightpage}%
 }
 \newcommand{\@copyrightholder}{\@author}
@@ -303,14 +400,22 @@
     \vspace*{\@abhdskip}%
     \ifphd%
       {\def\\{\noexpand\\} \xdef\@abstracttitle{\@abstracttitle}}
+<<<<<<< HEAD
       \expandafter\uppercase\expandafter{\@abstracttitle} \\[0.5\baselineskip]
+=======
+      \expandafter\uppercase\expandafter{\@abstracttitle} \\
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
       \@author,\ Ph.D. \\
       Cornell University\ \@conferralyear%
     \else
       \normalsize \bfseries\selectfont
       ABSTRACT
     \fi%
+<<<<<<< HEAD
     \vspace{0.5\baselineskip}%
+=======
+    \vspace{0.5\baselineskip}
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
   \end{center}%
   \pagestyle{empty}
   \thispagestyle{empty}
@@ -335,11 +440,19 @@
 
 \newenvironment{dedication}{%
   \prelim@contents{Dedication}
+<<<<<<< HEAD
   \null\vfil
   \begin{center}
 }{
   \end{center}
   \vfil\null
+=======
+  \null\vfill
+  \begin{center}
+}{
+  \end{center}
+  \vfill\null
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
   \clearpage
 }
 
@@ -351,7 +464,11 @@
 }
 
 \newcommand{\contentspage}{%
+<<<<<<< HEAD
   \singlespacing
+=======
+  \listspacing{toc}
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
   \label{toc}
   \prelim@contents{\contentsname}
   \tableofcontents
@@ -360,7 +477,11 @@
 }
 
 \newcommand{\tablelistpage}{%
+<<<<<<< HEAD
   \singlespacing
+=======
+  \listspacing{tab}
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
   \label{lot}
   \prelim@contents{\listtablename}
   \listoftables
@@ -369,7 +490,11 @@
 }
 
 \newcommand{\figurelistpage}{%
+<<<<<<< HEAD
   \singlespacing
+=======
+  \listspacing{fig}
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
   \label{lof}
   \prelim@contents{\listfigurename}
   \listoffigures
@@ -377,23 +502,36 @@
   \clearpage
 }
 \newcommand{\abbrlist}{%
+<<<<<<< HEAD
   \singlespacing
+=======
+  \listspacing{abbr}
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
   \prelim@contents{List of Abbreviations}
   \chapter*{List of Abbreviations}
 }
 
 \newcommand{\symlist}{%
+<<<<<<< HEAD
   \singlespacing
+=======
+  \listspacing{sym}
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
   \prelim@contents{List of Symbols}
   \chapter*{List of Symbols}
 }
 
 \newcommand{\preface}{%
+<<<<<<< HEAD
   \singlespacing
+=======
+  \listspacing{pref}
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
   \prelim@contents{Preface}
   \chapter*{Preface}
 }
 
+<<<<<<< HEAD
 \newcommand{\singlespacing}{%
   \let\CS=\@currsize\renewcommand{\baselinestretch}{1.0}\tiny\CS}
 \newcommand{\singlespacingplus}{%
@@ -407,11 +545,73 @@
 \newcommand{\changespacing}[2]{%
   \renewcommand{#1}{%
     \let\CS=\@currsize\renewcommand{\baselinestretch}{#2}\tiny\CS}%
+=======
+\renewcommand\normalsize{%
+   \@setfontsize\normalsize\@xiipt{12}%
+   \abovedisplayskip 12\p@ \@plus3\p@ \@minus7\p@
+   \abovedisplayshortskip \z@ \@plus3\p@
+   \belowdisplayshortskip 6.5\p@ \@plus3.5\p@ \@minus3\p@
+   \def\@listi{\leftmargin\leftmargini
+               \parsep 5\p@  \@plus2.5\p@ \@minus\p@
+               \topsep 10\p@ \@plus4\p@   \@minus6\p@
+               \itemsep \z@  \@plus2.5\p@ \@minus\p@}%
+   \belowdisplayskip \abovedisplayskip
+}
+\renewcommand\small{%
+   \@setfontsize\small\@xipt{11}%
+   \abovedisplayskip 11\p@ \@plus3\p@ \@minus6\p@
+   \abovedisplayshortskip \z@ \@plus3\p@
+   \belowdisplayshortskip 6.5\p@ \@plus3.5\p@ \@minus3\p@
+   \def\@listi{\leftmargin\leftmargini
+               \topsep 9\p@ \@plus3\p@ \@minus5\p@
+               \parsep 4.5\p@ \@plus2\p@ \@minus\p@
+               \itemsep \z@  \@plus2\p@ \@minus\p@}%
+   \belowdisplayskip \abovedisplayskip
+}
+\renewcommand\footnotesize{%
+   \@setfontsize\footnotesize\@xpt\@xpt
+   \abovedisplayskip 10\p@ \@plus2\p@ \@minus5\p@
+   \abovedisplayshortskip \z@ \@plus3\p@
+   \belowdisplayshortskip 6\p@ \@plus3\p@ \@minus3\p@
+   \def\@listi{\leftmargin\leftmargini
+               \topsep 6\p@ \@plus2\p@ \@minus2\p@
+               \parsep 3\p@ \@plus2\p@ \@minus\p@
+               \itemsep \parsep}%
+   \belowdisplayskip \abovedisplayskip
+}
+
+\newcommand{\realsinglespacing}{%
+  \let\CS=\@currsize\renewcommand{\baselinestretch}{1.0}\CS}
+\newcommand{\singlespacing}{%
+  \let\CS=\@currsize\renewcommand{\baselinestretch}{1.208333}\CS}
+\newcommand{\singlespacingplus}{%
+  \let\CS=\@currsize\renewcommand{\baselinestretch}{1.5}\CS}
+\newcommand{\doublespacing}{%
+  \let\CS=\@currsize\renewcommand{\baselinestretch}{2}\CS}
+\newcommand{\realdoublespacing}{%
+  \let\CS=\@currsize\renewcommand{\baselinestretch}{2}\CS}
+\newcommand{\normalspacing}{\doublespacing}
+\newcommand{\footnotespacing}{\singlespacing}
+\newcommand{\listspacing}[1]{\singlespacing} % extra arg is extensibility hook
+\newcommand{\changespacing}[2]{%
+  \renewcommand{#1}{%
+    \let\CS=\@currsize\renewcommand{\baselinestretch}{#2}\CS}%
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
 }
 \ifdraft\changespacing{\normalspacing}{1}\fi
 \newcommand{\changenormalspacing}[1]{\renewcommand{\normalspacing}{#1}}
 \normalspacing
 
+<<<<<<< HEAD
+=======
+\def \@floatboxreset {%
+        \reset@font
+        \normalsize
+        \singlespacing
+        \@setminipage
+}
+
+>>>>>>> 1c397870ec5e31c3dd9ba27e27eee00149324846
 \endinput
 %%
 %% End of file `cornell.cls'.
