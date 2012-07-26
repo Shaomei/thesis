@@ -13,16 +13,16 @@
 \usepackage{graphicx,pstricks}
 \usepackage{graphics}
 \usepackage{moreverb}
+\usepackage{subfigure}
 \usepackage{epsfig}
 \usepackage{hangcaption}
 \usepackage{txfonts}
 \usepackage{palatino}
 \usepackage{url}
-\usepackage{subfig}
+%\usepackage{subfig}
 \usepackage{verbatim}
 
 %\renewcommand{\comment}[1]{}
-\newcommand{\subfigure}{\subfloat}
 
 
 %if you're having problems with overfull boxes, you may need to increase
@@ -58,7 +58,7 @@ To understand how influence migrates across mediums, we study user's influence o
 In contrast to previous diffusion research on the virality of information, our work focuses on the persistence of information, in relation to people and content. Fist, we see a systematical difference, in lifespan, for information broadcase by different categories of users. Second, we find a strong association between the content and the temporal dynamics of information: rapidly-fading information contains significantly more words related to negative emotion, actions, and more complicated cognitive processes, whereas persistent information contains more words related to positive emotion, leisure, and lifestyle.
  
 In the end, we study the local and global structure of a decaying online social network. Although there is a significant correlation in both arrival and departure among friends, we show that the dynamics of departure behave differently from the dynamics of arrival. 
-In particular, for the majority of users with a sufficient number (e.g., greater than 20) of friends, departure is best predicted by the overall fraction of activity within a user¡¯s neighborhood, independent of size. We also find that active users tend to belong to a core that is densifying and is significantly denser than the inactive users, and the inactive set of users exhibit a higher density and lower conductance than the degree distribution alone can explain. These two aspects suggest that nodes at the fringe are more likely to depart, and therefore induce inactive and subsequent departure of neighboring nodes in tightly-knitcom-munities.
+In particular, for the majority of users with a sufficient number (e.g., greater than 20) of friends, departure is best predicted by the overall fraction of activity within a user¡¯s neighborhood, independent of size. We also find that active users tend to belong to a core that is densifying and is significantly denser than the inactive users, and the inactive set of users exhibit a higher density and lower conductance than the degree distribution alone can explain. These two aspects suggest that nodes at the fringe are more likely to depart, and therefore induce inactive and subsequent departure of neighboring nodes in tightly-knit communities.
 
 
 \end{abstract}
@@ -93,10 +93,10 @@ Many many many thanks to my committee!
 
 %With the huge IPO of FB and the great pontential expected from Twitter, social media and social marketing have become the new silicion valley favorite and created a new wave of glamous bubbles.
 
-Information diffusion has been a long intriguing topic for scholars from different fields. It is an essential element of many interesting problems, such as the diffusion of innovation\cite{rogers-2003}, formation of public opinion\cite{katz_lazarsfeld,Watts-2007}, adoption of new products\cite{Bass:1969}. Historically, most of the research in this area has been done through field observations and/or phone surveys\cite{katz_57,rogers-2003}. Confined by the methodology, their results are uaually based on the spread of a specific opinion or product in rather localized networks. 
+Information diffusion has been a long intriguing topic for scholars from different fields. It is an essential element of many interesting problems, such as the diffusion of innovation\cite{rogers-2003}, formation of public opinion\cite{katz_lazarsfeld,Watts-2007}, adoption of new products\cite{Bass:1969}. Historically, most of the research in this area has been done through field observations and/or phone surveys\cite{katz_57,rogers-2003}. Confined by the methodology, their results are usually based on the spread of a specific opinion or product in rather localized networks. 
 
 The development of the Internet and the emergence of a whole new set of communication technologies on top of it has largely changed the way people  gather and disseminate information, and brought both challenge and opportunity to a better understanding of how information spreads in the society.
-Historically, most empirical studies in this area were based on data collected through in-person interviews and phone surveys\cite{rogers-2003,katz_lazarsfeld}, targeted with a specific opinion or product that is under diffusion. Confined by the methodology, theories and conclusions drew from these research suffer at scale and data accuracy, and are challenged in today's massive, hybrid communication environment. Meanwhile, the popularity of eletronic communication tools has offered new possibilities for obtaining much better data on how information and behavior spread over large population. The abundance of digital records of online interactions can provide large amounts of data on both explicit network structure and detailed dynamics, supporting large-scale, quantitative study of diffusion in the real world.
+Historically, most empirical studies in this area were based on data collected through in-person interviews and phone surveys\cite{rogers-2003,katz_lazarsfeld}, targeted with a specific opinion or product that is under diffusion. Confined by the methodology, theories and conclusions drew from these research suffer at scale and data accuracy, and are challenged in today's massive, hybrid communication environment. Meanwhile, the popularity of electronic communication tools has offered new possibilities for obtaining much better data on how information and behavior spread over large population. The abundance of digital records of online interactions can provide large amounts of data on both explicit network structure and detailed dynamics, supporting large-scale, quantitative study of diffusion in the real world.
 
 Using these large scale datasets collected from social media sites (i.e. Twitter, Orkut), we study three major components of information diffusion process:
 \begin{itemize}
@@ -410,13 +410,17 @@ The third explanation for the spread of products or actions in a social network 
 
 Diffusion processes driven by these three mechanisms have very similar temporal and structural patterns, and are proved to be extremely difficult to be distinguished from each other based on only observational data\cite{Aral:2009,Shalizi-2011}. As a result, many studies, led by the viral story, have a strong bias towards the social influence while overlooking homophily and exogenous factors. However, in most online and offline settings, all these mechanisms usually take effect simultaneously when the diffusion is taking place. For example, although the state incentive policies may stimulated the sales of hybrid cars at the first place, early adopters of hybrid cars may also have a very positive opinion about their purchase and recommend it to their friends; at the same time, given the relatively high income and education level of the early adopters, the homophily principle may also determine that these people and their friends are naturally more likely to appreciate and afford the ``go green'' lifestyle. These factors can also interact with each other and generate a feedback effect that accelerates the spread of new products and ideas\cite{Crandall:2008}, making it even more difficult to separate one mechanism from the others. Although difficult, it is still important to identify the major mechanism that drives the diffusion in empirical studies, as it will not only reveal the fundamentally different underlying social mechanisms, but also predict the trend of the diffusion.
 
-Different diffusion mechanisms have different origins. Social influence is usually triggered by other mechanisms such as social identity, trust, or mutual utility, and is always operationalized through social networks. On the other hand, the origin of homophily are individual's preference and benefits of communicating with alike, social selection, or environmental and structural constraints\cite{kossinets-2008}
+Different diffusion mechanisms have different origins. Social influence is usually triggered by other mechanisms such as social identity, trust, or mutual utility, and is always operationalized through social networks. On the other hand, the origin of homophily are individual's preference and benefits of communicating with alike, social selection, or environmental and structural constraints\cite{kossinets-2008}. In this case, both the social network and the diffusion process running on top of it are results of homophily. Exogenous factors are confound variables that are independent from the social network. Many things can be confound variables, some are external and environmental such as geographical conditions and seasons, some are more internal such as the quality of content\cite{crane:2008} and types of people\cite{Wu-Twitter-2011} (see Chapter~\ref{chap:influece}). Identifying exogeneous factors can help us better control and understand their effect, and will also bring the study of diffusion to a broader context.
+
+%Exogenous factors can be introduced by the environment, season,  studying the exogenous factors can help us design policies and products that faciliate the diffusion process.
+
+A better understanding of the diffusion mechanism can also lead to better prediction of the diffusion pattern. social influence leads to uniformity of behavior while homophily leads to fragmentation. The effect of exogenous factors can be more temporary and context-dependent.
+
 
 Homophily, both the social network and the diffusion process are results of homophily.
-
+Although their effect can be more temporary, and context-dependent,
 
 As social influence is usually triggered by social identity, 
-A better understanding of the exogenous factors can help us design policies and products that faciliate the diffusion process.
 
 
 on personal decisions such as language aquistision\cite{JON EC paper} or dressing taste\cite{Gladwell:2002}, for 
