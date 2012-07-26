@@ -17,3 +17,5 @@ ${PAPER}.pdf: ${PAPER}.tex .FORCE
 
 clean:
 	$(RM) -Rf *.aux *.bbl *.blg *.out *.log *.lof *.lot *.toc **/*~
+spellcheck:
+	hunspell -t -d en_US *.tex
