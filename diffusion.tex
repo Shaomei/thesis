@@ -10,7 +10,7 @@
 % fixed up by Andrew Myers.
 %
 %Some possible packages to include
-\usepackage{graphicx,pstricks}
+\usepackage{graphicx}%,pstricks}
 \usepackage{graphics}
 \usepackage{moreverb}
 \usepackage{subfigure}
@@ -139,7 +139,7 @@ With viral videos and memes outbreak and circulating in the Internet almost ever
 \item \emph{Transmission probability}. As most existing research describe diffusion process with epidemic models, transmission probability is the probability a virus travels through a directional edge in the network and infects the end node. In the context of social networks, transmission probability is mapped to  the success rate of interpersonal recommendations in electronic market\cite{Leskovec-EC-2006}, the probability a tweet is retweeted by the followers of the tweet's author\cite{Bakshy-2011}, and the likelihood a user mark a Flickr photo as favorite after seeing a friend doing so\cite{Cha-2009}.
 \end{enumerate}
 
-Using large scale online social networks data, researchers have employed a whole set of computational tools to asset different aspects of cascades that may lead themselves to viral. However, in practice, it is still very difficult to engineer a success viral campaign\cite{Bakshy-2011}. In fact, most marketers and public relation professionals still rely heavily on experience and intuition when launching online campaigns, which mostly received attention in a short time span\cite{Jaewon-2011,crane:2008,Wu-ICWSM-2011,Wu-Twitter-2011}. Although the virality is still the holy grail for marketers, there has been an ascending suspicion on the whole idea of ``predicting virality''.
+Using large scale online social networks data, researchers have employed a whole set of computational tools to asset different aspects of cascades that may lead themselves to viral. However, in practice, it is still very difficult to engineer a success viral campaign\cite{Bakshy-2011}. In fact, most marketers and public relation professionals still rely heavily on experience and intuition when launching online campaigns, which mostly received attention in a short time span\cite{Yang-2011,crane:2008,Wu-ICWSM-2011,Wu-Twitter-2011}. Although the virality is still the holy grail for marketers, there has been an ascending suspicion on the whole idea of ``predicting virality''.
 
 In their Science article published in 2006, Salganik et al\cite{Salganik-2006} explored the unpredictability of song ratings, argued that, despite the quality of music, the best predictor for a song's popularity is actually the popularity itself: the songs that received first few thumbs-ups usually rise up to be the hit, even if the first thumbs-ups are given randomly. Some later work showed that the quality of initiators does not predict well with the final scale of cascades\cite{Sun-2009,Bakshy-2011}. Although some studies showed that the structure of the subgraph induced by existing adopters do have a role in behavior adoption\cite{Backstrom:2006,Romero-2011,Leskovec-SDM-07}, such role is not consistent in other studies\cite{Bakshy-2011}, and may depend on the context of diffusion\cite{Centola:2007}.
 
@@ -382,87 +382,86 @@ Although our study starts from the inactivity of users in online communities, th
 
 \chapter{Background}
 
-\section{Diffusion and network structure}
-Section 3 text. The dielectric constant at the air-metal interface
-determines the resonance shift as absorption or capture occurs.
+%\section{Diffusion and network structure}
+%Section 3 text. The dielectric constant at the air-metal interface
+%determines the resonance shift as absorption or capture occurs.
 
-\begin{equation}
-k_1=\frac{\omega }{c({1/\varepsilon_m + 1/\varepsilon_i})^{1/2}}=k_2=\frac{\omega
-sin(\theta)\varepsilon_{air}^{1/2}}{c}
-\end{equation}
+%\begin{equation}
+%k_1=\frac{\omega }{c({1/\varepsilon_m + 1/\varepsilon_i})^{1/2}}=k_2=\frac{\omega
+%sin(\theta)\varepsilon_{air}^{1/2}}{c}
+%\end{equation}
 
-\noindent
-where $\omega$ is the frequency of the pleonasm, $c$ is the speed of
-light, $\varepsilon_m$ is the dielectric constant of the metal,
-$\varepsilon_i$ is the dielectric constant of neighboring insulator,
-and $\varepsilon_{air}$ is the dielectric constant of air.
+%\noindent
+%where $\omega$ is the frequency of the pleonasm, $c$ is the speed of
+%light, $\varepsilon_m$ is the dielectric constant of the metal,
+%$\varepsilon_i$ is the dielectric constant of neighboring insulator,
+%and $\varepsilon_{air}$ is the dielectric constant of air.
 
 
-\section{Social theories}
+\section{Mechanisms for diffusion}
 There are several competing social theories explaining how things spread in population. 
 
 One of the most popular theories is the social influence theory (also called induction theory), which focuses on the viral spread of contagion through social contacts, and consider the reason that people adopt new ideas, behaviors, and products is \emph{because} their friends already did so. The social influence theory assumes the causal relationship between individual's activities and the activities of those they interact with, stressing the influence people received from their friends when deciding whether to adopt new products or ideas. Social influence can be exerted through word-of-mouth or imitation. And the diffusion process driven by social influence is also called social contagion as it spreads through social interactions like epidemic diseases. There are many work studying the effect of social influence in different settings, such as the diffusion of innovations\cite{strang-1998}, the adoption of norms\cite{Axelrod-1986}, and the spread of topics in blogspheres\cite{Java-2006}. Among them, the most striking results are a series of studies on longitudinal personal health data, claiming that obesity\cite{Christakis-2007}, happiness\cite{Fowler-2008}, and smoking\cite{Christakis-2008}, are all contagious through social networks\footnote{There have been many debates around the validity of these results and methodology applied. For example, \cite{CohenCole-2008, Lyons-2010} argues that the authors of these work mistaken environmental factors and homophily as social influence.}. 
 
 An alternative theory attributes homophily as the driving force of diffusion process. Homophily, is the phenomenon that people tend to befriend with others similar to them, in other words, ``birds of a feather flock together''. As a result, products or ideas that are appealing to one's friends are likely to be appealing to the ego as well, thus will naturally spread among the group of friends. The key idea here is that individuals adoption is a result of their inherent characteristics instead of their interactions with friends. Homophily, or ``selection mechanism'', has been studied by sociologists for a long history. People found that social relationships such as friendships and marriages are more frequently formed between people with similar demographics characteristics or cultural background\cite{lazarsfeld-1954,mcpherson-2001}. Later work also found the homophily effect prevalent in online social networks, contributing to correlated tastes, opinions, and online behaviors among those who are alike\cite{Liben-Nowell-2005,kossinets-2006,Kossinets-2009}.
 
-
-The third explanation for the spread of products or actions in a social network are exogenous factors that exist outside of the network (also referred as contextual/confounding factors). Such exogenous factors include environment, events, qualities of the products under diffusion, etc. For example, the popularization of hybrid cars in California between 2008 and 2009 can be attributed mostly to the state policies such as the tax credits, rebates, and car pool privileges. In this case, two friends who both live in the bay area may purchase a hybrid car one after another, however, their decisions are made independently and mostly driven by the state incentives. Thus we can not conclude that one purchases a hybrid car because his friend did so, or people in bay area have an inherent preference for hybrid cars (as people in this area may not purchase hybrid cars any more after the policy ends). Although as prevalent as homophily in real world settings, the importance of exogenous factors are largely neglected in the studies of diffusion until very recently\cite{Aral-2012}. In their study of the temporal dynamics of YouTube videos, Crane and Sornette argued that the nature of information (viral, quality, junk) is an important factor that determines how it spread. More particularly, they found a class of videos that do not spread virally through social networks, but still receive a lot of attention due to exogenous reasons such as the quality of videos or their association with real world events\cite{crane:2008}. Also, in \cite{CohenCole-2008}, Cohen-Cole et al re-examined the studies about the social contagions of health behaviors\cite{Christakis-2007,Christakis-2008,Fowler-2008} and argued that most of observed correlation of behaviors among friends can be explained by environmental factors. 
+The third explanation for the spread of products or actions in a social network are exogenous factors that exist outside of the network (also referred as contextual/confounding factors). Such exogenous factors include environment, events, advertising exposure, qualities of the products under diffusion, etc. For example, the popularization of hybrid cars in California between 2008 and 2009 can be attributed mostly to the state policies such as the tax credits, rebates, and car pool privileges. In this case, two friends who both live in the bay area may purchase a hybrid car one after another, however, their decisions are made independently and mostly driven by the state incentives. Thus we can not conclude that one purchases a hybrid car because his friend did so, or people in bay area have an inherent preference for hybrid cars (as people in this area may not purchase hybrid cars any more after the policy ends). Although as prevalent as homophily in real world settings, the importance of exogenous factors are largely neglected in the studies of diffusion until very recently\cite{Aral-2012}. The nature of information and external events can both drives the diffusion process. In their study of the temporal dynamics of YouTube videos, Crane and Sornette found a class of videos that do not spread virally through social networks, but still receive a lot of attention due to exogenous reasons such as the quality of videos or their association with real world events\cite{crane:2008}. Advertisement and brand exposure has a long history driving the spread of products, and such effect still exists on the on-line media. When studying how people ``fan'' Facebook pages on Facebook social network, Sun et al found the set of fans grow in a large number of short cascade chains, and the best predictor for the size of diffusion is not the characteristics of individuals who first ``fan'' the page but the exposure of the page on people's news feed\cite{Sun-2009}. Location and environment also largely contraints people's behavior. In \cite{CohenCole-2008}, Cohen-Cole et al re-examined the studies about the social contagions of health behaviors\cite{Christakis-2007,Christakis-2008,Fowler-2008} and argued that most of observed correlation of behaviors among friends can be explained by environmental factors. 
 
 Diffusion processes driven by these three mechanisms have very similar temporal and structural patterns, and are proved to be extremely difficult to be distinguished from each other based on only observational data\cite{Aral:2009,Shalizi-2011}. As a result, many studies, led by the viral story, have a strong bias towards the social influence while overlooking homophily and exogenous factors. However, in most online and off-line settings, all these mechanisms usually take effect simultaneously when the diffusion is taking place. For example, although the state incentive policies may stimulated the sales of hybrid cars at the first place, early adopters of hybrid cars may also have a very positive opinion about their purchase and recommend it to their friends; at the same time, given the relatively high income and education level of the early adopters, the homophily principle may also determine that these people and their friends are naturally more likely to appreciate and afford the ``go green'' lifestyle. These factors can also interact with each other and generate a feedback effect that accelerates the spread of new products and ideas\cite{Crandall:2008}, making it even more difficult to separate one mechanism from the others. Although difficult, it is still important to identify the major mechanism that drives the diffusion in empirical studies, as it will not only reveal the fundamentally different underlying social mechanisms, but also predict the trend of the diffusion.
 
-Different diffusion mechanisms have different origins. Social influence is usually triggered by other mechanisms such as social identity, trust, or mutual utility, and is always operationalized through social networks. On the other hand, the origin of homophily are individual's preference and benefits of communicating with alike, social selection, or environmental and structural constraints\cite{kossinets-2008}. In this case, both the social network and the diffusion process running on top of it are results of homophily. Exogenous factors are confound variables that are independent from the social network. Many things can be confound variables, some are external and environmental such as geographical conditions and seasons, some are more internal such as the quality of content\cite{crane:2008} and types of people\cite{Wu-Twitter-2011} (see Chapter~\ref{chap:influece}). Identifying exogenous factors can help us better control and understand their effect, and will also bring the study of diffusion to a broader context.
+Different diffusion mechanisms have different origins. Social influence is usually triggered by other mechanisms such as social identity, trust, or mutual utility, and is always operationalized through social networks. On the other hand, the origin of homophily are individual's preference and benefits of communicating with alike, social selection, or environmental and structural constraints\cite{kossinets-2008}. In this case, both the social network and the diffusion process running on top of it are results of homophily. Exogenous factors are confound variables that are independent from the social network. Many things can be confound variables, some are external and environmental such as geographical conditions and seasons, some are more internal such as the quality of content\cite{crane:2008} and types of people\cite{Wu-Twitter-2011} (see Chapter~\ref{chap:influece}). Identifying exogenous factors is crucial to diffusion research as it is necessary to control and understand their effect before we can compare results from different datasets or computer simulations. Also, as exogenous factors are not the properties of the networks but elements related to environment, policy, culture, or psychology, the study of them will connect diffusion research to many other disciplines and bring our understanding about diffusion process to a higher level.
+
+Distinguishing the underlying mechanisms can also help us to better predict the pattern of diffusion process. Different mechanisms will lead diffusion process into different directions in a long run. As authors in \cite{Crandall:2008} pointed out, while social influence usually leads to uniformity in entire social network, homophily tends to fragment the network into smaller communities. On the other hand, the effect of exogenous factors is usually more temporary and context-dependent.
+
+Historically, most empirical studies have been built on top of the social influence mechanism and focused on the Word-of-Mouth(WOM) propagation of information. In recent years, there has been a rising concern on the mixture of homophily and social influence and a number of work dedicated to tell them apart\cite{Anagnostopoulos-2008,Crandall:2008,Aral:2009,Aral-2012}. However, the effect of exogeneous factors is still rarely studied, especially, with empirical data. This can be due to mainly two reasons: first, there has been a wide range of mathematical models and computational tools developed based for analyzing network-based diffusions, thus it is natural to apply these methods to newly available datasets; second, exogenous factors can be latent, heterogeneous, context-sensitive, and usually involve expertise from other domains (e.g. law, politics, communication, art, culture, psychology, environment), making it very difficult for social network researchers to observe and study them with existing methods. In this thesis, we study diffusion of information with special emphasis on the effect of exogenous factors, such as the external role of users (see Chapter~\ref{chap:influece}), and the linguistic characteristics of content (see Chapter~\ref{chap:content}). Although we also present results on the correlation of user disengagement in relation to local and global network structure (see Chapter~\ref{chap:network}), we are aware that there may be other confound variables that we did not include in the study, thus will not declare the causal relationship between the disengagement of friends and the disengagement of the ego. 
 
 %Exogenous factors can be introduced by the environment, season,  studying the exogenous factors can help us design policies and products that faciliate the diffusion process.
 
-A better understanding of the diffusion mechanism can also lead to better prediction of the diffusion pattern. social influence leads to uniformity of behavior while homophily leads to fragmentation. The effect of exogenous factors can be more temporary and context-dependent.
+%A better understanding of the diffusion mechanism can also lead to better prediction of the diffusion pattern. social influence leads to uniformity of behavior while homophily leads to fragmentation. 
 
 
-Homophily, both the social network and the diffusion process are results of homophily.
-Although their effect can be more temporary, and context-dependent,
+%Homophily, both the social network and the diffusion process are results of homophily.
+%Although their effect can be more temporary, and context-dependent,
 
-As social influence is usually triggered by social identity, 
-
-
-on personal decisions such as language acquisition\cite{JON EC paper} or dressing taste\cite{Gladwell:2002}, for 
-
-The social influence theories focuses on the viral spread of contagion through social contacts, and assumes a strong causal relationship between the 
-
-considers individuals' decision of adoption a result of their friends' previous adoption of the new product.
-
-This theory is further populated by a series of studies of the correlation among friends on certain personal traits, claiming that obesity, happiness, and the tendency of committing suicide, are all contagious through social networks.
-
-the social influence theory considers individuals' decision of adoption a result of the previous-adoptions of the friends, for reason such as gaining social utilities\cite{Jon's language adoption work} or the trust to friends' opinion\cite{}.
-
-\subsection{Compare three mechanism}
-Historically, most studies focused on social influence (the viral story) and overlooked homophily and external factors.
-
-Recent studies show that both homophily and influence can drive the diffusion process, and it is inherently difficult to tell the difference based on only observational data. We need to be careful when explaining the mechanism of diffusion as we observed. 
-
-Why is it important to identify the mechanism if possible?
-
-Origin:
-
-Influence: social identity; mutual utility; trust on friends.
-Homophily: individual's preference and benefits of communicating with alike, social selection, environmental and structural constraints.
-Exogenous factors: events, 
-
-Appearance:
-
-Result:
+%As social influence is usually triggered by social identity, 
 
 
+%on personal decisions such as language acquisition\cite{Immorlica-2007} or dressing taste\cite{Gladwell:2002}, for 
 
+%The social influence theories focuses on the viral spread of contagion through social contacts, and assumes a strong causal relationship between the 
 
-\subsection{Complex contagion and the adoption curve}
+%considers individuals' decision of adoption a result of their friends' previous adoption of the new product.
 
-\subsection{Homophily}
+%This theory is further populated by a series of studies of the correlation among friends on certain personal traits, claiming that obesity, happiness, and the tendency of committing suicide, are all contagious through social networks.
 
-\subsection{Social influence}
+%the social influence theory considers individuals' decision of adoption a result of the previous-adoptions of the friends, for reason such as gaining social utilities\cite{Jon's language adoption work} or the trust to friends' opinion\cite{}.
 
-\subsection{Exogenous factors}
+%\subsection{Compare three mechanism}
+%Historically, most studies focused on social influence (the viral story) and overlooked homophily and external factors.
 
-\subsection{Complex contagion}
+%Recent studies show that both homophily and influence can drive the diffusion process, and it is inherently difficult to tell the difference based on only observational data. We need to be careful when explaining the mechanism of diffusion as we observed. 
 
+%Why is it important to identify the mechanism if possible?
+
+%Origin:
+
+%Influence: social identity; mutual utility; trust on friends.
+%Homophily: individual's preference and benefits of communicating with alike, social selection, environmental and structural constraints.
+%Exogenous factors: events, 
+
+%Appearance:
+
+%Result:
+
+%\subsection{Complex contagion and the adoption curve}
+
+%\subsection{Homophily}
+
+%\subsection{Social influence}
+
+%\subsection{Exogenous factors}
+
+%\subsection{Complex contagion}
 
 
 \section{Diffusion models}
@@ -476,6 +475,14 @@ On the other hand, modeling and predicting the propensity of real world diffusio
 \subsection{Trend detection}
 
 \section{Linguistic analysis}
+
+\section{MapReduce and parallel network algorithms}
+Introduction to MapReduce.
+
+MapReduce is good with easy-parallelizable tasks, hard for tasks that need certain global information (e.g., shortest path). However, many network problems are the second case. 
+
+Methods to convert a global problem to a series of MapReduce jobs~\cite{Suri-Triangle-2011}.
+
 
 \begin{comment}
 \section{On-line social network as the lab for studying information diffusion}
@@ -507,13 +514,6 @@ Nevertheless, we are aware that our analysis is limited in some important respec
 
 \section{Web as a source for knowledge}
 
-
-\section{MapReduce and parallel network algorithms}
-Introduction to MapReduce.
-
-MapReduce is good with easy-parallelizable tasks, hard for tasks that need certain global information (e.g., shortest path). However, many network problems are the second case. 
-
-Methods to convert a global problem to a series of MapReduce jobs~\cite{Suri-Triangle-2011}.
 
 
 %\part{The life of information: the interaction between people and content in online networks}
@@ -1372,7 +1372,7 @@ Given the large size of the URL population in our observation period
 ($260M$), and the large number of ways in which one can classify content
 (video vs. text, news vs. entertainment, political news vs. sports news,
 etc.), classifying even a small fraction of URLs according to content is an
-onerous task. Bakshy et al \cite{bakshy_11}, for example, used Amazon's
+onerous task. Bakshy et al \cite{Bakshy-2011}, for example, used Amazon's
 Mechanical Turk to classify a stratified sample of 1,000 URLs along a
 variety of dimensions; however, this method does not scale well to larger
 sample sizes.
@@ -1622,7 +1622,7 @@ the size of the difference is nevertheless striking, and suggests that in
 spite of the dominant result above that content lifespan is determined to a
 large extent by the type of content, the source of its origin also impacts
 its persistence, at least on average---a result that is consistent with
-previous findings~\cite{bakshy_11}.
+previous findings~\cite{Bakshy-2011}.
 
 \begin{figure}
 \centering

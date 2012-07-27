@@ -1,4 +1,4 @@
-latex = (pdflatex -interaction=nonstopmode $(1) \
+latex = (latex -interaction=nonstopmode $(1) \
 	| grep --color -A3 "\(Warning\|Error\|^\!\).*" \
 	|| true)
 
@@ -8,7 +8,9 @@ PAPER=diffusion
 all: ${PAPER}.pdf clean
 
 .FORCE:
-${PAPER}.pdf: ${PAPER}.tex .FORCE
+${PAPER}.pdf: ${PAPER}.dvi .FORCE
+	dvipdf ${PAPER}.dvi
+${PAPER}.dvi: ${PAPER}.tex .FORCE
 	hunspell -l -t -d en_US *.tex | grep --color ".*"
 	$(call latex,${PAPER}.tex) > /dev/null
 	bibtex ${PAPER} || true
