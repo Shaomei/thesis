@@ -65,16 +65,32 @@ In particular, for the majority of users with a sufficient number (e.g., greater
 
 \begin{biosketch}
 %Your biosketch goes here. Make sure it sits inside the brackets.
+Shaomei Wu is a PhD candidate in Information Science department, Cornell University. Coming from a Computer Science background, she is interested in applying computing technologies and methodologies to examine social phenomena. Particularly, she studies how opinions and behaviors emerge, spread, and evolve in social media, using network algorithms, statistical models, language technologies, and social science theories.
+
+Hoping to bridge between computer science and the social sciences, she has worked closely with researchers from different disciplines such as sociology, communication, psychology, and political science. Her work has been quoted in the press, including the Economist, New York Times, the Time magazine, San Francisco Chronicle, and USA Today.
+
+%She has collaborated widely with industry research labs, including Microsoft Research, Yahoo! Labs, and Google Research. on large-scale real-world problems. 
+
+She received her M.S. in Computer Science from University of California, Santa Barbara and her B.S. in Computer Science from Tsinghua University, Beijing, China.
+
 \end{biosketch}
 
-\begin{dedication}
+%\begin{dedication}
 %This document is dedicated to all Cornell graduate students.
-\end{dedication}
+%\end{dedication}
 
 \begin{acknowledgements}
-Many many many thanks to my committee!
-%First, I would like to thank my advisory committee - Michael Macy, Jon Kleinberg, Dan Cosley - for all the mentoring during my PhD study.
-%Thanks to my advisors Michael Macy, Jon Kleinberg, Dan Cosley. Many thanks to Duncan Watts, Jake Hofman, Winter Mason and everyone from Yahoo Resarch. Thanks to Andrew Tomkins and Google Research. Thanks to Ben Lickly, Shenwei Liu, Patrick Park, Yongren Shi, Chris Cameron, Tim Novikoff, Johan, Daniel, Jure for discussion. Thanks for Hyunyong, Karin, Theresa, Yookyung for always offering good insights. Thanks to my family for supporting!!!
+%Many many many thanks to my committee!
+First, I would like to thank my advisors: Michael Macy, Jon Kleinberg, and Dan Cosley, for patiently teaching me how to do research and warmly introducing me to the scientific community. Many thanks also go to Duncan Watts and Andrew Tomkins: I have learned so much from you and will forever consider you as my mentors. I also want to thank my co-authors: Jake Hofman, Winter Mason, Shenwei Liu, and Chenhao Tan, for being so smart and inspiring. I would like to thank everyone in Yahoo! Labs and Google Research: Ravi Kumar, Silvio Lattanzi, Ed Chi, and many others - it has been such pleasant and exciting experience working with you all! I would like to thank all my friends in Cornell as well, for being so kind to accompany me through the PhD journey, especially, over those long winters. Thank Ben Lickly for insightful comments and for being so supportive for everything. 
+
+Finally, many thanks to my family. Ç×°®µÄ°Ö°ÖÂèÂè£¬Ð»Ð»ÄãÃÇ.
+%Thanks to my advisors Michael Macy, Jon Kleinberg, Dan Cosley. Many thanks to Duncan Watts, Jake Hofman, Winter Mason and everyone from Yahoo Resarch. Thanks to Andrew Tomkins and Google Research. Thanks to Silvio, Ravi, Ben Lickly, Chenhao Tan, Shenwei Liu, Patrick Park, Yongren Shi, Chris Cameron, Tim Novikoff, Johan, Daniel, Jure for discussion. Thanks for Hyunyong, Karin, Theresa, Yookyung for always offering good insights. Thanks to my family for supporting!!!
+
+%Advisors: teach me how to do research, and introduce me to the community.
+%Duncan and Andrew: learned so much from you and consider you as my mentors.
+%....: discussion and insights and methods and everything i 
+%All my friends in Cornell for accompanying me through my PhD journey, especially, through those long winters.
+
 
 \end{acknowledgements}
 
@@ -93,7 +109,7 @@ Many many many thanks to my committee!
 
 %With the huge IPO of FB and the great pontential expected from Twitter, social media and social marketing have become the new silicion valley favorite and created a new wave of glamous bubbles.
 
-Information diffusion has been a long intriguing topic for scholars from different fields. It is an essential element of many interesting problems, such as the diffusion of innovation\cite{rogers-2003}, formation of public opinion\cite{katz_lazarsfeld,Watts-2007}, adoption of new products\cite{Bass:1969}. Historically, most of the research in this area has been done through field observations and/or phone surveys\cite{katz_57,rogers-2003}. Confined by the methodology, their results are usually based on the spread of a specific opinion or product in rather localized networks. 
+Information diffusion has been a long intriguing topic for scholars from different fields. It is an essential element of many interesting problems, such as the diffusion of innovations\cite{rogers-2003}, the formation of public opinions\cite{katz_lazarsfeld,Watts-2007}, and the adoption of new products\cite{Bass:1969}. Historically, most of the research in this area has been done through field observations and/or phone surveys\cite{katz_57,rogers-2003} over a small or sampled population. Confined by the methodology, their results are usually based on the spread of a specific opinion or product in rather localized networks. 
 
 The development of the Internet and the emergence of a whole new set of communication technologies on top of it has largely changed the way people  gather and disseminate information, and brought both challenge and opportunity to a better understanding of how information spreads in the society.
 Historically, most empirical studies in this area were based on data collected through in-person interviews and phone surveys\cite{rogers-2003,katz_lazarsfeld}, targeted with a specific opinion or product that is under diffusion. Confined by the methodology, theories and conclusions drew from these research suffer at scale and data accuracy, and are challenged in today's massive, hybrid communication environment. Meanwhile, the popularity of electronic communication tools has offered new possibilities for obtaining much better data on how information and behavior spread over large population. The abundance of digital records of online interactions can provide large amounts of data on both explicit network structure and detailed dynamics, supporting large-scale, quantitative study of diffusion in the real world.
@@ -135,7 +151,7 @@ This thesis is an inter-disciplinary effort. Although most of the results are qu
 With viral videos and memes outbreak and circulating in the Internet almost everyday, brands and politicians are eager to leverage the power of social networks and run online campaigns that ``go viral''. The demand from the market, contrasted with our lack of knowledge on the mechanism behind viral phenomenons, has catalyzed many studies focusing on modeling and predicting the virality of diffusion process. In this line of work, virality is usually defined and measured in three aspects: 
 \begin{enumerate}
 \item \emph{Scale}: the size of cascade tree originated from the original node. e.g., the cascade Facebook fanning pages;
-\item \emph{Range}: the maximal chain length in the diffusion network. e.g., blog\cite{Leskovec-SDM-07}. 
+\item \emph{Range}: the maximal chain length in the diffusion network. e.g., reference links between blog posts\cite{Leskovec-SDM-07}. 
 \item \emph{Transmission probability}. As most existing research describe diffusion process with epidemic models, transmission probability is the probability a virus travels through a directional edge in the network and infects the end node. In the context of social networks, transmission probability is mapped to  the success rate of interpersonal recommendations in electronic market\cite{Leskovec-EC-2006}, the probability a tweet is retweeted by the followers of the tweet's author\cite{Bakshy-2011}, and the likelihood a user mark a Flickr photo as favorite after seeing a friend doing so\cite{Cha-2009}.
 \end{enumerate}
 
@@ -143,7 +159,7 @@ Using large scale online social networks data, researchers have employed a whole
 
 In their Science article published in 2006, Salganik et al\cite{Salganik-2006} explored the unpredictability of song ratings, argued that, despite the quality of music, the best predictor for a song's popularity is actually the popularity itself: the songs that received first few thumbs-ups usually rise up to be the hit, even if the first thumbs-ups are given randomly. Some later work showed that the quality of initiators does not predict well with the final scale of cascades\cite{Sun-2009,Bakshy-2011}. Although some studies showed that the structure of the subgraph induced by existing adopters do have a role in behavior adoption\cite{Backstrom:2006,Romero-2011,Leskovec-SDM-07}, such role is not consistent in other studies\cite{Bakshy-2011}, and may depend on the context of diffusion\cite{Centola:2007}.
 
-There are two major factors that might contribute to the difficulty of predicting virality. First, as most studies observed, the power-law (or log-normal) distribution of the popularity of online content results in a skewed training set consisting of many unsuccessful examples and only a few successful examples. While most machine learning algorithms are not robust to skewed training sets\cite{Provost-2000}, the common practice of biased sampling can over-compensate the successful cases and overlook the unsuccessful ones. As a result, most characteristics we discovered in the positive class can also be found in the negative class - the predictive model would fail to tell one from the other. Second, as we mentioned before, given the fact that online communications is an integrated part of the global communication networks, there are many exogenous factors that can not be controlled or observed in the communication channel where the data is collected. The complexity and the fuzziness of real world diffusion process is innately inadequate to be fully captured by epidemic models\cite{Bakshy-2011,Cha-2010}.
+There are two major factors that might contribute to the difficulty of predicting virality. First, as most studies observed, the long-tailed distribution of the popularity of online content results in a skewed training set consisting of many unsuccessful examples and only a few successful examples. While most machine learning algorithms are not robust to skewed training sets\cite{Provost-2000}, the common practice of biased sampling can over-compensate the successful cases and overlook the unsuccessful ones. As a result, most characteristics we discovered in the positive class can also be found in the negative class - the predictive model would fail to tell one from the other. Second, as we mentioned before, given the fact that online communications is an integrated part of the global communication networks, there are many exogenous factors that can not be controlled or observed in the communication channel where the data is collected. The complexity and the fuzziness of real world diffusion process is innately inadequate to be fully captured by epidemic models\cite{Bakshy-2011,Cha-2010}.
 
 Understanding the difficulty of this task does not mean that it is unsolvable. We have seen tremendous progress towards a better understanding of the virality, incorporating theories and methods from multiple fields (e.g., \cite{Centola:2007, Bakshy-2011}). As part of these efforts, we also study the \emph{transmission probability} of URLs among different categories of users on Twitter. Our results show that influential users are much more likely to pass on information from those who are similar to them (for more details, see Chapter~\ref{chap:influece}).
 
@@ -217,7 +233,7 @@ The role of the influentials as trend makers has been a center piece of many cla
 
 There are several classic theories about the characteristics of the influentials. Dating back to the 50s, Katz and Lazarsfeld coined the term ``opinion leaders''. They claimed that, comparing to ordinary people, opinion leaders have more social connections and are more media-savvy\cite{katz_lazarsfeld}. Later, scholars studying the diffusion of innovations also suggested that opinion leaders usually own ``greater exposure to mass media than their followers'', ``are more cosmopolite'', ``have greater social participation'' , ``have higher socioeconomic status'', and ``are more innovative''\cite{rogers-2003}. Similar ideas are illustrated in best-selling books, in which authors claims that the influentials are ``connectors'', ``mavens'', and ``salesmen''\cite{gladwell}, and that influentials play their role actively and constantly, providing suggestions from what to buy to who to vote for\cite{keller_berry}.
 
-One critic to the classic theories is their lack of empirical supports. Although intuitively sound, these theories about influentials are too general to be operationalized or examined in practice. It was only since the abundance of online interaction data that we saw a new line of empirical work on measuring and quantifying personal influence in diffusion. Most of these work studied influence in two aspects: personal attributes such as demographics and activities, network attributes such as connectivity and position in the network.  Although both aspects are usually considered and studied, most work showed the network attributes more relevant to personal influence\cite{Sun-2009,Bakshy-2011,Kempe-2003,kwak_10,Leskovec-EC-2006,Cha-2009}. 
+One critique to the classic theories is their lack of empirical supports. Although intuitively sound, these theories about influentials are too general to be operationalized or examined in practice. It was only since the abundance of online interaction data that we saw a new line of empirical work on measuring and quantifying personal influence in diffusion. Most of these work studied influence in two aspects: personal attributes such as demographics and activities, network attributes such as connectivity and position in the network.  Although both aspects are usually considered and studied, most work showed the network attributes more relevant to personal influence\cite{Sun-2009,Bakshy-2011,Kempe-2003,kwak_10,Leskovec-EC-2006,Cha-2009}. 
 
 %Many work studied people in different demographics groups and the associated impact in diffusion process. However, although some research showed that age and gender are related with the tendency of adopting a new product\cite{}, most existing work found no siginificant correlation between individuals' demographics and their likelihood of seeding big cascades\cite{Sun-2009,Bakshy-2011}. Instead, people argued, it is the position in the network and the strength of social ties that makes some people more influential than the rest\cite{Kempe-2003,kwak_10,Leskovec-EC-2006,huberman, cha&mislove}. 
 
@@ -349,11 +365,10 @@ In summary, we study intrinsic qualities of the content that may effectively det
 \section{The network effect of disengagement}
 The structure of network is another interesting component of diffusion research. 
 
-At a local level, many studies have shown the correlation of activity among friends in online communities, and tried to understand the effect of neighborhood structure on the spread of information, or behavior. Classic theory on product adoption suggests an ``S-shape'' curve\cite{Bass:1969} in which the probability of adopting a new product grows slowly with a small number of adopted friends $k$, rapidly as $k$ increases, and quickly saturates once $k$ reaches a certain point. But recent empirical work based on online data showed that the adoption probability follows a ``diminishing return'' curve in which it first grows rapidly at small values $k$, then gradually stops to grow as $k$ gets large\cite{Backstrom:2006,Romero-2011}. When studying the local structure in depth, people found that, the structural closeness of local community (measured by triadic closures or cluster coefficient) has a significant effect at the probability of adoption\cite{Backstrom:2006}, however, such effect may differ by the types of content under diffusion\cite{Romero-2011}.
+At a local level, many studies have shown the correlation of activity among friends in online communities, and tried to understand the effect of neighborhood structure on the spread of information, or behavior. Classic theory on product adoption suggests an ``S-shape'' curve\cite{Bass:1969} in which the probability of adopting a new product grows slowly with a small number of adopted friends $k$, rapidly as $k$ increases, and quickly saturates once $k$ reaches a certain point. But recent empirical work based on online data showed that the adoption probability follows a ``diminishing return'' curve in which it first grows rapidly at small values $k$, then gradually stops to grow as $k$ gets large\cite{Backstrom:2006,Romero-2011}. When studying the local structure in depth, people found that, the structural closeness of local community (measured by triadic closures or cluster coefficient) has a significant effect at the probability of adoption\cite{Backstrom:2006}, however, such effect may differ by the types of content under diffusion\cite{Romero-2011}. Some new research showed the interaction between influence and structure. Wu et al found that the transmission probability decays as the distance to the root increases\cite{wu-2004}. In \cite{Christakis-2007,Christakis-2008,Fowler-2008}, the authors extended this result and argued that social influence only reaches three hops in the diffusion chain. 
 
-In addition to the research efforts on local structure, a number of studies looked at global structure of networks, in the understanding of macro-level dynamics of diffusion. Fixing the diffusion model for local dynamics (e.g., epidemic models, independent cascade models, threshold models), the global structure of network can determine (and explain) certain characteristics of cascades that run on top of it. For example,
-
- in \cite{pastor-satorras01}, the authors argues that the persistence of low-contagious virus in computer network systems is a result of the scale-free structure of the network.  In many other work, the global structure of the diffusion network is used as benchmark for generative models that simulate the mechanism of diffusion\cite{Eguiluz-2002,Gruhl-2004,Nowell-2008}.
+In addition to the research efforts on local structure, a number of studies looked at global structure of networks, in the understanding of macro-level dynamics of diffusion. Fixing the diffusion model for local dynamics (e.g., epidemic models, independent cascade models, threshold models, see next chapter for details), the global structure of network can determine (and explain) certain characteristics of cascades that run on top of it. For example,
+in \cite{pastor-satorras01}, the authors simulated the propagation of computer virus in power-law networks, and argued that the persistence of low-contagious virus is determined by the scale-free structure of the network, and no matter how low the transmission probability is, an epidemic will always occur. However, in a follow-up work\cite{Eguiluz-2002}, Eguiluz and Klemm showed that when the transmission probability is low, an epidemic will fail in power-law networks with high cluster coefficients. In many other work, the global structure of the diffusion network is used as benchmark for generative models that simulate the mechanism of diffusion\cite{Eguiluz-2002,Gruhl-2004,Nowell-2008}.
 
 %One refinement is to consider a more accurate model of power-law networks.
 %Egu´ýluz and Klemm [10] have demonstrated a non-zero epidemic threshold under the SIS model 3
@@ -465,22 +480,53 @@ Historically, most empirical studies have been built on top of the social influe
 
 
 \section{Diffusion models}
-S-shape adoption curve and Bass model
 
-epidemic models
+People have long observed some regularities in diffusion process. Some first attempt to depict such regularities can be traced back to French sociologist Gabriel Tarde's plot of ``S-shaped'' adoption curve\cite{Tarde-1903}. As described by the S-shaped curve, the adoption rate usually starts as low, rises up quickly, slows down later, and eventually goes flat. Frank Bass later developed a more general model that describes the process of diffusion as the interaction between existing and potential adopters, in a large population\cite{Bass:1969}. In Bass model, adoption rate $F(t)$ can be calculated using the following formula:
+\begin{equation}
+f(t) = (1 - F(t))\times(p + qF(t)),
+%k_1=\frac{\omega }{c({1/\varepsilon_m + 1/\varepsilon_i})^{1/2}}=k_2=\frac{\omega
+%sin(\theta)\varepsilon_{air}^{1/2}}{c}
+\end{equation}
+\noindent
+where:
+\vspace{-8pt}
+\begin{itemize}
+\item $t$ is time;
+\item $F(t)$ is the adoption fraction (i.e., the ratio of adopted population to the ultimate market potential population);
+\item $f(t)$ is the rate of change of adoption fraction $F(t)$;
+\item $p$ is the coefficient of innovation, representing the ``external influence or advertising effect'';
+\item $q$ is the coefficient of imitation, representing the ``internal influence or word-of-mouth effect''.
+\end{itemize}
 
-threshold models
+Developed almost half century ago, Bass model has been one of the most influential diffusion model in economics and marketing. One strength of Bass model is that it insightfully incorporated two distinct diffusion mechanisms: the social influence (wod-of-mouth) mechanism and the exogenous factors mechanism. Using Bass model, the S-shaped curves can be understood as a special condition for diffusion when advertising effect $p$ equals to 0.  Traditionally, Bass model has been very powerful at predicting the impact of advertising effect $p$: given that advertising has been the dominant force for product diffusion , if we ignore the WOM effect, $F(t)$ becomes a constant with value $1-\frac{1}{p}$, thus can be directly calculated with an empirical estimation of $p$. However, with the popularity of on-line social networks, there has been more and more attention, and evidence on the WOM effect $q$. Sometimes, the entire ad campaign runs only through WOM propagation (e.g., the early launch of Gmail), without any formal advertising. In this context, Bass model becomes limited, as it assumes the WOM effect $q$ is known, while in reality is it very difficult to measure or control the WOM effect $q$, which can also vary from person to person. In summary, Bass model can only describe the diffusion process at the population level, and it is not able to capture the dynamics among individuals in the networks.
 
-adoptation of WOM diffusion models (andrew's paper - scale-free, range of influence (anti-obesity work also mentioned))
+%nowadays, the popularity of on-line social networks and the pervalence of social media has brought more and more attention to the WOM effect $q$, namely, viral marketing. In this context, Bass model has become very limited, as it assumes the WOM effect $q$ is known, while in reality it is very difficult to measure or control $q$, and it can also vary from person to person.  Although powerful, Bass model can only model the diffusion process at the population level, and it is not able to capture the dynamics among individuals in the networks.
+
+To study the diffusion process through social networks, people have leveraged the similarity between the spread of information and epidemics through social contacts, and adopted a series of epidemics models to describe social contagions\cite{bailey-1987}. The key concept of classic epidemics models is the status of a host (or node in social networks): a person is first \emph{susceptible}(\textbf{S}) to the disease, then becomes \emph{infected}(\textbf{I}) (and thus \emph{infectious}) after enough exposes to infectious contacts, eventually, he will be \emph{recovered}(\textbf{R}) (or \emph{removed}, depending on the type of disease). After recovered, a person can be immune to the disease for a certain period of time, until he becomes susceptible again. Depending on the length of immunity period, we can apply the \emph{SIR} model in which all recovered people have lifelong immunity, or the \emph{SIRS} model which allows a recovered person to become susceptible again. When studying the adoption of products or behaviors, we can easily apply the epidemics model: after corresponding the product to the disease, the potential customers are the susceptible nodes, the existing customers are the infected nodes, the existing customers who used up the product are recovered, and then recovered nodes become susceptible again if they will possibly purchase the product again. SIR models are widely applied to simulate diffusion processes over large social networks. In~\cite{Girvan-2002}, Girvan et al used SIR model to explain and simulate periodic outbreaks of diceases. In~\cite{Dodds:2005}, Dodds et al studied SIR models over small-world network\cite{Watts-1998}, and presented several strategies for preventing or facilitating diffusions over such network structure. Many empirical studies also use SIR model as the framework to describe real-world diffusion pheonomenon. For example, In~\cite{Cha-2008}, Cha et al used SIR model to characterize the cascade of users ``favorite'' a photo in Flickr network; and in~\cite{Kumar-2004}, Kumar et al used two variants of the traditional SIR model to model the diffusion of topics in blogsphere.
+
+One problem of traditional epidemic models is that they assume a constant propagation across the network, thus can not fully address the interpersonal dynamics of diffusion at the individual level. As a result, two classes of diffusion models have been developed to better describe the adoption process for individuals in social networks. The first class are \emph{threshold models}\cite{Granovetter:1978}. In threshold models, each node $u$ has an adoption threshold $p_u \in [0,1]$, and a set of \emph{connection weights} $w_{u,v}$, for all nodes $v$ that are connected to $u$. A node $u$ will adopt the product once the connection weights of his neighbors who already adopted the product pass his adoption threshold, $\sum_{v, (u,v)\in E,  \textnormal{\small v already adopted}} \ge p_u$. The more recent class of these models are \emph{cascade models}, which focus on the influence from an adopted node $u$ to his friends $v$, $p_{u,v} \in [0,1]$. In cascade models, after a friend $u$ adopts the product, node $v$ will also adopt it with a probability $p_{u,v}$. These two classes models have been proved to be statistically equivalent\cite{Goldenberg:2001,Kempe-2003}. In applications, threshold models highlight the ``accumulated effect'' and can easily describe the ``complex contagion'' process\cite{Centola:2007}, whereas cascade models are more used for simulation of diffusion\cite{Goldenberg:2001}.
+
+These diffusion models are very helpful at characterizing the diffusion process and have formed the foundation of today's diffusion research. New extension to these models includes applying them on different topologies\cite{pastor-satorras01,Eguiluz-2002,Dodds:2005}, and adding constraints of the adoption threshold and the cascade probability\cite{wu-2004}. However, the network-based diffusion models are usually applied with the assumptions that the underlying diffusion mechanism is social influence, and their parameters such as connection weight $w_{u,v}$ and cascade probability $p_{u,v}$ are usually interpreted as personal influence from one person to the other. Here, we would like to call for attention to the possible bias towards social influence, and suggest to use these models more cautiously.
+
+For most of the work presented in this thesis, we did not employ these models directly, but many concepts described in these models (e.g., susceptible, infectious, connection weight, cascade probability) still apply.
 
 
+%A variety of methods have been applied by scholars to study the diffusion of information. From the theoretic perspective, sociologists and economists developed agent-based modeling (ABM) to explore the dynamics of diffusion in different networks and interactions [Centola and Macy 2007, Watts and Dodds 2007]. Computer scientists designed the algorithm to maximize the extent of diffusion by seeding the diffusion with specially-picked individuals [Liben-Nowell et al 2008]. 
 
-A variety of methods have been applied by scholars to study the diffusion of information. From the theoretic perspective, sociologists and economists developed agent-based modeling (ABM) to explore the dynamics of diffusion in different networks and interactions [Centola and Macy 2007, Watts and Dodds 2007]. Computer scientists designed the algorithm to maximize the extent of diffusion by seeding the diffusion with specially-picked individuals [Liben-Nowell et al 2008]. 
+%On the other hand, modeling and predicting the propensity of real world diffusion going viral through WOM process is of central interest in recent empirical studies. Built on top of the cascade model, Gruhl et al [2004] tracked the diffusion of topics in blogspheres to estimate the transmission probability with an expectation-maximization(EM)-like algorithm. Leskovec et al [2007] studied interpersonal recommendations on an e-commerce site to infer the adoption probability based on the category of products and invitation history. Cha et al [2008] studied the viral process of photos being marked as favorite on the Flickr social network. By applying the SIR model with infinite recovery time, they estimated the reproduction number with the mean degree of nodes at each step of contagion. Backstrom et al. [2006] modeled the probability of a user  joining a community and the growth of communities on LiveJournal using decision trees with network structure features.
 
-On the other hand, modeling and predicting the propensity of real world diffusion going viral through WOM process is of central interest in recent empirical studies. Built on top of the cascade model, Gruhl et al [2004] tracked the diffusion of topics in blogspheres to estimate the transmission probability with an expectation-maximization(EM)-like algorithm. Leskovec et al [2007] studied interpersonal recommendations on an e-commerce site to infer the adoption probability based on the category of products and invitation history. Cha et al [2008] studied the viral process of photos being marked as favorite on the Flickr social network. By applying the SIR model with infinite recovery time, they estimated the reproduction number with the mean degree of nodes at each step of contagion. Backstrom et al. [2006] modeled the probability of a user  joining a community and the growth of communities on LiveJournal using decision trees with network structure features.
 
+\begin{comment}
 
 \section{Temporal analysis}
+Kumar et al. [19] analyze the ¡°burstiness¡± of
+blogs, capturing bursts of activity within blog communities based
+on an analysis of the evolving link structure.
+
+Jon - burstiness of emails
+
+Crane: temporal patterns
+
 \subsection{Temporal pattern detection}
 \subsection{Trend detection}
 
@@ -494,7 +540,6 @@ MapReduce is good with easy-parallelizable tasks, hard for tasks that need certa
 Methods to convert a global problem to a series of MapReduce jobs~\cite{Suri-Triangle-2011}.
 
 
-\begin{comment}
 \section{On-line social network as the lab for studying information diffusion}
 \subsection{Twitter}
 
@@ -1733,25 +1778,25 @@ the peak of attention) be hour $0$.
 Then the {\em decay time} $t_u$ is defined as the hour after the peak 
 when the number of mentions first reaches $75\%$ of the total.
 Instead of measuring the time lag between the first and last mention of a given URL \cite{Wu-Twitter-2011}, we intentionally choose to measure the time lag from the peak of attention to the point when the URL fades away, as given the limited observation window when the dataset was collected, it is not obvious to determine when exactly a URL was first introduced or last appeared on Twitter.
-The distribution of $t_u$ shows heavy tail(see Figure~\ref{fig:tu_distribution}), as found previously in the distribution of URL lifespan\cite{Wu-Twitter-2011}.
+The distribution of $t_u$ shows a long tail(see Figure~\ref{fig:tu_distribution}), as found previously in the distribution of URL lifespan\cite{Wu-Twitter-2011}.
 %The distribution of $t_u$ approximately follows a power-law (see Figure \ref{fig:tu_distribution}), as found previously in the distribution of URL lifespan \cite{Wu-Twitter-2011}.
 Among all URLs we studied, the mean $t_u$ is 217.3  hour and the median $t_u$ is 19 hours.
 
 %\vspace{-0.1in}
 \begin{figure}[htb!]
 \centering
-\epsfig{figure=figures/tu_distribution.eps, width=5in}
+\epsfig{figure=figures/tu_distribution.eps, width=3.5in}
 %\vspace{-0.3in}
 \caption{Distribution of URL decay time $t_u$}
 \label{fig:tu_distribution}
 \end{figure}
 
-We further examine the relationship between $t_u$ and the overall popularity of URLs. Figure~\ref{fig:tu_tweet_rt} shows the average number of tweets and retweets accumulated by each URL as a function of $t_u$. Given the power-law distribution of $t_u$, we bin URLs by the integer part of $\log_2(t_u)$, and calculate the mean for each bin.  Although the persistent URLs are mentioned in slightly more tweets, the rapidly-fading URLs do better at attracting retweets. This result is consistent with previous findings that the longevity of information is determined not by diffusion, but by independent generation of tweets of the same content over time \cite{Wu-Twitter-2011}.
+We further examine the relationship between $t_u$ and the overall popularity of URLs. Figure~\ref{fig:tu_tweet_rt} shows the average number of tweets and retweets accumulated by each URL as a function of $t_u$. Given the skewed distribution of $t_u$, we bin URLs by the integer part of $\log_2(t_u)$, and calculate the mean for each bin.  Although the persistent URLs are mentioned in slightly more tweets, the rapidly-fading URLs do better at attracting retweets. This result is consistent with previous findings that the longevity of information is determined not by diffusion, but by independent generation of tweets of the same content over time \cite{Wu-Twitter-2011}.
 
 %\vspace{-0.1in}
 \begin{figure}[htb!]
 \centering
-\epsfig{figure=figures/tu_rt_tweet.eps, width=5in}
+\epsfig{figure=figures/tu_rt_tweet.eps, width=5.5in}
 %\vspace{-0.3in}
 \caption{URL overall popularity as a function of $t_u$}
 \label{fig:tu_tweet_rt}
@@ -1810,7 +1855,7 @@ To better illustrate our classification scheme, we apply the time series normali
 %\vspace{-0.1in}
 \begin{figure}[htb!]
 \centering
-\epsfig{figure=figures/class_centroids.eps, width=5in}
+\epsfig{figure=figures/class_centroids.eps, width=4in}
 \caption{Normalized time series centroids for two classes}
 \label{fig:classexample}
 %\vspace{-0.2in}
@@ -1871,6 +1916,7 @@ Header + Body + URL & 0.7224 & 0.7708 & 0.6478\\
 \hline
 \end{tabular}
 \end{table}
+\vspace{8pt}
 
 Table \ref{table:performance} shows that in general, the simple linear-kernel SVM classifier can predict the persistent/rapidly-fading category of URLs with impressively high accuracy (around $70\%$), as compared to $53\%$ for always predicting positive. Also, the F1 score for positive class is around $75\%$, which shows a remarkable balance of precision and recall at identifying the persistent content. This result provides strong evidences for the connection between the content of HTML pages and the persistence of the associated URLs.  Moreover, comparing across 4 feature sets, we see that the more information we have about the content, the better the classifier performs. This finding further confirms the relationship between textual content and the persistence of attention of the information.
 
@@ -1892,13 +1938,13 @@ most significant difference across temporal classes.
 
 Linguistic Inquiry and Word Count (LIWC) \cite{liwc} is a widely used text analysis tool that maps words onto 60 pre-defined categories, covering linguistic, psychological, and social dimensions. Using LIWC categories, we start by comparing the distribution of words across two classes.
 
-
-\begin{figure*}[htb!]
+\hspace{-8pt}
+\begin{figure}[htb]
  \centering
  \epsfig{figure=figures/liwc_distribution.eps, width=6.5in}
 \caption{Class distribution in 60 LIWC dimensions, using words from HTML header}
  \label{fig:liwc-dist}
-\end{figure*}
+\end{figure}
 
 %Using LIWC dictionary, we generate a 60-dimension binary vector based on the Header feature for each URL (the value for a given dimension is 1 when there is at least one word under the corresponding LIWC category in the extracted header text). 
 We say a LIWC category occurs in a URL when we find at least one word under that category from the header of the associated HTML page.\footnote{We also conduct the same analysis with text from the other 3 feature sets, however, since the number of words increases markedly in these feature sets, and LIWC dictionary many times maps a word into multiple categories, the binary vector for each URL is easily saturated and the $f_w(t)$ curve becomes too flat to show interesting difference.} Figure \ref{fig:liwc-dist} shows the percentage of occurrence for all LIWC categories in webpages from two classes. As illustrated by Figure \ref{fig:liwc-dist}, the two classes differ the most in the following three groups of LIWC categories,
@@ -1909,19 +1955,17 @@ We say a LIWC category occurs in a URL when we find at least one word under that
 \end{itemize}
 % related to emotions (\emph{posemo},\emph{negemo}), cognitive process (\emph{cogmech\footnote{Words related to cognitive process.}},\emph{insight\footnote{Insight: words like think, know, consider.}},\emph{incl}\footnote{Inclusive, words like and, with, include.},\emph{discrep}\footnote{Discrepancy, words like should, would, count.}), and certain parts of speech (\emph{verb},\emph{auxverb}\footnote{Auxiliary verbs.}, \emph{}). work and leisure, and some linguistic categories.
 
+To better see the trend in the frequency of specific categories as a function of $t_u$, for each category $w$, we define $f_w(t)$ as the fraction of occurrences of $w$ in all URLs $u$ for which $t_u=t$, and plot $y=f_w(t)$ for different groups of LIWC categories in Figure \ref{fig:liwc-trend}.
+
 %\vspace{-0.1in}
-\begin{figure*}[htb!]
+\begin{figure}[htb!]
  \centering
  \epsfig{figure=figures/liwc_trends.eps, width=6.5in}
  \caption{Trending LIWC categories}
  \label{fig:liwc-trend}
-\end{figure*}
+\end{figure}
 
-To better see the trend in the frequency of specific categories as a function of $t_u$, for each category $w$, we define $f_w(t)$ as the fraction of occurrences of $w$ in all URLs $u$ for which $t_u=t$, and plot $y=f_w(t)$ for different groups of LIWC categories in Figure \ref{fig:liwc-trend}.
-
-
-
-Again, to balance the power-law distribution of $t_u$, we bin $t_u$ by integer part of $\log_2(t_u)$, and plot the value $f_x(w)$ for each bin $x$ (instead of hour $x$). In this way, the later bins would still contain a substantial number of URLs so that the probabilistic curve is smoother. Similar as in \cite{Berger-2010,Hansen:11} we find the sentiment of content plays an important role in its dynamics: there is a clear trend of words with positive emotion rising in the persistent content, and the opposite for words with negative emotion. However, the amount of words related to affect stays more or less constant across $t_u$. We also see a drop of words related to cognitive process  when $t_u$ increases, suggesting that, content associated with more complicated cognitive process can be more viral\cite{Berger-2010}, yet not so persistent. Not surprisingly, we find that rapidly-fading content with more words related to actions (verb, auxverb, preps) and tense (present, future), presumably because these webpages contain more action-demanding, time-critical information that expires after a certain event or time.
+Again, to balance the skewed distribution of $t_u$, we bin $t_u$ by integer part of $\log_2(t_u)$, and plot the value $f_x(w)$ for each bin $x$ (instead of hour $x$). In this way, the later bins would still contain a substantial number of URLs so that the probabilistic curve is smoother. Similar as in \cite{Berger-2010,Hansen:11} we find the sentiment of content plays an important role in its dynamics: there is a clear trend of words with positive emotion rising in the persistent content, and the opposite for words with negative emotion. However, the amount of words related to affect stays more or less constant across $t_u$. We also see a drop of words related to cognitive process  when $t_u$ increases, suggesting that, content associated with more complicated cognitive process can be more viral\cite{Berger-2010}, yet not so persistent. Not surprisingly, we find that rapidly-fading content with more words related to actions (verb, auxverb, preps) and tense (present, future), presumably because these webpages contain more action-demanding, time-critical information that expires after a certain event or time.
 
 %positive emotion (\emph{posemo}) words rising in the persistence content, and opposite for negative emotion (\emph{negemo}) words. However, the amount of words related to affect stays more or less constant across $t_u$. We also see a big decrease of words related to cogntive process (\emph{cogmech}) in persistent content, adding to the results reported by Berger and Milkman (2010) that news articles that demands more cognitive efforts are more likely to be emailed to friends. Not surprisingly, words associated with future tense appear less in the long-lasting content. The higher portion of common verbs (\emph{verb}), auxilliary verbs (\emph{auxverb}) and prepositions (\emph{preps}) in lower $t_u$ matches with previous results that the content related to actions is more likely to fade away quickly.
 
@@ -2017,7 +2061,7 @@ heads & kind & busy & august\\
 \subsection{Trending words analysis}
 After measuring the content in LIWC categories and latent topics, in this part, we examine the content with more details, trying to discover the nuance between classes at the word level. We calculate and compare the most representative words in the two classes. Picking the words to describe a collection of documents can be turned into a trend detection problem: let the webpages of negative class be the corpus of early period and the webpages of positive class be the later period, negative class can thus be described by the most significant ``falling words'' whereas the positive class can be described by the most significant ``rising words''.  To do so, we apply the methods as presented in \cite{Kleinberg:2004} on the Header feature set, and generate the top 20 trending words for each class (see Table \ref{table:trending-words})\footnote{We also tried the same method on the other three feature sets, but as the number of terms largely increases, the data becomes too noisy to be described with a few words, and the results are difficult to interpret.}. 
 
-\begin{table}[t]
+\begin{table}[htbp!]
 \centering
 \caption{Representative words for two temporal classes}
 \label{table:trending-words}
@@ -2093,7 +2137,7 @@ First, Figure \ref{fig:youtube_tu} shows the distribution of decay time $t_u$ fo
 %\vspace{-0.1in}
 \begin{figure}[htb!]
 \centering
-\epsfig{figure=figures/youtube_tu_distribution.eps, width=5in}
+\epsfig{figure=figures/youtube_tu_distribution.eps, width=4in}
 %\vspace{-0.1in}
 \caption{Distribution of $t_u$ for YouTube videos}
 \label{fig:youtube_tu}
@@ -2219,9 +2263,10 @@ decision that depends on an assessment of the pulse of the
 neighborhood, captured more accurately by the fraction of friends who
 remain active.
 
-We study this question in the context of a large social network, and
+We study this question in the context of the Dblp co-authorship graph and
+a large social network, and
 argue that in fact a hybrid of these models provides the most accurate
-characterization.  While number of active neighbors is known to be a
+characterization.  While number of active friends is known to be a
 strong predictor of joining a group, for users with twenty or more
 friends, overall neighborhood activity, measured by the fraction of
 friends who remain active, is by far the best predictor of likelihood
@@ -2231,12 +2276,14 @@ is identical in both slope and intercept for several different buckets
 of neighborhood size.  Raw counts of inactive friends have low
 predictive power, and raw counts of active friends, while stronger,
 remain weak compared to the overall fraction of active friends.  On
-the other hand, for users with fewer than twenty friends, the actual
+the other hand, for users with fewer than twenty neighbors, the actual
 count of active friends remains a strong predictor of likelihood to
 depart. From these findings we reach a picture that users with few
 friends rely heavily on their continued presence, while users with
 more friends are pushed one unit closer to departure by each
-successive fraction of existing friends observed to depart.
+successive fraction of existing friends observed to depart(this is phenomena
+is particularly relevant for the Dblp dataset where a lot of nodes have
+very small degree).
 
 From this emerging local picture of behavior, we may then ask how
 arrival and departure dynamics interact with the global structure of
@@ -2246,7 +2293,7 @@ tend to occur as high-status users in the core of the graph choose to
 depart in search of the next big thing.  Alternately, it is possible
 that departure happens at the ``fringes'' of the graph, and then
 spreads inwards from there.  We study this problem by computing the
-density and conductance of the subgraphs of active and inactive users
+average induced degree(or density) and conductance of the subgraphs of active and inactive users
 through time, and comparing these results to thought experiments in
 which each node decides independently whether to remain active.  These
 experiments allow us to conclude that a core of active nodes remains
@@ -2450,19 +2497,19 @@ The correlation in the timing of last login among friends suggests the effect of
 \end{itemize}
 \vspace{-5pt}
 
-\begin{figure}[htb]
+\begin{figure}
 \centering
-%\vspace{-8pt}
-\subfigure[]{\label{fig:orkut_p_k_active_curve}\includegraphics[width=0.4\textwidth]{figures/p_k_active_curves.eps}} \hspace{0.05\textwidth}
-\subfigure[]{\label{fig:orkut_p_k_curve}\includegraphics[width=0.4\textwidth]{figures/p_k_curves.eps}}\hspace{0.05\textwidth} \\
-\subfigure[]{\label{fig:dblp_p_k_active_curve}\includegraphics[width=0.4\textwidth]{figures/dblp_p_k_active_curves.eps}} 
-\hspace{0.05\textwidth}
-%\vspace{-8pt}
-\subfigure[]{\label{fig:dblp_p_k_curve}\includegraphics[width=0.4\textwidth]{figures/dblp_p_k_curves.eps}}\hspace{0.05\textwidth} \\
-\subfigure[]{\label{fig:orkut_p_f_active_curve}\includegraphics[width=0.4\textwidth]{figures/p_f_active_curves.eps}}
-\hspace{0.05\textwidth}
-\subfigure[]{\label{fig:orkut_p_r_curve}\includegraphics[width=0.4\textwidth]{figures/p_r_curves.eps}}
-\caption{\small Probability of departure as function of different local properties. Where (a) is $p$ as f(active friend count) in SN, (b) is $p$ as f(inactive friend count) in SN, (c) is $p$ as f(active friend count) in Dblp, (d) is $p$ as f(inactive friend count) in Dblp, (e) is $p$ as f(active friend fraction) in SN and (f) is $p$ as f(inactive friends who left in the past 6 months) in SN.}
+\vspace{-4pt}
+\subfigure[\small{$p$ as f(active friend count) in SN}]{\label{fig:orkut_p_k_active_curve}\includegraphics[width=0.45\textwidth]{figures/p_k_active_curves.eps}} \hspace{0.05\textwidth}
+\subfigure[\small $p$ as f(inactive friend count) in SN]{\label{fig:orkut_p_k_curve}\includegraphics[width=0.45\textwidth]{figures/p_k_curves.eps}}\hspace{0.05\textwidth} \\
+\subfigure[\small $p$ as f(active friend count) in Dblp]{\label{fig:dblp_p_k_active_curve}\includegraphics[width=0.45\textwidth]{figures/dblp_p_k_active_curves.eps}} 
+\hspace{0.03\textwidth}
+\vspace{-4pt}
+\subfigure[\small $p$ as f(inactive friend count) in Dblp]{\label{fig:dblp_p_k_curve}\includegraphics[width=0.45\textwidth]{figures/dblp_p_k_curves.eps}}\hspace{0.05\textwidth} \\
+\subfigure[\small $p$ as f(active friend fraction) in SN]{\label{fig:orkut_p_f_active_curve}\includegraphics[width=0.45\textwidth]{figures/p_f_active_curves.eps}}
+\hspace{0.03\textwidth}
+\subfigure[\small $p$ as f(inactive friends who left in the past 6 months) in SN]{\label{fig:orkut_p_r_curve}\includegraphics[width=0.45\textwidth]{figures/p_r_curves.eps}}
+\caption{\small Probability of departure as function of different local properties.} % Where (a) is $p$ as f(active friend count) in SN, (b) is $p$ as f(inactive friend count) in SN, (c) is $p$ as f(active friend count) in Dblp, (d) is $p$ as f(inactive friend count) in Dblp, (e) is $p$ as f(active friend fraction) in SN and (f) is $p$ as f(inactive friends who left in the past 6 months) in SN.}
 \label{fig:p_plots}
 %\vspace{-3pt}
 \end{figure}
@@ -2499,20 +2546,20 @@ The results of the previous section provide qualitative evidence that an individ
 
 In addition, we aggregate users by the fraction of active/inactive friends, and look at how the probability of departure depends on the number of active/inactive friends for each group (see Figure~\ref{fig:p_k_3_level}). There are two things we note from Figure~\ref{fig:p_k_3_level}: First, for users with different fractions of inactive friends, there is a big gap between their probabilities of departure - for example, compared to users with less than $10\%$ friends left (blue line in Figure~\ref{fig:p_k_inactive_3_level}), users who have more than $50\%$ friends left (red line in Figure~\ref{fig:p_k_inactive_3_level}) are $10$ times more likely to leave as well. Second, once the user is in an inactive part of the neighborhood, the raw count of inactive friends has little effect in determining the probability of the user's departure (green line in Figure~\ref{fig:p_k_active_3_level}). Note that the blue line in Figure~\ref{fig:p_k_active_3_level} is very noisy because there are very few people in a highly obsolete neighborhood but still with a substantial amount of active friends. We still plot it just to be symmetric with Figure~\ref{fig:p_k_inactive_3_level}.
 
-\begin{figure*}[htb!]
+\begin{figure}[htbp!]
 \centering
 %\vspace{-8pt}
-\subfigure[]{\label{fig:p_f_3_level}\includegraphics[width=0.4\textwidth]{figures/p_f_active_3_levels.eps}} \\
+\subfigure[SN]{\label{fig:p_f_3_level}\includegraphics[width=0.4\textwidth]{figures/p_f_active_3_levels.eps}} \\
 %\hspace{0.03\textwidth}   
-\subfigure[]{\label{fig:p_k_active_3_level}\includegraphics[width=0.4\textwidth]{figures/p_k_active_3_levels.eps}} \\ %\hspace{0.03\textwidth}   
+\subfigure[SN]{\label{fig:p_k_active_3_level}\includegraphics[width=0.4\textwidth]{figures/p_k_active_3_levels.eps}} \\ %\hspace{0.03\textwidth}   
 %\subfigure[$p(f)$ group by total number of friends.]{\label{fig:p_f_active_3_level}\includegraphics[width=0.35\textwidth]{fig/p_f_active_3_levels.eps}}\\
-\subfigure[]{\label{fig:p_k_inactive_3_level}\includegraphics[width=0.4\textwidth]{figures/p_k_3_levels.eps}}
+\subfigure[SN]{\label{fig:p_k_inactive_3_level}\includegraphics[width=0.4\textwidth]{figures/p_k_3_levels.eps}}
 %\hspace{0.05\textwidth}               
 %\subfigure[$p(f)$ group by total number friends.]{\label{fig:p_f_3_level}\includegraphics[width=0.35\textwidth]{fig/p_f_3_levels.eps}}
-\caption{Probability of departure as function of local properties, at different levels of active/inactive friend fraction and friend count (snapshot taken at time $t=$2011/1/1). in SN}
+\caption{Probability of departure as function of local properties, at different levels of active/inactive friend fraction and friend count (snapshot taken at time $t=$2011/1/1). All measured in SN}
 \label{fig:p_k_3_level}
 %\vspace{-5pt}
-\end{figure*}
+\end{figure}
 
 \subsection{Predict the departure of user}
 Given a strong correlation between the probability of a user becoming inactive and the inactivity of his friends, the next question is, can we actually predict individuals's departures based on local properties? In this section, we explore the problem of modeling the departure of users using simple linear regression models and decision tree classifiers. In particular in this subsection we will focus exclusively on SN because we have a richer set of feature available.
@@ -2591,18 +2638,6 @@ The results of the regression model nicely confirm the descriptive results we sh
 \section{Structural trends in network topology}
 \label{sec:global}
 
-\begin{figure*}[htb!]
-\centering
-\subfigure[active(SN)]{\label{fig:orkut_edge_active}\includegraphics[width=0.30\textwidth]{figures/edges_active.eps}}                \hspace{0.02\textwidth} 
-\subfigure[inactive(SN)]{\label{fig:orkut_edge_inactive}\includegraphics[width=0.30\textwidth]{figures/edges_inactive.eps}} \hspace{0.02\textwidth}
-\subfigure[semi-active(SN)]{\label{fig:orkut_edge_semi_active}\includegraphics[width=0.30\textwidth]{figures/edges_semi_active.eps}}\\
-\subfigure[active(Dblp)]{\label{fig:dblp_edge_active}\includegraphics[width=0.30\textwidth]{figures/dblp_edges_active.eps}}                 \hspace{0.02\textwidth}
-\subfigure[inactive(Dblp)]{\label{fig:dblp_edge_inactive}\includegraphics[width=0.30\textwidth]{figures/dblp_edges_inactive.eps}} \hspace{0.02\textwidth}
-\subfigure[semi-active(Dblp)]{\label{fig:dblp_edge_semi_active}\includegraphics[width=0.30\textwidth]{figures/dblp_edges_semi_active.eps}}
-\caption{Distribution of edges, indicated by the ratio of actual number of edges over the expected number of edges (formed in random process).}
-\label{fig:edges}
-\end{figure*}
-
 We explore the overall structural changes that occur in the network as a result of the departure of several users, as well as the steady arrival of new users. Topological changes have been studied in the context of new nodes arriving but here we pay specific attention to how the global structure changes as a result of the departure or decline of user activities based on their local neighborhoods. 
 
 To get a sense of the how the structure of the network evolves over time, we
@@ -2610,7 +2645,22 @@ first study the distribution of edges among active and inactive
 nodes. Specially, we look at the edges between active nodes (Figure~\ref{fig:orkut_edge_active} and Figure~\ref{fig:dblp_edge_active}), edges between
 inactive nodes (Figure~\ref{fig:orkut_edge_inactive} and Figure~\ref{fig:dblp_edge_inactive}), and the edges across active and inactive nodes (Figure~\ref{fig:orkut_edge_semi_active} and Figure~\ref{fig:dblp_edge_semi_active}), and plot the
 ratio between the actual number of edges over the expected value over time.
-%
+
+\begin{figure}[htbp!]
+\centering
+\subfigure[active(SN)]{\label{fig:orkut_edge_active}\includegraphics[width=0.3\textwidth]{figures/edges_active.eps}}                %\hspace{0.02\textwidth} 
+\subfigure[inactive(SN)]{\label{fig:orkut_edge_inactive}\includegraphics[width=0.3\textwidth]{figures/edges_inactive.eps}} 
+%\hspace{0.02\textwidth}
+\subfigure[semi-active(SN)]{\label{fig:orkut_edge_semi_active}\includegraphics[width=0.3\textwidth]{figures/edges_semi_active.eps}}\\
+\subfigure[active(Dblp)]{\label{fig:dblp_edge_active}\includegraphics[width=0.3\textwidth]{figures/dblp_edges_active.eps}}                 %\hspace{0.02\textwidth}
+\subfigure[inactive(Dblp)]{\label{fig:dblp_edge_inactive}\includegraphics[width=0.3\textwidth]{figures/dblp_edges_inactive.eps}} 
+%\hspace{0.02\textwidth}
+\subfigure[semi-active(Dblp)]{\label{fig:dblp_edge_semi_active}\includegraphics[width=0.3\textwidth]{figures/dblp_edges_semi_active.eps}}
+\caption{Distribution of edges, indicated by the ratio of actual number of edges over the expected number of edges (formed in random process).}
+\label{fig:edges}
+\end{figure}
+
+
 
 Here, the expected number of edges is computed based on the total number of edges, $|E|$, in the network and the number of nodes in each of the active and inactive sets. The expected number of edges of any type is the expected number of edges if the the total $|E|$ edges are placed between randomly chosen pairs of nodes.
 
@@ -2642,7 +2692,7 @@ However, we even use a stronger baseline to see if the trends we observe are a r
 
 Consider each edge as occupying two slots (end points), each slot being in either $S_a$ (the active set of nodes), or $S_i$ (the inactive set of nodes); therefore $S_a\cup S_i = V(G)$. Let the fraction of all these slots that are in $S_i$ be $P_i$ (which is the number of edges going across the active and inactive component plus twice the number of edges in the inactive component); therefore the number of such slots occupied in $S_a$ is $P_a = (1-P_i)$. Suppose that all the $|E|$ edges were randomly placed in two slots each, with probabilities determined such that in expectation we respect $P_i$ and $P_a$, then we consider the induced density of this process as the expected density (for respective components). Notice that this is a more stringent baseline for our comparison. Therefore, an edge is contained in the inactive component with probability $P_i^2$ and so the expected density of the inactive set is $(|E|P_i^2)/|S_i|$. Similarly the expected density of the active component can be computed. 
 
-\begin{figure}[htb!]
+\begin{figure}[htbp!]
 \centering
 %\small
 \subfigure[active]{\label{fig:density_active}\includegraphics[width=0.40\textwidth]{figures/density_active.eps}}           \hspace{0.03\textwidth}     
@@ -2681,7 +2731,7 @@ inactivity.
 
 After learning about the connectedness of the active/inactive subnetwork separately, we now switch our gear to look at the connection of each subnetwork to the rest of social graph. We use conductance to measure the amount of possible connections between different sets of nodes in a network. 
 
-\begin{figure}[htb!]
+\begin{figure}[htbp!]
 \centering
 \subfigure[SN]{\label{fig:orkut_conductance}\includegraphics[width=0.40\textwidth]{figures/conductance.eps}}                \hspace{0.03\textwidth}
 \subfigure[Dblp]{\label{fig:dblp_conductance}\includegraphics[width=0.40\textwidth]{figures/dblp_conductance.eps}}
@@ -2728,7 +2778,19 @@ years, showing that as the network evolves, users at the peripheral
 region of the network are more likely to depart in groups; yet an internal core
 of the network survives and densifies over time. 
 
-We also want to be clear here that we are not making the statement that the departure of friends is the cause of the departure of a user. As what we have observed and modeled is only correlated action among friends in the social networks, and we are aware of the possible confound variables that can contribute to, or actually lead to, the departure of users, such as the advertising effect of some new on-line social networks, or the design of the social network studied that makes it inadequate to some users' needs. In the future, we would really like to extend this work in two directions. First, we look forward to obtaining more detailed logs of user activities, especially, how users observe, expresee, and react to the disengagement of friends, so that we can have a better answer on whether, or how, the social influence is taking place at spreading the disengagement across the network. Second, we would like to gather (if possible) users browsing history around the time when they departed, and understand the effect of competing on-line social network sites at drawing users away from the social network studied. Nevertheless, our work, for the first time, provides some insights on the evolving  network structure around disengaged nodes.
+We also want to emphasize that we are not making the statement that the departure of friends is the cause of the departure of a user. As what we have observed and modeled is only correlated action among friends in the social networks, and we are aware of the possible confound variables that can contribute to, or actually lead to, the departure of users, such as the advertising effect of some new on-line social networks, or the design of the social network studied that makes it inadequate to some users' needs. In the future, we would really like to extend this work in two directions. First, we look forward to obtaining more detailed logs of user activities, especially, how users observe, expresee, and react to the disengagement of friends, so that we can have a better answer on whether, or how, the social influence is taking place at spreading the disengagement across the network. Second, we would like to gather (if possible) users browsing history around the time when they departed, and understand the effect of competing on-line social network sites at drawing users away from the social network studied. Nevertheless, our work, for the first time, provides some insights on the evolving  network structure around disengaged nodes.
+
+%% An interesting area for future work is to study other internal or
+%% external factors in the process of user departure. For example,
+%% internally, a user may leave the network after his/her friends not
+%% because s/he is experiencing loneliness in the network but because of
+%% the similar personal traits that caused his/her friends to leave (for
+%% example all lawyers slowly migrating to a different social network
+%% tailored for the profession). Externally, the emergence of competing
+%% services and changes in online culture, may also contribute to
+%% the departure of users from the original network. These directions
+%% remain to be explored.
+
 
 %, and may influence their neighborhood communities towards inactivity.
 % 
@@ -3003,12 +3065,61 @@ Study the interaction between network and content.
 \chapter{Conclusion}
 %    In summary, I am deeply intrigued by the developing characteristics of information diffusion in online social media. Thanks to the Internet and social media technologies, I believe that we are heading towards a more democratic era where revolutions can be started by ordinary people and the power to change is in the hands of the masses. As part of this process, social media sites such as Facebook and Twitter have also evolved from friendship networks to a much broader platform for organizing social/political changes and communicating with various communities. I hope my work can help understand this movement and foster the effective flow of information in the society.
 
-We study three major aspects of information diffusion process: influencers, content, and network structure. In the future, I would like to study the impact of information in both on-line and off-line environment, and leverage my work to foster the effective flow of information in the society.
+This thesis explored three major aspects of information diffusion process: influencers, content, and network structure. Our work highlighted the importance of exogeneous factors in on-line diffusion process, showing that the external status of users, as well as the intrinsic quality of content, both play important roles at initializing and sustaining the spread of information in on-line social media. We also studied the ``virality'' of information (or behavior) from two new angles. First, we focused on the temporal patterns of cascades, in particular, the persistence of information. We found a heavy-tail distribution of the lifespan of information on Twitter, and explained this pheonomenon by the nature of information. Second, we studied the ``negative'' virality - the virality of ``inactivity'', showing that the disengagement of users in social networks are also correlated among friends, but with a different pattern compared to the correlation of user engagement. 
 
-Future work: 
-\appendix
-\chapter{Chapter 1 of appendix}
-Appendix chapter 1 text goes here
+In Chapter~\ref{chap:influece}, we revisited the influencer problem by incorporating exogenous influence into the context of Twitter.  
+After identifying 4 classes of elite users (media, celebrities, bloggers, organizations), we found that although audience attention has indeed fragmented among a wider pool of content producers than classical models of mass media,
+attention remains highly concentrated, where 0.05\% of the population
+accounts for almost half of all posted URLs.  Within this
+population of elite users, moreover, we found that attention is highly homophilous, with
+celebrities following celebrities, media following media, and bloggers
+following bloggers.  Second, we found considerable support for the two-step
+flow of information---almost half the information that originates from the
+media passes to the masses indirectly via a diffuse intermediate layer of
+opinion leaders, who although classified as ordinary users, are more
+connected and more exposed to the media than their followers.  Third, we
+found that although all categories devote a roughly similar fraction of
+their attention to different categories of news (World, U.S., Business,
+etc), there are some differences---organizations, for example, devote a
+surprisingly small fraction of their attention to business-related news.
+% We also find that certain types of popular URLs attract quite
+% different levels of attention from different categories, reflecting
+% their distinct interests. 
+We also found that different types of content exhibit very different
+lifespans: media-originated URLs are disproportionately represented among
+short-lived URLs while those originated by bloggers tend to be
+overrepresented among long-lived URLs. Finally, we found that the
+longest-lived URLs are dominated by content such as videos and music, which
+are continually being rediscovered by Twitter users and appear to persist
+indefinitely. 
+
+In Chapter~\ref{chap:content}, we further studied the longevity of information, explored the relationship between content and the temporal dynamics of information in the context of Twitter. We found that using the textual features extracted from the content, we can predict the persistence of information with high accuracy. Moreoever, we employed different text analysis techniques to understand the nature of content that contributes to persistence. We examined and compared the fleeting and lasting content on three aspects, including the psycholinguistic characteristics, trending words, and latent topics distribution. We found that the persistent information is more related to content with long-term value, such as positive emotions, life, family, and art. On the other hand, the rapidly-fading content contains
+ mostly time-critical information that carries relatively more negative
+sentiments, demanding more cognitive effort, or is associated with
+quick action.
+
+In Chapter~\ref{chap:network}, we studied the the local and global structure to understand the correlated inactivities among friends in two social networks. We found that the local structure for departed users is quite different from the local structure of active users: while the departure of a user with few friends may be described most accurately as a function of
+the raw number of friends who are active, for the majority of users
+with larger numbers of friends, departure is best predicted
+by the overall fraction of active nodes within a user's neighborhood,
+independent of size.  When looking at the global properties of the subgraphs
+induced by active and inactive users separately, it appeared that the spread and influence of inactivity is slowly resulting in
+the network peeling away from outside; however, the central core that is dense and has low conductance (i.e. tightly knit within and sparsely connected
+outside), is far more resilient to spreading inactivity. Perhaps peripheral nodes are more easily lured away from the network by a
+combination of external forces and neighboring inactivity. At the other end, the
+very well-connected central active set seems to survive and densify through
+time, despite widespread departure of nodes.
+
+In the future, I would like to extend my research cross media platforms, networks, and even between on-line and off-line spaces. Joining social media data with real world events, I will look forward to studying the effect of information, in a broad socio-cultural context. One of my ongoing projects is to study the role of social media in social movements, for better understanding on how the propagation of information leads (or reflects) societal changes. To do so, we have collected a large number of tweets and twitter networks related to big social movements (i.e., Middle East Revolution, Occupy WallStreet Movement). Using effective algorithms for community detection, hub detection, trend detection, and opinion
+mining, we will be able to identify the informal structure of massive communication networks
+for social movements and study the diffusion of ideology and behaviors across organizational/geographical boundaries.
+
+In summary, I am deeply intrigued by the developing characteristics of information diffusion in online social media. Thanks to the Internet and social media technologies, I believe that we are heading towards a more democratic era where revolutions can be started by ordinary people and the power to change is in the hands of the masses. As part of this process, social media sites such as Facebook and Twitter have also evolved from friendship networks to a much broader platform for organizing social/political changes and communicating with various communities. I hope my work can help understand this movement and foster the effective flow of information in the society.
+
+
+%\appendix
+%\chapter{Chapter 1 of appendix}
+%Appendix chapter 1 text goes here
 
 \bibliography{diffusion}
 
