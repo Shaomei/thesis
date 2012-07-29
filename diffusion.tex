@@ -58,7 +58,7 @@ To understand how influence migrates across mediums, we study user's influence o
 In contrast to previous diffusion research on the virality of information, our work focuses on the persistence of information, in relation to people and content. Fist, we see a systematical difference, in lifespan, for information broadcase by different categories of users. Second, we find a strong association between the content and the temporal dynamics of information: rapidly-fading information contains significantly more words related to negative emotion, actions, and more complicated cognitive processes, whereas persistent information contains more words related to positive emotion, leisure, and lifestyle.
  
 In the end, we study the local and global structure of a decaying online social network. Although there is a significant correlation in both arrival and departure among friends, we show that the dynamics of departure behave differently from the dynamics of arrival. 
-In particular, for the majority of users with a sufficient number (e.g., greater than 20) of friends, departure is best predicted by the overall fraction of activity within a user¡¯s neighborhood, independent of size. We also find that active users tend to belong to a core that is densifying and is significantly denser than the inactive users, and the inactive set of users exhibit a higher density and lower conductance than the degree distribution alone can explain. These two aspects suggest that nodes at the fringe are more likely to depart, and therefore induce inactive and subsequent departure of neighboring nodes in tightly-knit communities.
+In particular, for the majority of users with a sufficient number (e.g., greater than 20) of friends, departure is best predicted by the overall fraction of activity within a user's neighborhood, independent of size. We also find that active users tend to belong to a core that is densifying and is significantly denser than the inactive users, and the inactive set of users exhibit a higher density and lower conductance than the degree distribution alone can explain. These two aspects suggest that nodes at the fringe are more likely to depart, and therefore induce inactive and subsequent departure of neighboring nodes in tightly-knit communities.
 
 
 \end{abstract}
@@ -264,7 +264,10 @@ In addition, the \emph{context} of influence is usually overlooked. Influence do
 
 In Chapter~\ref{chap:influece}, we approach the influencer problem by leveraging people's external influence to online social media. Here, we consider online social media as a medium that carries a whole spectrum of communications, from personal and private interactions to mass media broadcasting. We thus categorize users based on their role in the global communication system. To eliminate the bias towards successful cascades, we study the influence of each category in terms of visibility and the ability to stimulate and sustain attention from other users. Our work makes three main contributions:
 \begin{itemize}
-\item We introduce a crowd-sourcing method for classifying users into ``elite'' and ``ordinary'' users according to their role in the media ecosystem, further classifying elite users into one of four categories of interest ¡ªmedia, celebrities, organizations, and bloggers.
+\item We introduce a crowd-sourcing method for classifying users into ``elite''
+and ``ordinary'' users according to their role in the media ecosystem, further
+classifying elite users into one of four categories of interest: media,
+celebrities, organizations, and bloggers.
 \item We investigate the distribution of attention among these categories, finding that although audience attention is
 highly concentrated on a minority of elite users, much of the information they produce reaches the masses indirectly via a large population of intermediaries - local opinion leaders.
 \item We find that different categories of users emphasize different types of content, and that content originated by different users exhibit dramatically different characteristic persistency, ranging from less than a day to months.
@@ -368,12 +371,16 @@ The structure of network is another interesting component of diffusion research.
 At a local level, many studies have shown the correlation of activity among friends in online communities, and tried to understand the effect of neighborhood structure on the spread of information, or behavior. Classic theory on product adoption suggests an ``S-shape'' curve\cite{Bass:1969} in which the probability of adopting a new product grows slowly with a small number of adopted friends $k$, rapidly as $k$ increases, and quickly saturates once $k$ reaches a certain point. But recent empirical work based on online data showed that the adoption probability follows a ``diminishing return'' curve in which it first grows rapidly at small values $k$, then gradually stops to grow as $k$ gets large\cite{Backstrom:2006,Romero-2011}. When studying the local structure in depth, people found that, the structural closeness of local community (measured by triadic closures or cluster coefficient) has a significant effect at the probability of adoption\cite{Backstrom:2006}, however, such effect may differ by the types of content under diffusion\cite{Romero-2011}. Some new research showed the interaction between influence and structure. Wu et al found that the transmission probability decays as the distance to the root increases\cite{wu-2004}. In \cite{Christakis-2007,Christakis-2008,Fowler-2008}, the authors extended this result and argued that social influence only reaches three hops in the diffusion chain. 
 
 In addition to the research efforts on local structure, a number of studies looked at global structure of networks, in the understanding of macro-level dynamics of diffusion. Fixing the diffusion model for local dynamics (e.g., epidemic models, independent cascade models, threshold models, see next chapter for details), the global structure of network can determine (and explain) certain characteristics of cascades that run on top of it. For example,
-in \cite{pastor-satorras01}, the authors simulated the propagation of computer virus in power-law networks, and argued that the persistence of low-contagious virus is determined by the scale-free structure of the network, and no matter how low the transmission probability is, an epidemic will always occur. However, in a follow-up work\cite{Eguiluz-2002}, Eguiluz and Klemm showed that when the transmission probability is low, an epidemic will fail in power-law networks with high cluster coefficients. In many other work, the global structure of the diffusion network is used as benchmark for generative models that simulate the mechanism of diffusion\cite{Eguiluz-2002,Gruhl-2004,Nowell-2008}.
+in \cite{pastor-satorras01}, the authors simulated the propagation of computer
+virus in power-law networks, and argued that the persistence of low-contagious
+virus is determined by the scale-free structure of the network, and no matter
+how low the transmission probability is, an epidemic will always occur.
+However, in a follow-up work\cite{Eguiluz-2002}, Egu\'{i}luz and Klemm showed that when the transmission probability is low, an epidemic will fail in power-law networks with high cluster coefficients. In many other work, the global structure of the diffusion network is used as benchmark for generative models that simulate the mechanism of diffusion\cite{Eguiluz-2002,Gruhl-2004,Nowell-2008}.
 
 %One refinement is to consider a more accurate model of power-law networks.
-%Egu´ýluz and Klemm [10] have demonstrated a non-zero epidemic threshold under the SIS model 3
+%Eguiluz and Klemm [10] have demonstrated a non-zero epidemic threshold under the SIS model 3
 %in power-law networks produced by a certain generative model that takes into account the high
-%clustering coefficient - the probability that two neighbors of a node are themselves neighbors—
+%clustering coefficient - the probability that two neighbors of a node are themselves neighbors
 %found in real social networks [28].
 
 While most existing work focuses on the growth of networks and the increase of activity, our work differs by shifting efforts to the dynamics of user departure from social networks, and the decline of activity. What leads people to depart from their social networks? Is inactivity also contagious? One could argue that since inactivity is by definition less visible than activity, it should have less effect on influencing an individual's behavior. However, the extreme case in which all friends of a user depart suggests that, eventually, there must be an effect. 
@@ -2825,7 +2832,9 @@ Need to bear in mind that what we have found might be characteristics for social
 ZZZZZ: future work, compare results with other social media or off-line data.
 
 
-A better understanding of diffusion dynamics can contribute to some interesting long-term social science questions, such as the pattern of communications, diffusion of innovation, unfolding of social movements. Today¡¯s user behavior data in social media can help us examine and possibly answer these questions quantitatively at a very large scale.
+A better understanding of diffusion dynamics can contribute to some interesting
+long-term social science questions, such as the pattern of communications,
+diffusion of innovation, unfolding of social movements. Today's user behavior data in social media can help us examine and possibly answer these questions quantitatively at a very large scale.
 
 \chapter{Lasswell's Maxim}
 
