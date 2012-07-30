@@ -11,7 +11,7 @@ all: ${PAPER}.pdf clean
 ${PAPER}.pdf: ${PAPER}.dvi .FORCE
 	dvipdf ${PAPER}.dvi
 ${PAPER}.dvi: ${PAPER}.tex .FORCE
-	hunspell -l -t -d en_US *.tex | grep --color ".*"
+	hunspell -l -t -d en_US *.tex | (grep --color ".*" || true)
 	$(call latex,${PAPER}.tex) > /dev/null
 	bibtex ${PAPER} || true
 	$(call latex,${PAPER}.tex) > /dev/null
