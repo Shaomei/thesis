@@ -85,9 +85,9 @@ She received her M.S. in Computer Science from University of California, Santa B
 %Many many many thanks to my committee!
 First, I would like to thank my advisors: Michael Macy, Jon Kleinberg, and Dan Cosley, for patiently teaching me how to do research and warmly introducing me to the scientific community. Many thanks also go to Duncan Watts and Andrew Tomkins: I have learned so much from you and will forever consider you as my mentors. I also want to thank my co-authors: Jake Hofman, Winter Mason, Shenwei Liu, and Chenhao Tan, for being so smart and inspiring. I would like to thank everyone in Yahoo! Labs and Google Research: Ravi Kumar, Silvio Lattanzi, Ed Chi, and many others - it has been such pleasant and exciting experience working with you all! I would like to thank all my friends in Cornell as well, for being so kind to accompany me through the PhD journey, especially, over those long winters. Thank Ben Lickly for insightful comments and for being so supportive for everything. 
 
-\begin{CJK*}{UTF8}{gbsn}
-亲爱的爸爸妈妈，谢谢你们。
-\end{CJK*}
+%\begin{CJK*}{UTF8}{gbsn}
+%亲爱的爸爸妈妈，谢谢你们。
+%\end{CJK*}
 
 %Thanks to my advisors Michael Macy, Jon Kleinberg, Dan Cosley. Many thanks to Duncan Watts, Jake Hofman, Winter Mason and everyone from Yahoo Resarch. Thanks to Andrew Tomkins and Google Research. Thanks to Silvio, Ravi, Ben Lickly, Chenhao Tan, Shenwei Liu, Patrick Park, Yongren Shi, Chris Cameron, Tim Novikoff, Johan, Daniel, Jure for discussion. Thanks for Hyunyong, Karin, Theresa, Yookyung for always offering good insights. Thanks to my family for supporting!!!
 
@@ -2341,6 +2341,7 @@ is earlier than two months prior to $t$, and consider a user
 at time $t$, we consider a user \emph{inactive} if he/she has not published any 
 paper in the earlier than five year prior to $t$, and consider a user
 \emph{active} otherwise. Note that our results do not depend on the time frame that we used. In fact, they hold for two quite different networks and time frames.
+%Considering all the possible exogenous factors that may affect people's activities in these two networks, the consistency %of our results suggest that there is some fundamental......
 
 \section{Arrival and departure correlation among friends}
 In this section, we study the temporal patterns of arrivals and
@@ -2389,7 +2390,7 @@ period, a large relative increase of $41\%$. We find similar pattern in the time
 To quantify the differences, we plot in
 Figure~\ref{fig:friend_random_cdf_gap} the distribution of absolute
 difference in the CDF values at each time, for arrivals and
-departures(at least in SN).  The correlation of departures is seen to be stronger than
+departures.  The correlation of departures is seen to be stronger than
 the correlation of arrivals, although the two gaps peak around roughly
 the same value.
 
@@ -2422,9 +2423,9 @@ happens.  Thus, for regular graphs (of constant degree), the mean of
 the distribution of fraction of friends already signed up will be at
 0.5.  The results are shown in Figure~\ref{fig:friend_signup}.  True
 social networks are of course non-regular, and while the distribution
-of plot (Figure~\ref{fig:friend_signup_fraction}) appears largely symmetrical, there are some outliers.  In particular, both in SN there are more than 20 times as many users users for whom, at
+of plot (Figure~\ref{fig:friend_signup_fraction}) appears largely symmetrical, there are some outliers.  In particular, in SN there are more than 20 times as many users for whom, at
 signup, 100\% of their friends have already signed up, compared to
-users for whom 0\% of their eventual friends have already signed up. These can be explained by many low-degree nodes who are attracted to the network by a friendship invitation but never really engage in the network afterwards. In Dblp the situation is a bit different, this is probably explainable by the fact that several papers are written by community of student that after the master or the PhD do not publish any more. Overall, we think that there is certain network effect towards the arrival of users, however, this effect is quite weak in the formation of the network, and may not be enough to actively engage users after they sign up.
+users for whom 0\% of their eventual friends have already signed up. These can be explained by many low-degree nodes who are attracted to the network by a friendship invitation but never really engage in the network afterwards. In Dblp the situation is a bit different, this is probably explainable by the fact that several papers are written by community of students and they stop publishing after the leading member graduates. Overall, we think that there is certain network effect towards the arrival of users, however, this effect is quite weak in the formation of the SN network, and may not be enough to actively engage users after they sign up.
 
 %These are explained by high-degree nodes who tend to arrive relatively
 %early in the system, inviting many friends who join but never become
@@ -2496,7 +2497,7 @@ single-edge correlations to properties of the entire neighborhood of a
 node.
 
 \subsection{Dependence on local properties}
-The correlation in the timing of last login among friends suggests the effect of friends' inactivity on the decrease of activities on an individual. To better understand how a user's departure is influenced by his local community, in this section, we look at the probability of a user's departure in relation to the following four properties related to the user's neighborhood.
+The correlation in the timing of last login among friends suggests the connection of friends' inactivity on the decrease of activities on an individual. To better understand how a user's departure can be correlated to properties of his local community, in this section, we look at the probability of a user's departure in relation to the following four properties related to the user's neighborhood.
 
 %\vspace{-5pt}
 \begin{itemize}\addtolength{\itemsep}{-.35\baselineskip} 
