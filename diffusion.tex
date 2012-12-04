@@ -83,7 +83,16 @@ She received her M.S. in Computer Science from University of California, Santa B
 
 \begin{acknowledgements}
 %Many many many thanks to my committee!
-First, I would like to thank my advisors: Michael Macy, Jon Kleinberg, and Dan Cosley, for patiently teaching me how to do research and warmly introducing me to the scientific community. Many thanks also go to Duncan Watts and Andrew Tomkins: I have learned so much from you and will forever consider you as my mentors. I also want to thank my co-authors: Jake Hofman, Winter Mason, Shenwei Liu, and Chenhao Tan, for being so smart and inspiring. I would like to thank everyone in Yahoo! Labs and Google Research: Ravi Kumar, Silvio Lattanzi, Ed Chi, and many others - it has been such pleasant and exciting experience working with you all! I would like to thank all my friends in Cornell as well, for being so kind to accompany me through the PhD journey, especially, over those long winters. Thank Ben Lickly for insightful comments and for being so supportive for everything. 
+First, I would like to thank my advisors: Michael Macy, Jon Kleinberg, and Dan Cosley, for patiently teaching me how to do research and warmly introducing me to the scientific community. I am also very thankful for having the opportunity to work with primerir industry research labs such as Yahoo! Labs and Google Research. Special thanks to Duncan Watts and Andrew Tomkins: I have learned so much from you and will forever consider you as my mentors. I want to thank my co-authors, without them most content of this thesis would not exist: Jake Hofman, Winter Mason, Shenwei Liu, Chenhao Tan, Atish Das Sarma, Alex Fabrikant, Atilish Das Sarma - it has been such pleasant and inspiring experience working with you all.
+
+%I also want to thank my co-authors: Jake Hofman, Winter Mason, Shenwei Liu, Chenhao Tan, Silvio Lattanzi, Atish Das Sarma, Alex Fabrikant, for being so smart and inspiring. 
+%I would like to thank everyone in Yahoo! Labs and Google Research: Ravi Kumar, Silvio Lattanzi, Ed Chi, and many others - it has been such pleasant and exciting experience working with you all! 
+
+I would like to thank all my friends and professors in Cornell as well, for being so kind to accompany me through the PhD journey, especially over those long winters. I am deeply thankful to the Information Science department, for being such an open, vibrant, and diverse place, for exposing me to so many briliant minds, such as Shimon Edelman and Phoebe Sengers. 
+
+Finally, I want to thank my family. Many thanks to Ben, for being so insightful and supportive. And many thanks to my parents, for all the trust and love they have shown to me.
+
+%Phoebe and Lucian, for showing me a brand new mindset.
 
 %\begin{CJK*}{UTF8}{gbsn}
 %亲爱的爸爸妈妈，谢谢你们。
@@ -2250,36 +2259,31 @@ reference to any social process.  In our case, we are motivated by the
 metaphor of a user at a party with friends.  The user is more likely
 to attend upon discovering that some number of friends will also
 attend.  If some or all of the friends then opt to depart, whether for
-a new party or to curl up with a good book, then the original user is
-much more likely to follow suit.  Hence, we anticipate that social
-forces play a significant role in both arrivals and departures.
+a new party or to just go home, then the original user is
+much more likely to follow suit.  Hence, we anticipate to see the network effect in both arrivals and departures.
 
 We begin to address this question with a basic study of the temporal
 correlation of arrivals and departures, and show that both processes
-introduce significant correlation among friends; in fact, we show that time intervals between
+introduce significant correlation; in fact, we show that time intervals between
 the departure of friends are more tightly distributed than the
 equivalent distribution of gaps between arrival of friends.
 
-In this sense, we might consider arrival as the propagation of a
+Assuming part of the temporal correlation is induced by social influence, we might consider arrival as the propagation of a
 ``join'' virus, and departure as simply the propagation of a new
 virus, in this case representing the decision to cease usage.
-However, this formulation is at odds with our conception of the
-underlying process.  It is plausible that seeing one friend join a
-social network, then two, then three, might impel a user to join, as
-we see in prior work~\cite{Backstrom:2006}.  However, once a user has two
+However, this formulation is at odds in reality. It is plausible that seeing one friend join a social network, then two, then three, might impel a user to join, as we see in prior work~\cite{Backstrom:2006}.  However, once a user has two
 hundred friends, will the departure of one, then two, then three friends 
 have a qualitatively different impact on the user's likelihood to
 depart?  Perhaps like the decision to join, the decision to depart
 depends more on the number of active friends than the number of
-inactive friends.  Or perhaps departure is a fundamentally different
+inactive friends. Or perhaps departure is a fundamentally different
 decision that depends on an assessment of the pulse of the
 neighborhood, captured more accurately by the fraction of friends who
-remain active.
+remain active. At last, departure can be merely a sympton of some external process that is driven mostly by exogenous factors rather than social forces.
 
-We study this question in the context of the Dblp co-authorship graph and
+We study this question in the context of the DBLP co-authorship graph and
 a large social network, and
-argue that in fact a hybrid of these models provides the most accurate
-characterization.  While number of active friends is known to be a
+argue that a hybrid of the social influence models could characterize the observed temporal clustering rather accurately. While number of active friends is known to be a
 strong predictor of joining a group, for users with twenty or more
 friends, overall neighborhood activity, measured by the fraction of
 friends who remain active, is by far the best predictor of likelihood
@@ -2291,11 +2295,10 @@ predictive power, and raw counts of active friends, while stronger,
 remain weak compared to the overall fraction of active friends.  On
 the other hand, for users with fewer than twenty neighbors, the actual
 count of active friends remains a strong predictor of likelihood to
-depart. From these findings we reach a picture that users with few
-friends rely heavily on their continued presence, while users with
-more friends are pushed one unit closer to departure by each
-successive fraction of existing friends observed to depart(this is phenomena
-is particularly relevant for the Dblp dataset where a lot of nodes have
+depart. An intuitive interpretation of these findings is that users with few
+friends rely heavily on the presence of individual friends, while users with
+more friends stay for the neighborhood atmosphere - they are pushed one unit closer to departure by each successive fraction of existing friends observed to depart(this phenomena
+is particularly relevant for the DBLP dataset where many nodes have
 very small degree).
 
 From this emerging local picture of behavior, we may then ask how
@@ -2304,7 +2307,7 @@ the graph.  In particular, we seek to understand where departures
 happen in the graph.  It is possible, for example, that departures
 tend to occur as high-status users in the core of the graph choose to
 depart in search of the next big thing.  Alternately, it is possible
-that departure happens at the ``fringes'' of the graph, and then
+that departure happens first at the ``fringes'' of the graph, and then
 spreads inwards from there.  We study this problem by computing the
 average induced degree(or density) and conductance of the subgraphs of active and inactive users
 through time, and comparing these results to thought experiments in
@@ -2316,36 +2319,45 @@ conductance under a planted degree constraint model.  The results
 suggest that although the inactive set of nodes densifies, its densification is
 not just a consequence of the degree distribution, but really a
 consequence of well-connected cluster of nodes from the fringes
-departing.  We are led to believe that departures happen from the
-fringes and heavily influence their immediate neighborhoods, while
+departing.  We reach the picture that departures happen from the
+fringes and spread to their immediate neighborhoods, while
 an internal dense core of active nodes survives.
+
+Most of the content in this chapter is adapted from \emph{Arrival and Departure Dynamics in Social Networks}, published in the Sixth ACM International Conference on Web Search and Data Mining (WSDM 2013). This is a collaborated work with Atish Das Sarma, Alex Fabrikant, Silvio Lattanzi, and Andrew Tomkins. 
+
+
 
 \section{Data}
 
-In this chapter, we study the structure properties in relation to the arrival and departure of users, using a snapshot
-of the DBLP co-authorship graph and a well-known social network.  The DBLP snapshot
-that we consider contains 1072718 nodes and 1839605 edges, for each author we store his/her co-authors
-and the year of the last publication. Furthermore for each author to author edge we also
-store the year of the first publication. in the rest of the paper we will refer to
-it as DBLP. The network we study contains millions of
-users and over a billion edges.  For each user, we have the timestamp
-of signup and last login, and for each edge, we have the timestamp of
-edge creation. In the rest of the paper we will refer to this network as SN.  
+In this chapter, we study the dynamics of arrival and departure using a
+snapshot of the DBLP co-authorship graph and a well-known social
+network. As previous research~\cite{Backstrom:2006} showed that the co-author network largely reassembles the dynamics of online social networks in forming individual communities, we are interested at 
+testing whether this similarity persists in the forming and degenerating of the entire social graph. The DBLP snapshot that we consider contains 1 million nodes
+and around $1.8$ millions edges, for each author we store his/her co-authors and the year of the last publication. Furthermore for each author to author
+edge we also store the year of the first publication. In the rest of
+the paper we will refer to it as DBLP. 
+The social network dataset we study contains 260 millions of users and 17 billion edges (as observed by August, 2011).  For each
+user, we have the timestamp of signup and last login, and for each
+edge, we have the timestamp of edge creation. In the rest of the paper
+we will refer to this network as SN.
 
 To study the pattern of user arrivals and departures, we first
 describe each user at each timestamp as either active or inactive,
 based on his most recent activity time. Given a snapshot of the SN network
 at time $t$, we consider a user \emph{inactive} if his last login time
 is earlier than two months prior to $t$, and consider a user
-\emph{active} otherwise. Given a snapshot of the DBLP network
+\emph{active} otherwise\footnote{As most online social network or social game sites use Monthly-Active-Users(MAU) as a standard way to measure the number of engaged users, we double the cutoff window to 2-month for a more conservative threshold to determine a user has departed.}. Given a snapshot of the DBLP network
 at time $t$, we consider a user \emph{inactive} if he/she has not published any 
 paper in the earlier than five year prior to $t$, and consider a user
-\emph{active} otherwise. Note that our results do not depend on the time frame that we used. In fact, they hold for two quite different networks and time frames.
-%Considering all the possible exogenous factors that may affect people's activities in these two networks, the consistency %of our results suggest that there is some fundamental......
+\emph{active} otherwise. Note that our results do not depend on the time frame that we used. In fact, they hold for two quite different networks and time frames. Considering all the possible exogenous factors that may affect people's activities in these two networks, the consistency of our results suggests that there might be some internal process that is fundamental to human social interactions and gives rise to the dynamics of arrivials and departures observed and studied in this chapter.
+
+
+
 
 \section{Arrival and departure correlation among friends}
-In this section, we study the temporal patterns of arrivals and
-departures, for both local dynamics and global trends.  We wish to understand whether users typically arrive
+
+In this section, we study the basic properties of arrival and
+departure.  We wish to understand whether users typically arrive
 and/or depart together in social networks.  However, we cannot
 directly compare gaps between arrivals and departures of friends, as
 networks are not stationary---consider for example the case of a
@@ -2357,23 +2369,24 @@ We must therefore normalize in some way against global rates of
 arrival and departure, which we do by the following technique. Given a snapshot of the network at time $t$, we
 consider two samples of user-pairs, one in which the pair of users are
 friends, and another in which the pair of users is chosen uniformly
-from all possible pairs\footnote{Note that although technically, it is possible for a random pair to be a pair of friends, 
+from all possible pairs\footnote{Technically, it is possible for a random pair to be a pair of friends, however,
 %as we only sample 1M among the total tens of billions of possible pairs, 
-given the service policy that each user has a rather small upper bound for the number of friends, the chance of a random pair being friends is negligible.}.  We then consider the distribution of the gap in arrival time between pairs in the two cases.  Differences in these
+given the service policy that each user has a rather small upper-bound for the number of friends, the chance of a random pair being friends is negligible.}.  We then consider the distribution of the gap in arrival time between pairs in the two cases.  Differences in these
 distributions will then highlight temporal correlation of arrivals of
 friends compared to strangers.
 
 To study departures, we adopt the same technique.  We consider only
 inactive users, and generate again a set of
 pairs of friends, and another set of pairs chosen uniformly at random.
-In this section, we fix $t$  then define the last login time of inactive users as their departure time. We pick 1M pairs for each of these four sample groups, and shows the
-Cumulative Distribution Function (CDF) for these distributions in Figure~\ref{fig:time_gap_cdf}.
+For a fixed time $t$, we define the last login time of inactive users as their departure time. We pick 1M pairs for each of these four sample groups, and compute the
+Cumulative Distribution Function (CDF) for these distributions. In Figure~\ref{fig:time_gap_cdf}, we plot the CDF curves, showing the percentage of friends(co-authors)/strangers who joined and left the SN(DBLP) within $n$ days(years) of each other.
+
 
 \begin{figure}[h]
 \centering
 %\vspace{-8pt}
 \subfigure[SN]{\label{fig:orkut_time_gap_cdf}\includegraphics[width=0.40\textwidth]{figures/arrival_and_departure_time_gap_cdf.eps}}       \hspace{0.05\textwidth}            
-\subfigure[Dblp]{\label{fig:dblp_time_gap_cdf}\includegraphics[width=0.40\textwidth]{figures/dblp_arrival_and_departure_time_gap_cdf.eps}}
+\subfigure[DBLP]{\label{fig:dblp_time_gap_cdf}\includegraphics[width=0.40\textwidth]{figures/dblp_arrival_and_departure_time_gap_cdf.eps}}
 \caption{\small The CDF curve for the difference in arrival and departure
   time between friends and random pairs of users.}
  \label{fig:time_gap_cdf}
@@ -2383,17 +2396,20 @@ Cumulative Distribution Function (CDF) for these distributions in Figure~\ref{fi
 The CDF for both arrivals and departures of friends lies significantly
 above the CDF for random pairs, indicating that friends both arrive
 and depart together, in comparison to the control group of random
-pairs.  As the figure shows, in the case of SN $43\%$ of random pairs depart within 200
-days of one another, while $61\%$ of friends depart within the same
-period, a large relative increase of $41\%$. We find similar pattern in the time interval of arrival - only $31\%$ of random pairs arrive within 200 days, but $45\%$ of friends arrive within the same period. This observation is even more evident in Dblp where the lines are clearly apart.
+pairs.  As the figure shows, in the case of SN, $43\%$ of random pairs
+depart within 200 days of one another, while $61\%$ of friends depart
+within the same period. We find
+similar pattern in the time interval of arrival - only $31\%$ of
+random pairs arrive within 200 days, but $45\%$ of friends arrive
+within the same period. This observation is even more evident in DBLP, where the solid and dashed lines show stronger separation.
 
 To quantify the differences, we plot in
 Figure~\ref{fig:friend_random_cdf_gap} the distribution of absolute
 difference in the CDF values at each time, for arrivals and
-departures.  The correlation of departures is seen to be stronger than
-the correlation of arrivals, although the two gaps peak around roughly
-the same value.
-
+departures.  The correlation of departures in SN is seen to be
+stronger than the correlation of arrivals, although the two gaps peak
+around roughly the same value.  However, arrivals
+and departures behave almost identically in DBLP, suggesting the dynamics of arrival and departure are more similar in collaboration networks than in social networks.
 
 %% A possible explanation for this observation is that some of the
 %% friendship only formed online - after two friends both sign up to the
@@ -2408,24 +2424,43 @@ the same value.
 \small
 %\vspace{-8pt}
 \subfigure[SN]{\label{fig:orkut_friend_random_cdf_gap}\includegraphics[width=0.40\textwidth]{figures/friend_random_cdf_gap.eps}}     \hspace{0.05\textwidth}              
-\subfigure[Dblp]{\label{fig:dblp_friend_random_cdf_gap}\includegraphics[width=0.40\textwidth]{figures/dblp_friend_random_cdf_gap.eps}}
+\subfigure[DBLP]{\label{fig:dblp_friend_random_cdf_gap}\includegraphics[width=0.40\textwidth]{figures/dblp_friend_random_cdf_gap.eps}}
 %\epsfig{file=}
 \caption{\small Gap between CDF curves.}
 \label{fig:friend_random_cdf_gap}
 %\vspace{-3pt}
 \end{figure}
 
-We also consider the eventual set of friends acquired by a user at the snapshot time $t$, and
-ask whether those friends join before or after the user.  First, in contrast to the observations in previous research\cite{Backstrom:2006}, the number of friends who already signed up seem to have a ``diminishing effect'' only on the case of the co-authorship graph and not of SN. In Figure~\ref{fig:friend_signup_count}, we see that in SN as the number of adopted friends increases, the probability of a user signup increases, but rather linearly, throughout almost the entire range x-axis. On the other hand, the expected
-fraction of friend pairs joining before the user will always be 0.5, as the friend network is undirected and each edge contributes one pair in
-which $a$ joins before $b$, and the opposite pair in which the reverse
-happens.  Thus, for regular graphs (of constant degree), the mean of
-the distribution of fraction of friends already signed up will be at
-0.5.  The results are shown in Figure~\ref{fig:friend_signup}.  True
-social networks are of course non-regular, and while the distribution
-of plot (Figure~\ref{fig:friend_signup_fraction}) appears largely symmetrical, there are some outliers.  In particular, in SN there are more than 20 times as many users for whom, at
-signup, 100\% of their friends have already signed up, compared to
-users for whom 0\% of their eventual friends have already signed up. These can be explained by many low-degree nodes who are attracted to the network by a friendship invitation but never really engage in the network afterwards. In Dblp the situation is a bit different, this is probably explainable by the fact that several papers are written by community of students and they stop publishing after the leading member graduates. Overall, we think that there is certain network effect towards the arrival of users, however, this effect is quite weak in the formation of the SN network, and may not be enough to actively engage users after they sign up.
+The temporally correlated activities between friends have been observed and modeled before\cite{Backstrom:2006,Marlow:2006,Anagnostopoulos-2008}, mostly in the form of adopting a new behavior or product within an existing social network. However, given that there is not a single underlying social network that might be accountable for the joining of new users, are those models still applicable in the scenarios of arrival? To answer this question, we will now focus on individual users, and study one's arrival in position of his local neighborhood. 
+%Shaomei: removed from camera-ready version, 11/27/2012
+%After showing the correlated arrivals between pairs of friends, we will now %focus on individual users, and study one's arrival in position of his local   %neighborhood.  
+
+Since we have no information on friendship outside the networks we are studying, we use the eventual set of friends acquired by a user at the snapshot time $t$ to approximate the set of friends he had before arrival, and ask whether those friends join before or after the user.
+%We also consider the eventual set of friends acquired by a user at the
+%snapshot time $t$, and ask whether those friends join before or after
+%the user.  
+For DBLP, we see the ``diminishing returning'' curve (Figure~\ref{fig:dblp_friend_signup_count}) as found in previous
+research~\cite{Backstrom:2006}. In SN (Figure~\ref{fig:friend_signup_count}), however, the probability of a user signup increases
+near-linearly as the number of
+adopted friends increases.
+The expected fraction of friends joining before the user is 0.5,
+as the friend network is undirected and each edge
+contributes one pair in which $a$ joins before $b$, and one pair with
+$b$ before $a$.  Thus, for regular graphs (of
+constant degree), the mean fraction of friends
+already signed up will be 0.5.  The results are shown in
+Figure~\ref{fig:friend_signup}.  True social networks are of course
+non-regular, and while the distribution of plot
+(Figure~\ref{fig:friend_signup_fraction}) appears largely symmetrical,
+there are some outliers.  In particular, in SN there are more than 20
+times as many users who signed up after all of their eventual friends did,
+compared to users who signed up before any of their friends. This follows from the many
+low-degree nodes who join in response to an invitation but do not subsequently
+engage with the network.  In DBLP, the peaks at 0\%, 25\%, $\frac{1}{3}$, 50\%,..., 100\% (Figure~\ref{fig:dblp_friend_signup_fraction}) can be explained by the substantial number of authors with only one publication, as they have a very small set of co-authors. Although the plot in Figure~\ref{fig:dblp_friend_signup_fraction} is largely symmetrical but is slightly skewed to the left. This shows that there are more authors whose collaboration networks grow than ones who stay with their early collaborators.
+%The differences in the results for DBLP are
+%explainable by the several papers written by student that cease
+%publishing after completing a degree. 
+Overall, we posit a weak network effect for new users in both networks, which may not be enough to actively engage users after they sign up.
 
 %These are explained by high-degree nodes who tend to arrive relatively
 %early in the system, inviting many friends who join but never become
@@ -2440,34 +2475,39 @@ users for whom 0\% of their eventual friends have already signed up. These can b
 \subfigure[Count(SN)]{\label{fig:friend_signup_count}\includegraphics[width=0.4\textwidth]{figures/friend_signup_count_dist.eps}}       \hspace{0.05\textwidth}          
 \subfigure[Fraction(SN)]{\label{fig:friend_signup_fraction}\includegraphics[width=0.4\textwidth]{figures/friend_signup_frac_dist.eps}}\\
 %\vspace{-8pt}
-\subfigure[Count(Dblp)]{\label{fig:dblp_friend_signup_count}\includegraphics[width=0.4\textwidth]{figures/dblp_friend_signup_count_dist.eps}}       \hspace{0.05\textwidth}   
-\subfigure[Fraction(Dblp)]{\label{fig:dblp_friend_signup_fraction}\includegraphics[width=0.4\textwidth]{figures/dblp_friend_signup_frac_dist.eps}}
+\subfigure[Count(DBLP)]{\label{fig:dblp_friend_signup_count}\includegraphics[width=0.4\textwidth]{figures/dblp_friend_signup_count_dist.eps}}       \hspace{0.05\textwidth}   
+\subfigure[Fraction(DBLP)]{\label{fig:dblp_friend_signup_fraction}\includegraphics[width=0.4\textwidth]{figures/dblp_friend_signup_frac_dist.eps}}
 \caption{\small Count and Fraction of friends already signed-up when user
   signs up.}
 \label{fig:friend_signup}
 %\vspace{-3pt}
 \end{figure}
 
-Our conclusion from this set of graphs is that friends tend to arrive
-and depart together, but departures are more tightly clustered than
-arrivals.  This observation relates only to individual friends, while
-we expect that the effects are better understood in terms of the
-entire ``neighborhood'' of friends in the graph.
+Our conclusion from these graphs is that friends tend to arrive
+and depart together, but at least for SN, departures are more tightly
+clustered than arrivals.  We also find interesting nuances in the dynamics of arrivals, in comparison to previous research. 
+In the next section, we will look more closely at departures, learning the how neighborhood activities affect one's likelihood to depart.
 
-Arrivals are difficult to study in this model, as the nature of the
-neighborhood is largely unknown to a new user until after the decision
-to join.  Other authors consider the related problem of joining a
-particular group as the adoption of an innovation within the substrate
-of an existing social network.  For example, \cite{Backstrom:2006}
-consider joining an interest group within the LiveJournal network.  We
-may therefore employ our longitudinal data to flesh out the picture
-given by this earlier, by looking more closely at the impact of the
-neighborhood structure on departure.  Subsequently, we then relate the
-results back to known literature on adoption of innovations around
-group membership, to compare what is known about arrivals and
-departures.
+%Our conclusion from this set of graphs is that friends tend to arrive
+%and depart together, but departures are more tightly clustered than
+%arrivals.  This observation relates only to individual friends, while
+%we expect that the effects are better understood in terms of the
+%entire ``neighborhood'' of friends in the graph.
 
-\section{Effect of local neighborhoods}
+%Arrivals are difficult to study in this model, as the nature of the
+%neighborhood is largely unknown to a new user until after the decision
+%to join.  Other authors consider the related problem of joining a
+%particular group as the adoption of an innovation within the substrate
+%of an existing social network.  For example, \cite{Backstrom:2006}
+%consider joining an interest group within the LiveJournal network.  We
+%may therefore employ our longitudinal data to flesh out the picture
+%given by this earlier, by looking more closely at the impact of the
+%neighborhood structure on departure.  Subsequently, we then relate the
+%results back to known literature on adoption of innovations around
+%group membership, to compare what is known about arrivals and
+%departures.
+
+\section{Local Neighborhoods}
 
 \begin{comment}
 To test the correlation in departure among friends, we begin by simply comparing the difference in last login times between friends and random pairs of users. 
@@ -2491,25 +2531,29 @@ edges have both nodes logged in within 180 days, and only $35\%$ of
 the random pairs logged in within this interval.  
 \end{comment}
 
-As shown in previous section (Figure~\ref{fig:time_gap_cdf}), friends are more likely than strangers to have logged in within around half year of
-one another.  This dramatic difference causes us next to look beyond
-single-edge correlations to properties of the entire neighborhood of a
-node.
+%As shown in previous section (Figure~\ref{fig:time_gap_cdf}), friends are more %likely than strangers to have logged in within around half year of
+%one another.  This dramatic difference causes us next to look beyond
+%single-edge correlations to properties of the entire neighborhood of a
+%node.
+
+Figure~\ref{fig:time_gap_cdf} shows a strong correlation in arrivals and departures for friends; now we will go beyond single-edges and study how such correlation is presented in the entire neighborhood of a node.
 
 \subsection{Dependence on local properties}
-The correlation in the timing of last login among friends suggests the connection of friends' inactivity on the decrease of activities on an individual. To better understand how a user's departure can be correlated to properties of his local community, in this section, we look at the probability of a user's departure in relation to the following four properties related to the user's neighborhood.
+%The correlation in the timing of last login among friends suggests the %connection of friends' inactivity on the decrease of activities on an %individual. To better understand how a user's departure can be correlated to %properties of his local community, in this section, we look at the probability %of a user's departure in relation to the following four properties related to %the user's neighborhood.
 
-%\vspace{-5pt}
-\begin{itemize}\addtolength{\itemsep}{-.35\baselineskip} 
+To better understand how a user's departure corresponds to his local community, we look at the probability of a user's departure in relation to the following four properties of the user's neighborhood.
+
+\vspace{-4pt}
+\begin{itemize}%\addtolength{\itemsep}{-.35\baselineskip} 
 \item number of active friends;
-\vspace{-5pt}
+\vspace{-3pt}
 \item fraction of active friends;
-\vspace{-5pt}
+\vspace{-3pt}
 \item number of inactive friends;
-\vspace{-5pt}
+\vspace{-3pt}
 \item number of inactive friends who left in the past 6 months;
 \end{itemize}
-\vspace{-5pt}
+\vspace{-4pt}
 
 \begin{figure}
 \centering
@@ -2523,18 +2567,20 @@ The correlation in the timing of last login among friends suggests the connectio
 \subfigure[\small $p$ as f(active friend fraction) in SN]{\label{fig:orkut_p_f_active_curve}\includegraphics[width=0.45\textwidth]{figures/p_f_active_curves.eps}}
 \hspace{0.03\textwidth}
 \subfigure[\small $p$ as f(inactive friends who left in the past 6 months) in SN]{\label{fig:orkut_p_r_curve}\includegraphics[width=0.45\textwidth]{figures/p_r_curves.eps}}
-\caption{\small Probability of departure as function of different local properties.} % Where (a) is $p$ as f(active friend count) in SN, (b) is $p$ as f(inactive friend count) in SN, (c) is $p$ as f(active friend count) in Dblp, (d) is $p$ as f(inactive friend count) in Dblp, (e) is $p$ as f(active friend fraction) in SN and (f) is $p$ as f(inactive friends who left in the past 6 months) in SN.}
+\caption{\small Probability of departure (between 0 and 1) as function of different local properties.} % Where (a) is $p$ as f(active friend count) in SN, (b) is $p$ as f(inactive friend count) in SN, (c) is $p$ as f(active friend count) in Dblp, (d) is $p$ as f(inactive friend count) in Dblp, (e) is $p$ as f(active friend fraction) in SN and (f) is $p$ as f(inactive friends who left in the past 6 months) in SN.}
 \label{fig:p_plots}
 %\vspace{-3pt}
 \end{figure}
 
-To study how the probability of a user becoming inactive depends on the number of friends who are active, we use a similar method as in \cite{Backstrom:2006}: we first take two snapshots $(t_0, t_1)$ of the network, three months apart in SN and three years apart in Dblp; we then find all pairs $(u,k)$ such that $u$ is active at the time of first snapshot $t_0$, and has $k$ friends who are also active at $t_0$; $p(k)$ is calculated as the fraction of such pairs $(u,k)$ for a given $k$ such that $u$ had left the network at the time of second snapshot $t_1$. In other words, $p(k)$ is the fraction of active users who left the network in the next three months, given that $k$ friends are active at the first snapshot time. Figure~\ref{fig:orkut_p_k_active_curve} and Figure~\ref{fig:dblp_p_k_active_curve} shows the curves of $p(k)$ at three different sample points of $t_0$. In a similar way, we can fix $f$ as the fraction of friends who are active at time $t_0$, and calculate the probability $p(f)$ of an active user leaving the network as function of $f$ (see Figure~\ref{fig:orkut_p_f_active_curve}). Note that for this figure and all the following figures involving the fraction of active/inactive friends, we exclude all the nodes with no friends in SN, which are around $10\%$ of all active users as of 2011/1/1, and among those users, $35\%$ of them left within three months. 
+We use a similar method as in \cite{Backstrom:2006} to calculate the probability of a user becoming inactive, as a function of the number of active friends: we first take two snapshots $(t_0, t_1)$ of the network, three months apart in SN and three years apart in DBLP; we then find all pairs $(u,k)$ such that $u$ is active at the time of first snapshot $t_0$, and has $k$ friends who are also active at $t_0$; $p(k)$ is calculated as the fraction of such pairs $(u,k)$ for a given $k$ such that $u$ had left the network at the time of second snapshot $t_1$. In other words, $p(k)$ is the fraction of active users who left the network in the next three months, given that $k$ friends were active at the first snapshot time. Figure~\ref{fig:orkut_p_k_active_curve} and Figure~\ref{fig:dblp_p_k_active_curve} shows the curves of $p(k)$ at three different $t_0$. In a similar way, we can fix the fraction of friends $f$ who are active at time $t_0$, and calculate the probability $p(f)$ of an active user leaving the network as function of $f$ (see Figure~\ref{fig:orkut_p_f_active_curve}). Note that in all figures involving the fraction of active/inactive friends, we exclude all nodes with no friends in SN (around $10\%$ of all active users as of 2011/1/1). Among those users, $35\%$ of them left within three months.
 
-Not surprisingly, Figure~\ref{fig:orkut_p_k_active_curve}, Figure~\ref{fig:dblp_p_k_active_curve} and Figure~\ref{fig:orkut_p_f_active_curve} show that as more and more friends stay active, a user is less and less likely to be inactive. The curve of $p(k)$ (see Figure~\ref{fig:orkut_p_k_active_curve}) also matches very well with what has been seen in other domains \cite{Backstrom:2006}, exhibiting the ``diminishing returns'' property - as the number of active friends $k$ increases, the probability of departure continues to decline, but more and more slowly, eventually converging to a constant for very large values of $k$. This observation indicates that the marginal gain of having each additional active friend is quite significant for users with a small number of active friends, but rather negligible when a user has already more than 50 active friends. In contrast, in Figure~\ref{fig:orkut_p_f_active_curve}, we do not see such a ``diminishing returns'' trend, but a steeper, and almost constant rate of decrease in the probability of departure throughout the course when the fraction of active friends increases. This is an interesting observation that has not been previously seen (specifically in various positive influence studies). 
+Not surprisingly, Figure~\ref{fig:orkut_p_k_active_curve}, Figure~\ref{fig:dblp_p_k_active_curve} and Figure~\ref{fig:orkut_p_f_active_curve} show that as more and more friends stay active, a user is less and less likely to be inactive. The curve of $p(k)$ (see Figure~\ref{fig:orkut_p_k_active_curve}) also matches very well with what has been seen in other domains \cite{Backstrom:2006}, exhibiting the ``diminishing returns'' property.
+% - as the number of active friends $k$ increases, the probability of departure continues to decline, but more and more slowly, eventually converging to a constant for very large values of $k$. 
+This observation indicates that the marginal gain of having each additional active friend is quite significant for users with a small number of active friends, but rather negligible when a user already has many, say more than 50,  active friends. In contrast, in Figure~\ref{fig:orkut_p_f_active_curve}, we do not see such a ``diminishing returns'' trend, but a steeper, and almost constant rate of decrease in the probability of departure throughout the course when the fraction of active friends increases. This is an interesting observation that has not been previously seen (specifically in various positive influence studies). 
 %This suggests that the fraction of active friends has a stronger effect on the probability of departure than the count of active friends. 
 % I commented this last sentence since currently theory is only for number, and also in some other plots we see number also as being quite important. So perhaps better not to make this categorical statement - Atish.
 
-To see how the inactivity of the neighborhood influences the departure of a user, we also plot the probability of departure as a function of number of inactive friends, in Figure~\ref{fig:orkut_p_k_curve} and Figure~\ref{fig:dblp_p_k_curve}. The curves in Figure~\ref{fig:orkut_p_k_curve} and Figure~\ref{fig:dblp_p_k_curve} show an interesting trend of decreasing slope through time: while the probability of a user departing increases with the growth in the number of inactive friends in initially, it becomes more and more insensitive to the value of $k$ in the later curves. This phenomenon is quite intriguing to us: if the departure of friends do have a clear effect on the departure of the user, as shown in the earlier curves, why is this effect diminished so much in the latest years? To answer this question, we note that we are counting the number of inactive friends as prior to the time of each snapshot, but many of them could have been inactive for a long time thus could hardly influence the user's experience in the network at the snapshot time. Figure \ref{fig:orkut_p_r_curve} confirms this idea, showing that the curves we see in Figure~\ref{fig:orkut_p_k_curve} are somewhat misleading -  in general, the probability of user's departure constantly grows with the number of friends $r$ who \emph{recently} became inactive (when $r$ is not too small). 
+To see how the inactivity of the neighborhood determines the departure of a user, we also plot the probability of departure as a function of number of inactive friends, in Figure~\ref{fig:orkut_p_k_curve} and Figure~\ref{fig:dblp_p_k_curve}. The curves in Figure~\ref{fig:orkut_p_k_curve} and Figure~\ref{fig:dblp_p_k_curve} show an interesting trend of decreasing slope through time: while the probability of a user departing increases with the growth in the number of inactive friends initially, it becomes more and more insensitive to the value of $k$ in the later curves. This phenomenon is quite intriguing to us: if the departure of friends do have certain predictive power on the departure of the user, as shown in the earlier curves, why is such predictive power diminished so much in the latest years? To answer this question, we note that we are counting the number of inactive friends as prior to the time of each snapshot, but many of them could have been inactive for a long time thus could hardly account for the dynamics of the network at the snapshot time. Figure \ref{fig:orkut_p_r_curve} confirms this idea, showing that the curves we see in Figure~\ref{fig:orkut_p_k_curve} are somewhat misleading -  in general, the probability of user's departure constantly grows with the number of friends $r$ who \emph{recently} became inactive (when $r$ is not too small). 
  
 %Figure~\ref{fig:p_k_curve} shows the curves of $p(k)$ at three different sample points of $t_0$. The results surprisingly contrasts our expectation in two ways. First, there is an initial drop in the probability of departure along with the increase of $k$ - especially, when $k$ grow from $0$ to $1$, the probability of a user leaving drops for over/about $50\%$. Second, the remainder of each curve shows small (2009,2010) or no (2011) increase in $p(k)$ as $k$ grows. It seems that through time, the departure of a user is more and more insensitive to the number of friends who have already left. 
 
@@ -2555,10 +2601,16 @@ To see how the inactivity of the neighborhood influences the departure of a user
 
 \subsection{Interaction between local properties}
 
-The results of the previous section provide qualitative evidence that an individual's probability of departure is related to the activeness of his neighborhood. Intuitively, as more and more friends leave a social network, a user will start to feel desolated and will be more likely to leave as well. Our previous results also suggest that the fraction of friends who are active/inactive contributes to the overall atmosphere of the neighborhood, and that this matters more than the raw number of active/inactive friends. However, does that apply to all users? Do the highly connected users act differently than the more marginally connected ones? Can people really notice and act on the degeneration of their neighborhood, or will they stay as long as there are a few active friends, in spite of a large fraction of their friends having left? To address these issues, we compute the probability of user's departure in SN in relation to the interaction between local properties. Specifically, in Figure~\ref{fig:p_f_3_level}, we divide users into three groups based on their degrees, and plot the probability of departure as a function of the number/fraction of active friends, for each group separately. We note that for users with different levels of connectivity in the network, the curves of $p(f)$ (Figure~\ref{fig:p_f_3_level}) are qualitatively identical. This result demonstrates again that the fraction of friends who are active has a stronger effect on the probability of an individual's departure, regardless of the size of the user's neighborhood.
+The results of the previous section provide qualitative evidence that an individual's probability of departure is related to the activeness of his neighborhood.  
+%Intuitively, as more and more friends leave a social network, a user will start to feel desolated and will be more likely to leave as well. Particularly, our previous results also suggest that the fraction of friends who are active/inactive contributes to the overall atmosphere of the neighborhood, and that this matters more than the raw number of active/inactive friends. 
+However, does that apply to all users? Do the highly connected users act differently than the more marginally connected ones? Is the probability of departure sensitive to the degeneration of neighborhood, or is it a step function that will only drop once there are less than $k$ active friends, as modeled in~\cite{Bhawalkar:2012}? 
+%Can people really notice and act on the degeneration of their neighborhood, or %will they stay as long as there are a few active friends, in spite of a large %fraction of their friends having left? 
+To address these questions, we compute the probability of user's departure in SN in relation to the interaction between local properties, such as neighborhood degree and the fraction of active friends in the neighborhood. More specifically, we control the degree and the fraction of active friends separately, and look at how the probability of departure changes under each condition. 
+
+In Figure~\ref{fig:p_f_3_level}, we divide users into three groups based on their degrees, and plot the probability of departure as a function of the number/fraction of active friends, for each group separately. We note that for users with different levels of connectivity in the network, the curves of $p(f)$ (Figure~\ref{fig:p_f_3_level}) are qualitatively identical. This result demonstrates again that the fraction of friends who are active has a stronger effect on the probability of an individual's departure, regardless of the size of the user's neighborhood.
 % Again I am not sure if we should omit or reword this last sentence - Atish
 
-In addition, we aggregate users by the fraction of active/inactive friends, and look at how the probability of departure depends on the number of active/inactive friends for each group (see Figure~\ref{fig:p_k_3_level}). There are two things we note from Figure~\ref{fig:p_k_3_level}: First, for users with different fractions of inactive friends, there is a big gap between their probabilities of departure - for example, compared to users with less than $10\%$ friends left (blue line in Figure~\ref{fig:p_k_inactive_3_level}), users who have more than $50\%$ friends left (red line in Figure~\ref{fig:p_k_inactive_3_level}) are $10$ times more likely to leave as well. Second, once the user is in an inactive part of the neighborhood, the raw count of inactive friends has little effect in determining the probability of the user's departure (green line in Figure~\ref{fig:p_k_active_3_level}). Note that the blue line in Figure~\ref{fig:p_k_active_3_level} is very noisy because there are very few people in a highly obsolete neighborhood but still with a substantial amount of active friends. We still plot it just to be symmetric with Figure~\ref{fig:p_k_inactive_3_level}.
+We also aggregate users by the fraction of active/inactive friends, and show how the probability of departure depends on the number of active/inactive friends for each group (see Figure~\ref{fig:p_k_3_level}). There are two things we note from Figure~\ref{fig:p_k_3_level}: First, for users with different fractions of inactive friends, there is a big gap between their probabilities of departure - for example, compared to users with less than $10\%$ friends left (blue line in Figure~\ref{fig:p_k_inactive_3_level}), users who have more than $50\%$ friends left (red line in Figure~\ref{fig:p_k_inactive_3_level}) are $10$ times more likely to leave as well. Second, once the user is in an inactive part of the neighborhood, the raw count of inactive friends has little effect in determining the probability of the user's departure (green line in Figure~\ref{fig:p_k_active_3_level}). Note that the blue line in Figure~\ref{fig:p_k_active_3_level} is very noisy because there are very few people in a highly obsolete neighborhood but still with a substantial amount of active friends. We still plot it just to be symmetric with Figure~\ref{fig:p_k_inactive_3_level}.
 
 \begin{figure}[htbp!]
 \centering
@@ -2576,9 +2628,9 @@ In addition, we aggregate users by the fraction of active/inactive friends, and 
 \end{figure}
 
 \subsection{Predict the departure of user}
-Given a strong correlation between the probability of a user becoming inactive and the inactivity of his friends, the next question is, can we actually predict individuals's departures based on local properties? In this section, we explore the problem of modeling the departure of users using simple linear regression models and decision tree classifiers. In particular in this subsection we will focus exclusively on SN because we have a richer set of feature available.
+Given a strong correlation between the probability of a user becoming inactive and the inactivity of his friends, the next question is, can we actually predict individuals's departures based on local properties? In this section, we model the departure of users using simple linear regression models and decision tree classifiers. In particular, we will focus exclusively on SN because we have a richer set of features available.
 
-To start, we formalize our problem as a binary classification task in which class 1 is defined as consisting of those users who were active as of Jan 1st, 2011 ($t_0$) and departed within two months after $t_0$, and class 0 is defined as consisting of those who stayed active for two months after $t_0$. We then randomly sample 500K positive examples and negative examples separately, from all the users who were active at $t$. Note that among all examples, there are $90\%$ negative and only $10\%$ positive examples; our sampling scheme provides a more balanced distribution of examples of both classes. 
+To start, we formalize our problem as a binary classification task in which class 1 is defined as consisting of those users who were active as of Jan 1st, 2011 ($t_0$) and departed within two months after $t_0$, and class 0 is defined as consisting of those who stayed active for two months after $t_0$. We then randomly sample 500K examples for each class, from all the users who were active at $t$. Note that in our data, there are $90\%$ negative and only $10\%$ positive cases; our sampling scheme provides a more balanced distribution of examples of both classes. 
 
 We extract two sets of local features for each user:
 \begin{itemize}
@@ -2610,9 +2662,11 @@ To predict the departure of users, we train a simple decision tree (REPTree) cla
 	\end{tabular}
 \end{table}
 
-Table \ref{table:departure-performance} shows that relying on only local features of individuals, the simple decision tree classifier can predict the departure of user with high accuracy ($75\%$ with all features, as compared to $50\%$ for always predicting one class). This result demonstrates a strong connection between user's local properties and the propensity of departure. Moreover, comparing across 3 sets of features, we see that although the activity features are more powerful, neighborhood features can also provide rather accurate insights on the departure of users. 
+Table \ref{table:performance} shows that relying on only local features of individuals, the simple decision tree classifier can predict the departure of user with high accuracy ($75\%$ with all features, as compared to $50\%$ for always predicting one class). This result demonstrates a strong connection between user's local properties and the propensity of departure. Moreover, comparing across 3 sets of features, we see that although the activity features are most effective, neighborhood features can also provide rather accurate insights on the departure of users. 
 
-The decision tree classifier demonstrates that local properties provide strong evidence to predict the departure of user. It also suggests that the activity features are more effective at predicting user departure. However, the decision trees we trained contain over a thousand nodes and thus is too complicated to illustrate how the local properties influence the probability of user departure. To better understand the effect of different features, we also fit the data with a logistic regression model that predicts the probability of departure. The model is constructed on 7 independent variable covering both neighborhood features and activity features, the results of the model is summarized in Table~\ref{table:logistic_regression_result}
+%The decision tree classifier demonstrates that local properties provide strong %evidence to predict the departure of user. It also suggests that the activity %features are more effective at predicting user departure. However, the decision %trees we trained contain over a thousand nodes and thus is too complicated to %illustrate how the local properties influence the probability of user %departure. To better understand the effect of different features, we also fit %the data with a logistic regression model that predicts the probability of %departure. The model is constructed on 7 independent variable covering both %neighborhood features and activity features, the results of the model is %summarized in Table~\ref{table:logistic_regression_result}
+
+\begin{comment}
 
 \begin{table}[t]
 \small
@@ -2646,30 +2700,36 @@ The decision tree classifier demonstrates that local properties provide strong e
 We evaluate the logistic regression model using 10-fold cross validation as well, and it only slightly under-performs the decision tree classifier, with the ROC area as 0.774. 
 
 The results of the regression model nicely confirm the descriptive results we showed previously, and quantify the effect of different variables on the departure probability. In particular, from Table~\ref{table:logistic_regression_result}, we see that the existence of active friends and continued activities, both decrease a user's tendency to depart while the number of friend who departed recently contribute to this tendency. We also notice that although most of the activity variables and the neighborhood variables have very high significance (very low p-value) in the estimated model, each unit of the fraction of active friends has the most substantial effect on the probability of user departure.
-
+\end{comment}
 %(TODO:(shaomei) Disucss more the results of logistic regression model)
 
 \section{Structural trends in network topology}
 \label{sec:global}
 
-We explore the overall structural changes that occur in the network as a result of the departure of several users, as well as the steady arrival of new users. Topological changes have been studied in the context of new nodes arriving but here we pay specific attention to how the global structure changes as a result of the departure or decline of user activities based on their local neighborhoods. 
+In this section, we explore the overall structural changes that occur in the network as a result of the departure of existing users, as well as the steady arrival of new users. Topological changes have been studied in the context of new nodes arriving but here we pay specific attention to how the global structure changes in the process of the departure or decline of user activities.
 
 To get a sense of the how the structure of the network evolves over time, we
-first study the distribution of edges among active and inactive
-nodes. Specially, we look at the edges between active nodes (Figure~\ref{fig:orkut_edge_active} and Figure~\ref{fig:dblp_edge_active}), edges between
+first study the distribution of nodes (Figure~\ref{fig:nodes}) and edges (Figure~\ref{fig:edges}) among active and inactive parts of the network. For nodes, we notice that although the total number of users keeps on increasing steadily, the number of active users has stopped growing for a long time (see Figure~\ref{fig:nodes}). For edges, we look at the edges between active nodes (Figure~\ref{fig:orkut_edge_active} and Figure~\ref{fig:dblp_edge_active}), edges between
 inactive nodes (Figure~\ref{fig:orkut_edge_inactive} and Figure~\ref{fig:dblp_edge_inactive}), and the edges across active and inactive nodes (Figure~\ref{fig:orkut_edge_semi_active} and Figure~\ref{fig:dblp_edge_semi_active}), and plot the
 ratio between the actual number of edges over the expected value over time.
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[width = 0.75\linewidth]{figures/nodes.eps}
+\caption{Distribution of nodes in active and inactive sub-networks}
+\label{fig:nodes}
+\end{figure}
 
 \begin{figure}[htbp!]
 \centering
 \subfigure[active(SN)]{\label{fig:orkut_edge_active}\includegraphics[width=0.3\textwidth]{figures/edges_active.eps}}                %\hspace{0.02\textwidth} 
 \subfigure[inactive(SN)]{\label{fig:orkut_edge_inactive}\includegraphics[width=0.3\textwidth]{figures/edges_inactive.eps}} 
 %\hspace{0.02\textwidth}
-\subfigure[semi-active(SN)]{\label{fig:orkut_edge_semi_active}\includegraphics[width=0.3\textwidth]{figures/edges_semi_active.eps}}\\
-\subfigure[active(Dblp)]{\label{fig:dblp_edge_active}\includegraphics[width=0.3\textwidth]{figures/dblp_edges_active.eps}}                 %\hspace{0.02\textwidth}
+\subfigure[cross(SN)]{\label{fig:orkut_edge_semi_active}\includegraphics[width=0.3\textwidth]{figures/edges_semi_active.eps}}\\
+\subfigure[active(DBLP)]{\label{fig:dblp_edge_active}\includegraphics[width=0.3\textwidth]{figures/dblp_edges_active.eps}}                 %\hspace{0.02\textwidth}
 \subfigure[inactive(Dblp)]{\label{fig:dblp_edge_inactive}\includegraphics[width=0.3\textwidth]{figures/dblp_edges_inactive.eps}} 
 %\hspace{0.02\textwidth}
-\subfigure[semi-active(Dblp)]{\label{fig:dblp_edge_semi_active}\includegraphics[width=0.3\textwidth]{figures/dblp_edges_semi_active.eps}}
+\subfigure[cross(DBLP)]{\label{fig:dblp_edge_semi_active}\includegraphics[width=0.3\textwidth]{figures/dblp_edges_semi_active.eps}}
 \caption{Distribution of edges, indicated by the ratio of actual number of edges over the expected number of edges (formed in random process).}
 \label{fig:edges}
 \end{figure}
@@ -2696,15 +2756,15 @@ Here, the expected number of edges is computed based on the total number of edge
 %\label{fig:edges}
 %\end{figure}
 
-To understand the overall structure among the sets of active and inactive nodes, we study the density and conductance of these two sub-networks in the rest of this section.
+To understand the overall structure among the sets of active and inactive nodes, we also study the density and conductance of these two sub-networks in the rest of this section. Here the active sub-network consists of the active nodes and the edges among them, and the inactive sub-network is similarly defined.
 
 Figure~\ref{fig:density} and plots the overall density of the active (\ref{fig:density_active} and \ref{fig:dblp_density_active}) and inactive (\ref{fig:density_inactive} and \ref{fig:dblp_density_inactive}) set of nodes, as a function of time. For comparison, we also plot the {\em expected} densities of the respective sets, as determined by the number of active and inactive nodes and edges and the degree distributions. 
 
-We here define density of a set of nodes(or average induced degree) as the number of edges between them divided by the number of nodes; i.e. for a set of nodes $S$, $density(S) = \frac{|E(S, S)|}{|S|}$ (here $E(S, S)$ contains all edges $(u, v)$ such that $u, v\in S$). Therefore, the density of set $S$ is half of the average induced degree of the set of nodes in $S$. In order to compare the the density we observe for the set of active nodes and the set of inactive nodes, we define an {\em expected} density for each of these components. The expected density of the inactive set of nodes could be computed simply as the density of the entire graph times the fraction of inactive nodes. 
+We use the definition density of a set of nodes (or average induced degree) used in~\cite{Charikar:2000}, where the density  of a set of nodes is the number of edges between the nodes divided by the number of nodes; i.e. for a set of nodes $S$, $density(S) = \frac{|E(S, S)|}{|S|}$ (here $E(S, S)$ contains all edges $(u, v)$ such that $u, v\in S$). Therefore, the density of set $S$ is half of the average induced degree of the set of nodes in $S$. In order to compare the the density we observe for the set of active nodes and the set of inactive nodes, we define an {\em expected} density for each sub-network. The expected density of the inactive set of nodes could be computed simply as the density of the entire graph times the fraction of inactive nodes. 
 
 However, we even use a stronger baseline to see if the trends we observe are a result of a trend more than just that of degrees. Therefore, we compute expected density subject to the overall degree constraints on active and inactive nodes as follows. 
 
-Consider each edge as occupying two slots (end points), each slot being in either $S_a$ (the active set of nodes), or $S_i$ (the inactive set of nodes); therefore $S_a\cup S_i = V(G)$. Let the fraction of all these slots that are in $S_i$ be $P_i$ (which is the number of edges going across the active and inactive component plus twice the number of edges in the inactive component); therefore the number of such slots occupied in $S_a$ is $P_a = (1-P_i)$. Suppose that all the $|E|$ edges were randomly placed in two slots each, with probabilities determined such that in expectation we respect $P_i$ and $P_a$, then we consider the induced density of this process as the expected density (for respective components). Notice that this is a more stringent baseline for our comparison. Therefore, an edge is contained in the inactive component with probability $P_i^2$ and so the expected density of the inactive set is $(|E|P_i^2)/|S_i|$. Similarly the expected density of the active component can be computed. 
+Consider each edge as occupying two slots (end points), each slot being in either $S_a$ (the active set of nodes), or $S_i$ (the inactive set of nodes); therefore $S_a\cup S_i = V(G)$. Let the fraction of all these slots that are in $S_i$ be $P_i$ (which is the number of edges going across the active and inactive sub-network plus twice the number of edges in the inactive sub-network); therefore the number of such slots occupied in $S_a$ is $P_a = (1-P_i)$. Suppose that all the $|E|$ edges were randomly placed in two slots each, with probabilities determined such that in expectation we respect $P_i$ and $P_a$, then we consider the induced density of this process as the expected density (for respective sub-networks). Notice that this is a more stringent baseline for our comparison. Therefore, an edge is contained in the inactive sub-network with probability $P_i^2$ and so the expected density of the inactive set is $(|E|P_i^2)/|S_i|$. Similarly the expected density of the active sub-network can be computed. 
 
 \begin{figure}[htbp!]
 \centering
@@ -2714,7 +2774,7 @@ Consider each edge as occupying two slots (end points), each slot being in eithe
 \vspace{-5pt}
 \subfigure[active]{\label{fig:dblp_density_active}\includegraphics[width=0.40\textwidth]{figures/dblp_density_active.eps}}     \hspace{0.03\textwidth}           
 \subfigure[inactive]{\label{fig:dblp_density_inactive}\includegraphics[width=0.40\textwidth]{figures/dblp_density_inactive.eps}}
-\caption{Density of the active and inactive subnetworks}
+\caption{Density of the active and inactive sub-networks}
 \label{fig:density}
 \end{figure}
 
@@ -2727,23 +2787,23 @@ Consider each edge as occupying two slots (end points), each slot being in eithe
 
 The plots on these densities in Figure~\ref{fig:density} shows that the density
 of the active set $density(S_a)$ increases rapidly with increase in
-time. Comparing this with the plot on distribution of edges in
-Figures~\ref{fig:edges}, we see that as the number of inactive nodes starts
-increasing, the number of edges in the active set, and correspondingly its
-density, becomes much higher than the density of the inactive set of nodes. We
-notice that the density of the active set is only marginally higher than its
-expected density. However, for inactive nodes, the density is significantly
+time. However, as shown in the plot on distribution of edges in
+Figures~\ref{fig:edges}, as the number of edges in the active sub-network continue growing, 
+%the density of active sub-network as the number of inactive nodes starts
+%increasing, the number of edges in the active sub-network, and correspondingly its density, becomes much higher than the density of the inactive set of nodes. We notice that 
+the density of the active sub-network is only marginally higher than its
+expected density. On contrast, the density of inactive sub-network is significantly
 higher than the expected density, even conditioned on the degree
-distribution. This is only explainable by the fact that the decision to depart
-is correlated across edges, as supported by our local analysis; the nodes that
+distribution. This further confirms the fact that departure 
+is correlated across edges, as shown in our local analysis. The nodes that
 are departing are still probably at the periphery of the network (since the
 inactive set has much lower density than the active set), but these inactive
 nodes continue to be internally well-connected because of a higher-than-expected
 density. This strengthens the evidence from previous sections that a node's
-likelihood to become inactive is influenced by the extent of neighboring
+likelihood to become inactive is strongly associated with neighboring
 inactivity.
 
-After learning about the connectedness of the active/inactive subnetwork separately, we now switch our gear to look at the connection of each subnetwork to the rest of social graph. We use conductance to measure the amount of possible connections between different sets of nodes in a network. 
+After studying the connectedness within the active/inactive sub-network separately, we now look at the connection of each sub-network to the rest of social graph, to get a more complete picture about where departures happen and spread in the network. We use conductance to measure the amount of possible connections between different sets of nodes in a network. 
 
 \begin{figure}[htbp!]
 \centering
@@ -2753,46 +2813,46 @@ After learning about the connectedness of the active/inactive subnetwork separat
 \label{fig:conductance}
 \end{figure}
 
-Conductance of a set of nodes $S$, $\phi(s)$ is measured as $\phi(S) = \frac{|E(S, V(G)\S)|}{|E(S)|}$. Here $E(S, V(G)\S)$ contains all edges $(u, v)$ such that $u\in S, v\notin S$, and $|E(S)| = 2|E(S, S)| + |E(S, V(G)\S)|$. So notice that conductance is always less than $1$, and any set with more than half its edges going across to the complement set has a conductance of more than $\frac{1}{3}$. We again measure the conductance of sets $S_a$ and $S_i$ through time and compare with their expected conductances (see Figure~\ref{fig:conductance}). The computation of expected conductance is also performed in a similar manner to as described previously for expected density. 
+Conductance of a set of nodes $S$, $\phi(s)$, first defined in~\cite{Jerrum:1988}, is measured as $\phi(S) = \frac{|E(S, V(G)\S)|}{|E(S)|}$. Here $E(S, V(G)\S)$ contains all edges $(u, v)$ such that $u\in S, v\notin S$, and $|E(S)| = 2|E(S, S)| + |E(S, V(G)\S)|$. So notice that conductance is always less than $1$, and any set with more than half its edges going across to the complement set has a conductance of more than $\frac{1}{3}$. We again measure the conductance of sets $S_a$ and $S_i$ through time and compare with their expected conductances (see Figure~\ref{fig:conductance}). The computation of expected conductance is also performed in a similar manner to as described previously for expected density. 
 
-We see a similar trend in conductance in Figure~\ref{fig:conductance} as seen for densities. The conductance of the active set of nodes $S_a$, $\phi(S_a)$ remains somewhat less than the conductance expected for this set. This suggests that there are somewhat fewer edges going across from $S_a$ to the inactive set $S_i$ and far more edges within $S_a$ itself, than would be expected. The conductance plots for the set of inactive nodes however is again more contrasting. $\phi(S_i)$ remains far lower than the expected conductance. Nodes that are becoming inactive continue to have many more edges within, than one would expect. This clearly suggests that the inactive set of nodes are influencing neighbors to inactivity. Yet again, the absolute conductance value still suggests that nodes at the periphery of the network are more susceptible to becoming inactive. 
+We see a similar trend in conductance (Figure~\ref{fig:conductance}) as seen for densities. The conductance of the active set of nodes $S_a$, $\phi(S_a)$ remains  less than the conductance expected for this set. This suggests that there are fewer edges going across from $S_a$ to the inactive set $S_i$ and far more edges within $S_a$ itself, than would be expected. The conductance plots for the set of inactive nodes however is again more contrasting. $\phi(S_i)$ remains far lower than the expected conductance. Nodes that are becoming inactive continue to have many more edges within, than one would expect. This clearly suggests that the inactive set of nodes are influencing neighbors to inactivity. Yet again, the absolute conductance value still suggests that nodes at the periphery of the network are more susceptible to becoming inactive. 
 
 The takeaway from these plots are two fold. Firstly, of course, these trends
 corroborate our findings from the previous sections suggesting that there is a
-strong influence of inactivity on its neighborhood and that nodes are much more
-likely to depart from the network if they are surrounded by inactive
-nodes. However, these plots on global measures such as density and conductance
-also suggest a picture of the evolving network. With the active set's density
+strong correlation among inactivity in neighboring nodes 
+%and that nodes are much more likely to depart from the network if they are surrounded by inactive nodes
+. However, these plots on global measures such as density and conductance
+also suggest a picture of the evolving network. With the active sub-network's density
 being much higher than the inactive, and the inactive set showing higher than
 expected density and lower than average conductance, we are led to believe that
 nodes in the {\em core} of the network are much more likely to survive, while
-nodes at the periphery are more susceptible to departure.
+nodes at the periphery are more susceptible to departure, probably by a combination of external forces and the neighborhood inactivity.
 
 \section{Conclusion}
-In this chapter, we have studied the dynamics of user departure from
-online social networks, from the perspectives of local and global network structure. 
-We considered the influence of local
+We have studied the dynamics of user departure from
+online social networks and collaboration networks, from the perspectives of local and global network structure. 
+We considered the predictive power of local
 neighborhoods on the behavior of nodes as well as studied global
 changes in the network topology. At the local level, we studied
 individuals and the dynamics in their local neighborhood, measured the
 probability of user arrival and departure in relation to the
-activity of their friends. Our findings are three fold: first, there
+activity of their friends. Our findings are threefold: first, there
 is a strong clustered effect in the timing of departure among friends
 while this is not as visible in arrivals; second, although both
 numbers and fractions of neighborhood (in)activity are correlated to
 the probability of the individual's departure, the fraction of
-inactive friends has arguably the strongest effect on the departure
+inactive friends has arguably the better predictive power on the departure
 probability, providing an interesting complement to literature on arrivals which
 shows number of active friends as the most predictive of these
 measures; third, once a significant fraction of friends depart, the
 overall connectivity of individuals in the entire network does not
-save the user from leaving the network. At the global level, we looked
+have predictive power as to whether the user will leave the network. At the global level, we looked
 at the trend of network topological properties over the past few
 years, showing that as the network evolves, users at the peripheral
 region of the network are more likely to depart in groups; yet an internal core
 of the network survives and densifies over time. 
 
-We also want to emphasize that we are not making the statement that the departure of friends is the cause of the departure of a user. As what we have observed and modeled is only correlated action among friends in the social networks, and we are aware of the possible confound variables that can contribute to, or actually lead to, the departure of users, such as the advertising effect of some new on-line social networks, or the design of the social network studied that makes it inadequate to some users' needs. In the future, we would really like to extend this work in two directions. First, we look forward to obtaining more detailed logs of user activities, especially, how users observe and react to the disengagement of friends, so that we can have a better answer on whether, or how, the social influence is taking place at spreading the disengagement across the network. Second, we would like to gather (if possible) users browsing history around the time when they departed, and understand the effect of competing on-line social network sites at drawing users away from the social network studied. Nevertheless, our work, for the first time, provides some insights on the evolving  network structure around disengaged nodes.
+We want to emphasize that our results do not prove a causal relationship between the departure of friends and the departure of a user. What we have observed and modeled is only correlated actions among neighbors, and we are aware of the possible factors that can contribute to, or actually lead to, the departure of users. For example, internally, users with similar personal traits may tend to leave the network altogether; externally, the emergence of competing services may draw users away from the original network. Our model provides \emph{one} possible explanation on the emergence of observed pattern, but does not exclude other explanations. Our goal is to offer a space for building better models of how people tune out of social networks, in additional to how they sign up. 
 
 %% An interesting area for future work is to study other internal or
 %% external factors in the process of user departure. For example,
@@ -2817,6 +2877,7 @@ We also want to emphasize that we are not making the statement that the departur
 %% very well-connected central active set seems to survive and densify through
 %% time, despite widespread departure of nodes.
 
+%\section{Acknowledgments}
 
 
 
