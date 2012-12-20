@@ -23,7 +23,7 @@
 \usepackage{verbatim}
 
 %\renewcommand{\comment}[1]{}
-\usepackage{CJKutf8}
+%\usepackage{CJKutf8}
 
 
 
@@ -41,7 +41,7 @@
 
 \title {The Dynamics of Information Diffusion on On-line Social Networks}
 \author {Shaomei Wu}
-\conferraldate {August}{2012}
+\conferraldate {January}{2013}
 \degreefield {Ph.D.}
 \copyrightholder{Shaomei Wu}
 \copyrightyear{2012}
@@ -52,22 +52,23 @@
 \makecopyright
 
 \begin{abstract}
-Although there has been a long history of studying the diffusion of information in various social science fields, existing theories are mostly built on direct observations in small networks or survey responses from large samples. As a result, it is hard to verify or refute these theories empirically on a large scale. In recent years, the abundance of digital records of online interactions has provided us for the first time both the explicit network structure and detailed dynamics, supporting global-scale, quantitative study of diffusion in the real world. Using these large scale datasets collected from social media sites, this thesis is to mainly address the following three questions about the process of information diffusion: ``who influence whom?'',  ``how do different types of information spread?'',  and ``how does the network structure impact the diffusion process?'' 
-%To better understand influence in a hybrid communication channel such as Twitter,
+Although there has been a long history of studying the diffusion of information in various social science fields, existing theories are mostly built on direct observations in small networks or survey responses from large samples. As a result, it is hard to verify or refute these theories empirically on a large scale. In recent years, the abundance of digital records of online interactions has provided us for the first time both the explicit network structure and detailed dynamics, supporting global-scale, quantitative study of diffusion in the real world. Using these large scale datasets collected from social media sites, we are able to dissect and study the process of information diffusion in its three components: people, information, and network.
+This thesis is to mainly address a few long-hanging questions about each component, including: ``who influence whom?'',  ``how do different types of information spread?'',  and ``how does the network structure impact the diffusion process?'' In our search of answers for these questions, we realize that these three components are very much interconnected and constantly interacting with each other in real-world diffusion processes. Thus our results on each component should not be taken in isolation but be viewed interdependently. 
 
-To understand how influence migrates across mediums, we study user's influence on social media based on their role in the global media ecosystem. By categorizing Twitter accounts into elite (i.e. celebrities, media outlets, organizations, and bloggers) and ordinary users, we find a striking concentration of attention on a minority of elite users, and significant homophily within elite categories. On the other hand, following the definition of ``opinion leaders'' in the classical ``two-step flow'' theory, we find a large population of opinion leaders who serve as a layer of intermediaries between the elite users and the masses. 
+To understand who influence whom in today's hybrid communication environment, we study user's influence on social media based on their role in the global media ecosystem. By categorizing Twitter accounts into elite (i.e. celebrities, media outlets, organizations, and bloggers) and ordinary users, we find a striking concentration of attention on a minority of elite users, and significant homophily within elite categories. On the other hand, following the definition of ``opinion leaders'' in the classical ``two-step flow'' theory, we find a large population of opinion leaders who serve as a layer of intermediaries between the elite users and the masses. 
 
-In contrast to previous diffusion research on the virality of information, our work focuses on the persistence of information, in relation to people and content. Fist, we see a systematical difference, in lifespan, for information broadcase by different categories of users. Second, we find a strong association between the content and the temporal dynamics of information: rapidly-fading information contains significantly more words related to negative emotion, actions, and more complicated cognitive processes, whereas persistent information contains more words related to positive emotion, leisure, and lifestyle.
+The next question we ask is the role of content in the diffusion process. In contrast to previous research on the virality of information, we switch our focus to the persistence of information, trying to understand why certain content keep on spreading in social media for a long time while most of them do not. First, we see an interactive effect, from both people and content, on the lifespan of information. As a result, there is a significant difference in lifespan, for information broadcasted by different categories of users. Second, we find a strong association between the linguistic style of content and its temporal dynamics: rapidly-fading information contains significantly more words related to negative emotion, actions, and more complicated cognitive processes, whereas persistent information contains more words related to positive emotion, leisure, and lifestyle.
  
-In the end, we study the local and global structure of a decaying online social network. Although there is a significant correlation in both arrival and departure among friends, we show that the dynamics of departure behave differently from the dynamics of arrival. 
-In particular, for the majority of users with a sufficient number (e.g., greater than 20) of friends, departure is best predicted by the overall fraction of activity within a user's neighborhood, independent of size. We also find that active users tend to belong to a core that is densifying and is significantly denser than the inactive users, and the inactive set of users exhibit a higher density and lower conductance than the degree distribution alone can explain. These two aspects suggest that nodes at the fringe are more likely to depart, and therefore induce inactive and subsequent departure of neighboring nodes in tightly-knit communities.
+In the end, we conduct a longitudinal study of the local and global structure of several large social networks, asking how and where disengagement happens in the social graph. We find that, although there is a significant correlation in both arrival and departure among friends, the dynamics of departure behave differently from the dynamics of arrival. 
+In particular, for the majority of users with a sufficient number (e.g., greater than 20) of friends, departure is best predicted by the overall fraction of active friends within a user's neighborhood, independent of the size of the  neighborhood. We also find that active users tend to belong to a core that is densifying and is significantly denser than the inactive users, and the inactive set of users exhibit a higher density and lower conductance than the degree distribution alone can explain. These two aspects suggest that nodes at the fringe are more likely to depart and subsequent departures are correlated among neighboring nodes in tightly-knit communities. 
+%and therefore induce inactive and subsequent departure of neighboring nodes in tightly-knit communities.
 
 
 \end{abstract}
 
 \begin{biosketch}
 %Your biosketch goes here. Make sure it sits inside the brackets.
-Shaomei Wu is a PhD candidate in Information Science department, Cornell University. Coming from a Computer Science background, she is interested in applying computing technologies and methodologies to examine social phenomena. Particularly, she studies how opinions and behaviors emerge, spread, and evolve in social media, using network algorithms, statistical models, language technologies, and social science theories.
+Shaomei Wu is a PhD candidate in Information Science department, Cornell University. Coming from the computer science background, she is interested in applying computing technologies and methodologies to examine social phenomena. Particularly, she studies how opinions and behaviors emerge, spread, and evolve in social media, using network algorithms, statistical models, language technologies, and social science theories.
 
 Hoping to bridge between computer science and the social sciences, she has worked closely with researchers from different disciplines such as sociology, communication, psychology, and political science. Her work has been quoted in the press, including the Economist, New York Times, the Time magazine, San Francisco Chronicle, and USA Today.
 
@@ -83,12 +84,12 @@ She received her M.S. in Computer Science from University of California, Santa B
 
 \begin{acknowledgements}
 %Many many many thanks to my committee!
-First, I would like to thank my advisors: Michael Macy, Jon Kleinberg, and Dan Cosley, for patiently teaching me how to do research and warmly introducing me to the scientific community. I am also very thankful for having the opportunity to work with primerir industry research labs such as Yahoo! Labs and Google Research. Special thanks to Duncan Watts and Andrew Tomkins: I have learned so much from you and will forever consider you as my mentors. I want to thank my co-authors, without them most content of this thesis would not exist: Jake Hofman, Winter Mason, Shenwei Liu, Chenhao Tan, Atish Das Sarma, Alex Fabrikant, Atilish Das Sarma - it has been such pleasant and inspiring experience working with you all.
+First, I would like to thank my advisors: Michael Macy, Jon Kleinberg, and Dan Cosley, for patiently teaching me how to do research and warmly introducing me to the scientific community. I am also very thankful for having the opportunity to work with premier industry research labs such as Yahoo! Labs and Google Research. Special thanks to Duncan Watts and Andrew Tomkins: I have learned so much from you and will forever consider you as my mentors. I want to thank my co-authors, without them most content of this thesis would not exist: Jake Hofman, Winter Mason, Shenwei Liu, Chenhao Tan, Atish Das Sarma, Alex Fabrikant, Atish Das Sarma - it has been such pleasant and inspiring experience working with you all.
 
 %I also want to thank my co-authors: Jake Hofman, Winter Mason, Shenwei Liu, Chenhao Tan, Silvio Lattanzi, Atish Das Sarma, Alex Fabrikant, for being so smart and inspiring. 
 %I would like to thank everyone in Yahoo! Labs and Google Research: Ravi Kumar, Silvio Lattanzi, Ed Chi, and many others - it has been such pleasant and exciting experience working with you all! 
 
-I would like to thank all my friends and professors in Cornell as well, for being so kind to accompany me through the PhD journey, especially over those long winters. I am deeply thankful to the Information Science department, for being such an open, vibrant, and diverse place, for exposing me to so many briliant minds, such as Shimon Edelman and Phoebe Sengers. 
+I would like to thank all my friends and professors in Cornell as well, for being so kind to accompany me through the PhD journey, especially over those long winters. Thanks to Chris Cameron for all the help with setting-up and maintaining the Hadoop cluster, and to the entire Social Dynamics Lab for all the inspiring discussions and the always thoughtful comments. I am also deeply thankful to the Information Science department, for being such an open, vibrant, and diverse place, for exposing me to so many brilliant minds, such as Shimon Edelman and Phoebe Sengers. 
 
 Finally, I want to thank my family. Many thanks to Ben, for being so insightful and supportive. And many thanks to my parents, for all the trust and love they have shown to me.
 
@@ -118,123 +119,66 @@ Finally, I want to thank my family. Many thanks to Ben, for being so insightful 
 %\part{Introduction and Background}
 
 \chapter{Introduction}
+\label{chap:introduction}
 %With the invention of print, telephone, the Internet, the amount of information a person can 
 %However cynical Postman is, he has made a point that medium has an effect on both the form of information and the way it is disseminated and processed. Through the evolution of communication technology, information has become more and more easier to be produced, faster to be propagated, and more accessible.
 
 %With the huge IPO of FB and the great pontential expected from Twitter, social media and social marketing have become the new silicion valley favorite and created a new wave of glamous bubbles.
 
-Information diffusion has been a long intriguing topic for scholars from different fields. It is an essential element of many interesting problems, such as the diffusion of innovations\cite{rogers-2003}, the formation of public opinions\cite{katz_lazarsfeld,Watts-2007}, and the adoption of new products\cite{Bass:1969}. Historically, most of the research in this area has been done through field observations and/or phone surveys\cite{katz_57,rogers-2003} over a small or sampled population. Confined by the methodology, their results are usually based on the spread of a specific opinion or product in rather localized networks. 
+Information diffusion is the process that information spreads among people in the society. Common examples of information diffusion include the spread of rumors, beliefs, and behaviors. 
+%Information diffusion usually happens through multiple channels, such as, mass media (e.g., TV, radio, newspaper), the Internt, and word-of-mouth.  
+Having attracted a long-term interest from scholars in different fields, the study of information diffusion is an essential element of many interesting problems, such
+%Information diffusion has been a long intriguing topic for scholars from %different fields. It is an essential element of many interesting problems, such 
+as the diffusion of innovations\cite{rogers-2003}, the formation of public opinions\cite{katz_lazarsfeld,Watts-2007}, and the adoption of new products\cite{Bass:1969}. Historically, most of the research in this area has been done through field observations and/or phone surveys\cite{katz_57,rogers-2003} over a small or sampled population. Confined by the methodology, their results are usually based on the spread of a specific opinion or product in rather localized networks. 
 
-The development of the Internet and the emergence of a whole new set of communication technologies on top of it has largely changed the way people  gather and disseminate information, and brought both challenge and opportunity to a better understanding of how information spreads in the society.
-Historically, most empirical studies in this area were based on data collected through in-person interviews and phone surveys\cite{rogers-2003,katz_lazarsfeld}, targeted with a specific opinion or product that is under diffusion. Confined by the methodology, theories and conclusions drew from these research suffer at scale and data accuracy, and are challenged in today's massive, hybrid communication environment. Meanwhile, the popularity of electronic communication tools has offered new possibilities for obtaining much better data on how information and behavior spread over large population. The abundance of digital records of online interactions can provide large amounts of data on both explicit network structure and detailed dynamics, supporting large-scale, quantitative study of diffusion in the real world.
+From the spread of telegraphy and telephony, to the wide popularity of social media, the development in digital communication tools has largely changed the way we produce, share, and consume information. The advancement of personal publishing technologies - such as the web, blogs, photo sharing sites, online social networks, and micro-blogs - has made the process of creating and disseminating content much easier and more decentralized. As a result, we are entering - perhaps for the first time in human history - an age with abundance of information, of tools to generate and share information, of channels to access information, and of freedom to select and filter information. As pointed out by Herbert Simon\cite{Simon-1971}, the factors that limit the speed and scale of today's diffusion process is not any more the availability of information, but the ``attention of its recipients''. In response to the scarcity of attention, it is the massive, vibrant, hybrid communication environment, in which ideas, opinions, and news stories travel in an unforeseen speed, breaking the boundary between mediums, striving for their audience\cite{Leskovec-Newscycle-2009}.
 
-Using these large scale datasets collected from social media sites (i.e. Twitter, Orkut), we study three major components of information diffusion process:
+%we are situated in. Not only different opinions and news stories strive for attention, even for the same story, different mediums usually cover it repeatedly in competition for audience.
+
+%The limiting factor is not any more the availability of information but the attention span. Ideas, opinions, and stories travel in an unseen speed, breaking the boundary of medium, and competing for attention from the audience.
+
+
+In this context, diffusion theories from previous work are challenged both at scale and at accuracy. Mostly drawn from single-medium, small-scale diffusion of a particular opinion (or product), are these results still applicable in the  viral spread of YouTube videos or news stories over millions of people in various new communication platforms? To answer this question, we need to conduct large scale empirical study on real-world diffusion process over many different communication channels. Such task used to be unimaginable for diffusion researchers, however, has become not only possible but also necessary, for the understanding of how information and behavior spread over large population in today's information world. 
+
+There are two material bases for the large-scale empirical studies presented in this thesis: one is the recent availability of digital electronic records of human behaviors; and the other is the advancement in computing infrastructure to handle the huge amount of data. The popularity of digital electronic communication tools has offered great opportunities for us to obtain much better data on how viral cascades actually happen. Containing both explicit network structure and detailed interaction dynamics, these data sets support large-scale, quantitative studies on real-world diffusion process. At the same time, big data requires a whole range of new technologies to efficiently store and process large data sets. In the past few years, we have experienced a rapid development in data-intensive computing tools and platforms, especially, the availability of affordable high-performance computation resources (e.g., Amazon Elastic Computing Cloud\cite{}), and the popularization of low-cost, easy-to-setup MapReduce\cite{} environment (e.g., Hadoop\cite{}, PIG\cite{}). These tools have made it possible to work with the data sets we used, and to uncover the interesting patterns of information cascades in large on-line social networks.
+
+These two elements are not only the foundation, but also the active ingredients of our study. They largely expand the study of information diffusion, from a 
+traditional social science subject, to a nature science subject that involves  more quantitative methods and more measurable, replicable results. Most of my work has taken the nature science approach, aiming at qualitative understandings about diffusion process with quantitative evidences and mathematical models.
+
+%also the defining characters of ``big data'' research
+%fundamental ingredients
+
+%we want to verify (or rebut) the classic diffusion theories with empirical evidence. 
+
+% as they were usually drawn from the spread of a specific opinion (or product) through a single medium over a small sample, in isolation from other competing opinions. But meanwhile, 
+
+%the popularity of digital electronic communication tools has offered brand new possibilities for obtaining much better data on how information and behavior spread over large population. The abundance of digital records of online interactions can provide large amounts of data on both explicit network structure and detailed dynamics, supporting large-scale, quantitative study of diffusion in the real world.
+
+%.. in the way that... Meanwhile.. big data studies enable us to...
+
+
+%The development of the Internet and the emergence of a whole new set of communication technologies on top of it has largely changed the way people  gather and disseminate information, and brought both challenge and opportunity to a better understanding of how information spreads in the society.
+%Historically, most empirical studies in this area were based on data collected through in-person interviews and phone surveys\cite{rogers-2003,katz_lazarsfeld}, targeted with a specific opinion or product that is under diffusion. Confined by the methodology, theories and conclusions drew from these research suffer at scale and data accuracy, and are challenged in today's massive, hybrid communication environment. Meanwhile, the popularity of electronic communication tools has offered new possibilities for obtaining much better data on how information and behavior spread over large population. The abundance of digital records of online interactions can provide large amounts of data on both explicit network structure and detailed dynamics, supporting large-scale, quantitative study of diffusion in the real world.
+
+Leveraging the power of ``big data'' and data-intensive technologies, this thesis focuses on the flow of information (and activity) in on-line environment at large scale, that is, diffusion through on-line social media and social networks over millions of people. 
+
+In particular, we frequently study the diffusion process in the context of Twitter. As a highly popular micro-blogging service, Twitter provides a natural environment for the study of diffusion process. Unlike other online social networks, Twitter is expressly devoted to disseminating information in that users subscribe to the information broadcasted by other users; thus the network of potential adoption can be reconstructed by crawling the corresponding "follower graph". In addition, because of the need of users to share web content, with the restriction of maximal tweet length as 140 characters, URL shortening services (e.g., bit.ly, TinyURL, etc) are used widely, and effectively tag numerous pieces of information with unique and easily-identifiable tokens. As a result, we are able to observe and trace essentially everything that is spreading on Twitter. Thus although we have only one communication channel, we have a very high level of resolution and coverage regarding what is being diffused. Meanwhile, although it may be non-representative in some respects, Twitter is very representative in at least one respect--namely it includes essentially all actors of any consequence in the information diffusion process in the society: media outlets and formal organizations of all sizes, bloggers, and public figures like celebrities, as well as tens of millions of ordinary individuals. In this sense, it really is a complete sample of one (admittedly narrow) slice through the diffusion landscape. 
+
+We also include studies that are based on data sets from on-line social networks and collaboration social networks, as both an extension and a complement to the results drawn from Twitter. The biggest difference between Twitter and most other social networks is that social networks are usually built on top of bi-directional friendship links, and assume a strong, consistent identity provided by their users, whereas mostly of the edges in Twitter network is uni-directiona, non-reciprocal, and the notion for user identity is rather weak\footnote{A small number of users with consistent, true identities are marked explicitly as ``Verified Accounts''}. Such differences give rise to some interesting and distinctive patterns for diffusion processes in these two mediums, ultimately, making the communication through Twitter more similar to traditional mass media broadcasting than to word-of-mouth style information exchange.
+
+%Borrowing the concept from the study of epidemics, we dissect information diffusion process into three components - people (), content (virus), network (), and ask the following three quesitons throughout this thesis:
+
+Considering information diffusion as the process that \emph{information} travels among \emph{people} through communication \emph{networks}, we study three key components of this problem in the following chapters:
+
+%Using these large scale datasets collected from social media sites (i.e. Twitter, Orkut), we study three major components of today's information diffusion process:
 \begin{itemize}
-\item \emph{People}, who are the ``influentials'' and whom are they influencing?
-\item \emph{Content}, does different types of information spread differently?
-\item \emph{Network}, what can the macro- and micro-level structure of the network tell us about the underlying mechanism that drives the diffusion process?
+\item \emph{People}, who are the ``influentials'' and whom are they influencing (see Chapter~\ref{chap:influece})?
+\item \emph{Content}, does different types of information spread differently (see Chapter~\ref{chap:content}))? 
+\item \emph{Network}, what can the macro- and micro-level structure of the network tell us about the underlying mechanism that drives the diffusion process (see Chapter~\ref{chap:network})?
 \end{itemize}
 
-Although still a young field, there has been a growing literature that studied these components, mostly focused on modeling and predicting the scale or the spikiness of cascade. Building on top of existing knowledge, our exploration on these three components highlights the following three contributions:
+Centered around these questions, this thesis is structured in sixed chapters. Chapter~\ref{chap:introduction} contains an introduction and states the purpose  of this work. Chapter~\ref{chap:background} includes the basic theories, models, and concepts used in this thesis. Chapter~\ref{chap:influece}, Chapter~\ref{chap:content}, and Chapter~\ref{chap:network} each focuses on one of the three components mentioned aboved - people, content, and network, respectively. They form the core of this thesis, and will be introduced separated in the following part of this chapter. In the end, we conclude this work and offer some insights for future work in Chapter~\ref{chap:conclusion}.   
 
-%In this thesis, I will discuss our exploration on these three components of diffusion, highlighting our contributions on the following three aspects.
-
-%Built on top of existing research, this thesis will contribute our knowledge about the dynamics of information diffusion on online social networks, from three perspectives.
-
-First, we study the ``virality'' of diffusion with new aspects. Instead of scale, we focus on the temporal patterns of cascades, in particular, the persistence of information. We notice that certain information has a very long lifespan whereas most of the information only exists shortly in social media. We also look at the ``negative'' virality - the virality of ``inactivity'', and show how user disengagement, similar to user engagement, has a network effect but operates slightly differently.
-
-Second, we examine the exogenous properties of actors and artifacts beyond the closed, single-medium communication network. For example, by looking in-depth at the textual characteristics, we find that the persistent attention to certain content can be better explained by the innate quality of the content, independent from the mechanism of how it spreads in the network. We also find that, despite the connectivity and demographics, certain users are more influential on social media because of their established role (and fame) from the world outside social media. These results suggest that, diffusion process should be studied in context, considering the socio-cultural factors that constantly interact with the information cascade.
-
-%Our results show that, diffusion should be studied in context, taking into account the socio-cultural factors that constantly interact with the diffusion process. 
-%These findings suggest that, online social networks are not isolated systems, but instead, a part of the global communication networks with many existing channels, actors, and communication artifacts.
-
-Third, we study different components of diffusion not only by themselves, but also the interaction between them. As information diffusion is an interactive process between people and content, mediated by the communication networks, different components of diffusoin do not exist in isolation. People with high influence tend to cluster together\cite{Aral-2012}, and the location in the network can tell us a lot about a person's status\cite{Kempe-2003,Backstrom:2006}. In our work, we show that different people have different preference of content and individual's influence is topic-dependent.
-
-%In the end, we will examine a diffusion process that closely tight the online and offline world together - Arab spring. Contributions:
-%\begin{enumerate}
-%\item Trace the evolution, and unveal the dynamicss of social movement using digital logs;
-%\item Understand the role and impact of social media in societal changes;
-%\end{enumerate}
-
-This thesis is an inter-disciplinary effort. Although most of the results are quantitative and are drew from analysis on large online datasets, I have worked closely with experts from various fields including sociologists, computer scientists, psychologists, communication scholars, and political scientists. During this process, I try to conduct my research with not only computational methods but also theories and insights from different fields. As a result, I hope our findings are not limited to online social networks, but can also help uncover the nature of information diffusion process across online and off-line spaces.
-
-%Finally, we study the arab spring movement and hope that the insights from our work is not limited to online social networks but also help uncover the nature of information diffusion process across online and offline environement.
-
-\section{The predictability of virality}
-
-With viral videos and memes outbreak and circulating in the Internet almost everyday, brands and politicians are eager to leverage the power of social networks and run online campaigns that ``go viral''. The demand from the market, contrasted with our lack of knowledge on the mechanism behind viral phenomenons, has catalyzed many studies focusing on modeling and predicting the virality of diffusion process. In this line of work, virality is usually defined and measured in three aspects: 
-\begin{enumerate}
-\item \emph{Scale}: the size of cascade tree originated from the original node.
-e.g., the cascade Facebook fanning pages\cite{Sun-2009};
-\item \emph{Range}: the maximal chain length in the diffusion network. e.g., reference links between blog posts\cite{Leskovec-SDM-07}. 
-\item \emph{Transmission probability}. As most existing research describe diffusion process with epidemic models, transmission probability is the probability a virus travels through a directional edge in the network and infects the end node. In the context of social networks, transmission probability is mapped to  the success rate of interpersonal recommendations in electronic market\cite{Leskovec-EC-2006}, the probability a tweet is retweeted by the followers of the tweet's author\cite{Bakshy-2011}, and the likelihood a user mark a Flickr photo as favorite after seeing a friend doing so\cite{Cha-2009}.
-\end{enumerate}
-
-Using large scale online social networks data, researchers have employed a whole set of computational tools to asset different aspects of cascades that may lead themselves to viral. However, in practice, it is still very difficult to engineer a success viral campaign\cite{Bakshy-2011}. In fact, most marketers and public relation professionals still rely heavily on experience and intuition when launching online campaigns, which mostly received attention in a short time span\cite{Yang-2011,crane:2008,Wu-ICWSM-2011,Wu-Twitter-2011}. Although the virality is still the holy grail for marketers, there has been an ascending suspicion on the whole idea of ``predicting virality''.
-
-In their Science article published in 2006, Salganik et al\cite{Salganik-2006} explored the unpredictability of song ratings, argued that, despite the quality of music, the best predictor for a song's popularity is actually the popularity itself: the songs that received first few thumbs-ups usually rise up to be the hit, even if the first thumbs-ups are given randomly. Some later work showed that the quality of initiators does not predict well with the final scale of cascades\cite{Sun-2009,Bakshy-2011}. Although some studies showed that the structure of the subgraph induced by existing adopters do have a role in behavior adoption\cite{Backstrom:2006,Romero-2011,Leskovec-SDM-07}, such role is not consistent in other studies\cite{Bakshy-2011}, and may depend on the context of diffusion\cite{Centola:2007}.
-
-There are two major factors that might contribute to the difficulty of predicting virality. First, as most studies observed, the long-tailed distribution of the popularity of online content results in a skewed training set consisting of many unsuccessful examples and only a few successful examples. While most machine learning algorithms are not robust to skewed training sets\cite{Provost-2000}, the common practice of biased sampling can over-compensate the successful cases and overlook the unsuccessful ones. As a result, most characteristics we discovered in the positive class can also be found in the negative class - the predictive model would fail to tell one from the other. Second, as we mentioned before, given the fact that online communications is an integrated part of the global communication networks, there are many exogenous factors that can not be controlled or observed in the communication channel where the data is collected. The complexity and the fuzziness of real world diffusion process is innately inadequate to be fully captured by epidemic models\cite{Bakshy-2011,Cha-2010}.
-
-Understanding the difficulty of this task does not mean that it is unsolvable. We have seen tremendous progress towards a better understanding of the virality, incorporating theories and methods from multiple fields (e.g., \cite{Centola:2007, Bakshy-2011}). As part of these efforts, we also study the \emph{transmission probability} of URLs among different categories of users on Twitter. Our results show that influential users are much more likely to pass on information from those who are similar to them (for more details, see Chapter~\ref{chap:influece}).
-
-Meanwhile, during our study of the spread of URLs on Twitter, we discovered and explored some new metrics for the success of cascade. We first noticed that,  although skewed as well, the distribution of the lifespan of information has a much heavier tail towards the end. In other words, there is a substantial amount of information that is consistently tweeted over a long period of time, in the fast-paced medium such as Twitter. When examining the persistent items in depth, we realized that, most of them can not be characterized by any of the traditional metrics for virality: they do not receive many retweets, they do not spread through long-chains, and they are usually not part of super-sized cascades. However, as they generate comparably large interest that lasts for a significantly long period of time, we believe that persistent content are interesting enough to be studied as ``success'' examples of diffusion as well.
-
-The study of information longevity is generally missed in the study of information diffusion, even among the string of research on the temporal dynamics of cascades\cite{Yang-2011,crane:2008,Leskovec:2005}. Although some previous work also spotted the lastingness of certain content\cite{crane:2008,Szabo-2010}, researchers usually concentrate on modeling the speed, intensity, and scale of the peak of attention, while treating the long-last content as corner cases.
-%Although there has been a growing interst at studying the temporal dynamics of diffusion process\cite{Yang-2011,and others}, most work has concentrated on the peak of attention, but not the longevity. %studying how fast the peak is accumulated\cite{}, how attention are distributed around the peak\cite{}, and how long the cycle is when there are more than one peaks\cite{}. 
-%Even in previous work that also spotted the lastingness of certain content\cite{crane:2008,Szabo-2010}, authors were trying to predict the speed and intensity of the burst of attention while treating the long-last content as corner cases. 
-In our work, we compare the lifespan of information by its initiator and content, and ask what makes certain things so persistently eye-catching in a world where information is overly rich and attention is remarkably scarce\cite{Simon-1971}. Our major findings include:
-\begin{itemize}
-\item The longevity of information is determined to a large extent by the exogenous qualities of the information, not by social contagion. 
-\item Content picked up by certain group of users (e.g., bloggers) are in general of more persistent interest, as these users actively perform the role of ``information filter'' on online social media.
-\item There is a strong correlation between the content and the temporal dynamics of information. Content with cultural/intelligent value are more likely to persist. At the text level, rapidly-fading information cntains signficantly more words related to negative emotion, actions, and more complicated cognitive processes, whereas the persistent information contains more words related to positive emotion, leisure, and lifestyle.
-\item The decay of attention, although much less visible, also has a network effect that coordinates the disengagement in online social networks among friends.
-\end{itemize}
-
-%Although many work on temporal analysis, and 
-%Similar pattern has also been found in the viewing of YouTube videos\cite{crane:2008,Szabo-2010}, most of them concentrated on the peak and intensity, not the longevity.
-
-%``early temporal dynamics is important at predicting the final popularity'' \cite{Szabo-2010}. ``without early temporal dynamics, semantics is important''.
-
-  
-%Inspried by the examples of big cascade, and the market buzz, 
-%most existing work has focused on modeling and predicting the scale of diffusion (i.e., virality). 
-
-%Two major reasons for the ``unpredictability''.
-
-%First, power law of popularity - large majority of unsuccessl events that are over-looked, and given the number, they pontentially exhibit all characteristics of viral examples.
-
-%We also made efforts on predicting the scale. Then we switch our gear to studying the temporal dynamics of information, following an emerging line of research\cite{}. Patterns they have shown... In current study of temporal dynamics, most work on the trend, and the peaks. However, we start to look at the longevity of information, and ask what makes information persistent. Interestingly, the distribution of lifespan does not follow power-law, but instead, with a large number of items with super long lifespan. When looking these items, we find they can not be characterized by any of the viral metrics above. They are not viral, nor generated by long-chains, and usually not part of big cascade.  However, they are very interesting because... (they are like organic process that does not die!)
-
-%Existing efforts on predicting the popularity with early activity patterns\cite{Szabo-2010}.
-
-%Second, exogenous characterstics - the innate inadequate of epidemic models. When we think to model virality, we need to think in a bigger context (details in following sections).
-
-
-
-% Understanding how information spreads in the society has attracted a growing interest from both practitioners and scholars. It is an essential element for many interesting problems, such as the diffusion of innovation, formation of public opinion, product adoption, and viral marketing. 
-
-%Historically, one of the biggest challenges in the study of information diffusion is data collection. Given the difficulty of observing and tracing the diffusion process over all possible channels, most empirical studies in this field have been conducted manually by sociologists and communication researchers, through in-person interviews or standardized surveys of population samples. Therefore, these studies are largely confined by the scale and the data accuracy. As a result, existing theoretical models in the literature have relied on many assumptions about the underlying diffusion mechanism instead of empirical evidence. Being widely applied, these models are, however, hard to be verified or rebutted empirically on a large scale. 
-
-%In recent years, the abundance of digital records of online interactions has provided us both the explicit network structure and detailed dynamics, supporting global-scale, quantitative study of diffusion in the real world. 
-
-%Using these large scale datasets collected from social media sites (i.e. Twitter, Orkut), this thesis addresses the following three questions: ``who influences whom?'', ``how do different types of information spread?'',  and ``how does the network structure impact the diffusion process?''
-
-%Viewing the diffusion of information as an organic process, we study each stage in its lifecycle, from production, dissemination, to consumption (deceased). Each part is motivated by social science problems and theories, and aim at contribute deeper insights about how information flow in the society and its impact.
-
-%our work mainly contributed to the aspectes in the lifecycle of information diffusion that are overlooked by previous studies:
-%\begin{enumerate}
-%\item Production: people's external influence, especially, the role of mass media
-%\item Dissemination: temporal dynamics and the role of content
-%\item End-of-life: how does disengagement happen?
-%\end{enumerate}
-
-
-%\begin{enumerate}
-%\item Production: what can we know about the diffusion when the information is created - persistance (compared with the seed selection problem);
-%\item Dissemination: influencers, content, network structure, and the interaction among them.
-%\item End-of-life: network effect on disengagement.
-%\end{enumerate}
 
 
 \section{The Influencer Problem}
@@ -243,18 +187,39 @@ In our work, we compare the lifespan of information by its initiator and content
 
 %Uniqlo - flagship stores in NYC, featuring ``community heros'' such as restaurant owner and street fair organizer.
 
-The role of the influentials as trend makers has been a center piece of many classic theories about information diffusion process\cite{katz_lazarsfeld,rogers-2003}. The existence, and the importance, of the influentials also populated by several best-selling books such as The Tipping Point\cite{Gladwell:2002} and The Influentials\cite{keller_berry}. Today, challenged by the unbounded opportunity (and efforts) to reach the masses, marketers and PR firms are especially eager to leverage the power of the influentials to ``tip'' their products. But, who are the influentials? 
+The role of the influentials as trend makers has been a center piece of many classic theories on information diffusion process\cite{katz_lazarsfeld,rogers-2003}. The existence, and the importance, of the influentials also populated by several best-selling books such as The Tipping Point\cite{Gladwell:2002} and The Influentials\cite{keller_berry}. Today, challenged by the unbounded opportunity (and efforts) to reach the masses, marketers and PR firms are especially eager to leverage the power of the influentials to ``tip'' their products. But, who are the influentials? 
 %Can we estimate person influence and pick out the influencers?
 
-There are several classic theories about the characteristics of the influentials. Dating back to the 50s, Katz and Lazarsfeld coined the term ``opinion leaders''. They claimed that, comparing to ordinary people, opinion leaders have more social connections and are more media-savvy\cite{katz_lazarsfeld}. Later, scholars studying the diffusion of innovations also suggested that opinion leaders usually own ``greater exposure to mass media than their followers'', ``are more cosmopolite'', ``have greater social participation'' , ``have higher socioeconomic status'', and ``are more innovative''\cite{rogers-2003}. Similar ideas are illustrated in best-selling books, in which authors claims that the influentials are ``connectors'', ``mavens'', and ``salesmen''\cite{gladwell}, and that influentials play their role actively and constantly, providing suggestions from what to buy to who to vote for\cite{keller_berry}.
+Classic theories characterize the influentials as a group of very special people. Dating back to the 50s, Katz and Lazarsfeld coined the term ``opinion leaders''. They claimed that, comparing to ordinary people, opinion leaders have more social connections and are more media-savvy\cite{katz_lazarsfeld}. Later, scholars studying the diffusion of innovations also suggested that opinion leaders usually own ``greater exposure to mass media than their followers'', ``are more cosmopolitan'', ``have greater social participation'' , ``have higher socioeconomic status'', and ``are more innovative''\cite{rogers-2003}. Similar ideas were illustrated in best-selling books, in which authors claims that the influentials are ``connectors'', ``mavens'', and ``salesmen''\cite{gladwell}, and that influentials play their role actively and constantly, dissiminating ideas on various issues - from what to buy to who to vote for\cite{keller_berry}.
 
-One critique to the classic theories is their lack of empirical supports. Although intuitively sound, these theories about influentials are too general to be operationalized or examined in practice. It was only since the abundance of online interaction data that we saw a new line of empirical work on measuring and quantifying personal influence in diffusion. Most of these work studied influence in two aspects: personal attributes such as demographics and activities, network attributes such as connectivity and position in the network.  Although both aspects are usually considered and studied, most work showed the network attributes more relevant to personal influence\cite{Sun-2009,Bakshy-2011,Kempe-2003,kwak_10,Leskovec-EC-2006,Cha-2009}. 
+One critique to the classic theories is their lack of empirical supports. Although intuitively sound, these theories about influentials are too general to be operationalized or examined in practice. It was only since the abundance of online interaction data that we saw a new line of empirical work on measuring and quantifying personal influence in diffusion. Most of these work studied influence in two aspects: personal attributes such as demographics and activities, and network attributes such as connectivity and position in the network.  Although both aspects are usually considered and studied, most work showed the network attributes more relevant to personal influence\cite{Sun-2009,Bakshy-2011,Kempe-2003,kwak_10,Leskovec-EC-2006,Cha-2009}. 
 
 %Many work studied people in different demographics groups and the associated impact in diffusion process. However, although some research showed that age and gender are related with the tendency of adopting a new product\cite{}, most existing work found no siginificant correlation between individuals' demographics and their likelihood of seeding big cascades\cite{Sun-2009,Bakshy-2011}. Instead, people argued, it is the position in the network and the strength of social ties that makes some people more influential than the rest\cite{Kempe-2003,kwak_10,Leskovec-EC-2006,huberman, cha&mislove}. 
 
-However, we find current knowledge on influence and influentials still limited for several reasons. First, as most work focused on big cascades, the results can be biased towards the ``successful'' events that are deemed to be rare\cite{Bakshy-2011}.
+However, we find current knowledge on influence and influentials still limited for several reasons. 
 
-In addition, the \emph{context} of influence is usually overlooked. Influence does not exist in vacuum. It needs to be exercised by people, with certain communication medium. The context of influence is important, because individuals influence can differ by their expertise\cite{Cha-2010}, the subject\cite{Leskovec-EC-2006}, and the communication channels\cite{Wu-Twitter-2011}. Existing empirical studies measure influence in a variety of ways, from the size of diffusion tree, to the probability of passing the cascade to the next hop. The lack of consistency in current definition of influence also introduces ambiguity: different types of influence are usually studied as a whole, regardless different mechanisms that operate behind them. As a result, hybrid influence is observed and studied as if driven by a single mechanism. For example, exogenous influence migrated from other channels is usually mixed with and treated as interpersonal influence in most empirical studies.
+First, as most work focused on big cascades, the results can be biased towards the ``successful'' events that are deemed to be rare. Given the very high failing rate in social media, research\cite{Bakshy-2011} has shown that the capability of targeted ``influentials'' on generating large cascades is only marginally higher than the average; and their effect much less reliable than practioners had expected.
+
+Second, the \emph{context} of influence is usually overlooked. Influence does not exist in vacuum. It needs to be exercised by people, with certain communication medium. The context of influence is important, because individuals influence can differ by their expertise\cite{Cha-2010}, the subject\cite{Leskovec-EC-2006}, and the communication channels\cite{Wu-Twitter-2011}.
+
+Last but not least, the inconsistency in existing influence metrics is problematic, for two reasons. First, as existing empirical studies measure influence in a variety of ways - from the size of diffusion tree to the probability of passing the cascade to the next hop, it is hard for researchers to compare the results quantitatively across studies. Second, the inconsistency also introduces ambiguity: different types of influece are studied as a whole, regardless different mechanisms that orperate behind them. Depending on its origin, there are three well-known mechanisms for influence: interpersonal influence, homophily, and external factors. Accordingly, we need to be able to understand and distinguish three types of influence. The interpersonal  influence(a.k.a. social influence, induction) is attributed to the interaction between the influencer and the influencee\footnote{Here, and in the rest of this thesis, when we say \emph{influencee}, we mean the person who are influenced by the influencer.}, and the influecee's adoption of certain idea or behavior is purely induced by the earlier adoption of that idea or behavior by the influencer. The homophily influence comes from the fact that the influencer and the influencee share similar taste and interests, thus the influencee is more likely to adopt even before interaction happens, no matter whether the influencer has adopted or not. The last type of influence is induced by external factors, such as the influencer's expertise or authority in certain domain. The external influence (a.k.a. confounding influence) does not require personal relationship between the two, either involves much of the personal preference or taste. For example, a person is more likely to follow a dietary plan suggested by a medical doctor than a random friend.
+Knowing these three types of influence, we notice that the influence measured by different empirical metrics is in fact driven by very different mechanisms. For example, the probability of single-hop transmission is associated with a mix of all three types of influence; whereas, the size of big diffusion trees (or the length of long diffusion chains) usually does not refelct the interpersonal influence of the seeding node\cite{Sun-2009}\footnote{The reason behind is that, as some research has shown, personal influence can reach up to three degrees from the ego\cite{christakis-2011}.}. Many previous work did not recognize such difference in the source of influence, and studied the the observed hybrid influence as if driven by a single mechanism. Consequently, they may reach a much less accurate picture about the underlying diffusion process. For example, it has been a common mistake to confuse homophily-driven diffusion as influence-base contagion, and to over-estimate social influence. As a result, we have seen an emerging line of research on distinguishing the induction influence from homophily influence. However, there is still little known about the external influence: in most emipirial studies, the exogenous influence is mixed and treated as social influence.
+
+
+%Only when we fully understand the underlying mechanism for influence, can we really leverage the power of influentials in different situations. Thus we need to distinguish and annotate different types of influence by their origins.
+%To better understand the underlying mechanism of influence, we distinguish different types of influence by their origins, namely, interpersonal influence, homophily influence, and external influence.
+
+%there is a big inconsistency among the metrics for influence in existing empirical work, making it not only hard to compare results across studies but also confusing for understanding the source of influence. 
+%hard to compare the results across studies,
+%confusing for the understanding of the mechanism behind the influence.
+%Existing empirical studies measure influence in a variety of ways, from the size of diffusion tree, to the probability of passing the cascade to the next hop. Although all fairly intuitive, the influence measured in different metrics is in fact driven by different mechanisms. Depending on its origin, there are three well-known mechanisms for influence, namely, interpersonal influence, homophily, and external factors.
+%The interpersonal influence is attributed to the interaction and relationship  between the influencer and the influencee(e.g., the influence of a good salesman). The homophily influence comes from the fact that the influencer and the influencee share similar taste and interests, thus the influencee is more likely to adopt the same idea even before interaction happens. The last type of influence is induced by external factors, such as the influencer's expertise or authority in certain domain. The external influence does not require personal relationship between the two, or the preference of the influencee.
+
+%For example, the probability of single-hop transmission can reflect a mix of interpersonal influence, homophily, and external factors; however, interpersonal influence of a person usually does not account for the size of diffusion tree seeded by that person, especially, when the diffusion tree has multiple levels, as it has been shown that interpersonal influence can only reach up to two hops away from the center\cite{}. 
+%Only when we fully understand the underlying mechanism for influence, can we really leverage the power of influentials in different situations. Thus we need to distinguish and annotate different types of influence by their origins.
+%To better understand the underlying mechanism of influence, we distinguish different types of influence by their origins, namely, interpersonal influence, homophily influence, and external influence.
+
+%The lack of consistency in current definition of influence also introduces ambiguity: different types of influence are usually studied as a whole, regardless different mechanisms that operate behind them. As a result, hybrid influence is observed and studied as if driven by a single mechanism. For example, exogenous influence migrated from other channels is usually mixed with and treated as interpersonal influence in most empirical studies.
 
 %As a result, homophily can be 
 
@@ -277,14 +242,14 @@ In addition, the \emph{context} of influence is usually overlooked. Influence do
 %Recently, this idea of networked influence is recently challenged, too. One problem of existing work on this direction is the bias induced by over-sampling the ``successful'' diffusion events that rarely happen in reality\cite{Bakshy-2011}. Another problem is the lack of context in the study of influence. As a result, the definition of influence is inconsistent and ambiguous, makes it hard to compare results across studies or understand the specific mechanism that drives influence of different kinds\cite{Cha-2010,kwak_10,Bakshy-2011}. 
 
 
-In Chapter~\ref{chap:influece}, we approach the influencer problem by leveraging people's external influence to online social media. Here, we consider online social media as a medium that carries a whole spectrum of communications, from personal and private interactions to mass media broadcasting. We thus categorize users based on their role in the global communication system. To eliminate the bias towards successful cascades, we study the influence of each category in terms of visibility and the ability to stimulate and sustain attention from other users. Our work makes three main contributions:
+In Chapter~\ref{chap:influece}, we approach the influencer problem by focusing on the external influence migrated from other media channels to online social media. First of all, we consider online social media as a medium that carries a whole spectrum of communications, from personal and private interactions to mass media broadcasting. We thus categorize users based on their role in the global communication ecosystem. To reduce the bias towards successful cascades, we study the influence of each category of users in terms of visibility and the ability to stimulate and sustain attention from other users. Our work makes three main contributions:
 \begin{itemize}
-\item We introduce a crowd-sourcing method for classifying users into ``elite''
+\item We introduce a folksonomy model for classifying users into ``elite''
 and ``ordinary'' users according to their role in the media ecosystem, further
 classifying elite users into one of four categories of interest: media,
-celebrities, organizations, and bloggers.
+celebrities, organizations, and bloggers. Our selection of these five categories is to cover a spectrum of communication styles, from mass media, to ``mass-personal'', to interpersonal.
 \item We investigate the distribution of attention among these categories, finding that although audience attention is
-highly concentrated on a minority of elite users, much of the information they produce reaches the masses indirectly via a large population of intermediaries - local opinion leaders.
+highly concentrated on a minority of elite users, much of the information they produce reaches the masses indirectly via a large population of intermediaries - local opinion leaders. These local opinion leaders distributed among all classes of users, but are more media-savyy and in general have more followers.
 \item We find that different categories of users emphasize different types of content, and that content originated by different users exhibit dramatically different characteristic persistency, ranging from less than a day to months.
 \end{itemize}
 
@@ -344,23 +309,25 @@ highly concentrated on a minority of elite users, much of the information they p
 %\end{enumerate}
 
 \section{The role of content}
-Although it has been a common belief that different types of information spread differently, the role of content in diffusion process has not been examined thoroughly and systematically. Most empirical work in this area focused on the relationship between information virality and content\cite{Berger-2010,Hansen:11}, while some explored the connection between the temporal patterns and the content\cite{Gruhl-2004,crane:2008}. However, these studies are limited either by the lack of observations, or -- when viewed as content-base predictions -- by the relatively weak predictive power. 
+Although it has been a common belief that different types of information spread differently, the role of content in diffusion process has not been examined thoroughly and systematically. Most empirical work in this area focused on the relationship between information virality and content\cite{Berger-2010,Hansen:11}, while some explored the connection between the temporal patterns and the content\cite{Gruhl-2004,crane:2008}. However, due to the skewness of virality and the informal and sporadic nature of social media content, these studies are limited either by the lack of observations, or -- when viewed as content-base predictions -- by the relatively weak predictive power. 
 
 %Some studies the temporal patterns.
 
 %Results from these work are general, or lack of predictive power.
 
-There are several major challenges here. First, the content itself is difficult to track, especially when it travels and mutates across multiple media channels over a long period time\cite{Leskovec-Newscycle-2009}.  Second, predicting the virality of information at an individual level is a very hard problem by itself\cite{Bakshy-2011,Szabo-2010}. Third, given the focus of past work on how people interact with information, modeling such dynamics becomes extremely complicated with many unpredictable elements involved\cite{yang-2010,Yang-2011,Wu-Twitter-2011,Bakshy-2011}. 
+There are several major challenges here. First, the content (a.k.a. topic) itself is difficult to track, especially when it travels and mutates across multiple media channels over a long period time\cite{Leskovec-Newscycle-2009}.  Second, predicting the virality of information for each individual person is a very hard problem by itself\cite{Bakshy-2011,Szabo-2010}. Third, given the focus of past work on how people interact with information, modeling such dynamics becomes extremely complicated with many unpredictable elements involved\cite{yang-2010,Yang-2011,Wu-Twitter-2011,Bakshy-2011}. 
 
-In Chapter~\ref{chap:content}, we study the relationship between content and temporal dynamics of diffusion on Twitter. 
+In Chapter~\ref{chap:content}, we study the role of content in diffusion process by showing the relationship between the textual characteristics of content and its temporal dynamics when spreading on Twitter. Our approach overcomes the challenges mentioned above in the following ways. 
 
-We tackle the information tracking problem by taking advantage of the URL shorteners (e.g. bit.ly, TinyURL, etc) commonly adopted by Twitter users. Considering each webpage as a unit of information, the URL shortening services tag a page with a unique token that is easily traceable in Twitter communications. As a result, we able able to track the whole lifespan of a specific webpage by the inclusion of the shortened URL in tweets. 
+First, we tackle the information tracking problem by taking advantage of the URL shorteners (e.g. bit.ly, TinyURL, etc) commonly adopted by Twitter users. Considering each webpage as a unit of information, the URL shortening services tag a page with a unique token that is easily traceable in Twitter communications. As a result, we able able to track the whole lifespan of a specific webpage by the inclusion of the shortened URL in tweets. 
 
-In response to the difficulty of predicting the virality (e.g., scale, transmission probability), we shift our attention to the persistency of information. We compare two extreme temporal patterns in the decay rate of URLs embedded in tweets, defining a predicting task to distinguish between URLs that fade rapidly following their peak of popularity and those that fade more slowly. Our experiments show a strong connection between content and the temporal dynamics of information.
+Second, in response to the difficulty of predicting the virality (e.g., scale, transmission probability), we shift our attention to the persistency of information. We compare two extreme temporal patterns in the decay rate of URLs embedded in tweets, defining a predicting task to distinguish between URLs that fade rapidly following their peak of popularity and those that fade more slowly. Our experiments show a strong connection between content and the temporal dynamics of information.
 
-Also, by studying the webpages instead of individual tweets, we have a much richer, and more static corpus of content that allows us to simplify our model by focusing on the textual content instead of the users, while still maintaining sufficient degree of freedom to generate Another advantage of our approach is that if we can predict the temporal pattern of information based on content alone, we will be able to do that at a very stage, presumably when the information is first generated - which can be of interest to practitioners. 
+Third, by studying the webpages instead of individual tweets, we have a much richer, and more static corpus of content that allows us to simplify our model by focusing on the textual content instead of the people or the highly dynamics interactions among them, while still maintaining sufficient degree of freedom to generate a meaningful set of features for our machine learning models.
 
-In summary, we study intrinsic qualities of the content that may effectively determine the dissemination process, especially, the persistence of information. Our two main contributions include:
+In the end, another advantage of our approach is that if we can predict the temporal pattern of information based on content alone, we will be able to do that at a very stage, presumably when the information is first generated - which can be of interest to practitioners. 
+
+In summary, Chapter~\ref{chap:content} presents our study on intrinsic qualities of the content that may effectively determine the dissemination process, especially, the persistence of information. Our two main contributions include:
 \begin{itemize}
 \item We build a classifier that predicts the decay/persistence of information with textual features, providing one of the first empirical studies of the connection between content and temporal variations of information diffusion processes in online social media.
 \item We investigate the properties of the text that are associated with different temporal patterns, finding significant differences in word usage and sentiment between rapidly-fading and long-lasting information.
@@ -418,7 +385,7 @@ Although our study starts from the inactivity of users in online communities, th
 
 
 \chapter{Background}
-
+\label{chap:background}
 %\section{Diffusion and network structure}
 %Section 3 text. The dielectric constant at the air-metal interface
 %determines the resonance shift as absorption or capture occurs.
@@ -528,7 +495,7 @@ To study the diffusion process through social networks, people have leveraged th
 
 One problem of traditional epidemic models is that they assume a constant propagation across the network, thus can not fully address the interpersonal dynamics of diffusion at the individual level. As a result, two classes of diffusion models have been developed to better describe the adoption process for individuals in social networks. The first class are \emph{threshold models}\cite{Granovetter:1978}. In threshold models, each node $u$ has an adoption threshold $p_u \in [0,1]$, and a set of \emph{connection weights} $w_{u,v}$, for all nodes $v$ that are connected to $u$. A node $u$ will adopt the product once the connection weights of his neighbors who already adopted the product pass his adoption threshold, $\sum_{v, (u,v)\in E,  \textnormal{\small v already adopted}} \ge p_u$. The more recent class of these models are \emph{cascade models}, which focus on the influence from an adopted node $u$ to his friends $v$, $p_{u,v} \in [0,1]$. In cascade models, after a friend $u$ adopts the product, node $v$ will also adopt it with a probability $p_{u,v}$. These two classes models have been proved to be statistically equivalent\cite{Goldenberg:2001,Kempe-2003}. In applications, threshold models highlight the ``accumulated effect'' and can easily describe the ``complex contagion'' process\cite{Centola:2007}, whereas cascade models are more used for simulation of diffusion\cite{Goldenberg:2001}.
 
-These diffusion models are very helpful at characterizing the diffusion process and have formed the foundation of today's diffusion research. New extension to these models includes applying them on different topologies\cite{pastor-satorras01,Eguiluz-2002,Dodds:2005}, and adding constraints of the adoption threshold and the cascade probability\cite{wu-2004}. However, the network-based diffusion models are usually applied with the assumptions that the underlying diffusion mechanism is social influence, and their parameters such as connection weight $w_{u,v}$ and cascade probability $p_{u,v}$ are usually interpreted as personal influence from one person to the other. Here, we would like to call for attention to the possible bias towards social influence, and suggest to use these models more cautiously.
+These diffusion models are very helpful at characterizing the diffusion process and have formed the foundation of today's diffusion research. New extension to these models includes applying them on different topological structures\cite{pastor-satorras01,Eguiluz-2002,Dodds:2005}, and adding constraints of the adoption threshold and the cascade probability\cite{wu-2004}. However, the network-based diffusion models are usually applied with the assumptions that the underlying diffusion mechanism is social influence, and their parameters such as connection weight $w_{u,v}$ and cascade probability $p_{u,v}$ are usually interpreted as personal influence from one person to the other. Here, we would like to call for attention to the possible bias towards social influence, and suggest to use these models more cautiously.
 
 For most of the work presented in this thesis, we did not employ these models directly, but many concepts described in these models (e.g., susceptible, infectious, connection weight, cascade probability) still apply.
 
@@ -537,7 +504,85 @@ For most of the work presented in this thesis, we did not employ these models di
 
 %On the other hand, modeling and predicting the propensity of real world diffusion going viral through WOM process is of central interest in recent empirical studies. Built on top of the cascade model, Gruhl et al [2004] tracked the diffusion of topics in blogspheres to estimate the transmission probability with an expectation-maximization(EM)-like algorithm. Leskovec et al [2007] studied interpersonal recommendations on an e-commerce site to infer the adoption probability based on the category of products and invitation history. Cha et al [2008] studied the viral process of photos being marked as favorite on the Flickr social network. By applying the SIR model with infinite recovery time, they estimated the reproduction number with the mean degree of nodes at each step of contagion. Backstrom et al. [2006] modeled the probability of a user  joining a community and the growth of communities on LiveJournal using decision trees with network structure features.
 
+%%% Below: moved to background from introduction (12/17/2012)
 
+\section{The predictability of virality}
+
+With viral videos and memes outbreak and circulating in the Internet almost everyday, brands and politicians are eager to leverage the power of social networks and run online campaigns that ``go viral''. The demand from the market, contrasted with our lack of knowledge on the mechanism behind viral phenomenons, has catalyzed many studies focusing on modeling and predicting the virality of diffusion process. In this line of work, virality is usually defined and measured in three aspects: 
+\begin{enumerate}
+\item \emph{Scale}: the size of cascade tree originated from the original node.
+e.g., the cascade Facebook fanning pages\cite{Sun-2009};
+\item \emph{Range}: the maximal chain length in the diffusion network. e.g., reference links between blog posts\cite{Leskovec-SDM-07}. 
+\item \emph{Transmission probability}. As most existing research describe diffusion process with epidemic models, transmission probability is the probability a virus travels through a directional edge in the network and infects the end node. In the context of social networks, transmission probability is mapped to  the success rate of interpersonal recommendations in electronic market\cite{Leskovec-EC-2006}, the probability a tweet is retweeted by the followers of the tweet's author\cite{Bakshy-2011}, and the likelihood a user mark a Flickr photo as favorite after seeing a friend doing so\cite{Cha-2009}.
+\end{enumerate}
+
+Using large scale online social networks data, researchers have employed a whole set of computational tools to asset different aspects of cascades that may lead themselves to viral. However, in practice, it is still very difficult to engineer a success viral campaign\cite{Bakshy-2011}. In fact, most marketers and public relation professionals still rely heavily on experience and intuition when launching online campaigns, which mostly received attention in a short time span\cite{Yang-2011,crane:2008,Wu-ICWSM-2011,Wu-Twitter-2011}. Although the virality is still the holy grail for marketers, there has been an ascending suspicion on the whole idea of ``predicting virality''.
+
+In their Science article published in 2006, Salganik et al\cite{Salganik-2006} explored the unpredictability of song ratings, argued that, despite the quality of music, the best predictor for a song's popularity is actually the popularity itself: the songs that received first few thumbs-ups usually rise up to be the hit, even if the first thumbs-ups are given randomly. Some later work showed that the quality of initiators does not predict well with the final scale of cascades\cite{Sun-2009,Bakshy-2011}. Although some studies showed that the structure of the subgraph induced by existing adopters do have a role in behavior adoption\cite{Backstrom:2006,Romero-2011,Leskovec-SDM-07}, such role is not consistent in other studies\cite{Bakshy-2011}, and may depend on the context of diffusion\cite{Centola:2007}.
+
+There are two major factors that might contribute to the difficulty of predicting virality. First, as most studies observed, the long-tailed distribution of the popularity of online content results in a skewed training set consisting of many unsuccessful examples and only a few successful examples. While most machine learning algorithms are not robust to skewed training sets\cite{Provost-2000}, the common practice of biased sampling can over-compensate the successful cases and overlook the unsuccessful ones. As a result, most characteristics we discovered in the positive class can also be found in the negative class - the predictive model would fail to tell one from the other. Second, as we mentioned before, given the fact that online communications is an integrated part of the global communication networks, there are many exogenous factors that can not be controlled or observed in the communication channel where the data is collected. The complexity and the fuzziness of real world diffusion process is innately inadequate to be fully captured by epidemic models\cite{Bakshy-2011,Cha-2010}.
+
+Understanding the difficulty of this task does not mean that it is unsolvable. We have seen tremendous progress towards a better understanding of the virality, incorporating theories and methods from multiple fields (e.g., \cite{Centola:2007, Bakshy-2011}). As part of these efforts, we also study the \emph{transmission probability} of URLs among different categories of users on Twitter. Our results show that influential users are much more likely to pass on information from those who are similar to them (for more details, see Chapter~\ref{chap:influece}).
+
+Meanwhile, during our study of the spread of URLs on Twitter, we discovered and explored some new metrics for the success of cascade. We first noticed that,  although skewed as well, the distribution of the lifespan of information has a much heavier tail towards the end. In other words, there is a substantial amount of information that is consistently tweeted over a long period of time, in the fast-paced medium such as Twitter. When examining the persistent items in depth, we realized that, most of them can not be characterized by any of the traditional metrics for virality: they do not receive many retweets, they do not spread through long-chains, and they are usually not part of super-sized cascades. However, as they generate comparably large interest that lasts for a significantly long period of time, we believe that persistent content are interesting enough to be studied as ``success'' examples of diffusion as well.
+
+The study of information longevity is generally missed in the study of information diffusion, even among the string of research on the temporal dynamics of cascades\cite{Yang-2011,crane:2008,Leskovec:2005}. Although some previous work also spotted the lastingness of certain content\cite{crane:2008,Szabo-2010}, researchers usually concentrate on modeling the speed, intensity, and scale of the peak of attention, while treating the long-last content as corner cases.
+%Although there has been a growing interst at studying the temporal dynamics of diffusion process\cite{Yang-2011,and others}, most work has concentrated on the peak of attention, but not the longevity. %studying how fast the peak is accumulated\cite{}, how attention are distributed around the peak\cite{}, and how long the cycle is when there are more than one peaks\cite{}. 
+%Even in previous work that also spotted the lastingness of certain content\cite{crane:2008,Szabo-2010}, authors were trying to predict the speed and intensity of the burst of attention while treating the long-last content as corner cases. 
+In our work, we compare the lifespan of information by its initiator and content, and ask what makes certain things so persistently eye-catching in a world where information is overly rich and attention is remarkably scarce\cite{Simon-1971}. Our major findings include:
+\begin{itemize}
+\item The longevity of information is determined to a large extent by the exogenous qualities of the information, not by social contagion. 
+\item Content picked up by certain group of users (e.g., bloggers) are in general of more persistent interest, as these users actively perform the role of ``information filter'' on online social media.
+\item There is a strong correlation between the content and the temporal dynamics of information. Content with cultural/intelligent value are more likely to persist. At the text level, rapidly-fading information cntains signficantly more words related to negative emotion, actions, and more complicated cognitive processes, whereas the persistent information contains more words related to positive emotion, leisure, and lifestyle.
+\item The decay of attention, although much less visible, also has a network effect that coordinates the disengagement in online social networks among friends.
+\end{itemize}
+
+%Although many work on temporal analysis, and 
+%Similar pattern has also been found in the viewing of YouTube videos\cite{crane:2008,Szabo-2010}, most of them concentrated on the peak and intensity, not the longevity.
+
+%``early temporal dynamics is important at predicting the final popularity'' \cite{Szabo-2010}. ``without early temporal dynamics, semantics is important''.
+
+  
+%Inspried by the examples of big cascade, and the market buzz, 
+%most existing work has focused on modeling and predicting the scale of diffusion (i.e., virality). 
+
+%Two major reasons for the ``unpredictability''.
+
+%First, power law of popularity - large majority of unsuccessl events that are over-looked, and given the number, they pontentially exhibit all characteristics of viral examples.
+
+%We also made efforts on predicting the scale. Then we switch our gear to studying the temporal dynamics of information, following an emerging line of research\cite{}. Patterns they have shown... In current study of temporal dynamics, most work on the trend, and the peaks. However, we start to look at the longevity of information, and ask what makes information persistent. Interestingly, the distribution of lifespan does not follow power-law, but instead, with a large number of items with super long lifespan. When looking these items, we find they can not be characterized by any of the viral metrics above. They are not viral, nor generated by long-chains, and usually not part of big cascade.  However, they are very interesting because... (they are like organic process that does not die!)
+
+%Existing efforts on predicting the popularity with early activity patterns\cite{Szabo-2010}.
+
+%Second, exogenous characterstics - the innate inadequate of epidemic models. When we think to model virality, we need to think in a bigger context (details in following sections).
+
+
+
+% Understanding how information spreads in the society has attracted a growing interest from both practitioners and scholars. It is an essential element for many interesting problems, such as the diffusion of innovation, formation of public opinion, product adoption, and viral marketing. 
+
+%Historically, one of the biggest challenges in the study of information diffusion is data collection. Given the difficulty of observing and tracing the diffusion process over all possible channels, most empirical studies in this field have been conducted manually by sociologists and communication researchers, through in-person interviews or standardized surveys of population samples. Therefore, these studies are largely confined by the scale and the data accuracy. As a result, existing theoretical models in the literature have relied on many assumptions about the underlying diffusion mechanism instead of empirical evidence. Being widely applied, these models are, however, hard to be verified or rebutted empirically on a large scale. 
+
+%In recent years, the abundance of digital records of online interactions has provided us both the explicit network structure and detailed dynamics, supporting global-scale, quantitative study of diffusion in the real world. 
+
+%Using these large scale datasets collected from social media sites (i.e. Twitter, Orkut), this thesis addresses the following three questions: ``who influences whom?'', ``how do different types of information spread?'',  and ``how does the network structure impact the diffusion process?''
+
+%Viewing the diffusion of information as an organic process, we study each stage in its lifecycle, from production, dissemination, to consumption (deceased). Each part is motivated by social science problems and theories, and aim at contribute deeper insights about how information flow in the society and its impact.
+
+%our work mainly contributed to the aspectes in the lifecycle of information diffusion that are overlooked by previous studies:
+%\begin{enumerate}
+%\item Production: people's external influence, especially, the role of mass media
+%\item Dissemination: temporal dynamics and the role of content
+%\item End-of-life: how does disengagement happen?
+%\end{enumerate}
+
+
+%\begin{enumerate}
+%\item Production: what can we know about the diffusion when the information is created - persistance (compared with the seed selection problem);
+%\item Dissemination: influencers, content, network structure, and the interaction among them.
+%\item End-of-life: network effect on disengagement.
+%\end{enumerate}
+
+%%% Above: moved to Background from Introduction (12/17/2012)
 \begin{comment}
 
 \section{Temporal analysis}
@@ -2279,7 +2324,7 @@ depends more on the number of active friends than the number of
 inactive friends. Or perhaps departure is a fundamentally different
 decision that depends on an assessment of the pulse of the
 neighborhood, captured more accurately by the fraction of friends who
-remain active. At last, departure can be merely a sympton of some external process that is driven mostly by exogenous factors rather than social forces.
+remain active. At last, departure can be merely a symptom of some external process that is driven mostly by exogenous factors rather than social forces.
 
 We study this question in the context of the DBLP co-authorship graph and
 a large social network, and
@@ -2349,7 +2394,7 @@ is earlier than two months prior to $t$, and consider a user
 \emph{active} otherwise\footnote{As most online social network or social game sites use Monthly-Active-Users(MAU) as a standard way to measure the number of engaged users, we double the cutoff window to 2-month for a more conservative threshold to determine a user has departed.}. Given a snapshot of the DBLP network
 at time $t$, we consider a user \emph{inactive} if he/she has not published any 
 paper in the earlier than five year prior to $t$, and consider a user
-\emph{active} otherwise. Note that our results do not depend on the time frame that we used. In fact, they hold for two quite different networks and time frames. Considering all the possible exogenous factors that may affect people's activities in these two networks, the consistency of our results suggests that there might be some internal process that is fundamental to human social interactions and gives rise to the dynamics of arrivials and departures observed and studied in this chapter.
+\emph{active} otherwise. Note that our results do not depend on the time frame that we used. In fact, they hold for two quite different networks and time frames. Considering all the possible exogenous factors that may affect people's activities in these two networks, the consistency of our results suggests that there might be some internal process that is fundamental to human social interactions and gives rise to the dynamics of arrivals and departures observed and studied in this chapter.
 
 
 
@@ -3140,6 +3185,7 @@ Study the interaction between network and content.
 
 
 \chapter{Conclusion}
+\label{chap:conclusion}
 %    In summary, I am deeply intrigued by the developing characteristics of information diffusion in online social media. Thanks to the Internet and social media technologies, I believe that we are heading towards a more democratic era where revolutions can be started by ordinary people and the power to change is in the hands of the masses. As part of this process, social media sites such as Facebook and Twitter have also evolved from friendship networks to a much broader platform for organizing social/political changes and communicating with various communities. I hope my work can help understand this movement and foster the effective flow of information in the society.
 
 This thesis explored three major aspects of information diffusion process: influencers, content, and network structure. Our work highlighted the importance of exogenous factors in on-line diffusion process, showing that the external status of users, as well as the intrinsic quality of content, both play important roles at initializing and sustaining the spread of information in on-line social media. We also studied the ``virality'' of information (or behavior) from two new angles. First, we focused on the temporal patterns of cascades, in particular, the persistence of information. We found a heavy-tail distribution of the lifespan of information on Twitter, and explained this pheonomenon by the nature of information. Second, we studied the ``negative'' virality - the virality of ``inactivity'', showing that the disengagement of users in social networks are also correlated among friends, but with a different pattern compared to the correlation of user engagement. 
@@ -3186,6 +3232,36 @@ outside), is far more resilient to spreading inactivity. Perhaps peripheral node
 combination of external forces and neighboring inactivity. At the other end, the
 very well-connected central active set seems to survive and densify through
 time, despite widespread departure of nodes.
+
+%% below this, moved from Introduction to conclusion (12/17/2012)
+
+Although still a young field, there has been a growing literature that studied these components, mostly focused on modeling and predicting the scale or the spikiness of cascade. Building on top of existing knowledge, our exploration on these three components highlights the following three contributions.
+
+%In this thesis, I will discuss our exploration on these three components of diffusion, highlighting our contributions on the following three aspects.
+
+%Built on top of existing research, this thesis will contribute our knowledge about the dynamics of information diffusion on online social networks, from three perspectives.
+
+First, we study the ``virality'' of diffusion with new aspects. Instead of scale, we focus on the temporal patterns of cascades, in particular, the persistence of information. We notice that certain information has a very long lifespan whereas most of the information only exists shortly in social media. We also look at the ``negative'' virality - the virality of ``inactivity'', and show how user disengagement, similar to user engagement, has a network effect but operates slightly differently.
+
+Second, we examine the exogenous properties of actors and artifacts beyond the closed, single-medium communication network. For example, by looking in-depth at the textual characteristics, we find that the persistent attention to certain content can be better explained by the innate quality of the content, independent from the mechanism of how it spreads in the network. We also find that, despite the connectivity and demographics, certain users are more influential on social media because of their established role (and fame) from the world outside social media. These results suggest that, diffusion process should be studied in context, considering the socio-cultural factors that constantly interact with the information cascade.
+
+%Our results show that, diffusion should be studied in context, taking into account the socio-cultural factors that constantly interact with the diffusion process. 
+%These findings suggest that, online social networks are not isolated systems, but instead, a part of the global communication networks with many existing channels, actors, and communication artifacts.
+
+Third, we study different components of diffusion not only by themselves, but also the interaction between them. As information diffusion is an interactive process between people and content, mediated by the communication networks, different components of diffusoin do not exist in isolation. People with high influence tend to cluster together\cite{Aral-2012}, and the location in the network can tell us a lot about a person's status\cite{Kempe-2003,Backstrom:2006}. In our work, we show that different people have different preference of content and individual's influence is topic-dependent.
+
+%In the end, we will examine a diffusion process that closely tight the online and offline world together - Arab spring. Contributions:
+%\begin{enumerate}
+%\item Trace the evolution, and unveal the dynamicss of social movement using digital logs;
+%\item Understand the role and impact of social media in societal changes;
+%\end{enumerate}
+
+This thesis is an inter-disciplinary effort. Although most of the results are quantitative and are drew from analysis on large online datasets, I have worked closely with experts from various fields including sociologists, computer scientists, psychologists, communication scholars, and political scientists. During this process, I try to conduct my research with not only computational methods but also theories and insights from different fields. As a result, I hope our findings are not limited to online social networks, but can also help uncover the nature of information diffusion process across online and off-line spaces.
+
+%Finally, we study the arab spring movement and hope that the insights from our work is not limited to online social networks but also help uncover the nature of information diffusion process across online and offline environement.
+
+%% above this, moved from introduction to conclusion (12/17/2012)
+
 
 In the future, I would like to extend my research cross media platforms, networks, and even between on-line and off-line spaces. Joining social media data with real world events, I will look forward to studying the effect of information, in a broad socio-cultural context. One of my ongoing projects is to study the role of social media in social movements, for better understanding on how the propagation of information leads (or reflects) societal changes. To do so, we have collected a large number of tweets and twitter networks related to big social movements (i.e., Middle East Revolution, Occupy WallStreet Movement). Using effective algorithms for community detection, hub detection, trend detection, and opinion
 mining, we will be able to identify the informal structure of massive communication networks
